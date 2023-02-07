@@ -38,6 +38,7 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
             <table id="example1" class="table table-bordered">
               <thead>
                 <tr>
+                  <th>No</th>
                   <th>ID Pegawai</th>
                   <th>ID Personal</th>
                   <th>Nama</th>
@@ -51,8 +52,10 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
                 </tr>
               </thead>
               <tbody>
+                <?php $no=1 ?>
                 <?php foreach ($query as $user) : ?>
                   <tr>
+                    <td><?= $no++; ?></td>
                     <td width="2%"><?= $user['id_pegawai']; ?></td>
                     <td width="2%"><?= $user['id_personal']; ?></td>
                     <td><?= $user['name']; ?></td>
