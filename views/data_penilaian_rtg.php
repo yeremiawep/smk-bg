@@ -1,7 +1,8 @@
 <?php
 include '../config/database.php';
 
-$query = mysqli_query($conn, "SELECT * FROM users WHERE divisi='1' AND jabatan='9' ");
+$query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisi='1' AND jabatan='9' ");
+//SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE id_pegawai='$id'
 
 $sko = mysqli_query($conn, "SELECT * FROM penilaian_cro");
 $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
@@ -55,8 +56,8 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
                     <td width="2%"><?= $user['id_pegawai']; ?></td>
                     <td width="2%"><?= $user['id_personal']; ?></td>
                     <td><?= $user['name']; ?></td>
-                    <td><?= $user['divisi']; ?></td>
-                    <td><?= $user['jabatan']; ?></td>
+                    <td><?= $user['name_div']; ?></td>
+                    <td><?= $user['name_jab']; ?></td>
                     <td width="30%">
                       <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-xl">Isi Nilai SKO</a>
                       <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-sk">Isi Nilai SK</a>

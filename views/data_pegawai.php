@@ -1,8 +1,7 @@
 <?php
 include '../config/database.php';
 
-// $query = mysqli_query($conn, "SELECT * FROM users");
-$query = mysqli_query($conn, "SELECT * FROM users, jabatans, divisions WHERE users.jabatan = jabatans.id AND users.divisi = divisions.id");
+$query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id;");
 
 ?>
 
@@ -121,7 +120,7 @@ $query = mysqli_query($conn, "SELECT * FROM users, jabatans, divisions WHERE use
                 <option value="13">Pelaksana CRO</option>
               </select>
             </div>
-            <div class="row">
+            <div class="row mt-2 inline-block">
               <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
               <button type="submit" class="btn btn-primary">Save changes</button>
             </div>
@@ -132,16 +131,10 @@ $query = mysqli_query($conn, "SELECT * FROM users, jabatans, divisions WHERE use
     </div>
     <!-- /.modal-dialog -->
   </div>
-
-
   <!-- END MODAL XL -->
-
-
-  <!-- /.content -->
 </div>
 <!-- END MODAL XL -->
-</div>
-<!-- ./wrapper -->
+
 <!-- DataTables  & Plugins -->
 <!-- <?php include '../template/footer.php' ?> -->
 <script>
@@ -171,6 +164,12 @@ $query = mysqli_query($conn, "SELECT * FROM users, jabatans, divisions WHERE use
   function hapusData() {
     alert('Yakin Hapus ?');
   }
+</script>
+<script>
+$('.view-data').click(function(){
+  var id_pegawai = $(this).attr('data-id');
+  console.log(id_pegawai);
+});
 </script>
 </body>
 

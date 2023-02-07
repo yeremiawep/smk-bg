@@ -1,9 +1,9 @@
 <?php
 include '../config/database.php';
 
-$cro = mysqli_query($conn, "SELECT * FROM users WHERE divisi='1' AND jabatan='3' ");
-$cit = mysqli_query($conn, "SELECT * FROM users WHERE divisi='2' AND jabatan='4' ");
-$rtg = mysqli_query($conn, "SELECT * FROM users WHERE divisi='1' AND jabatan='5' ");
+$cro = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisi='1' AND jabatan='3' ");
+$cit = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisi='2' AND jabatan='4' ");
+$rtg = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisi='1' AND jabatan='5' ");
 
 
 $sko_cro = mysqli_query($conn, "SELECT * FROM penilaian_spvcro");
@@ -60,8 +60,8 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_manajerial");
                     <td width="2%"><?= $cro['id_pegawai']; ?></td>
                     <td width="2%"><?= $cro['id_personal']; ?></td>
                     <td><?= $cro['name']; ?></td>
-                    <td><?= $cro['divisi']; ?></td>
-                    <td><?= $cro['jabatan']; ?></td>
+                    <td><?= $cro['name_div']; ?></td>
+                    <td><?= $cro['name_jab']; ?></td>
                     <td width="30%">
                       <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-cro">Isi Nilai SKO</a>
                       <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-sk">Isi Nilai SK</a>
@@ -113,8 +113,8 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_manajerial");
                     <td width="2%"><?= $cit['id_pegawai']; ?></td>
                     <td width="2%"><?= $cit['id_personal']; ?></td>
                     <td><?= $cit['name']; ?></td>
-                    <td><?= $cit['divisi']; ?></td>
-                    <td><?= $cit['jabatan']; ?></td>
+                    <td><?= $cit['name_div']; ?></td>
+                    <td><?= $cit['name_jab']; ?></td>
                     <td width="30%">
                       <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-cit">Isi Nilai SKO</a>
                       <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-sk">Isi Nilai SK</a>
@@ -166,8 +166,8 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_manajerial");
                     <td width="2%"><?= $rtg['id_pegawai']; ?></td>
                     <td width="2%"><?= $rtg['id_personal']; ?></td>
                     <td><?= $rtg['name']; ?></td>
-                    <td><?= $rtg['divisi']; ?></td>
-                    <td><?= $rtg['jabatan']; ?></td>
+                    <td><?= $rtg['name_div']; ?></td>
+                    <td><?= $rtg['name_jab']; ?></td>
                     <td width="30%">
                       <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-rtg">Isi Nilai SKO</a>
                       <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-sk">Isi Nilai SK</a>
