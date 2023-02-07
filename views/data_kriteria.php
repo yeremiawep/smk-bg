@@ -105,7 +105,7 @@ $sko_pcro   = mysqli_query($conn, "SELECT * FROM penilaian_cro");
         <div class="card">
           <div class="card-header">
             <h2 class="card-title">Sasaran Kinerja Objektif</h2><br>
-            <h6>Asisten Supervisor | <i>Rutang</i></h6>
+            <h6>Asisten Supervisor | <i>Rumah Tangga</i></h6>
             <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-rtg">Add Kriteria</button>
           </div>
           <div class="card-body">

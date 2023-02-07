@@ -1,7 +1,7 @@
 <?php
 include '../config/database.php';
 
-$query = mysqli_query($conn, "SELECT * FROM users WHERE divisi='3' AND jabatan='9' ");
+$query = mysqli_query($conn, "SELECT * FROM users WHERE divisi='1' AND jabatan='9' ");
 
 $sko = mysqli_query($conn, "SELECT * FROM penilaian_cro");
 $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");

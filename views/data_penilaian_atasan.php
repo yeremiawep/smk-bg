@@ -1,14 +1,15 @@
 <?php
 include '../config/database.php';
 
-$query = mysqli_query($conn, "SELECT * FROM users WHERE divisi='1' AND jabatan='3' ");
-// $query1 = mysqli_query($conn, "SELECT * FROM users WHERE divisi='1' AND jabatan='3' ");
-// $query2 = mysqli_query($conn, "SELECT * FROM users WHERE divisi='2' AND jabatan='4' ");
-// $query3 = mysqli_query($conn, "SELECT * FROM users WHERE divisi='3' AND jabatan='5' ");
+$cro = mysqli_query($conn, "SELECT * FROM users WHERE divisi='1' AND jabatan='3' ");
+$cit = mysqli_query($conn, "SELECT * FROM users WHERE divisi='2' AND jabatan='4' ");
+$rtg = mysqli_query($conn, "SELECT * FROM users WHERE divisi='1' AND jabatan='5' ");
 
-$sko = mysqli_query($conn, "SELECT * FROM penilaian_cro");
-// $sko_rtg = mysqli_query($conn, "SELECT * FROM penilaian_rtg");
-$sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
+
+$sko_cro = mysqli_query($conn, "SELECT * FROM penilaian_spvcro");
+$sko_cit = mysqli_query($conn, "SELECT * FROM penilaian_spvcit");
+$sko_rtg = mysqli_query($conn, "SELECT * FROM penilaian_spvrtg");
+$sk = mysqli_query($conn, "SELECT * FROM sk_manajerial");
 
 ?>
 
@@ -31,7 +32,7 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
       <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Data Penilaian</h3>
+            <h3 class="card-title">Asisten Supervisor | <i>Cash Replenishment Outsource</i></h3>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -53,16 +54,122 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
               </thead>
               <tbody>
                 <?php $no=1 ?>
-                <?php foreach ($query as $user) : ?>
+                <?php foreach ($cro as $cro) : ?>
                   <tr>
                     <td><?= $no++; ?></td>
-                    <td width="2%"><?= $user['id_pegawai']; ?></td>
-                    <td width="2%"><?= $user['id_personal']; ?></td>
-                    <td><?= $user['name']; ?></td>
-                    <td><?= $user['divisi']; ?></td>
-                    <td><?= $user['jabatan']; ?></td>
+                    <td width="2%"><?= $cro['id_pegawai']; ?></td>
+                    <td width="2%"><?= $cro['id_personal']; ?></td>
+                    <td><?= $cro['name']; ?></td>
+                    <td><?= $cro['divisi']; ?></td>
+                    <td><?= $cro['jabatan']; ?></td>
                     <td width="30%">
-                      <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-xl">Isi Nilai SKO</a>
+                      <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-cro">Isi Nilai SKO</a>
+                      <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-sk">Isi Nilai SK</a>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+      </div>
+      <!-- /.card -->
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Asisten Supervisor | <i>Cash In Transit</i></h3>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table id="example1" class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>ID Pegawai</th>
+                  <th>ID Personal</th>
+                  <th>Nama</th>
+                  <th>Divisi</th>
+                  <th>Jabatan</th>
+                  <th>Input Nilai</th>
+                  <th>Nilai SKO</th>
+                  <th>Nilai SK</th>
+                  <th>Pelanggaran Disiplin</th>
+                  <th>Nilai Akhir</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php $no=1 ?>
+                <?php foreach ($cit as $cit) : ?>
+                  <tr>
+                    <td><?= $no++; ?></td>
+                    <td width="2%"><?= $cit['id_pegawai']; ?></td>
+                    <td width="2%"><?= $cit['id_personal']; ?></td>
+                    <td><?= $cit['name']; ?></td>
+                    <td><?= $cit['divisi']; ?></td>
+                    <td><?= $cit['jabatan']; ?></td>
+                    <td width="30%">
+                      <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-cit">Isi Nilai SKO</a>
+                      <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-sk">Isi Nilai SK</a>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+      </div>
+      <!-- /.card -->
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Asisten Supervisor | <i>Rumah Tangga</i></h3>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table id="example1" class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>ID Pegawai</th>
+                  <th>ID Personal</th>
+                  <th>Nama</th>
+                  <th>Divisi</th>
+                  <th>Jabatan</th>
+                  <th>Input Nilai</th>
+                  <th>Nilai SKO</th>
+                  <th>Nilai SK</th>
+                  <th>Pelanggaran Disiplin</th>
+                  <th>Nilai Akhir</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php $no=1 ?>
+                <?php foreach ($rtg as $rtg) : ?>
+                  <tr>
+                    <td><?= $no++; ?></td>
+                    <td width="2%"><?= $rtg['id_pegawai']; ?></td>
+                    <td width="2%"><?= $rtg['id_personal']; ?></td>
+                    <td><?= $rtg['name']; ?></td>
+                    <td><?= $rtg['divisi']; ?></td>
+                    <td><?= $rtg['jabatan']; ?></td>
+                    <td width="30%">
+                      <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-rtg">Isi Nilai SKO</a>
                       <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-sk">Isi Nilai SK</a>
                     </td>
                     <td></td>
@@ -88,8 +195,8 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
 
 <!-- MODAL XL -->
 
-<!-- SKO -->
-<div class="modal fade" id="modal-xl">
+<!-- SKO CRO -->
+<div class="modal fade" id="modal-cro">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
@@ -111,7 +218,7 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
                 </tr>
               </thead>
               <tbody>
-                <?php foreach ($sko as $sko) : ?>
+                <?php foreach ($sko_cro as $sko) : ?>
                   <tr>
                     <td><?= $sko['aspek']; ?></td>
                     <td><?= $sko['kriteria']; ?></td>
@@ -124,22 +231,6 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
                         <option value="3">3</option>
                         <option value="4">4</option>
                       </select>
-                      <!-- <div class="form-check">
-                        <input class="form-check-input" type="radio" name="nilai" id="nilai" value="1">
-                        <label class="form-check-label" for="inlineRadio1">1</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="nilai" id="nilai" value="2">
-                        <label class="form-check-label" for="inlineRadio2">2</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="nilai" id="nilai" value="3">
-                        <label class="form-check-label" for="inlineRadio2">3</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="nilai" id="nilai" value="4">
-                        <label class="form-check-label" for="inlineRadio2">4</label>
-                      </div> -->
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -159,7 +250,123 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
   <!-- END MODAL XL -->
   <!-- /.content -->
 </div>
-<!-- END SKO -->
+<!-- END SKO CRO -->
+
+<!-- SKO CIT -->
+<div class="modal fade" id="modal-cit">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Tambah Penilaian</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="../views/hitung/hitung_sko.php" method="POST">
+          <div class="form">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Aspek</th>
+                  <th>Kriteria</th>
+                  <th>Target</th>
+                  <th>Nilai</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($sko_cit as $sko) : ?>
+                  <tr>
+                    <td><?= $sko['aspek']; ?></td>
+                    <td><?= $sko['kriteria']; ?></td>
+                    <td><?= $sko['target']; ?></td>
+                    <td>
+                      <select class="form-select" aria-label="Default select example" name="nilai" id="nilai">
+                        <option selected>Input Nilai</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                      </select>
+                    </td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+            <div class="row d-inline-block">
+              <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- END MODAL XL -->
+  <!-- /.content -->
+</div>
+<!-- END SKO CIT -->
+
+<!-- SKO RTG -->
+<div class="modal fade" id="modal-rtg">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Tambah Penilaian</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="../views/hitung/hitung_sko.php" method="POST">
+          <div class="form">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Aspek</th>
+                  <th>Kriteria</th>
+                  <th>Target</th>
+                  <th>Nilai</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($sko_rtg as $sko) : ?>
+                  <tr>
+                    <td><?= $sko['aspek']; ?></td>
+                    <td><?= $sko['kriteria']; ?></td>
+                    <td><?= $sko['target']; ?></td>
+                    <td>
+                      <select class="form-select" aria-label="Default select example" name="nilai" id="nilai">
+                        <option selected>Input Nilai</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                      </select>
+                    </td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+            <div class="row d-inline-block">
+              <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- END MODAL XL -->
+  <!-- /.content -->
+</div>
+<!-- END SKO RTG -->
+
+
 
 <!-- SK -->
 <div class="modal fade" id="modal-sk">
