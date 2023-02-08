@@ -48,7 +48,7 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
                 </tr>
               </thead>
               <tbody>
-                <?php $no=1 ?>
+                <?php $no = 1 ?>
                 <?php foreach ($query as $user) : ?>
                   <tr>
                     <td><?= $no++; ?></td>
