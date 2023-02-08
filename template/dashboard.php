@@ -1,8 +1,12 @@
 <?php 
 include '../config/database.php';
 
-$query = mysqli_query($conn, "SELECT * FROM users");
-
+$query = mysqli_query($conn, "SELECT count(id) AS jml FROM users");
+$query2 = mysqli_query($conn, "SELECT count(id) AS jml FROM divisions");
+$query3 = mysqli_query($conn, "SELECT count(id) AS jml FROM jabatans");
+$view = mysqli_fetch_array($query);
+$view2 = mysqli_fetch_array($query2);
+$view3 = mysqli_fetch_array($query3);
 ?>
 
 <section class="content">
@@ -13,7 +17,7 @@ $query = mysqli_query($conn, "SELECT * FROM users");
         <!-- small box -->
         <div class="small-box bg-info">
           <div class="inner">
-            <h3>163</h3>
+            <h3><?= $view['jml']; ?></h3>
 
             <p>Pegawai</p>
           </div>
@@ -27,7 +31,7 @@ $query = mysqli_query($conn, "SELECT * FROM users");
         <!-- small box -->
         <div class="small-box bg-success">
           <div class="inner">
-            <h3>3</h3>
+            <h3><?= $view2['jml']; ?></h3>
 
             <p>Divisi</p>
           </div>
@@ -41,7 +45,7 @@ $query = mysqli_query($conn, "SELECT * FROM users");
         <!-- small box -->
         <div class="small-box bg-warning">
           <div class="inner">
-            <h3>18</h3>
+            <h3><?= $view3['jml']; ?></h3>
 
             <p>Jabatan</p>
           </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Feb 2023 pada 15.07
+-- Waktu pembuatan: 08 Feb 2023 pada 04.31
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.2.0
 
@@ -29,19 +29,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `divisions` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name_div` varchar(255) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `name_div` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `divisions`
 --
 
-INSERT INTO `divisions` (`id`, `name_div`, `created_at`, `updated_at`) VALUES
-(1, 'CRO', '2022-04-28 16:50:12', '2022-04-28 16:50:12'),
-(2, 'CIT', '2022-04-28 16:50:12', '2022-04-28 16:50:12'),
-(3, 'Rutang', '2022-04-28 16:50:12', '2022-04-28 16:50:12');
+INSERT INTO `divisions` (`id`, `name_div`) VALUES
+(1, 'CRO'),
+(2, 'CIT'),
+(3, 'Rutang');
 
 -- --------------------------------------------------------
 
@@ -51,32 +49,30 @@ INSERT INTO `divisions` (`id`, `name_div`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `jabatans` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name_jab` varchar(255) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `name_jab` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `jabatans`
 --
 
-INSERT INTO `jabatans` (`id`, `name_jab`, `created_at`, `updated_at`) VALUES
-(1, 'Pemimpin Cabang', '2022-04-28 16:50:12', '2022-04-28 16:50:12'),
-(2, 'Wakil Pemimpin Cabang', '2022-04-28 16:50:12', '2022-04-28 16:50:12'),
-(3, 'Asisten Supervisor CRO', '2022-04-28 16:50:12', '2022-04-28 16:50:12'),
-(4, 'Asisten Supervisor CIT', '2022-04-28 16:50:12', '2022-04-28 16:50:12'),
-(5, 'Asisten Supervisor Rutang', '2022-04-28 16:50:12', '2022-04-28 16:50:12'),
-(6, 'Internal Control', NULL, NULL),
-(7, 'Admin CRO', NULL, NULL),
-(8, 'Admin CIT', NULL, NULL),
-(9, 'Admin Rutang', NULL, NULL),
-(10, 'Pelaksana CIT', NULL, NULL),
-(11, 'Pelaksana CPC', NULL, NULL),
-(12, 'Supervisor CRO', NULL, NULL),
-(13, 'Pelaksana CRO', NULL, NULL),
-(16, 'Pengemudi CRO', NULL, NULL),
-(17, 'Pengemudi CIT', NULL, NULL),
-(18, 'Pramubakti', NULL, NULL);
+INSERT INTO `jabatans` (`id`, `name_jab`) VALUES
+(1, 'Pemimpin Cabang'),
+(2, 'Wakil Pemimpin Cabang'),
+(3, 'Asisten Supervisor CRO'),
+(4, 'Asisten Supervisor CIT'),
+(5, 'Asisten Supervisor Rutang'),
+(6, 'Internal Control'),
+(7, 'Admin CRO'),
+(8, 'Admin CIT'),
+(9, 'Admin Rutang'),
+(10, 'Pelaksana CIT'),
+(11, 'Pelaksana CPC'),
+(12, 'Supervisor CRO'),
+(13, 'Pelaksana CRO'),
+(16, 'Pengemudi CRO'),
+(17, 'Pengemudi CIT'),
+(18, 'Pramubakti');
 
 -- --------------------------------------------------------
 
@@ -92,6 +88,13 @@ CREATE TABLE `nilai_pco` (
   `nilai_akhir` float NOT NULL,
   `predikat` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `nilai_pco`
+--
+
+INSERT INTO `nilai_pco` (`id`, `id_user`, `nilai_sko`, `nilai_sk`, `nilai_akhir`, `predikat`) VALUES
+(1, 2140, 2.15, 1, 3.15, 'Sangat Baik');
 
 -- --------------------------------------------------------
 
@@ -529,13 +532,13 @@ ALTER TABLE `jabatans`
 -- AUTO_INCREMENT untuk tabel `nilai_pco`
 --
 ALTER TABLE `nilai_pco`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `penilaian_cro`
 --
 ALTER TABLE `penilaian_cro`
-  MODIFY `id_isi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_isi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `penilaian_spvcit`
