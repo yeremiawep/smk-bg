@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Feb 2023 pada 04.31
+-- Waktu pembuatan: 08 Feb 2023 pada 12.59
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.2.0
 
@@ -171,7 +171,7 @@ INSERT INTO `penilaian_spvcro` (`id_isi`, `aspek`, `kriteria`, `target`, `nilai`
 (3, 'Proses Bisnis Internal', 'Melakukan Pengecekan Laporan Harian', 'Memastikan telah diperiksa dan dikirim H+1 paling lambat pukul 09.00 ke BRI', 0),
 (4, 'Proses Bisnis Internal', 'Memonitoring kegiatan dan penggunaan dana operasional', 'Memastikan kesesuaian pengeluaran dengan bukti pemakaian', 0),
 (5, 'Proses Bisnis Internal', 'Merencanakan Hand Over ATM', 'Hand Over sesuai jadwal', 0),
-(6, 'Pekerja', 'Memberikan Pengarahan dan Pelatihan terhadap karyawan bawahannya', 'Dilakukan 1x dalam 1bulan', 0),
+(6, 'Pekerja', 'Memberikan Pembinaan terhadap karyawan bawahannya', 'Dilakukan minimal 1x dalam 1 bulan', 0),
 (7, 'Pekerja', 'Disiplin', 'Absensi tanpa keterangan maksimal 5x dalam 1 bulan', 0);
 
 -- --------------------------------------------------------
