@@ -5,8 +5,8 @@
       <!-- <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image" /> -->
     </div>
     <div class="info">
-      <a href="#" class="d-block">
-        <?= $_SESSION['user'] . ' | ' . $_SESSION['jabatan']; ?>
+      <a href="#" class="justify-content-center">
+        <?= $_SESSION['user'] . '<hr>' . $_SESSION['name_jab']; ?>
       </a>
     </div>
   </div>

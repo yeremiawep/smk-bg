@@ -47,7 +47,7 @@ $sko_pcro   = mysqli_query($conn, "SELECT * FROM penilaian_cro");
                   <td><?= $cro['kriteria']; ?></td>
                   <td><?= $cro['target']; ?></td>
                   <td>
-                    <a href="" class="btn btn-sm btn-warning">Edit</a>
+                    <a href="index.php?page=edit-kriteria-cro&&id=<?= $cro['id_isi']; ?>" class="btn btn-sm btn-warning">Edit</a>
                     <a onClick="hapusData()" href="../views/delete/delete_spvcro.php?id=<?= $cro['id_isi']; ?>" class="btn btn-sm btn-danger">Delete</a>
                   </td>
                 </tr>

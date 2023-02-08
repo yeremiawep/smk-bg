@@ -71,6 +71,8 @@ include '../config/database.php'
           include "../views/data_kriteria.php";
         } else if ($_GET['page'] == 'data-kompetensi') {
           include "../views/data_kompetensi.php";
+        } else if ($_GET['page'] == 'edit-kriteria-cro') {
+          include "../views/edit/edit_kriteria_cro.php";
         } else {
           include "../template/dashboard.php";
         }

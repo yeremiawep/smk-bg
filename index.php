@@ -30,7 +30,7 @@
       <div class="card-body">
         <form action="config/auth.php" method="post">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" id="nip" name="nip" placeholder="NIP">
+            <input type="text" class="form-control" id="nip" name="nip" placeholder="ID Pegawai">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-user"></span>
