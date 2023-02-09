@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Feb 2023 pada 12.59
+-- Waktu pembuatan: 09 Feb 2023 pada 11.20
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.2.0
 
@@ -44,6 +44,61 @@ INSERT INTO `divisions` (`id`, `name_div`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `hitung_nilai`
+--
+
+CREATE TABLE `hitung_nilai` (
+  `id_nilai` int(11) NOT NULL,
+  `id_user` bigint(20) UNSIGNED NOT NULL,
+  `divisi` bigint(20) UNSIGNED NOT NULL,
+  `jabatan` bigint(20) UNSIGNED NOT NULL,
+  `id_isi_sko` int(11) NOT NULL,
+  `nilai_sko` int(11) NOT NULL,
+  `periode` year(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data untuk tabel `hitung_nilai`
+--
+
+INSERT INTO `hitung_nilai` (`id_nilai`, `id_user`, `divisi`, `jabatan`, `id_isi_sko`, `nilai_sko`, `periode`) VALUES
+(1, 101, 3, 9, 45, 0, 2022),
+(2, 101, 3, 9, 46, 0, 2022),
+(3, 101, 3, 9, 47, 0, 2022),
+(4, 101, 3, 9, 48, 0, 2022),
+(5, 101, 3, 9, 49, 0, 2022),
+(6, 101, 3, 9, 50, 0, 2022);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `hitung_nilai_sk`
+--
+
+CREATE TABLE `hitung_nilai_sk` (
+  `id_nilai_sk` int(11) NOT NULL,
+  `id_user` bigint(20) UNSIGNED NOT NULL,
+  `divisi` bigint(20) UNSIGNED NOT NULL,
+  `jabatan` bigint(20) UNSIGNED NOT NULL,
+  `id_isi_sk` int(11) NOT NULL,
+  `nilai` int(11) NOT NULL,
+  `periode` year(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data untuk tabel `hitung_nilai_sk`
+--
+
+INSERT INTO `hitung_nilai_sk` (`id_nilai_sk`, `id_user`, `divisi`, `jabatan`, `id_isi_sk`, `nilai`, `periode`) VALUES
+(1, 101, 3, 9, 8, 0, 2022),
+(2, 101, 3, 9, 9, 0, 2022),
+(3, 101, 3, 9, 10, 0, 2022),
+(4, 101, 3, 9, 11, 0, 2022),
+(5, 101, 3, 9, 12, 0, 2022);
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `jabatans`
 --
 
@@ -77,24 +132,103 @@ INSERT INTO `jabatans` (`id`, `name_jab`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `nilai_pco`
+-- Struktur dari tabel `kriteria_kompetensi`
 --
 
-CREATE TABLE `nilai_pco` (
-  `id` int(11) NOT NULL,
-  `id_user` int(11) NOT NULL,
-  `nilai_sko` float NOT NULL,
-  `nilai_sk` float NOT NULL,
-  `nilai_akhir` float NOT NULL,
-  `predikat` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `kriteria_kompetensi` (
+  `id_isi` int(11) NOT NULL,
+  `jenis_sk` int(11) NOT NULL,
+  `kriteria` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `nilai_pco`
+-- Dumping data untuk tabel `kriteria_kompetensi`
 --
 
-INSERT INTO `nilai_pco` (`id`, `id_user`, `nilai_sko`, `nilai_sk`, `nilai_akhir`, `predikat`) VALUES
-(1, 2140, 2.15, 1, 3.15, 'Sangat Baik');
+INSERT INTO `kriteria_kompetensi` (`id_isi`, `jenis_sk`, `kriteria`) VALUES
+(1, 1, 'Dorongan Berprestasi'),
+(2, 1, 'Orientasi Pelayanan Pelanggan'),
+(3, 1, 'Komitmen Organisasi'),
+(4, 1, 'Kepedulian terhadap pekerjaan dan kualitas hasil kerja'),
+(5, 1, 'Kerjasama'),
+(6, 1, 'Kepemimpinan'),
+(7, 1, 'Pengambilan Keputusan'),
+(8, 2, 'Dorongan Berprestasi'),
+(9, 2, 'Orientasi Pelayanan Pelanggan'),
+(10, 2, 'Komitmen Organisasi'),
+(11, 2, 'Kepedulian terhadap pekerjaan dan kualitas hasil kerja'),
+(12, 2, 'Kerjasama');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `kriteria_penilaian`
+--
+
+CREATE TABLE `kriteria_penilaian` (
+  `id_isi` int(11) NOT NULL,
+  `jabatan` bigint(20) UNSIGNED NOT NULL,
+  `divisi` bigint(20) UNSIGNED NOT NULL,
+  `aspek` varchar(255) NOT NULL,
+  `kriteria` varchar(255) NOT NULL,
+  `target` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data untuk tabel `kriteria_penilaian`
+--
+
+INSERT INTO `kriteria_penilaian` (`id_isi`, `jabatan`, `divisi`, `aspek`, `kriteria`, `target`) VALUES
+(1, 13, 1, 'Aspek Proses Bisnis Internal', 'Menyelesaikan Pekerjaan Sesuai SOP', 'Maksimal 30 menit setiap lokasi ATM'),
+(2, 13, 1, 'Aspek Proses Bisnis Internal', 'Pembuatan Laporan Kegiatan', 'Dilaporkan paling lama 10 menit setelah kegiatan selesai melalui telepon'),
+(3, 13, 1, 'Aspek Proses Bisnis Internal', 'Kelengkapan dan Pemeliharaan Peralatan', 'Tidak ada peralatan yang rusak dan hilang'),
+(4, 13, 1, 'Aspek Pekerja', 'Mengikuti Pembinaan/Pengarahan dari atasan', 'Dilakukan 1x dalam sebulan'),
+(5, 13, 1, 'Aspek Pekerja', 'Disiplin', 'Absensi tanpa keterangan maksimal 5x dalam 1 tahun'),
+(6, 4, 2, 'Aspek Proses Bisnis Internal', 'Merencanakan dan Membuat Jadwal Operasional', 'Dikirimkan ke Divisi Cash Management setiap bulan paling lambat tanggal 25'),
+(7, 4, 2, 'Aspek Proses Bisnis Internal', 'Melakukan Pengecekan Laporan Harian', 'Memastikan telah diperiksa dan dikirim H+1 paling lambat pukul 09.00 ke Customer'),
+(8, 4, 2, 'Aspek Proses Bisnis Internal', 'Mengontrol Progress Invoice Customer', 'Memastikan Jumlah Pembayaran sesuai dengan Invoice '),
+(9, 4, 2, 'Aspek Proses Bisnis Internal', 'Memonitoring kegiatan dan penggunaan dana operasional ', 'Memastikan kesesuaian pengeluaran dengan bukti pemakaian '),
+(10, 4, 2, 'Aspek Pekerja', 'Memberikan Pengarahan dan Pelatihan terhadap karyawan bawahannya', 'Dilakukan 1x dalam 1 bulan'),
+(11, 4, 2, 'Aspek Pekerja', 'Disiplin', 'Absensi tanpa keterangan tidak lebih dari 5x dalam 1 tahun'),
+(12, 3, 1, 'Aspek Proses Bisnis Internal', 'Merencanakan dan Membuat Jadwal Operasional', 'Dikirimkan ke Divisi Cash Management setiap bulan paling lambat tanggal 25'),
+(13, 3, 1, 'Aspek Proses Bisnis Internal', 'Membuat Mapping Area', 'Tidak terjadi Cash Out & Pengerjaan terhadap ATM Problem tidak lebih dari 1 jam'),
+(14, 3, 1, 'Aspek Proses Bisnis Internal', 'Melakukan Pengecekan Laporan Harian', 'Memastikan telah diperiksa dan dikirim H+1 paling lambat pukul 09.00 ke BRI'),
+(15, 3, 1, 'Aspek Proses Bisnis Internal', 'Memonitoring kegiatan dan penggunaan dana operasional ', 'Memastikan kesesuaian pengeluaran dengan bukti pemakaian '),
+(16, 3, 1, 'Aspek Proses Bisnis Internal', 'Merencanakan Hand Over ATM', 'Memastikan Hand Over ATM sesuai jadwal'),
+(17, 3, 1, 'Aspek Proses Bisnis Internal', 'Melaksanakan Opname Kas Vault setiap hari', 'Dilakukan sebelum pukul 09.00 setiap harinya'),
+(18, 3, 1, 'Aspek Pekerja', 'Memberikan Pengarahan dan Pelatihan terhadap karyawan bawahannya', 'Dilakukan 1 kali dalam 1 bulan'),
+(19, 3, 1, 'Aspek Pekerja', 'Disiplin', 'Absensi tanpa keterangan tidak lebih dari 5x dalam 1 tahun'),
+(20, 5, 3, 'Aspek Proses Bisnis Internal', 'Merencanakan dan Mengawasi penggunaan dana operasional', 'Memastikan pengeluaran dan pemasukan disesuaikan dengan invoice dan bukti pemakaian'),
+(21, 5, 3, 'Aspek Proses Bisnis Internal', 'Melakukan Rekonsiliasi Giro Operasional, TC dan Kas Harian', 'Memastikan saldo rekening koran dan kas sesuai'),
+(22, 5, 3, 'Aspek Proses Bisnis Internal', 'Monitoring pos biaya pada aplikasi ERP', 'Memastikan biaya tidak kurang (minus)'),
+(23, 5, 3, 'Aspek Proses Bisnis Internal', 'Monitoring pendataan aset & inventaris', 'Dilakukan setiap hari maksimal pukul 14.30'),
+(24, 5, 3, 'Aspek Proses Bisnis Internal', 'Merencanakan maintenance aset & inventaris', 'Dilakukan 1x dalam 1 bulan'),
+(25, 5, 3, 'Aspek Proses Bisnis Internal', 'Monitoring SDM dan Update data secara periodik', 'Dilakukan 3x dalam 1 tahun'),
+(26, 5, 3, 'Aspek Proses Bisnis Internal', 'Melakukan Update Dokumen legalitas', 'Dilakukan setiap hari maksimal pukul 14.30'),
+(27, 5, 3, 'Aspek Pekerja', 'Memberikan Pengarahan dan Pelatihan terhadap karyawan bawahannya', 'Dilakukan 1x dalam 1 bulan'),
+(28, 5, 3, 'Aspek Pekerja', 'Disiplin', 'Absensi tanpa keterangan tidak lebih dari 5x dalam 1 tahun'),
+(29, 7, 1, 'Aspek Proses Bisnis Internal', 'Menindaklanjuti perintah dari Customer yang diinstruksikan oleh Asisten Supervisor', 'Penyelesaian sesegera mungkin'),
+(30, 7, 1, 'Aspek Proses Bisnis Internal', 'Mempersiapkan perlengkapan/alat kerja sesuai instruksi Asisten Supervisor', 'Kelengkapan alat kerja dan memenuhi standar layak pakai'),
+(31, 7, 1, 'Aspek Proses Bisnis Internal', 'Melakukan control kepada tim lapangan melalui telepon selama penugasan', 'Memastikan pelaksanaan pekerjaan telah sesuai dengan surat tugas'),
+(32, 7, 1, 'Aspek Proses Bisnis Internal', 'Menyiapkan laporan harian kegiatan CRO ke customer', 'Laporan disusun segera setelah menerima laporan kegiatan dari tim lapangan dan tim CPC'),
+(33, 7, 1, 'Aspek Proses Bisnis Internal', 'Mengirim laporan harian kegiatan CRO ke customer via email', 'Dilaporkan paling lama jam 10 pagi H+1'),
+(34, 7, 1, 'Aspek Proses Bisnis Internal', 'Melakukan pengecekan terhadap kelengkapan peralatan setelah selesai penugasan', 'Mengecek kelengkapan dan kondisi alat kerja agar siap dipakai untuk kegiatan berikutnya'),
+(35, 7, 1, 'Aspek Proses Bisnis Internal', 'Merekap hasil EJ Log', 'Memastikan ketersediaan EJ Log di masing-masing ATM'),
+(36, 7, 1, 'Aspek Pekerja', 'Disiplin', 'Absensi tepat waktu dan meminimalisir keterlambatan'),
+(37, 7, 1, 'Aspek Pekerja', 'Mengikuti Pengarahan dari atasan', 'Dilakukan minimal 1x setiap bulan'),
+(38, 8, 2, 'Aspek Proses Bisnis Internal', 'Input Data TTP Harian', 'Memastikan jumlah TTP sesuai dengan jumlah STH '),
+(39, 8, 2, 'Aspek Proses Bisnis Internal', 'Menatakerjakan dokumen dari tim lapangan', 'Memastikan kelengkapan dan pengesahan dokumen'),
+(40, 8, 2, 'Aspek Proses Bisnis Internal', 'Merekap TTP harian menjadi Tagihan dan Deklarasi Asuransi', 'Memastikan TTP Harian sesuai dengan deklarasi'),
+(41, 8, 2, 'Aspek Proses Bisnis Internal', 'Melakukan input data H+1', 'Memastikan input data dilakukan H+1'),
+(42, 8, 2, 'Aspek Proses Bisnis Internal', 'Menatakerjakan Invoice CIT', 'Memastikan pembayaran invoice tepat waktu'),
+(43, 8, 2, 'Aspek Pekerja', 'Disiplin', 'Absensi tepat waktu dan meminimalisir keterlambatan'),
+(44, 8, 2, 'Aspek Pekerja', 'Mengikuti Pembinaan dari atasan', 'Dilakukan minimal 1x setiap bulan'),
+(45, 9, 3, 'Aspek Proses Bisnis Internal', 'Melaporkan aktiva dan aset KC', 'Dilakukan setiap awal bulan'),
+(46, 9, 3, 'Aspek Proses Bisnis Internal', 'Mengajukan perpanjangan PKWT pekerja', 'Dilakukan sebelum tanggal 10 bulan berikutnya setelah masa PKWT berakhir'),
+(47, 9, 3, 'Aspek Proses Bisnis Internal', 'Mengajukan biaya perpanjangan KIR dan Pajak Kendaraan', 'Memastikan penyelesaian perpanjangan sebelum masa berlaku berakhir'),
+(48, 9, 3, 'Aspek Proses Bisnis Internal', 'Membuat dan melaporkan dana operasional', 'Dilaporkan setiap hari melalui aplikasi'),
+(49, 9, 3, 'Aspek Pekerja', 'Disiplin', 'Absensi tepat waktu dan meminimalisir keterlambatan'),
+(50, 9, 3, 'Aspek Pekerja', 'Mengikuti Pembinaan dari atasan', 'Dilakukan minimal 1x setiap bulan');
 
 -- --------------------------------------------------------
 
@@ -342,7 +476,7 @@ INSERT INTO `users` (`id`, `name`, `no_ktp`, `id_personal`, `id_pegawai`, `jabat
 (58, 'Aris Hadi Tama', '1802071004860010', 3541, 3988, 13, 1, 'Jakarta Pusat', 'Islam', 'SMK TEKNIK ELEKTRO', '0000-00-00', 35, 'kontrak', '18033097983', 'PEKERJA MANDIRI KAB. LAMPUNG TENGAH ', 'SMK TEKNIK ELEKTRO', '3988'),
 (59, 'Bayu Anggara', '1803072406960000', 3543, 3990, 11, 1, 'Jakarta Pusat', 'Islam', 'SMA IPS', '0000-00-00', 25, 'kontrak', '18033098007', '2238386692', 'SMA IPS', '3990'),
 (60, 'Agus Suparman ', '3216072208760000', 3544, 3991, 13, 1, 'Bekasi', 'Islam', 'STM MESIN', '0000-00-00', 45, 'kontrak', '18033098015', '511595627', 'STM MESIN', '3991'),
-(61, 'Desy Tria Rahmawati', '3175027012920000', 3546, 3993, 9, 1, 'Jakarta Timur', 'Islam', 'S1 MANAJEMEN KEUANGAN', '0000-00-00', 29, 'kontrak', '18033098023', '1218353949', 'S1 MANAJEMEN KEUANGAN', '3993'),
+(61, 'Desy Tria Rahmawati', '3175027012920000', 3546, 3993, 9, 3, 'Jakarta Timur', 'Islam', 'S1 MANAJEMEN KEUANGAN', '0000-00-00', 29, 'kontrak', '18033098023', '1218353949', 'S1 MANAJEMEN KEUANGAN', '3993'),
 (62, 'Rayihadi', '203160203900011', 3701, 4148, 7, 1, 'Serpong - Tangerang Selatan', 'Islam', 'SMK BISNIS MANAJEMEN', '0000-00-00', 31, 'kontrak', '18039066198', '2355066977', 'SMK BISNIS MANAJEMEN', '4148'),
 (63, 'Herman Nurmansyah', '3171051204890000', 3704, 4151, 11, 1, 'Jakarta Timur', 'Islam', 'SMK TEKNIK OTOMOTIF', '0000-00-00', 32, 'kontrak', '18039065737', '1208238017', 'SMK TEKNIK OTOMOTIF', '4151'),
 (64, 'Jimi Fajar', '3273251305880000', 3870, 4317, 10, 2, 'Bekasi', 'Islam', 'SMK ELEKTRO', '0000-00-00', 33, 'kontrak', '18059670804', '1881799042', 'SMK ELEKTRO', '4317'),
@@ -378,11 +512,11 @@ INSERT INTO `users` (`id`, `name`, `no_ktp`, `id_personal`, `id_pegawai`, `jabat
 (94, 'Rikky Zainur Iqbal', '3171033005760000', 5141, 5591, 16, 1, 'Jakarta Pusat', 'Islam', 'SMA IPS', '0000-00-00', 45, 'kontrak', '19075109413', '1208565325', 'SMA IPS', '5591'),
 (95, 'Yaya Nurhayadi', '3275090409930020', 5237, 5688, 13, 1, 'Bekasi', 'Islam', 'SMK TATA NIAGA', '0000-00-00', 28, 'kontrak', '19095997359', '1790272348', 'SMK PEMASARAN', '5688'),
 (96, 'Edin', '3276100207940000', 5238, 5689, 18, 1, 'Depok', 'Islam', 'SMK TEKNIK ELETRONIKA', '0000-00-00', 27, 'kontrak', '19095997417', '1451200184', 'SMK TEKNIK ELEKTRONIKA', '5689'),
-(97, 'Saut Sahat Parulian (Kepala Pool)', '3175053009860000', 5279, 5730, 9, 1, 'Jakarta Timur', 'Kristen Protestan', 'SMA IPS', '0000-00-00', 35, 'kontrak', '20000483246', '1770597551', 'SMA IPS', '5730'),
+(97, 'Saut Sahat Parulian (Kepala Pool)', '3175053009860000', 5279, 5730, 9, 3, 'Jakarta Timur', 'Kristen Protestan', 'SMA IPS', '0000-00-00', 35, 'kontrak', '20000483246', '1770597551', 'SMA IPS', '5730'),
 (98, 'Febriyanto', '3171062408910000', 5327, 5778, 13, 1, 'Jakarta Selatan', 'Islam', 'SMK AKUNTANSI', '0000-00-00', 30, 'kontrak', '20010225439', '1766856251', 'SMK AKUNTANSI', '5778'),
 (99, 'Parnington Siregar', '3671032804910000', 5328, 5779, 13, 1, 'Tangerang', 'Islam', 'SMA IPS', '0000-00-00', 29, 'kontrak', '20010225355', 'PEKERJA MANDIRI KOTA TANGERANG ', 'SMA IPS', '5779'),
 (100, 'Budi Rahmat Hidayat', '3175042402790000', 5392, 5843, 16, 1, 'Jakarta Timur', 'Islam', 'SMA IPS', '0000-00-00', 42, 'kontrak', '20018722601', '1451818337', 'SMA IPS', '5843'),
-(101, 'Dhea Rahmadhani', '3175066912980000', 5393, 5844, 9, 1, 'Jakarta Timur', 'Islam', 'D3 SIA', '0000-00-00', 23, 'kontrak', '20018722619', '2251512336', 'D3 SIA', '5844'),
+(101, 'Dhea Rahmadhani', '3175066912980000', 5393, 5844, 9, 3, 'Jakarta Timur', 'Islam', 'D3 SIA', '0000-00-00', 23, 'kontrak', '20018722619', '2251512336', 'D3 SIA', '5844'),
 (102, 'Aswin Setiawan', '3174010407840000', 5406, 5857, 7, 1, 'Jakarta Selatan', 'Islam', 'D3 MANAJEMEN INFORMATIKA', '0000-00-00', 37, 'kontrak', '20018722627', '1482149542', 'D3 MANAJEMEN INFORMATIKA', '5857'),
 (103, 'M Anton Trihatmono', '3175040205740000', 5497, 5948, 17, 2, 'Jakarta Timur', 'Islam', 'S1 TEKNIK INFORMATIKA', '0000-00-00', 47, 'kontrak', '20025620244', '1641352983', 'S1 TEKNIK INFORMATIKA', '5948'),
 (104, 'Agung Tri Nugroho', '3175041002850010', 5498, 5949, 17, 2, 'Jakarta Timur', 'Islam', 'S1 HUKUM', '0000-00-00', 36, 'kontrak', '20025620715', '1215533889', 'S1 HUKUM', '5949'),
@@ -457,16 +591,44 @@ ALTER TABLE `divisions`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `hitung_nilai`
+--
+ALTER TABLE `hitung_nilai`
+  ADD PRIMARY KEY (`id_nilai`),
+  ADD KEY `id_user` (`id_user`),
+  ADD KEY `divisi` (`divisi`),
+  ADD KEY `jabatan` (`jabatan`),
+  ADD KEY `id_isi_sko` (`id_isi_sko`);
+
+--
+-- Indeks untuk tabel `hitung_nilai_sk`
+--
+ALTER TABLE `hitung_nilai_sk`
+  ADD PRIMARY KEY (`id_nilai_sk`),
+  ADD KEY `divisi` (`divisi`),
+  ADD KEY `jabatan` (`jabatan`),
+  ADD KEY `id_isi_sk` (`id_isi_sk`),
+  ADD KEY `id_user` (`id_user`);
+
+--
 -- Indeks untuk tabel `jabatans`
 --
 ALTER TABLE `jabatans`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `nilai_pco`
+-- Indeks untuk tabel `kriteria_kompetensi`
 --
-ALTER TABLE `nilai_pco`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `kriteria_kompetensi`
+  ADD PRIMARY KEY (`id_isi`);
+
+--
+-- Indeks untuk tabel `kriteria_penilaian`
+--
+ALTER TABLE `kriteria_penilaian`
+  ADD PRIMARY KEY (`id_isi`),
+  ADD KEY `jabatan` (`jabatan`,`divisi`),
+  ADD KEY `divisi` (`divisi`);
 
 --
 -- Indeks untuk tabel `penilaian_cro`
@@ -523,16 +685,34 @@ ALTER TABLE `divisions`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT untuk tabel `hitung_nilai`
+--
+ALTER TABLE `hitung_nilai`
+  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT untuk tabel `hitung_nilai_sk`
+--
+ALTER TABLE `hitung_nilai_sk`
+  MODIFY `id_nilai_sk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT untuk tabel `jabatans`
 --
 ALTER TABLE `jabatans`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT untuk tabel `nilai_pco`
+-- AUTO_INCREMENT untuk tabel `kriteria_kompetensi`
 --
-ALTER TABLE `nilai_pco`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `kriteria_kompetensi`
+  MODIFY `id_isi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT untuk tabel `kriteria_penilaian`
+--
+ALTER TABLE `kriteria_penilaian`
+  MODIFY `id_isi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT untuk tabel `penilaian_cro`
@@ -579,6 +759,31 @@ ALTER TABLE `users`
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
+
+--
+-- Ketidakleluasaan untuk tabel `hitung_nilai`
+--
+ALTER TABLE `hitung_nilai`
+  ADD CONSTRAINT `hitung_nilai_ibfk_1` FOREIGN KEY (`divisi`) REFERENCES `divisions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `hitung_nilai_ibfk_2` FOREIGN KEY (`jabatan`) REFERENCES `jabatans` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `hitung_nilai_ibfk_3` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `hitung_nilai_ibfk_4` FOREIGN KEY (`id_isi_sko`) REFERENCES `kriteria_penilaian` (`id_isi`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `hitung_nilai_sk`
+--
+ALTER TABLE `hitung_nilai_sk`
+  ADD CONSTRAINT `hitung_nilai_sk_ibfk_1` FOREIGN KEY (`divisi`) REFERENCES `divisions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `hitung_nilai_sk_ibfk_2` FOREIGN KEY (`jabatan`) REFERENCES `jabatans` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `hitung_nilai_sk_ibfk_3` FOREIGN KEY (`id_isi_sk`) REFERENCES `kriteria_kompetensi` (`id_isi`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `hitung_nilai_sk_ibfk_4` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `kriteria_penilaian`
+--
+ALTER TABLE `kriteria_penilaian`
+  ADD CONSTRAINT `kriteria_penilaian_ibfk_1` FOREIGN KEY (`jabatan`) REFERENCES `jabatans` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `kriteria_penilaian_ibfk_2` FOREIGN KEY (`divisi`) REFERENCES `divisions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `users`
