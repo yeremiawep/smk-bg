@@ -39,10 +39,6 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
                   <th>Divisi</th>
                   <th>Jabatan</th>
                   <th>Input Nilai</th>
-                  <th>Nilai SKO</th>
-                  <th>Nilai SK</th>
-                  <th>Pelanggaran Disiplin</th>
-                  <th>Nilai Akhir</th>
                 </tr>
               </thead>
               <tbody>
@@ -57,7 +53,6 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
                     <td><?= $user['name_jab']; ?></td>
                     <td width="30%">
                       <a href="index.php?page=input-nilai-rtg" class="btn btn-primary inline-block">Isi Nilai SKO</a>
-                      <!-- data-toggle="modal" data-target="#modal-xl" -->
                       <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-sk">Isi Nilai SK</a>
                     </td>
                     <td></td>
