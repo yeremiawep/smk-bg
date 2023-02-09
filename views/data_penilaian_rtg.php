@@ -59,7 +59,7 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
                     <td><?= $user['name_div']; ?></td>
                     <td><?= $user['name_jab']; ?></td>
                     <td width="30%">
-                      <a class="btn btn-primary inline-block" id="isiSKO" data-toggle="modal" data-target="#modal-xl" data-id="<?= $user['id_pegawai']; ?>">Isi Nilai SKO</a>
+                      <a class="btn btn-primary inline-block" id="isiSko" data-toggle="modal" data-target="#modal-xl" data-id="<?= $user['id_pegawai']; ?>">Isi Nilai SKO</a>
                       <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-sk">Isi Nilai SK</a>
                     </td>
                     <td></td>
@@ -88,7 +88,7 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
 <!-- SKO -->
 <div class="modal fade" id="modal-xl">
   <div class="modal-dialog modal-xl">
-    <div class="modal-content">
+    <div class="modal-content" role="document">
       <div class="modal-header">
         <h4 class="modal-title">Tambah Penilaian</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -97,7 +97,7 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
       </div>
       <div class="modal-body">
         <form action="../views/hitung/hitung_sko.php" method="POST">
-          <input type="text" name="id_user" id="id_user" value="<?= $user['id']; ?>">
+          <input type="text" name="id_pegawai" id="id_pegawai">
           <div class="form">
             <table class="table table-bordered">
               <thead>
@@ -230,6 +230,12 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
       responsive: true,
     });
   });
+
+  $(document).on("click", "#isiSko", function() {
+    let id = $(this).data('id');
+
+    $(".modal-body #id_pegawai").val(id);
+  })
 </script>
 <script>
   function hapusData() {
