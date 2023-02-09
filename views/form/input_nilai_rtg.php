@@ -33,7 +33,7 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
             <h2 class="card-title">Form Input Penilaian</h2>
           </div>
           <div class="card-body">
-            <form action="../views/hitung/hitung_sko.php" method="POST">
+            <form action="../views/hitung/nilai_akhir.php" method="POST">
               <div class="row">
                 <label for="id_pegawai" class="col-sm-2 col-form-label">Nama</label>
                 <div class="col-auto">
@@ -111,6 +111,15 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
                     </tbody>
                   </table>
                 </div>
+              </div>
+              <div class="row">
+                <label for="hukuman" class="col-sm-2 col-form-label">Hukuman Disiplin</label>
+                <select class="form-select text-center" name="hukuman" id="hukuman">
+                  <option value="0">0</option>
+                  <option value="0.25">SP1 - 0.25</option>
+                  <option value="0.50">SP2 - 0.50</option>
+                  <option value="1.00">SP3 - 1.00</option>
+                </select>
               </div>
               <div class="row">
                 <button type="submit" class="btn btn-md btn-success">Submit</button>

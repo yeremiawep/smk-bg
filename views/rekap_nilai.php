@@ -38,6 +38,7 @@ $nilai = mysqli_query($conn, "SELECT * FROM nilai_sk JOIN users ON nilai_sk.id_p
                   <th width="10%">Jabatan</th>
                   <th width="10%">Nilai SKO</th>
                   <th width="10%">Nilai SK</th>
+                  <th width="10%">Hukuman Disiplin</th>
                   <th width="10%">Nilai Akhir</th>
                   <th width="10%">Predikat</th>
                 </tr>
@@ -53,6 +54,7 @@ $nilai = mysqli_query($conn, "SELECT * FROM nilai_sk JOIN users ON nilai_sk.id_p
                     <td><?= $n['name_jab']; ?></td>
                     <td><?= $n['nilai_sko']; ?></td>
                     <td><?= $n['nilai_sk']; ?></td>
+                    <td><?= $n['hukuman']; ?></td>
                     <td><?= $n['nilai_akhir']; ?></td>
                     <td></td>
                   </tr>
