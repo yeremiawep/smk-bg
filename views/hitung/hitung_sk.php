@@ -1,12 +1,10 @@
 <?php
 include '../../config/database.php';
 
-$name = $_GET['name'];
-$id_pegawai = $_GET['id_pegawai'];
-$id_personal = $_GET['id_personal'];
-$divisi = $_GET['divisi'];
-$jabatan = $_GET['jabatan'];
+$id_pegawai = $_POST['id_pegawai'];
+$nilai = $_POST['nilai'];
+$hasil = array_sum($nilai)/count($nilai) * 40/100;
 
-// $query = mysqli_query($conn, "INSERT INTO users (id, name, id_personal, id_pegawai, divisi, jabatan) VALUES ('','$name','$id_personal','$id_pegawai','$divisi','$jabatan')");
+$query = mysqli_query($conn, "UPDATE nilai_sk SET nilai_sk='$hasil' WHERE id_pegawai='$id_pegawai'");
 
 header('Location: ../../app/index.php?page=data-penilaian');

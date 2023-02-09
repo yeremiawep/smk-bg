@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Feb 2023 pada 11.20
+-- Waktu pembuatan: 09 Feb 2023 pada 20.45
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.2.0
 
@@ -229,6 +229,28 @@ INSERT INTO `kriteria_penilaian` (`id_isi`, `jabatan`, `divisi`, `aspek`, `krite
 (48, 9, 3, 'Aspek Proses Bisnis Internal', 'Membuat dan melaporkan dana operasional', 'Dilaporkan setiap hari melalui aplikasi'),
 (49, 9, 3, 'Aspek Pekerja', 'Disiplin', 'Absensi tepat waktu dan meminimalisir keterlambatan'),
 (50, 9, 3, 'Aspek Pekerja', 'Mengikuti Pembinaan dari atasan', 'Dilakukan minimal 1x setiap bulan');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `nilai_sk`
+--
+
+CREATE TABLE `nilai_sk` (
+  `id` int(11) NOT NULL,
+  `id_pegawai` int(11) NOT NULL,
+  `nilai_sko` float NOT NULL,
+  `nilai_sk` float NOT NULL,
+  `nilai_akhir` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data untuk tabel `nilai_sk`
+--
+
+INSERT INTO `nilai_sk` (`id`, `id_pegawai`, `nilai_sko`, `nilai_sk`, `nilai_akhir`) VALUES
+(7, 3993, 2.16, 1.36, 3.52),
+(8, 5730, 2.04, 1.2, 3.24);
 
 -- --------------------------------------------------------
 
@@ -631,6 +653,13 @@ ALTER TABLE `kriteria_penilaian`
   ADD KEY `divisi` (`divisi`);
 
 --
+-- Indeks untuk tabel `nilai_sk`
+--
+ALTER TABLE `nilai_sk`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_pegawai` (`id_pegawai`);
+
+--
 -- Indeks untuk tabel `penilaian_cro`
 --
 ALTER TABLE `penilaian_cro`
@@ -671,6 +700,7 @@ ALTER TABLE `sk_pcro`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id_pegawai` (`id_pegawai`),
   ADD KEY `jabatan` (`jabatan`),
   ADD KEY `divisi` (`divisi`);
 
@@ -713,6 +743,12 @@ ALTER TABLE `kriteria_kompetensi`
 --
 ALTER TABLE `kriteria_penilaian`
   MODIFY `id_isi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+
+--
+-- AUTO_INCREMENT untuk tabel `nilai_sk`
+--
+ALTER TABLE `nilai_sk`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `penilaian_cro`
@@ -784,6 +820,12 @@ ALTER TABLE `hitung_nilai_sk`
 ALTER TABLE `kriteria_penilaian`
   ADD CONSTRAINT `kriteria_penilaian_ibfk_1` FOREIGN KEY (`jabatan`) REFERENCES `jabatans` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `kriteria_penilaian_ibfk_2` FOREIGN KEY (`divisi`) REFERENCES `divisions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `nilai_sk`
+--
+ALTER TABLE `nilai_sk`
+  ADD CONSTRAINT `nilai_sk_ibfk_4` FOREIGN KEY (`id_pegawai`) REFERENCES `users` (`id_pegawai`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `users`

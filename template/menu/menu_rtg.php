@@ -55,6 +55,12 @@
       </a>
     </li>
     <li class="nav-item">
+      <a href="index.php?page=rekap-nilai" class="nav-link">
+        <i class="far fa-copy nav-icon"></i>
+        <p>Rekap Nilai</p>
+      </a>
+    </li>
+    <li class="nav-item">
       <a href="index.php?page=data-periode" class="nav-link">
         <i class="nav-icon fas fa-calendar"></i>
         <p>

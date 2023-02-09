@@ -2,7 +2,6 @@
 include '../config/database.php';
 
 $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisi='3' AND jabatan='9' ");
-//SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE id_pegawai='$id'
 
 $sko = mysqli_query($conn, "SELECT * FROM penilaian_cro");
 $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
@@ -42,10 +41,6 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
                   <th>Divisi</th>
                   <th>Jabatan</th>
                   <th>Input Nilai</th>
-                  <th>Nilai SKO</th>
-                  <th>Nilai SK</th>
-                  <th>Pelanggaran Disiplin</th>
-                  <th>Nilai Akhir</th>
                 </tr>
               </thead>
               <tbody>
@@ -59,13 +54,10 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
                     <td><?= $user['name_div']; ?></td>
                     <td><?= $user['name_jab']; ?></td>
                     <td width="30%">
-                      <a class="btn btn-primary inline-block" id="isiSko" data-toggle="modal" data-target="#modal-xl" data-id="<?= $user['id_pegawai']; ?>">Isi Nilai SKO</a>
-                      <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-sk">Isi Nilai SK</a>
+                      <!-- <a class="btn btn-primary inline-block" id="isiSko" data-toggle="modal" data-target="#modal-xl" data-id="<?= $user['id_pegawai']; ?>">Isi Nilai</a>
+                      <a class="btn btn-primary inline-block" id="isiSk" data-toggle="modal" data-target="#modal-sk" data-id=<?= $user['id_pegawai']; ?>>Isi Nilai SK</a> -->
+                      <a href="index.php?page=input-nilai-rtg&&id=<?= $user['id_pegawai']; ?>&&jab=<?= $user['name_jab']; ?>" class="btn btn-sm btn-primary">Input Nilai</a>
                     </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
                   </tr>
                 <?php endforeach; ?>
               </tbody>
@@ -155,6 +147,7 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
       </div>
       <div class="modal-body">
         <form action="../views/hitung/hitung_sk.php" method="POST">
+        <input type="text" name="id_pegawai" id="id_pegawai">
           <div class="form">
             <table class="table table-bordered">
               <thead>
@@ -191,11 +184,7 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
     </div>
     <!-- /.modal-dialog -->
   </div>
-
-
   <!-- END MODAL XL -->
-
-
   <!-- /.content -->
 </div>
 <!-- END SK -->
@@ -234,6 +223,11 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
   $(document).on("click", "#isiSko", function() {
     let id = $(this).data('id');
 
+    $(".modal-body #id_pegawai").val(id);
+  })
+
+  $(document).on("click", "#isiSk", function() {
+    let id = $(this).data('id');
     $(".modal-body #id_pegawai").val(id);
   })
 </script>
