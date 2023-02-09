@@ -1,15 +1,13 @@
 <?php
 include '../config/database.php';
 
-$query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisi='1' AND jabatan='9' ");
-//SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE id_pegawai='$id'
+$query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisi='3' AND jabatan='9' ");
 
-$sko = mysqli_query($conn, "SELECT * FROM penilaian_cro");
+$sko = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan=9");
 $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
 
 ?>
 
-<!-- Content Wrapper. Contains page content -->
 <section class="content-header">
   <div class="container-fluid">
     <div class="row">
@@ -18,7 +16,6 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
       </div>
     </div>
   </div>
-  <!-- /.container-fluid -->
 </section>
 
 <!-- Main content -->
@@ -59,7 +56,8 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
                     <td><?= $user['name_div']; ?></td>
                     <td><?= $user['name_jab']; ?></td>
                     <td width="30%">
-                      <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-xl">Isi Nilai SKO</a>
+                      <a href="index.php?page=input-nilai-rtg" class="btn btn-primary inline-block">Isi Nilai SKO</a>
+                      <!-- data-toggle="modal" data-target="#modal-xl" -->
                       <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-sk">Isi Nilai SK</a>
                     </td>
                     <td></td>
@@ -114,13 +112,17 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
                     <td><?= $sko['kriteria']; ?></td>
                     <td><?= $sko['target']; ?></td>
                     <td>
-                      <select class="form-select" aria-label="Default select example" name="nilai" id="nilai">
+                      <select class="form-select" aria-label="Default select example" name="nilai[]" id="nilai[]">
                         <option selected>Input Nilai</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                       </select>
+
+
+
+
                       <!-- <div class="form-check">
                         <input class="form-check-input" type="radio" name="nilai" id="nilai" value="1">
                         <label class="form-check-label" for="inlineRadio1">1</label>

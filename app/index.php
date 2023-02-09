@@ -73,6 +73,10 @@ include '../config/database.php'
           include "../views/data_kompetensi.php";
         } else if ($_GET['page'] == 'edit-kriteria-cro') {
           include "../views/edit/edit_kriteria_cro.php";
+        } else if ($_GET['page'] == 'input-nilai-rtg') {
+          include "../views/hitung/hitung_sko_rtg.php";
+        } else if ($_GET['page'] == 'isi-nilai') {
+          include "../views/hitung/input/input_nilai.php";
         } else {
           include "../template/dashboard.php";
         }
