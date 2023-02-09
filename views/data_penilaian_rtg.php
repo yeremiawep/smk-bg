@@ -49,7 +49,7 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
                 </tr>
               </thead>
               <tbody>
-                <?php $no=1 ?>
+                <?php $no = 1 ?>
                 <?php foreach ($query as $user) : ?>
                   <tr>
                     <td><?= $no++; ?></td>
@@ -59,7 +59,7 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
                     <td><?= $user['name_div']; ?></td>
                     <td><?= $user['name_jab']; ?></td>
                     <td width="30%">
-                      <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-xl">Isi Nilai SKO</a>
+                      <a class="btn btn-primary inline-block" id="isiSKO" data-toggle="modal" data-target="#modal-xl" data-id="<?= $user['id_pegawai']; ?>">Isi Nilai SKO</a>
                       <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-sk">Isi Nilai SK</a>
                     </td>
                     <td></td>
@@ -97,6 +97,7 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
       </div>
       <div class="modal-body">
         <form action="../views/hitung/hitung_sko.php" method="POST">
+          <input type="text" name="id_user" id="id_user" value="<?= $user['id']; ?>">
           <div class="form">
             <table class="table table-bordered">
               <thead>
@@ -114,29 +115,13 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
                     <td><?= $sko['kriteria']; ?></td>
                     <td><?= $sko['target']; ?></td>
                     <td>
-                      <select class="form-select" aria-label="Default select example" name="nilai" id="nilai">
+                      <select class="form-select" aria-label="Default select example" name="nilai[]" id="nilai[]">
                         <option selected>Input Nilai</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                       </select>
-                      <!-- <div class="form-check">
-                        <input class="form-check-input" type="radio" name="nilai" id="nilai" value="1">
-                        <label class="form-check-label" for="inlineRadio1">1</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="nilai" id="nilai" value="2">
-                        <label class="form-check-label" for="inlineRadio2">2</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="nilai" id="nilai" value="3">
-                        <label class="form-check-label" for="inlineRadio2">3</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="nilai" id="nilai" value="4">
-                        <label class="form-check-label" for="inlineRadio2">4</label>
-                      </div> -->
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -169,7 +154,7 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
         </button>
       </div>
       <div class="modal-body">
-        <form action="../views/hitung/hitung_sk.php" method="GET">
+        <form action="../views/hitung/hitung_sk.php" method="POST">
           <div class="form">
             <table class="table table-bordered">
               <thead>
@@ -183,29 +168,13 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
                   <tr>
                     <td><?= $sk['kriteria']; ?></td>
                     <td>
-                      <select class="form-select" aria-label="Default select example" name="nilai" id="nilai">
+                      <select class="form-select" aria-label="Default select example" name="nilai[]" id="nilai[]">
                         <option selected>Input Nilai</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                       </select>
-                      <!-- <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="nilai" id="nilai" value="1">
-                        <label class="form-check-label" for="inlineRadio1">1</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="nilai" id="nilai" value="2">
-                        <label class="form-check-label" for="inlineRadio2">2</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="nilai" id="nilai" value="3">
-                        <label class="form-check-label" for="inlineRadio2">3</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="nilai" id="nilai" value="4">
-                        <label class="form-check-label" for="inlineRadio2">4</label>
-                      </div> -->
                     </td>
                   </tr>
                 <?php endforeach; ?>
