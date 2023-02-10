@@ -1,8 +1,8 @@
 <?php 
 include '../config/database.php';
 
-$sk_manajerial = mysqli_query($conn, "SELECT * FROM sk_manajerial");
-$sk_pcro = mysqli_query($conn, "SELECT * FROM sk_pcro");
+$sk_manajerial = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk=1");
+$sk_pcro = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk=2");
 
 ?>
 

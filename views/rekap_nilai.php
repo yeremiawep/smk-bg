@@ -15,7 +15,7 @@ $nilai = mysqli_query($conn, "SELECT * FROM nilai_sk JOIN users ON nilai_sk.id_p
     </div>
   </div>
   /.container-fluid -->
-</section>
+<!-- </section> -->
 
 <!-- Main content -->
 <section class="content">

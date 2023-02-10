@@ -105,8 +105,8 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
             <div class="row">
               <label for="jabatan">Jabatan</label>
               <select class="custom-select" name="jabatan" id="jabatan">
-                <option value="1">Pimpinan Cabang</option>
-                <option value="2">Wakil Pimpinan Cabang</option>
+                <option value="1">Pemimpin Cabang</option>
+                <option value="2">Wakil Pemimpin Cabang</option>
                 <option value="3">Asisten Supervisor CRO</option>
                 <option value="4">Asisten Supervisor CIT</option>
                 <option value="5">Asisten Supervisor Rutang</option>
