@@ -75,8 +75,8 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title">Add Pegawai</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <button type="button" class="close" data-dismiss="modal" Arial-label="Close">
+          <span Arial-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
@@ -166,10 +166,10 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
   }
 </script>
 <script>
-$('.view-data').click(function(){
-  var id_pegawai = $(this).attr('data-id');
-  console.log(id_pegawai);
-});
+  $('.view-data').click(function() {
+    var id_pegawai = $(this).attr('data-id');
+    console.log(id_pegawai);
+  });
 </script>
 </body>
 

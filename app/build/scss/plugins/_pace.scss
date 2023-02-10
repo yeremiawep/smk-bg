@@ -15,7 +15,7 @@
 }
 
 // Mixin
-@mixin pace-variant($name, $color) {
+@mixin pace-vArialnt($name, $color) {
   .pace-#{$name} {
     .pace {
       .pace-progress {
@@ -33,7 +33,16 @@
       }
 
       .pace-activity {
-        background-image: linear-gradient(45deg, rgba(color-yiq($color), 0.2) 25%, transparent 25%, transparent 50%, rgba(color-yiq($color), 0.2) 50%, rgba(color-yiq($color), 0.2) 75%, transparent 75%, transparent);
+        background-image: linear-gradient(
+          45deg,
+          rgba(color-yiq($color), 0.2) 25%,
+          transparent 25%,
+          transparent 50%,
+          rgba(color-yiq($color), 0.2) 50%,
+          rgba(color-yiq($color), 0.2) 75%,
+          transparent 75%,
+          transparent
+        );
       }
     }
   }
@@ -41,7 +50,7 @@
   .pace-big-counter-#{$name} {
     .pace {
       .pace-progress::after {
-        color: rgba($color, .19999999999999996);
+        color: rgba($color, 0.19999999999999996);
       }
     }
   }
@@ -62,8 +71,8 @@
       &::before {
         background: $color;
         color: color-yiq($color);
-        font-size: .8rem;
-        line-height: .7rem;
+        font-size: 0.8rem;
+        line-height: 0.7rem;
         padding-top: 17%;
       }
     }
@@ -81,7 +90,7 @@
   .pace-center-circle-#{$name} {
     .pace {
       .pace-progress {
-        background: rgba($color, .8);
+        background: rgba($color, 0.8);
         color: color-yiq($color);
       }
     }
@@ -127,15 +136,14 @@
         border: 5px solid color-yiq($color);
       }
 
-
       .pace-activity::before {
-          border-right-color: rgba($color, .2);
-          border-left-color: rgba($color, .2);
+        border-right-color: rgba($color, 0.2);
+        border-left-color: rgba($color, 0.2);
       }
 
       .pace-activity::after {
-          border-top-color: rgba($color, .2);
-          border-bottom-color: rgba($color, .2);
+        border-top-color: rgba($color, 0.2);
+        border-bottom-color: rgba($color, 0.2);
       }
     }
   }
@@ -183,11 +191,11 @@
     .pace {
       .pace-progress {
         background-color: $color;
-        box-shadow: inset -1px 0 $color, inset 0 -1px $color, inset 0 2px rgba(color-yiq($color), 0.5), inset 0 6px rgba(color-yiq($color), .3);
+        box-shadow: inset -1px 0 $color, inset 0 -1px $color, inset 0 2px rgba(color-yiq($color), 0.5), inset 0 6px rgba(color-yiq($color), 0.3);
       }
 
       .pace-activity {
-        background-image: radial-gradient(rgba(color-yiq($color), .65) 0%, rgba(color-yiq($color), .15) 100%);
+        background-image: radial-gradient(rgba(color-yiq($color), 0.65) 0%, rgba(color-yiq($color), 0.15) 100%);
         height: 12px;
       }
     }
@@ -200,12 +208,10 @@
   }
 }
 
-
 @each $name, $color in $theme-colors {
-  @include pace-variant($name, $color);
+  @include pace-vArialnt($name, $color);
 }
 
 @each $name, $color in $colors {
-  @include pace-variant($name, $color);
+  @include pace-vArialnt($name, $color);
 }
-

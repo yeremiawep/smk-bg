@@ -4,7 +4,7 @@
 --
 -- Host: 127.0.0.1
 -- Waktu pembuatan: 10 Feb 2023 pada 10.10
--- Versi server: 10.4.27-MariaDB
+-- Versi server: 10.4.27-MArialDB
 -- Versi PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -162,21 +162,21 @@ INSERT INTO `kriteria_penilaian` (`id_isi`, `jabatan`, `divisi`, `aspek`, `krite
 (4, 13, 1, 'Aspek Pekerja', 'Mengikuti Pembinaan/Pengarahan dari atasan', 'Dilakukan 1x dalam sebulan'),
 (5, 13, 1, 'Aspek Pekerja', 'Disiplin', 'Absensi tanpa keterangan maksimal 5x dalam 1 tahun'),
 (6, 4, 2, 'Aspek Proses Bisnis Internal', 'Merencanakan dan Membuat Jadwal Operasional', 'Dikirimkan ke Divisi Cash Management setiap bulan paling lambat tanggal 25'),
-(7, 4, 2, 'Aspek Proses Bisnis Internal', 'Melakukan Pengecekan Laporan Harian', 'Memastikan telah diperiksa dan dikirim H+1 paling lambat pukul 09.00 ke Customer'),
+(7, 4, 2, 'Aspek Proses Bisnis Internal', 'Melakukan Pengecekan Laporan HArialn', 'Memastikan telah diperiksa dan dikirim H+1 paling lambat pukul 09.00 ke Customer'),
 (8, 4, 2, 'Aspek Proses Bisnis Internal', 'Mengontrol Progress Invoice Customer', 'Memastikan Jumlah Pembayaran sesuai dengan Invoice '),
 (9, 4, 2, 'Aspek Proses Bisnis Internal', 'Memonitoring kegiatan dan penggunaan dana operasional ', 'Memastikan kesesuaian pengeluaran dengan bukti pemakaian '),
 (10, 4, 2, 'Aspek Pekerja', 'Memberikan Pengarahan dan Pelatihan terhadap karyawan bawahannya', 'Dilakukan 1x dalam 1 bulan'),
 (11, 4, 2, 'Aspek Pekerja', 'Disiplin', 'Absensi tanpa keterangan tidak lebih dari 5x dalam 1 tahun'),
 (12, 3, 1, 'Aspek Proses Bisnis Internal', 'Merencanakan dan Membuat Jadwal Operasional', 'Dikirimkan ke Divisi Cash Management setiap bulan paling lambat tanggal 25'),
 (13, 3, 1, 'Aspek Proses Bisnis Internal', 'Membuat Mapping Area', 'Tidak terjadi Cash Out & Pengerjaan terhadap ATM Problem tidak lebih dari 1 jam'),
-(14, 3, 1, 'Aspek Proses Bisnis Internal', 'Melakukan Pengecekan Laporan Harian', 'Memastikan telah diperiksa dan dikirim H+1 paling lambat pukul 09.00 ke BRI'),
+(14, 3, 1, 'Aspek Proses Bisnis Internal', 'Melakukan Pengecekan Laporan HArialn', 'Memastikan telah diperiksa dan dikirim H+1 paling lambat pukul 09.00 ke BRI'),
 (15, 3, 1, 'Aspek Proses Bisnis Internal', 'Memonitoring kegiatan tim lapangan dan penggunaan dana operasional ', 'Memastikan kesesuaian pengeluaran dengan bukti pemakaian '),
 (16, 3, 1, 'Aspek Proses Bisnis Internal', 'Merencanakan Hand Over ATM', 'Memastikan Hand Over ATM sesuai jadwal'),
 (17, 3, 1, 'Aspek Proses Bisnis Internal', 'Melaksanakan Opname Kas Vault setiap hari', 'Dilakukan sebelum pukul 09.00 setiap harinya'),
 (18, 3, 1, 'Aspek Pekerja', 'Memberikan Pengarahan dan Pelatihan terhadap karyawan bawahannya', 'Dilakukan 1 kali dalam 1 bulan'),
 (19, 3, 1, 'Aspek Pekerja', 'Disiplin', 'Absensi tanpa keterangan tidak lebih dari 5x dalam 1 tahun'),
 (20, 5, 3, 'Aspek Proses Bisnis Internal', 'Merencanakan dan Mengawasi penggunaan dana operasional', 'Memastikan pengeluaran dan pemasukan disesuaikan dengan invoice dan bukti pemakaian'),
-(21, 5, 3, 'Aspek Proses Bisnis Internal', 'Melakukan Rekonsiliasi Giro Operasional, TC dan Kas Harian', 'Memastikan saldo rekening koran dan kas sesuai'),
+(21, 5, 3, 'Aspek Proses Bisnis Internal', 'Melakukan Rekonsiliasi Giro Operasional, TC dan Kas HArialn', 'Memastikan saldo rekening koran dan kas sesuai'),
 (22, 5, 3, 'Aspek Proses Bisnis Internal', 'Monitoring pos biaya pada aplikasi ERP', 'Memastikan biaya tidak kurang (minus)'),
 (23, 5, 3, 'Aspek Proses Bisnis Internal', 'Monitoring pendataan aset & inventaris', 'Dilakukan setiap hari maksimal pukul 14.30'),
 (24, 5, 3, 'Aspek Proses Bisnis Internal', 'Merencanakan maintenance aset & inventaris', 'Dilakukan 1x dalam 1 bulan'),
@@ -187,15 +187,15 @@ INSERT INTO `kriteria_penilaian` (`id_isi`, `jabatan`, `divisi`, `aspek`, `krite
 (29, 7, 1, 'Aspek Proses Bisnis Internal', 'Menindaklanjuti perintah dari Customer yang diinstruksikan oleh Asisten Supervisor', 'Penyelesaian sesegera mungkin'),
 (30, 7, 1, 'Aspek Proses Bisnis Internal', 'Mempersiapkan perlengkapan/alat kerja sesuai instruksi Asisten Supervisor', 'Kelengkapan alat kerja dan memenuhi standar layak pakai'),
 (31, 7, 1, 'Aspek Proses Bisnis Internal', 'Melakukan control kepada tim lapangan melalui telepon selama penugasan', 'Memastikan pelaksanaan pekerjaan telah sesuai dengan surat tugas'),
-(32, 7, 1, 'Aspek Proses Bisnis Internal', 'Menyiapkan laporan harian kegiatan CRO ke customer', 'Laporan disusun segera setelah menerima laporan kegiatan dari tim lapangan dan tim CPC'),
-(33, 7, 1, 'Aspek Proses Bisnis Internal', 'Mengirim laporan harian kegiatan CRO ke customer via email', 'Dilaporkan paling lama jam 10 pagi H+1'),
+(32, 7, 1, 'Aspek Proses Bisnis Internal', 'Menyiapkan laporan hArialn kegiatan CRO ke customer', 'Laporan disusun segera setelah menerima laporan kegiatan dari tim lapangan dan tim CPC'),
+(33, 7, 1, 'Aspek Proses Bisnis Internal', 'Mengirim laporan hArialn kegiatan CRO ke customer via email', 'Dilaporkan paling lama jam 10 pagi H+1'),
 (34, 7, 1, 'Aspek Proses Bisnis Internal', 'Melakukan pengecekan terhadap kelengkapan peralatan setelah selesai penugasan', 'Mengecek kelengkapan dan kondisi alat kerja agar siap dipakai untuk kegiatan berikutnya'),
 (35, 7, 1, 'Aspek Proses Bisnis Internal', 'Merekap hasil EJ Log', 'Memastikan ketersediaan EJ Log di masing-masing ATM'),
 (36, 7, 1, 'Aspek Pekerja', 'Disiplin', 'Absensi tepat waktu dan meminimalisir keterlambatan'),
 (37, 7, 1, 'Aspek Pekerja', 'Mengikuti Pengarahan dari atasan', 'Dilakukan minimal 1x setiap bulan'),
-(38, 8, 2, 'Aspek Proses Bisnis Internal', 'Input Data TTP Harian', 'Memastikan jumlah TTP sesuai dengan jumlah STH '),
+(38, 8, 2, 'Aspek Proses Bisnis Internal', 'Input Data TTP HArialn', 'Memastikan jumlah TTP sesuai dengan jumlah STH '),
 (39, 8, 2, 'Aspek Proses Bisnis Internal', 'Menatakerjakan dokumen dari tim lapangan', 'Memastikan kelengkapan dan pengesahan dokumen'),
-(40, 8, 2, 'Aspek Proses Bisnis Internal', 'Merekap TTP harian menjadi Tagihan dan Deklarasi Asuransi', 'Memastikan TTP Harian sesuai dengan deklarasi'),
+(40, 8, 2, 'Aspek Proses Bisnis Internal', 'Merekap TTP hArialn menjadi Tagihan dan Deklarasi Asuransi', 'Memastikan TTP HArialn sesuai dengan deklarasi'),
 (41, 8, 2, 'Aspek Proses Bisnis Internal', 'Melakukan input data H+1', 'Memastikan input data dilakukan H+1'),
 (42, 8, 2, 'Aspek Proses Bisnis Internal', 'Menatakerjakan Invoice CIT', 'Memastikan pembayaran invoice tepat waktu'),
 (43, 8, 2, 'Aspek Pekerja', 'Disiplin', 'Absensi tepat waktu dan meminimalisir keterlambatan'),
@@ -297,7 +297,7 @@ INSERT INTO `users` (`id_user`, `name`, `no_ktp`, `id_personal`, `id_pegawai`, `
 (42, 'Muhammad Hasbi Falihuddin', '3525030803880000', 2431, 2878, 10, 1, 'Bekasi', 'Islam', 'SMK TEKNIK MESIN', '1988-03-08', 33, 'kontrak', '17009837182', '0002137170971', 'SMK TEKNIK MESIN', '2878'),
 (43, 'Hagi Achmad', '3174020908940000', 2473, 2920, 3, 1, 'Jakarta Selatan', 'Islam', 'SMK TEKNIK ELEKTRO AUDIO VIDEO', '1994-08-09', 27, 'kontrak', '17017209663', '1294762634', 'SMK TEKNIK ELEKTRO AUDIO VIDEO', '2920'),
 (44, 'Riswan Haryadi', '3276012802810000', 2529, 2976, 13, 1, 'Depok', 'Islam', 'SMA IPS', '1981-02-28', 40, 'kontrak', '17023086139', '0002139269578', 'SMA IPS', '2976'),
-(45, 'FITRA ARIA SENJAYA W', '3674051705880000', 2608, 3055, 17, 2, 'Ciputat-Tangerang Selatan', 'Islam', 'S1 SISTEM INFORMASI', '1988-05-17', 33, 'kontrak', '17025709514', 'PEKERJA MANDIRI KOTA JAKARTA PUSAT ', 'SMA IPS', '3055'),
+(45, 'FITRA Arial SENJAYA W', '3674051705880000', 2608, 3055, 17, 2, 'Ciputat-Tangerang Selatan', 'Islam', 'S1 SISTEM INFORMASI', '1988-05-17', 33, 'kontrak', '17025709514', 'PEKERJA MANDIRI KOTA JAKARTA PUSAT ', 'SMA IPS', '3055'),
 (46, 'Auki Priyansyah', '3303082207920000', 2609, 3056, 17, 2, 'Jakarta Utara', 'Islam', 'SMA', '1992-07-22', 29, 'kontrak', '17025709795', '533174444', 'SMA', '3056'),
 (47, 'Nicolas Hansi Latue', '3674011211830000', 2675, 3122, 10, 2, 'Serpong - Tangerang Selatan', 'Kristen Protestan', 'SMA IPS', '1983-11-12', 38, 'kontrak', '17031220548', '0001243814589', 'SMA IPS', '3122'),
 (48, 'Ginanjar Yuli Parwoto ', '3303142707940000', 2996, 3443, 7, 1, 'Jakarta Pusat', 'Islam', 'SMK AKUNTANSI', '1994-07-27', 27, 'kontrak', '17048147072', '2243677533', 'SMK AKUNTANSI', '3443'),

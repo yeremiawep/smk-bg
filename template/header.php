@@ -4,7 +4,9 @@
   <title>Sistem Manajemen Kinerja | BG</title>
 
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" /> -->
+  <!-- Google Font:Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../app/plugins/fontawesome-free/css/all.min.css" />
   <!-- Ionicons -->

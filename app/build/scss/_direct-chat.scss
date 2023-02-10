@@ -15,7 +15,6 @@
     }
   }
 
-
   &.timestamp-light {
     .direct-chat-timestamp {
       color: lighten(color-yiq($yiq-text-light), 10%);
@@ -42,13 +41,13 @@
 }
 
 .direct-chat-msg {
-  @include clearfix ();
+  @include clearfix();
   margin-bottom: 10px;
 }
 
 .direct-chat-messages,
 .direct-chat-contacts {
-  transition: transform .5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .direct-chat-text {
@@ -163,11 +162,11 @@
 
 //Contacts list -- for displaying contacts in direct chat contacts pane
 .contacts-list {
-  @include list-unstyled ();
+  @include list-unstyled();
 
   > li {
-    @include clearfix ();
-    border-bottom: 1px solid rgba($black, .2);
+    @include clearfix();
+    border-bottom: 1px solid rgba($black, 0.2);
     margin: 0;
     padding: 10px;
 
@@ -210,20 +209,20 @@
   color: darken($gray-400, 10%);
 }
 
-// Color variants
+// Color vArialnts
 @each $name, $color in $theme-colors {
   .direct-chat-#{$name} {
-    @include direct-chat-variant($color);
+    @include direct-chat-vArialnt($color);
   }
 }
 
 @each $name, $color in $colors {
   .direct-chat-#{$name} {
-    @include direct-chat-variant($color);
+    @include direct-chat-vArialnt($color);
   }
 }
 
-@include dark-mode () {
+@include dark-mode() {
   .direct-chat-text {
     background-color: lighten($dark, 7.5%);
     border-color: lighten($dark, 10%);
@@ -244,16 +243,16 @@
     }
   }
 
-  // Color variants
+  // Color vArialnts
   @each $name, $color in $theme-colors-alt {
     .direct-chat-#{$name} {
-      @include direct-chat-variant($color);
+      @include direct-chat-vArialnt($color);
     }
   }
 
   @each $name, $color in $colors-alt {
     .direct-chat-#{$name} {
-      @include direct-chat-variant($color);
+      @include direct-chat-vArialnt($color);
     }
   }
 }

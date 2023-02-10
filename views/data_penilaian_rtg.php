@@ -4,7 +4,7 @@ include '../config/database.php';
 $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisi='3' AND jabatan='9' ");
 
 $sko = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan=9");
-$sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk=2"); 
+$sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk=2");
 
 ?>
 
@@ -42,7 +42,7 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk=2");
                 </tr>
               </thead>
               <tbody>
-                <?php $no=1 ?>
+                <?php $no = 1 ?>
                 <?php foreach ($query as $user) : ?>
                   <tr>
                     <td width="2%"><?= $no++; ?></td>
@@ -80,8 +80,8 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk=2");
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title">Tambah Penilaian</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <button type="button" class="close" data-dismiss="modal" Arial-label="Close">
+          <span Arial-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
@@ -103,7 +103,7 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk=2");
                     <td><?= $sko['kriteria']; ?></td>
                     <td><?= $sko['target']; ?></td>
                     <td>
-                      <select class="form-select" aria-label="Default select example" name="nilai[]" id="nilai[]">
+                      <select class="form-select" Arial-label="Default select example" name="nilai[]" id="nilai[]">
                         <option selected>Input Nilai</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -137,8 +137,8 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk=2");
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title">Tambah Penilaian</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <button type="button" class="close" data-dismiss="modal" Arial-label="Close">
+          <span Arial-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
@@ -156,7 +156,7 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk=2");
                   <tr>
                     <td><?= $sk['kriteria']; ?></td>
                     <td>
-                      <select class="form-select" aria-label="Default select example" name="nilai" id="nilai">
+                      <select class="form-select" Arial-label="Default select example" name="nilai" id="nilai">
                         <option selected>Input Nilai</option>
                         <option value="1">1</option>
                         <option value="2">2</option>

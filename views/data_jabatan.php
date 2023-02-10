@@ -68,8 +68,8 @@ $jabatan = mysqli_query($conn, "SELECT * FROM jabatans");
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title">Add Jabatan</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <button type="button" class="close" data-dismiss="modal" Arial-label="Close">
+          <span Arial-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">

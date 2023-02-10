@@ -90,8 +90,8 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title">Tambah Penilaian</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <button type="button" class="close" data-dismiss="modal" Arial-label="Close">
+          <span Arial-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
@@ -113,7 +113,7 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
                     <td><?= $sko['kriteria']; ?></td>
                     <td><?= $sko['target']; ?></td>
                     <td>
-                      <select class="form-select" aria-label="Default select example" name="nilai" id="nilai">
+                      <select class="form-select" Arial-label="Default select example" name="nilai" id="nilai">
                         <option selected>Input Nilai</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -163,8 +163,8 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title">Tambah Penilaian</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <button type="button" class="close" data-dismiss="modal" Arial-label="Close">
+          <span Arial-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
@@ -182,7 +182,7 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
                   <tr>
                     <td><?= $sk['kriteria']; ?></td>
                     <td>
-                      <select class="form-select" aria-label="Default select example" name="nilai" id="nilai">
+                      <select class="form-select" Arial-label="Default select example" name="nilai" id="nilai">
                         <option selected>Input Nilai</option>
                         <option value="1">1</option>
                         <option value="2">2</option>

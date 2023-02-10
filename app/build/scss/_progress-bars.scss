@@ -43,7 +43,7 @@
   margin-bottom: map-get($spacers, 2);
 }
 
-// size variation
+// size vArialtion
 .progress-sm {
   height: 10px;
 }
@@ -65,7 +65,7 @@
   }
 }
 
-@include dark-mode () {
+@include dark-mode() {
   .progress {
     background: lighten($dark, 7.5%);
   }
