@@ -3,6 +3,8 @@ include '../../config/database.php';
 
 $id = $_POST['id'];
 $name = $_POST['name'];
+$id_pegawai = $_POST['id_pegawai'];
+$id_personal = $_POST['id_personal'];
 $divisi = $_POST['divisi'];
 $jabatan = $_POST['jabatan'];
 $domisili = $_POST['domisili'];
@@ -14,7 +16,9 @@ $no_bpjs_kesehatan = $_POST['no_bpjs_kesehatan'];
 $ijazah = $_POST['ijazah'];
 
 $query = mysqli_query($conn, "UPDATE users SET 
-                              name='$name', 
+                              name='$name',
+                              id_pegawai='$id_pegawai',
+                              id_personal='$id_personal', 
                               divisi='$divisi', 
                               jabatan='$jabatan', 
                               domisili='$domisili', 
@@ -24,7 +28,6 @@ $query = mysqli_query($conn, "UPDATE users SET
                               no_bpjs_ketenagakerjaan='$no_bpjs_ketenagakerjaan', 
                               no_bpjs_kesehatan='$no_bpjs_kesehatan', 
                               ijazah='$ijazah' 
-                          WHERE id='$id'");
-
+                          WHERE id_user='$id'");
 
 header('Location: ../../app/index.php?page=data-pegawai');

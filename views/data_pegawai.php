@@ -11,7 +11,7 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
     <div class="row">
       <div class="col-sm-6">
         <h1>Data Pegawai</h1>
-        <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-xl">Add Pegawai</button>
+        <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-xl"><i class="nav-icon fas fa-user-plus"></i> Add Pegawai</button>
       </div>
     </div>
   </div>
@@ -37,7 +37,7 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
                   <th>Nama</th>
                   <th>Divisi</th>
                   <th>Jabatan</th>
-                  <th>Aksi</th>
+                  <th>Options</th>
                 </tr>
               </thead>
               <tbody>
@@ -49,9 +49,9 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
                     <td><?= $user['name_div']; ?></td>
                     <td><?= $user['name_jab']; ?></td>
                     <td>
-                      <a href="index.php?page=detail-pegawai&&id=<?= $user['id_pegawai']; ?>" class="btn btn-sm btn-info">Detail</a>
-                      <a href="index.php?page=edit-data-pegawai&&id=<?= $user['id_pegawai']; ?>" class="btn btn-sm btn-warning">Edit</a>
-                      <a onClick="hapusData()" href="../views/delete/delete_data_pegawai.php?id=<?= $user['id_pegawai']; ?>" class="btn btn-sm btn-danger">Delete</a>
+                      <a href="index.php?page=detail-pegawai&&id=<?= $user['id_pegawai']; ?>" class="btn btn-sm btn-info"><i class="nav-icon fas fa-eye"></i></a>
+                      <a href="index.php?page=edit-data-pegawai&&id=<?= $user['id_pegawai']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                      <a onClick="hapusData()" href="../views/delete/delete_data_pegawai.php?id=<?= $user['id_pegawai']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>

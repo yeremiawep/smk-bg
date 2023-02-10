@@ -16,7 +16,7 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
         <form method="POST" action="../views/update/update_data_pegawai.php">
           <?php foreach ($query as $q) : ?>
           <div class="row">
-            <input type="text" name="id" value="<?= $q['id']; ?>" hidden>
+            <input type="text" name="id_user" id="id_user" value="<?= $q['id_user']; ?>" disabled>
           </div>
           <div class="row">
             <div class="col-sm-6">

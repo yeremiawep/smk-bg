@@ -12,7 +12,7 @@ $jabatan = mysqli_query($conn, "SELECT * FROM jabatans");
     <div class="row">
       <div class="col-sm-6">
         <h1>Data Jabatan</h1>
-        <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-xl">Add Jabatan</button>
+        <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-xl"><i class="nav-icon fas fa-plus"></i> Add Jabatan</button>
       </div>
     </div>
   </div>
@@ -42,8 +42,8 @@ $jabatan = mysqli_query($conn, "SELECT * FROM jabatans");
                   <tr>
                     <td width="20%"><?= $j['name_jab']; ?></td>
                     <td width="20%">
-                      <a href="index.php?page=edit-data-jabatan&&id=<?= $j['id']; ?>" class="btn btn-sm btn-warning">Edit</a>
-                      <a onClick="hapusData()" href="../views/delete/delete_data_jabatan.php?id=<?= $j['id']; ?>" class="btn btn-sm btn-danger">Delete</a>
+                      <a href="index.php?page=edit-data-jabatan&&id=<?= $j['id']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                      <a onClick="hapusData()" href="../views/delete/delete_data_jabatan.php?id=<?= $j['id']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>

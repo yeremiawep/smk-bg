@@ -31,7 +31,7 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
             <div class="card-header">
               <h2 class="card-title">Sasaran Kinerja Objektif</h2><br>
               <h6>Asisten Supervisor | <i>Cash Replenishment Outsource</i></h6>
-              <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-add">Add Kriteria</button>
+              <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-add"><i class="nav-icon fas fa-plus"></i> Add Kriteria</button>
             </div>
             <div class="card-body">
               <table class="table table-bordered">
@@ -50,8 +50,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                     <td><?= $cro['kriteria']; ?></td>
                     <td><?= $cro['target']; ?></td>
                     <td>
-                      <a href="index.php?page=edit-kriteria&&id=<?= $cro['id_isi']; ?>&&jab=<?= $cro['jabatan']; ?>" class="btn btn-sm btn-warning">Edit</a>
-                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $cro['id_isi']; ?>" class="btn btn-sm btn-danger">Delete</a>
+                      <a href="index.php?page=edit-kriteria&&id=<?= $cro['id_isi']; ?>&&jab=<?= $cro['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $cro['id_isi']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                   <?php endforeach; ?>
@@ -70,7 +70,7 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
             <div class="card-header">
               <h2 class="card-title">Sasaran Kinerja Objektif</h2><br>
               <h6>Asisten Supervisor | <i>Cash In Transit</i></h6>
-            <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-add">Add Kriteria</button>
+            <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-add"><i class="nav-icon fas fa-plus"></i> Add Kriteria</button>
             </div>
             <div class="card-body">
               <table class="table table-bordered">
@@ -89,8 +89,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                     <td><?= $cit['kriteria']; ?></td>
                     <td><?= $cit['target']; ?></td>
                     <td>
-                    <a href="index.php?page=edit-kriteria&&id=<?= $cit['id_isi']; ?>&&jab=<?= $cit['jabatan']; ?>" class="btn btn-sm btn-warning">Edit</a>
-                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $cit['id_isi']; ?>" class="btn btn-sm btn-danger">Delete</a>
+                    <a href="index.php?page=edit-kriteria&&id=<?= $cit['id_isi']; ?>&&jab=<?= $cit['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $cit['id_isi']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                   <?php endforeach; ?>
@@ -109,7 +109,7 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
             <div class="card-header">
               <h2 class="card-title">Sasaran Kinerja Objektif</h2><br>
               <h6>Asisten Supervisor | <i>Rumah Tangga</i></h6>
-              <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-add">Add Kriteria</button>
+              <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-add"><i class="nav-icon fas fa-plus"></i> Add Kriteria</button>
             </div>
             <div class="card-body">
               <table class="table table-bordered">
@@ -128,8 +128,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                     <td><?= $rtg['kriteria']; ?></td>
                     <td width="40%"><?= $rtg['target']; ?></td>
                     <td>
-                    <a href="index.php?page=edit-kriteria&&id=<?= $rtg['id_isi']; ?>&&jab=<?= $rtg['jabatan']; ?>" class="btn btn-sm btn-warning">Edit</a>
-                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $rtg['id_isi']; ?>" class="btn btn-sm btn-danger">Delete</a>
+                    <a href="index.php?page=edit-kriteria&&id=<?= $rtg['id_isi']; ?>&&jab=<?= $rtg['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $rtg['id_isi']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                   <?php endforeach; ?>
@@ -149,7 +149,7 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
               <h2 class="card-title">Sasaran Kinerja Objektif</h2><br>
               <h6>Pelaksana | <i>Cash Replenishment Outsource</i></h6>
               <!-- <h6>| <i>Cash Replenishment Outsource</i></h6> -->
-              <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-add">Add Kriteria</button>
+              <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-add"><i class="nav-icon fas fa-plus"></i> Add Kriteria</button>
             </div>
             <div class="card-body">
               <table class="table table-bordered">
@@ -168,8 +168,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                     <td><?= $p['kriteria']; ?></td>
                     <td><?= $p['target']; ?></td>
                     <td>
-                    <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning">Edit</a>
-                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $p['id_isi']; ?>" class="btn btn-sm btn-danger">Delete</a>
+                    <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $p['id_isi']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                   <?php endforeach; ?>
@@ -189,7 +189,7 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
               <h2 class="card-title">Sasaran Kinerja Objektif</h2><br>
               <h6>Admin | <i>Cash Replenishment Outsource</i></h6>
               <!-- <h6>| <i>Cash Replenishment Outsource</i></h6> -->
-              <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-add">Add Kriteria</button>
+              <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-add"><i class="nav-icon fas fa-plus"></i> Add Kriteria</button>
             </div>
             <div class="card-body">
               <table class="table table-bordered">
@@ -208,8 +208,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                     <td><?= $p['kriteria']; ?></td>
                     <td><?= $p['target']; ?></td>
                     <td>
-                    <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning">Edit</a>
-                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $p['id_isi']; ?>" class="btn btn-sm btn-danger">Delete</a>
+                    <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $p['id_isi']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                   <?php endforeach; ?>
@@ -229,7 +229,7 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
               <h2 class="card-title">Sasaran Kinerja Objektif</h2><br>
               <h6>Admin | <i>Cash In Transit</i></h6>
               <!-- <h6>| <i>Cash Replenishment Outsource</i></h6> -->
-              <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-add">Add Kriteria</button>
+              <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-add"><i class="nav-icon fas fa-plus"></i> Add Kriteria</button>
             </div>
             <div class="card-body">
               <table class="table table-bordered">
@@ -248,8 +248,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                     <td><?= $p['kriteria']; ?></td>
                     <td><?= $p['target']; ?></td>
                     <td>
-                    <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning">Edit</a>
-                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $p['id_isi']; ?>" class="btn btn-sm btn-danger">Delete</a>
+                    <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $p['id_isi']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                   <?php endforeach; ?>
@@ -269,7 +269,7 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
               <h2 class="card-title">Sasaran Kinerja Objektif</h2><br>
               <h6>Admin | <i>Rumah Tangga</i></h6>
               <!-- <h6>| <i>Cash Replenishment Outsource</i></h6> -->
-              <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-add">Add Kriteria</button>
+              <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-add"><i class="nav-icon fas fa-plus"></i> Add Kriteria</button>
             </div>
             <div class="card-body">
               <table class="table table-bordered">
@@ -288,8 +288,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                     <td><?= $p['kriteria']; ?></td>
                     <td><?= $p['target']; ?></td>
                     <td>
-                    <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning">Edit</a>
-                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $p['id_isi']; ?>" class="btn btn-sm btn-danger">Delete</a>
+                    <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $p['id_isi']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                   <?php endforeach; ?>
