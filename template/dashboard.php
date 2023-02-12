@@ -1,7 +1,7 @@
 <?php 
 include '../config/database.php';
 
-$query = mysqli_query($conn, "SELECT count(id) AS jml FROM users");
+$query = mysqli_query($conn, "SELECT count(id_user) AS jml FROM users");
 $query2 = mysqli_query($conn, "SELECT count(id) AS jml FROM divisions");
 $query3 = mysqli_query($conn, "SELECT count(id) AS jml FROM jabatans");
 $view = mysqli_fetch_array($query);

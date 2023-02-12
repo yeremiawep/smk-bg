@@ -1,10 +1,10 @@
 <?php
 include '../config/database.php';
 
-$query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisi='1' AND jabatan='13' ");
+$query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisi='1' AND jabatan!='3' ");
 
-$sko = mysqli_query($conn, "SELECT * FROM penilaian_cro");
-$sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
+$sko = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE divisi='1' AND jabatan!='3'");
+$sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk='2'");
 
 ?>
 
@@ -41,10 +41,6 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
                   <th>Divisi</th>
                   <th>Jabatan</th>
                   <th>Input Nilai</th>
-                  <th>Nilai SKO</th>
-                  <th>Nilai SK</th>
-                  <th>Pelanggaran Disiplin</th>
-                  <th>Nilai Akhir</th>
                 </tr>
               </thead>
               <tbody>
@@ -57,14 +53,9 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
                     <td><?= $user['name']; ?></td>
                     <td><?= $user['name_div']; ?></td>
                     <td><?= $user['name_jab']; ?></td>
-                    <td width="30%">
-                      <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-xl">Isi Nilai SKO</a>
-                      <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-sk">Isi Nilai SK</a>
+                    <td width="20%">
+                      <a href="index.php?page=input-nilai&&id=<?= $user['id_pegawai']; ?>&&div=<?= $user['divisi']; ?>&&jab=<?= $user['jabatan']; ?>" class="btn btn-primary inline-block">Input Nilai</a>
                     </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
                   </tr>
                 <?php endforeach; ?>
               </tbody>

@@ -4,10 +4,8 @@
     <div class="image">
       <!-- <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image" /> -->
     </div>
-    <div class="info">
-      <a href="#" class="justify-content-center">
-        <?= $_SESSION['user'] . '<hr>' . $_SESSION['name_jab']; ?>
-      </a>
+    <div class="row justify-content-center text-white">
+      <?= $_SESSION['user'] . '<hr>' . $_SESSION['name_jab']; ?>
     </div>
   </div>
 
