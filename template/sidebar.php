@@ -23,6 +23,7 @@
 
   <!-- Sidebar Menu -->
   <?php
+
   if ($_SESSION['jabatan'] == '5') {
     include 'menu/menu_rtg.php';
   } else if ($_SESSION['jabatan'] == '1') {

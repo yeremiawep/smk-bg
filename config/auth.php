@@ -5,9 +5,7 @@ include "database.php";
 $nip = $_POST['nip'];
 $password = $_POST['password'];
 
-//"SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id;"
 $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE id_pegawai='$nip' AND password='$password'");
-
 
 if (mysqli_num_rows($query) == 1) {
   header('Location:../app');
