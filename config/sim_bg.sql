@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Feb 2023 pada 10.10
--- Versi server: 10.4.27-MArialDB
+-- Waktu pembuatan: 13 Feb 2023 pada 06.17
+-- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -49,13 +49,28 @@ INSERT INTO `divisions` (`id`, `name_div`) VALUES
 
 CREATE TABLE `hitung_nilai` (
   `id_nilai` int(11) NOT NULL,
-  `id_user` bigint(20) UNSIGNED NOT NULL,
-  `divisi` bigint(20) UNSIGNED NOT NULL,
-  `jabatan` bigint(20) UNSIGNED NOT NULL,
-  `id_isi_sko` int(11) NOT NULL,
-  `nilai_sko` int(11) NOT NULL,
-  `periode` year(4) NOT NULL
+  `id_pegawai` int(11) NOT NULL,
+  `id_isi_sko` bigint(20) UNSIGNED NOT NULL,
+  `nilai_sko` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data untuk tabel `hitung_nilai`
+--
+
+INSERT INTO `hitung_nilai` (`id_nilai`, `id_pegawai`, `id_isi_sko`, `nilai_sko`) VALUES
+(1, 3993, 45, 1),
+(2, 3993, 46, 1),
+(3, 3993, 47, 1),
+(4, 3993, 48, 1),
+(5, 3993, 49, 1),
+(6, 3993, 50, 1),
+(8, 5730, 45, 2),
+(9, 5730, 46, 3),
+(10, 5730, 47, 3),
+(11, 5730, 48, 2),
+(12, 5730, 49, 3),
+(13, 5730, 50, 3);
 
 -- --------------------------------------------------------
 
@@ -65,13 +80,26 @@ CREATE TABLE `hitung_nilai` (
 
 CREATE TABLE `hitung_nilai_sk` (
   `id_nilai_sk` int(11) NOT NULL,
-  `id_user` bigint(20) UNSIGNED NOT NULL,
-  `divisi` bigint(20) UNSIGNED NOT NULL,
-  `jabatan` bigint(20) UNSIGNED NOT NULL,
-  `id_isi_sk` int(11) NOT NULL,
-  `nilai` int(11) NOT NULL,
-  `periode` year(4) NOT NULL
+  `id_pegawai` int(11) NOT NULL,
+  `id_isi_sk` bigint(20) UNSIGNED NOT NULL,
+  `nilai` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data untuk tabel `hitung_nilai_sk`
+--
+
+INSERT INTO `hitung_nilai_sk` (`id_nilai_sk`, `id_pegawai`, `id_isi_sk`, `nilai`) VALUES
+(1, 3993, 8, 1),
+(2, 3993, 9, 1),
+(3, 3993, 10, 1),
+(4, 3993, 11, 1),
+(5, 3993, 12, 1),
+(7, 5730, 8, 3),
+(8, 5730, 9, 3),
+(9, 5730, 10, 3),
+(10, 5730, 11, 3),
+(11, 5730, 12, 3);
 
 -- --------------------------------------------------------
 
@@ -113,7 +141,7 @@ INSERT INTO `jabatans` (`id`, `name_jab`) VALUES
 --
 
 CREATE TABLE `kriteria_kompetensi` (
-  `id_isi` int(11) NOT NULL,
+  `id_isi` bigint(20) UNSIGNED NOT NULL,
   `jenis_sk` int(11) NOT NULL,
   `kriteria` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
@@ -143,7 +171,7 @@ INSERT INTO `kriteria_kompetensi` (`id_isi`, `jenis_sk`, `kriteria`) VALUES
 --
 
 CREATE TABLE `kriteria_penilaian` (
-  `id_isi` int(11) NOT NULL,
+  `id_isi` bigint(20) UNSIGNED NOT NULL,
   `jabatan` bigint(20) UNSIGNED NOT NULL,
   `divisi` bigint(20) UNSIGNED NOT NULL,
   `aspek` varchar(255) NOT NULL,
@@ -210,10 +238,10 @@ INSERT INTO `kriteria_penilaian` (`id_isi`, `jabatan`, `divisi`, `aspek`, `krite
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `nilai_sk`
+-- Struktur dari tabel `nilai_akhir`
 --
 
-CREATE TABLE `nilai_sk` (
+CREATE TABLE `nilai_akhir` (
   `id` int(11) NOT NULL,
   `id_pegawai` int(11) NOT NULL,
   `nilai_sko` float NOT NULL,
@@ -267,7 +295,6 @@ INSERT INTO `users` (`id_user`, `name`, `no_ktp`, `id_personal`, `id_pegawai`, `
 (12, 'Muhammad Yusuf', '3275091306900010', 524, 926, 10, 2, 'Bekasi', 'Islam', 'SMK TEKNIK OTOMOTIF', '1990-06-18', 31, 'kontrak', '13025300040', '0000508729151', 'SMK OTOMOTIF', '926'),
 (13, 'Ahdi Ilhamsyah', '3275060804870000', 605, 1039, 17, 2, 'Bekasi', 'Islam', 'SMK TEKNIK OTOMOTIF', '1982-04-08', 39, 'kontrak', '13030656550', '0001795301561', 'SMK OTOMOTIF', '1039'),
 (14, 'Roy Ramses Tamara Panggabean', '1271050704800000', 606, 1040, 10, 2, 'Jakarta Timur', 'Kristen Protestan', 'S1 PENDIDIKAN', '1980-04-07', 41, 'kontrak', '13030656568', '0001770073244', '? (kanpus)', '1040'),
-(15, 'Sudiarto', '276051810850004', 907, 1069, 18, 1, 'Depok', 'Islam', 'SMK TEKNIK KENDARAAN RINGAN', '1985-10-18', 36, 'kontrak', '13039299246', '0001766166704', 'SMK TEKNIK KENDARAAN RINGAN', '1069'),
 (16, 'Raneng Eko IS', '3175032105830000', 694, 1143, 7, 1, 'Jakarta Timur', 'Islam', 'S1 -TEKNIK KOMPUTER', '1983-05-21', 38, 'kontrak', '14000884495', '0001771054547', 'SMK TEKNIK', '1143'),
 (17, 'Ahmad Fauzi', '3276011703940000', 699, 1148, 13, 1, 'Depok', 'Islam', 'SMK BISNIS MANAJEMEN', '1994-03-17', 27, 'kontrak', '18033098395', '511595627', 'SMK PEMASARAN', '1148'),
 (18, 'Cecep Suhendang', '3175040168780020', 707, 1156, 3, 1, 'Jakarta Timur', 'Islam', 'SMA IPS', '1978-08-01', 43, 'kontrak', '14000884180', '1217984927', 'SMA IPS', '1156'),
@@ -415,8 +442,7 @@ INSERT INTO `users` (`id_user`, `name`, `no_ktp`, `id_personal`, `id_pegawai`, `
 (160, 'Sabaryanto', '3275022703810010', 7181, 21308, 16, 1, 'Bekasi', 'Islam', 'SMK', '1981-03-27', 41, 'kontrak', '21099188928', '', '', '21308'),
 (161, 'Mochamad Yusup', '3276020104810010', 7562, 24688, 16, 1, 'Depok', 'Islam', 'SMU', '1981-04-01', 41, 'kontrak', '', '', '', '24688'),
 (162, 'Eko Prasetiyo Budhi', '3315010311850000', 7564, 24690, 16, 1, 'Jakarta Pusat', 'Islam', 'SLTA', '1985-11-03', 37, 'kontrak', '', '', '', '24690'),
-(163, 'Moh Alva Viantara', '3275022311870010', 1471, 1918, 3, 1, 'Bekasi', 'Islam', '', '1987-11-23', 35, 'kontrak', '', '', '', '1918'),
-(167, 'Diandra', NULL, 9809, 9089, 9, 3, 'Tangerang', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '');
+(163, 'Moh Alva Viantara', '3275022311870010', 1471, 1918, 3, 1, 'Bekasi', 'Islam', '', '1987-11-23', 35, 'kontrak', '', '', '', '1918');
 
 --
 -- Indexes for dumped tables
@@ -433,20 +459,16 @@ ALTER TABLE `divisions`
 --
 ALTER TABLE `hitung_nilai`
   ADD PRIMARY KEY (`id_nilai`),
-  ADD KEY `id_user` (`id_user`),
-  ADD KEY `divisi` (`divisi`),
-  ADD KEY `jabatan` (`jabatan`),
-  ADD KEY `id_isi_sko` (`id_isi_sko`);
+  ADD KEY `id_isi_sko` (`id_isi_sko`),
+  ADD KEY `id_pegawai` (`id_pegawai`);
 
 --
 -- Indeks untuk tabel `hitung_nilai_sk`
 --
 ALTER TABLE `hitung_nilai_sk`
   ADD PRIMARY KEY (`id_nilai_sk`),
-  ADD KEY `divisi` (`divisi`),
-  ADD KEY `jabatan` (`jabatan`),
   ADD KEY `id_isi_sk` (`id_isi_sk`),
-  ADD KEY `id_user` (`id_user`);
+  ADD KEY `id_user` (`id_pegawai`);
 
 --
 -- Indeks untuk tabel `jabatans`
@@ -469,9 +491,9 @@ ALTER TABLE `kriteria_penilaian`
   ADD KEY `divisi` (`divisi`);
 
 --
--- Indeks untuk tabel `nilai_sk`
+-- Indeks untuk tabel `nilai_akhir`
 --
-ALTER TABLE `nilai_sk`
+ALTER TABLE `nilai_akhir`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_pegawai` (`id_pegawai`);
 
@@ -498,13 +520,13 @@ ALTER TABLE `divisions`
 -- AUTO_INCREMENT untuk tabel `hitung_nilai`
 --
 ALTER TABLE `hitung_nilai`
-  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `hitung_nilai_sk`
 --
 ALTER TABLE `hitung_nilai_sk`
-  MODIFY `id_nilai_sk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_nilai_sk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `jabatans`
@@ -516,25 +538,25 @@ ALTER TABLE `jabatans`
 -- AUTO_INCREMENT untuk tabel `kriteria_kompetensi`
 --
 ALTER TABLE `kriteria_kompetensi`
-  MODIFY `id_isi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_isi` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `kriteria_penilaian`
 --
 ALTER TABLE `kriteria_penilaian`
-  MODIFY `id_isi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id_isi` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
--- AUTO_INCREMENT untuk tabel `nilai_sk`
+-- AUTO_INCREMENT untuk tabel `nilai_akhir`
 --
-ALTER TABLE `nilai_sk`
+ALTER TABLE `nilai_akhir`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=168;
+  MODIFY `id_user` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=169;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
@@ -544,19 +566,15 @@ ALTER TABLE `users`
 -- Ketidakleluasaan untuk tabel `hitung_nilai`
 --
 ALTER TABLE `hitung_nilai`
-  ADD CONSTRAINT `hitung_nilai_ibfk_1` FOREIGN KEY (`divisi`) REFERENCES `divisions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `hitung_nilai_ibfk_2` FOREIGN KEY (`jabatan`) REFERENCES `jabatans` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `hitung_nilai_ibfk_3` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `hitung_nilai_ibfk_4` FOREIGN KEY (`id_isi_sko`) REFERENCES `kriteria_penilaian` (`id_isi`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `hitung_nilai_ibfk_5` FOREIGN KEY (`id_pegawai`) REFERENCES `users` (`id_pegawai`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `hitung_nilai_ibfk_6` FOREIGN KEY (`id_isi_sko`) REFERENCES `kriteria_penilaian` (`id_isi`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `hitung_nilai_sk`
 --
 ALTER TABLE `hitung_nilai_sk`
-  ADD CONSTRAINT `hitung_nilai_sk_ibfk_1` FOREIGN KEY (`divisi`) REFERENCES `divisions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `hitung_nilai_sk_ibfk_2` FOREIGN KEY (`jabatan`) REFERENCES `jabatans` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `hitung_nilai_sk_ibfk_3` FOREIGN KEY (`id_isi_sk`) REFERENCES `kriteria_kompetensi` (`id_isi`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `hitung_nilai_sk_ibfk_4` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `hitung_nilai_sk_ibfk_4` FOREIGN KEY (`id_pegawai`) REFERENCES `users` (`id_pegawai`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `hitung_nilai_sk_ibfk_5` FOREIGN KEY (`id_isi_sk`) REFERENCES `kriteria_kompetensi` (`id_isi`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `kriteria_penilaian`
@@ -566,10 +584,10 @@ ALTER TABLE `kriteria_penilaian`
   ADD CONSTRAINT `kriteria_penilaian_ibfk_2` FOREIGN KEY (`divisi`) REFERENCES `divisions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `nilai_sk`
+-- Ketidakleluasaan untuk tabel `nilai_akhir`
 --
-ALTER TABLE `nilai_sk`
-  ADD CONSTRAINT `nilai_sk_ibfk_4` FOREIGN KEY (`id_pegawai`) REFERENCES `users` (`id_pegawai`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `nilai_akhir`
+  ADD CONSTRAINT `nilai_akhir_ibfk_1` FOREIGN KEY (`id_pegawai`) REFERENCES `users` (`id_pegawai`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `users`

@@ -75,6 +75,8 @@ include '../config/database.php'
           include "../views/edit/edit_kriteria.php";
         } else if ($_GET['page'] == 'input-nilai') {
           include "../views/hitung/hitung_sko_rtg.php";
+        } else if ($_GET['page'] == 'input-nilai-sk') {
+          include "../views/hitung/hitung_sk_rtg.php";
         } else if ($_GET['page'] == 'isi-nilai') {
           include "../views/hitung/input/input_nilai.php";
         } else if ($_GET['page'] == 'rekap-nilai') {

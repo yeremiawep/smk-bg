@@ -3,9 +3,6 @@ include '../config/database.php';
 
 $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisi='3' AND jabatan='9' ");
 
-$sko = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan=9");
-$sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk=2");
-
 ?>
 
 <section class="content-header">
@@ -52,8 +49,8 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk=2");
                     <td><?= $user['name_div']; ?></td>
                     <td><?= $user['name_jab']; ?></td>
                     <td width="20%">
-                      <a href="index.php?page=input-nilai&&id=<?= $user['id_pegawai']; ?>&&jab=<?= $user['jabatan']; ?>" class="btn btn-primary inline-block">Input Nilai</a>
-                      <!-- <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-sk">Isi Nilai SK</a> -->
+                      <a href="index.php?page=input-nilai&&id=<?= $user['id_pegawai']; ?>&&div=<?= $user['divisi']; ?>&&jab=<?= $user['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SKO</a>
+                      <a href="index.php?page=input-nilai-sk&&id=<?= $user['id_pegawai']; ?>&&div=<?= $user['divisi']; ?>&&jab=<?= $user['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SK</a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -80,8 +77,8 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk=2");
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title">Tambah Penilaian</h4>
-        <button type="button" class="close" data-dismiss="modal" Arial-label="Close">
-          <span Arial-hidden="true">&times;</span>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
@@ -103,7 +100,7 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk=2");
                     <td><?= $sko['kriteria']; ?></td>
                     <td><?= $sko['target']; ?></td>
                     <td>
-                      <select class="form-select" Arial-label="Default select example" name="nilai[]" id="nilai[]">
+                      <select class="form-select" aria-label="Default select example" name="nilai[]" id="nilai[]">
                         <option selected>Input Nilai</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -137,8 +134,8 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk=2");
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title">Tambah Penilaian</h4>
-        <button type="button" class="close" data-dismiss="modal" Arial-label="Close">
-          <span Arial-hidden="true">&times;</span>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
@@ -156,7 +153,7 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk=2");
                   <tr>
                     <td><?= $sk['kriteria']; ?></td>
                     <td>
-                      <select class="form-select" Arial-label="Default select example" name="nilai" id="nilai">
+                      <select class="form-select" aria-label="Default select example" name="nilai" id="nilai">
                         <option selected>Input Nilai</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
