@@ -25,6 +25,7 @@
     <!-- /.login-logo -->
     <div class="card card-outline card-primary">
       <div class="card-header text-center">
+        <img src="app/dist/img/logo_bg2.png" alt="BG" width="50%" height="20%">
         <h1>Bringin Gigantara</h1>
       </div>
       <div class="card-body">
@@ -98,4 +99,5 @@ if (isset($_GET['error'])) {
   }
 }
 ?>
+
 </html>

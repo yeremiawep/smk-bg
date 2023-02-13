@@ -45,19 +45,20 @@ $nilai = mysqli_query($conn, "SELECT * FROM nilai_sk JOIN users ON nilai_sk.id_p
               </thead>
               <tbody>
                 <?php $no = 1; ?>
-                <?php foreach ($nilai as $n) : ?>
-                  <tr>
-                    <td><?= $no++; ?></td>
-                    <td><?= $n['id_pegawai']; ?></td>
-                    <td><?= $n['name']; ?></td>
-                    <td><?= $n['name_div']; ?></td>
-                    <td><?= $n['name_jab']; ?></td>
-                    <td><?= $n['nilai_sko']; ?></td>
-                    <td><?= $n['nilai_sk']; ?></td>
-                    <td><?= $n['nilai_akhir']; ?></td>
-                    <td></td>
-                  </tr>
-                <?php endforeach; ?>
+                <!-- <?php foreach ($nilai as $nilai) : ?> -->
+                <tr>
+                  <td><?= $no++; ?></td>
+                  <td><?= $nilai['id_pegawai']; ?></td>
+                  <td><?= $nilai['name']; ?></td>
+                  <td><?= $nilai['name_div']; ?></td>
+                  <td><?= $nilai['name_jab']; ?></td>
+                  <td><?= $nilai['nilai_sko']; ?></td>
+                  <td><?= $nilai['nilai_sk']; ?></td>
+                  <td><?= $nilai['hukuman']; ?></td>
+                  <td><?= $nilai['nilai_akhir']; ?></td>
+                  <td></td>
+                </tr>
+                <!-- <?php endforeach; ?> -->
               </tbody>
             </table>
           </div>
