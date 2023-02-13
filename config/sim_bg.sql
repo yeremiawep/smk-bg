@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Feb 2023 pada 06.17
--- Versi server: 10.4.27-MariaDB
--- Versi PHP: 8.2.0
+-- Waktu pembuatan: 13 Feb 2023 pada 11.06
+-- Versi server: 10.4.18-MariaDB
+-- Versi PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `divisions` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name_div` varchar(255) NOT NULL
+  `name_div` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -52,25 +52,42 @@ CREATE TABLE `hitung_nilai` (
   `id_pegawai` int(11) NOT NULL,
   `id_isi_sko` bigint(20) UNSIGNED NOT NULL,
   `nilai_sko` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `hitung_nilai`
 --
 
 INSERT INTO `hitung_nilai` (`id_nilai`, `id_pegawai`, `id_isi_sko`, `nilai_sko`) VALUES
-(1, 3993, 45, 1),
-(2, 3993, 46, 1),
-(3, 3993, 47, 1),
-(4, 3993, 48, 1),
-(5, 3993, 49, 1),
-(6, 3993, 50, 1),
-(8, 5730, 45, 2),
+(1, 3993, 45, 4),
+(2, 3993, 46, 3),
+(3, 3993, 47, 3),
+(4, 3993, 48, 3),
+(5, 3993, 49, 3),
+(6, 3993, 50, 3),
+(8, 5730, 45, 3),
 (9, 5730, 46, 3),
 (10, 5730, 47, 3),
-(11, 5730, 48, 2),
+(11, 5730, 48, 3),
 (12, 5730, 49, 3),
-(13, 5730, 50, 3);
+(13, 5730, 50, 3),
+(15, 418, 29, 4),
+(16, 418, 30, 2),
+(17, 418, 31, 4),
+(18, 418, 32, 3),
+(19, 418, 33, 3),
+(20, 418, 34, 3),
+(21, 418, 35, 4),
+(22, 418, 36, 3),
+(23, 418, 37, 2),
+(25, 314, 12, 3),
+(26, 314, 13, 4),
+(27, 314, 14, 3),
+(28, 314, 15, 3),
+(29, 314, 16, 3),
+(30, 314, 17, 3),
+(31, 314, 18, 3),
+(32, 314, 19, 3);
 
 -- --------------------------------------------------------
 
@@ -83,23 +100,28 @@ CREATE TABLE `hitung_nilai_sk` (
   `id_pegawai` int(11) NOT NULL,
   `id_isi_sk` bigint(20) UNSIGNED NOT NULL,
   `nilai` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `hitung_nilai_sk`
 --
 
 INSERT INTO `hitung_nilai_sk` (`id_nilai_sk`, `id_pegawai`, `id_isi_sk`, `nilai`) VALUES
-(1, 3993, 8, 1),
-(2, 3993, 9, 1),
-(3, 3993, 10, 1),
-(4, 3993, 11, 1),
-(5, 3993, 12, 1),
+(1, 3993, 8, 4),
+(2, 3993, 9, 3),
+(3, 3993, 10, 3),
+(4, 3993, 11, 3),
+(5, 3993, 12, 3),
 (7, 5730, 8, 3),
 (8, 5730, 9, 3),
-(9, 5730, 10, 3),
-(10, 5730, 11, 3),
-(11, 5730, 12, 3);
+(9, 5730, 10, 4),
+(10, 5730, 11, 4),
+(11, 5730, 12, 3),
+(13, 418, 8, 3),
+(14, 418, 9, 3),
+(15, 418, 10, 3),
+(16, 418, 11, 3),
+(17, 418, 12, 3);
 
 -- --------------------------------------------------------
 
@@ -109,7 +131,7 @@ INSERT INTO `hitung_nilai_sk` (`id_nilai_sk`, `id_pegawai`, `id_isi_sk`, `nilai`
 
 CREATE TABLE `jabatans` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name_jab` varchar(255) NOT NULL
+  `name_jab` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -144,7 +166,7 @@ CREATE TABLE `kriteria_kompetensi` (
   `id_isi` bigint(20) UNSIGNED NOT NULL,
   `jenis_sk` int(11) NOT NULL,
   `kriteria` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `kriteria_kompetensi`
@@ -177,7 +199,7 @@ CREATE TABLE `kriteria_penilaian` (
   `aspek` varchar(255) NOT NULL,
   `kriteria` varchar(255) NOT NULL,
   `target` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `kriteria_penilaian`
@@ -248,7 +270,7 @@ CREATE TABLE `nilai_akhir` (
   `nilai_sk` float NOT NULL,
   `hukuman` double NOT NULL,
   `nilai_akhir` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -258,22 +280,22 @@ CREATE TABLE `nilai_akhir` (
 
 CREATE TABLE `users` (
   `id_user` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `no_ktp` varchar(255) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `no_ktp` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `id_personal` int(11) NOT NULL,
   `id_pegawai` int(11) NOT NULL,
   `jabatan` bigint(20) UNSIGNED DEFAULT NULL,
   `divisi` bigint(20) UNSIGNED DEFAULT NULL,
-  `domisili` varchar(255) DEFAULT NULL,
-  `agama` varchar(255) DEFAULT NULL,
-  `pendidikan` varchar(255) DEFAULT NULL,
+  `domisili` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `agama` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pendidikan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tgl_lahir` date DEFAULT NULL,
   `usia` int(11) DEFAULT NULL,
-  `status` enum('kontrak','tetap') DEFAULT NULL,
-  `no_bpjs_ketenagakerjaan` varchar(255) DEFAULT NULL,
-  `no_bpjs_kesehatan` varchar(255) DEFAULT NULL,
-  `ijazah` varchar(255) DEFAULT NULL,
-  `password` varchar(255) NOT NULL
+  `status` enum('kontrak','tetap') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `no_bpjs_ketenagakerjaan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `no_bpjs_kesehatan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ijazah` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -520,13 +542,13 @@ ALTER TABLE `divisions`
 -- AUTO_INCREMENT untuk tabel `hitung_nilai`
 --
 ALTER TABLE `hitung_nilai`
-  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT untuk tabel `hitung_nilai_sk`
 --
 ALTER TABLE `hitung_nilai_sk`
-  MODIFY `id_nilai_sk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_nilai_sk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `jabatans`
