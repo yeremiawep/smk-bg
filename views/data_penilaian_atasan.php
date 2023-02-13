@@ -64,7 +64,7 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi");
                     <td><?= $cro['name_jab']; ?></td>
                     <td width="30%">
                       <a href="index.php?page=input-nilai&&id=<?= $cro['id_pegawai']; ?>&&div=<?= $cro['divisi']; ?>&&jab=<?= $cro['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SKO</a>
-                      <a href="index.php?page=input-nilai-sk&&id=<?= $cro['id_pegawai']; ?>&&div=<?= $cro['divisi']; ?>&&jab=<?= $cro['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SK</a>
+                      <a href="index.php?page=input-nilai-sk-manajerial&&id=<?= $cro['id_pegawai']; ?>&&div=<?= $cro['divisi']; ?>&&jab=<?= $cro['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SK</a>
                     </td>
                     <td></td>
                     <td></td>
@@ -117,7 +117,7 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi");
                     <td><?= $cit['name_jab']; ?></td>
                     <td width="30%">
                       <a href="index.php?page=input-nilai&&id=<?= $cit['id_pegawai']; ?>&&div=<?= $cit['divisi']; ?>&&jab=<?= $cit['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SKO</a>
-                      <a href="index.php?page=input-nilai-sk&&id=<?= $cit['id_pegawai']; ?>&&div=<?= $cit['divisi']; ?>&&jab=<?= $cit['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SK</a>
+                      <a href="index.php?page=input-nilai-sk-manajerial&&id=<?= $cit['id_pegawai']; ?>&&div=<?= $cit['divisi']; ?>&&jab=<?= $cit['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SK</a>
                     </td>
                     <td></td>
                     <td></td>
@@ -170,7 +170,7 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi");
                     <td><?= $rtg['name_jab']; ?></td>
                     <td width="30%">
                       <a href="index.php?page=input-nilai&&id=<?= $rtg['id_pegawai']; ?>&&div=<?= $rtg['divisi']; ?>&&jab=<?= $rtg['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SKO</a>
-                      <a href="index.php?page=input-nilai-sk&&id=<?= $rtg['id_pegawai']; ?>&&div=<?= $rtg['divisi']; ?>&&jab=<?= $rtg['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SK</a>
+                      <a href="index.php?page=input-nilai-sk-manajerial&&id=<?= $rtg['id_pegawai']; ?>&&div=<?= $rtg['divisi']; ?>&&jab=<?= $rtg['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SK</a>
                     </td>
                     <td></td>
                     <td></td>
