@@ -1,10 +1,10 @@
 <?php
 include '../config/database.php';
 
-$query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisi='1' AND jabatan='13' ");
+$query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisi='1' AND jabatan='13'");
 
-$sko = mysqli_query($conn, "SELECT * FROM penilaian_cro");
-$sk = mysqli_query($conn, "SELECT * FROM sk_pcro");
+$sko = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE divisi='1' AND jabatan='13'");
+$sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk='2'");
 
 ?>
 
