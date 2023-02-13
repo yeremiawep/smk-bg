@@ -3,13 +3,13 @@ include '../config/database.php';
 
 $cro = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisi='1' AND jabatan='3' ");
 $cit = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisi='2' AND jabatan='4' ");
-$rtg = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisi='1' AND jabatan='5' ");
+$rtg = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisi='3' AND jabatan='5' ");
 
 
-$sko_cro = mysqli_query($conn, "SELECT * FROM penilaian_spvcro");
-$sko_cit = mysqli_query($conn, "SELECT * FROM penilaian_spvcit");
-$sko_rtg = mysqli_query($conn, "SELECT * FROM penilaian_spvrtg");
-$sk = mysqli_query($conn, "SELECT * FROM sk_manajerial");
+$sko_cro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian");
+$sko_cit = mysqli_query($conn, "SELECT * FROM kriteria_penilaian");
+$sko_rtg = mysqli_query($conn, "SELECT * FROM kriteria_penilaian");
+$sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi");
 
 ?>
 
@@ -63,8 +63,8 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_manajerial");
                     <td><?= $cro['name_div']; ?></td>
                     <td><?= $cro['name_jab']; ?></td>
                     <td width="30%">
-                      <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-cro">Isi Nilai SKO</a>
-                      <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-sk">Isi Nilai SK</a>
+                      <a href="index.php?page=input-nilai&&id=<?= $cro['id_pegawai']; ?>&&div=<?= $cro['divisi']; ?>&&jab=<?= $cro['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SKO</a>
+                      <a href="index.php?page=input-nilai-sk&&id=<?= $cro['id_pegawai']; ?>&&div=<?= $cro['divisi']; ?>&&jab=<?= $cro['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SK</a>
                     </td>
                     <td></td>
                     <td></td>
@@ -116,8 +116,8 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_manajerial");
                     <td><?= $cit['name_div']; ?></td>
                     <td><?= $cit['name_jab']; ?></td>
                     <td width="30%">
-                      <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-cit">Isi Nilai SKO</a>
-                      <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-sk">Isi Nilai SK</a>
+                      <a href="index.php?page=input-nilai&&id=<?= $cit['id_pegawai']; ?>&&div=<?= $cit['divisi']; ?>&&jab=<?= $cit['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SKO</a>
+                      <a href="index.php?page=input-nilai-sk&&id=<?= $cit['id_pegawai']; ?>&&div=<?= $cit['divisi']; ?>&&jab=<?= $cit['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SK</a>
                     </td>
                     <td></td>
                     <td></td>
@@ -169,8 +169,8 @@ $sk = mysqli_query($conn, "SELECT * FROM sk_manajerial");
                     <td><?= $rtg['name_div']; ?></td>
                     <td><?= $rtg['name_jab']; ?></td>
                     <td width="30%">
-                      <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-rtg">Isi Nilai SKO</a>
-                      <a href="" class="btn btn-primary inline-block" data-toggle="modal" data-target="#modal-sk">Isi Nilai SK</a>
+                      <a href="index.php?page=input-nilai&&id=<?= $rtg['id_pegawai']; ?>&&div=<?= $rtg['divisi']; ?>&&jab=<?= $rtg['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SKO</a>
+                      <a href="index.php?page=input-nilai-sk&&id=<?= $rtg['id_pegawai']; ?>&&div=<?= $rtg['divisi']; ?>&&jab=<?= $rtg['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SK</a>
                     </td>
                     <td></td>
                     <td></td>
