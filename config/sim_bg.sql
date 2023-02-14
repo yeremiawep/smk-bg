@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Feb 2023 pada 11.06
--- Versi server: 10.4.18-MariaDB
--- Versi PHP: 8.0.3
+-- Waktu pembuatan: 14 Feb 2023 pada 11.14
+-- Versi server: 10.4.27-MariaDB
+-- Versi PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `divisions` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name_div` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `name_div` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -52,7 +52,7 @@ CREATE TABLE `hitung_nilai` (
   `id_pegawai` int(11) NOT NULL,
   `id_isi_sko` bigint(20) UNSIGNED NOT NULL,
   `nilai_sko` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data untuk tabel `hitung_nilai`
@@ -100,7 +100,7 @@ CREATE TABLE `hitung_nilai_sk` (
   `id_pegawai` int(11) NOT NULL,
   `id_isi_sk` bigint(20) UNSIGNED NOT NULL,
   `nilai` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data untuk tabel `hitung_nilai_sk`
@@ -126,12 +126,36 @@ INSERT INTO `hitung_nilai_sk` (`id_nilai_sk`, `id_pegawai`, `id_isi_sk`, `nilai`
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `hukuman`
+--
+
+CREATE TABLE `hukuman` (
+  `id_hukuman` int(11) NOT NULL,
+  `jenis_pelanggaran` varchar(100) NOT NULL,
+  `bobot` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `hukuman`
+--
+
+INSERT INTO `hukuman` (`id_hukuman`, `jenis_pelanggaran`, `bobot`) VALUES
+(1, 'Tidak ada pelanggaran dilakukan', 0),
+(2, 'Sistem dan Prosedur', 1),
+(3, 'Pelanggaran Fundamental', 1.5),
+(4, 'SP-1', 0.25),
+(5, 'SP-2', 0.35),
+(6, 'SP-3', 0.5);
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `jabatans`
 --
 
 CREATE TABLE `jabatans` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name_jab` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `name_jab` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -166,7 +190,7 @@ CREATE TABLE `kriteria_kompetensi` (
   `id_isi` bigint(20) UNSIGNED NOT NULL,
   `jenis_sk` int(11) NOT NULL,
   `kriteria` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data untuk tabel `kriteria_kompetensi`
@@ -199,7 +223,7 @@ CREATE TABLE `kriteria_penilaian` (
   `aspek` varchar(255) NOT NULL,
   `kriteria` varchar(255) NOT NULL,
   `target` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data untuk tabel `kriteria_penilaian`
@@ -270,7 +294,7 @@ CREATE TABLE `nilai_akhir` (
   `nilai_sk` float NOT NULL,
   `hukuman` double NOT NULL,
   `nilai_akhir` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -280,22 +304,22 @@ CREATE TABLE `nilai_akhir` (
 
 CREATE TABLE `users` (
   `id_user` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `no_ktp` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `no_ktp` varchar(255) DEFAULT NULL,
   `id_personal` int(11) NOT NULL,
   `id_pegawai` int(11) NOT NULL,
   `jabatan` bigint(20) UNSIGNED DEFAULT NULL,
   `divisi` bigint(20) UNSIGNED DEFAULT NULL,
-  `domisili` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `agama` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `pendidikan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `domisili` varchar(255) DEFAULT NULL,
+  `agama` varchar(255) DEFAULT NULL,
+  `pendidikan` varchar(255) DEFAULT NULL,
   `tgl_lahir` date DEFAULT NULL,
   `usia` int(11) DEFAULT NULL,
-  `status` enum('kontrak','tetap') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `no_bpjs_ketenagakerjaan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `no_bpjs_kesehatan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `ijazah` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `status` enum('kontrak','tetap') DEFAULT NULL,
+  `no_bpjs_ketenagakerjaan` varchar(255) DEFAULT NULL,
+  `no_bpjs_kesehatan` varchar(255) DEFAULT NULL,
+  `ijazah` varchar(255) DEFAULT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -493,6 +517,12 @@ ALTER TABLE `hitung_nilai_sk`
   ADD KEY `id_user` (`id_pegawai`);
 
 --
+-- Indeks untuk tabel `hukuman`
+--
+ALTER TABLE `hukuman`
+  ADD PRIMARY KEY (`id_hukuman`);
+
+--
 -- Indeks untuk tabel `jabatans`
 --
 ALTER TABLE `jabatans`
@@ -549,6 +579,12 @@ ALTER TABLE `hitung_nilai`
 --
 ALTER TABLE `hitung_nilai_sk`
   MODIFY `id_nilai_sk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT untuk tabel `hukuman`
+--
+ALTER TABLE `hukuman`
+  MODIFY `id_hukuman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `jabatans`
