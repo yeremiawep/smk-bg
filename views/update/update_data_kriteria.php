@@ -6,6 +6,6 @@ $aspek = $_POST['aspek'];
 $kriteria = $_POST['kriteria'];
 $target = $_POST['target'];
 
-$query = mysqli_query($conn, "UPDATE kriteria_penilaian SET aspek='$aspek', kriteria='$kriteria', target='$target' WHERE id_isi='$id_isi'");
+$query = mysqli_query($conn, "UPDATE kriteria_penilaian SET aspek='$aspek', kriteria='$kriteria', target='$target' WHERE id_isi_sko='$id_isi'");
 
 header('Location: ../../app/index.php?page=data-kinerja-objektif');

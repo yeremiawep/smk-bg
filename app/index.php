@@ -12,7 +12,7 @@ include "../template/header.php";
 include '../config/database.php'
 ?>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed" style="font-family: Poppins; font-size: 14.5px;">
   <div class="wrapper">
     <!-- Preloader -->
     <?php include "../template/preloader.php"; ?>

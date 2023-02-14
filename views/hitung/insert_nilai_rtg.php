@@ -9,10 +9,10 @@ $id_isi = $_POST['id_isi'];
 $nilaisko = $_POST['nilai'];
 $count = count($nilaisko);
 
-for($i=0; $i <= $count; $i++) {
-  $insertsko = "INSERT INTO hitung_nilai VALUES ('','$id[$i]','$id_pegawai[$i]','$id_isi[$i]','$nilaisko[$i]')";
-  $sql = mysqli_query($conn, $insertsko);
-}
+// for($i=0; $i <= $count; $i++) {
+//   $insertsko = "INSERT INTO hitung_nilai VALUES ('','$id[$i]','$id_pegawai[$i]','$id_isi[$i]','$nilaisko[$i]')";
+//   $sql = mysqli_query($conn, $insertsko);
+// }
 
 
 // Insert Nilai SK
@@ -22,10 +22,10 @@ $id_isi_sk = $_POST['id_isi_sk'];
 $nilaisk = $_POST['nilaisk'];
 $countsk = count($nilaisk);
 
-for($j=0; $j <= $countsk; $j++) {
-  $insertsk = "INSERT INTO hitung_nilai_sk VALUES('','$id[$j]','$id_pegawai[$j]','$id_isi_sk[$j]','$nilaisk[$j]')";
-  $sql = mysqli_query($conn, $insertsk);
-}
+// for($j=0; $j <= $countsk; $j++) {
+//   $insertsk = "INSERT INTO hitung_nilai_sk VALUES('','$id[$j]','$id_pegawai[$j]','$id_isi_sk[$j]','$nilaisk[$j]')";
+//   $sql = mysqli_query($conn, $insertsk);
+// }
 
 // Insert Nilai Akhir
 
@@ -35,7 +35,7 @@ $nilaihk = $_POST['nilaihk'];
 $total_nilai_sko = array_sum($nilaisko)/$count * 60 / 100; 
 
 // Hitung Nilai SK-Non Manajerial, bobot = 40% ;
-$total_nilai_sk = array_sum($nilai_sk)/$countsk * 40 / 100;
+$total_nilai_sk = array_sum($nilaisk)/$countsk * 40 / 100;
 
 // Total Nilai Akhir
 $nilai_akhir = $total_nilai_sko + $total_nilai_sk - $nilaihk;

@@ -9,7 +9,7 @@ $view2 = mysqli_fetch_array($query2);
 $view3 = mysqli_fetch_array($query3);
 ?>
 
-<section class="content">
+<section class="content" style="font-family: Poppins;">
   <div class="container-fluid">
     <!-- Small boxes (Stat box) -->
     <div class="row">

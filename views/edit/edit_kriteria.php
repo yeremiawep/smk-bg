@@ -2,7 +2,7 @@
 
 $id = $_GET['id'];
 $jab = $_GET['jab'];
-$cro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN jabatans ON kriteria_penilaian.jabatan=jabatans.id JOIN divisions ON kriteria_penilaian.divisi=divisions.id WHERE id_isi = '$id'");
+$kriteria = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN jabatans ON kriteria_penilaian.jabatan=jabatans.id JOIN divisions ON kriteria_penilaian.divisi=divisions.id WHERE id_isi_sko = '$id'");
 
 ?>
 
@@ -15,15 +15,15 @@ $cro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN jabatans ON kr
       <!-- /.card-header -->
       <div class="card-body">
         <form method="POST" action="../views/update/update_data_kriteria.php">
-          <?php foreach ($cro as $cro) : ?>
+          <?php foreach ($kriteria as $k) : ?>
             <div class="row">
-              <input type="text" name="id_isi" value="<?= $cro['id_isi']; ?>" hidden>
+              <input type="text" name="id_isi" value="<?= $k['id_isi_sko']; ?>" hidden>
             </div>
             <div class="row">
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="divisi">Divisi</label>
-                  <input type="text" class="form-control" name="divisi" value="<?= $cro['name_div']; ?>" readonly>
+                  <input type="text" class="form-control" name="divisi" value="<?= $k['name_div']; ?>" readonly>
                 </div>
               </div>
             </div>
@@ -31,7 +31,7 @@ $cro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN jabatans ON kr
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="jabatan">Jabatan</label>
-                  <input type="text" class="form-control" name="jabatan" value="<?= $cro['name_jab']; ?>" readonly>
+                  <input type="text" class="form-control" name="jabatan" value="<?= $k['name_jab']; ?>" readonly>
                 </div>
               </div>
             </div>
@@ -39,7 +39,7 @@ $cro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN jabatans ON kr
               <div class="col-sm-6">
                 <div class="form-group">
                   <label>Aspek</label>
-                  <input type="text" class="form-control" name="aspek" value="<?= $cro['aspek']; ?>">
+                  <input type="text" class="form-control" name="aspek" value="<?= $k['aspek']; ?>">
                 </div>
               </div>
             </div>
@@ -47,7 +47,7 @@ $cro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN jabatans ON kr
               <div class="col-sm-6">
                 <div class="form-group">
                   <label>Kriteria</label>
-                  <input type="text" class="form-control" name="kriteria" value="<?= $cro['kriteria']; ?>">
+                  <input type="text" class="form-control" name="kriteria" value="<?= $k['kriteria']; ?>">
                 </div>
               </div>
             </div>
@@ -55,7 +55,7 @@ $cro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN jabatans ON kr
               <div class="col-sm-6">
                 <div class="form-group">
                   <label>Target</label>
-                  <input type="text" class="form-control" name="target" value="<?= $cro['target']; ?>">
+                  <input type="text" class="form-control" name="target" value="<?= $k['target']; ?>">
                 </div>
               </div>
             </div>

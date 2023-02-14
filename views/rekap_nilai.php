@@ -1,7 +1,7 @@
 <?php
 include '../config/database.php';
 
-$nilai = mysqli_query($conn, "SELECT * FROM nilai_sk JOIN users ON nilai_sk.id_pegawai=users.id_pegawai JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id");
+$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user");
 
 ?>
 
@@ -38,27 +38,28 @@ $nilai = mysqli_query($conn, "SELECT * FROM nilai_sk JOIN users ON nilai_sk.id_p
                   <th width="10%">Jabatan</th>
                   <th width="10%">Nilai SKO</th>
                   <th width="10%">Nilai SK</th>
-                  <th width="10%">Hukuman Disiplin</th>
+                  <th width="10%">Pelanggaran Disiplin</th>
                   <th width="10%">Nilai Akhir</th>
                   <th width="10%">Predikat</th>
                 </tr>
               </thead>
               <tbody>
                 <?php $no = 1; ?>
-                <!-- <?php foreach ($nilai as $nilai) : ?> -->
+                <?php foreach ($nilai as $nilai) : ?>
                 <tr>
                   <td><?= $no++; ?></td>
                   <td><?= $nilai['id_pegawai']; ?></td>
                   <td><?= $nilai['name']; ?></td>
-                  <td><?= $nilai['name_div']; ?></td>
-                  <td><?= $nilai['name_jab']; ?></td>
+                  <td><?= $nilai['divisi']; ?></td>
+                  <td><?= $nilai['jabatan']; ?></td>
                   <td><?= $nilai['nilai_sko']; ?></td>
                   <td><?= $nilai['nilai_sk']; ?></td>
                   <td><?= $nilai['hukuman']; ?></td>
                   <td><?= $nilai['nilai_akhir']; ?></td>
-                  <td></td>
+                  <td>
+                  </td>
                 </tr>
-                <!-- <?php endforeach; ?> -->
+                <?php endforeach; ?>
               </tbody>
             </table>
           </div>

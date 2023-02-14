@@ -1,7 +1,7 @@
 <?php
 include '../config/database.php';
 
-$query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisi='2' AND jabatan!='4' ");
+$query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisi='2' AND jabatan='8' ");
 
 $sko = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE divisi='2' AND jabatan!='4'");
 $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk='2'");
@@ -54,7 +54,7 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk='2'"
                     <td><?= $user['name_div']; ?></td>
                     <td><?= $user['name_jab']; ?></td>
                     <td width="30%">
-                      <a href="index.php?page=input-nilai-cit&&id=<?= $user['id_user']; ?>&&idpeg=<?= $user['id_pegawai']; ?>&&div=<?= $user['divisi']; ?>&&jab=<?= $user['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SKO</a>
+                      <a href="index.php?page=input-nilai-cit&&id=<?= $user['id_user']; ?>&&idpeg=<?= $user['id_pegawai']; ?>&&div=<?= $user['divisi']; ?>&&jab=<?= $user['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai</a>
                       <!-- <a href="index.php?page=input-nilai-sk&&id=<?= $user['id_pegawai']; ?>&&div=<?= $user['divisi']; ?>&&jab=<?= $user['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SK</a> -->
                     </td>
                   </tr>
