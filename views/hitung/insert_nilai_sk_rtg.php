@@ -1,5 +1,5 @@
 <?php
-include '../../../config/database.php';
+include '../../config/database.php';
 
 $id_pegawai = $_POST['id_pegawai'];
 $id_isi = $_POST['id_isi'];

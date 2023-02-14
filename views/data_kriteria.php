@@ -1,7 +1,7 @@
 <?php
 include '../config/database.php';
 
-$sko_spvcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan=3 ");
+$sko_spvcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan=3");
 $sko_spvcit = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan=4");
 $sko_spvrtg = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan=5");
 $sko_pcro   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan=13");
@@ -50,8 +50,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                     <td><?= $cro['kriteria']; ?></td>
                     <td><?= $cro['target']; ?></td>
                     <td>
-                      <a href="index.php?page=edit-kriteria&&id=<?= $cro['id_isi']; ?>&&jab=<?= $cro['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
-                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $cro['id_isi']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
+                      <a href="index.php?page=edit-kriteria&&id=<?= $cro['id_isi_sko']; ?>&&jab=<?= $cro['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $cro['id_isi_sko']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -89,8 +89,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                     <td><?= $cit['kriteria']; ?></td>
                     <td><?= $cit['target']; ?></td>
                     <td>
-                      <a href="index.php?page=edit-kriteria&&id=<?= $cit['id_isi']; ?>&&jab=<?= $cit['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
-                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $cit['id_isi']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
+                      <a href="index.php?page=edit-kriteria&&id=<?= $cit['id_isi_sko']; ?>&&jab=<?= $cit['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $cit['id_isi_sko']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -128,8 +128,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                     <td><?= $rtg['kriteria']; ?></td>
                     <td width="40%"><?= $rtg['target']; ?></td>
                     <td>
-                      <a href="index.php?page=edit-kriteria&&id=<?= $rtg['id_isi']; ?>&&jab=<?= $rtg['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
-                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $rtg['id_isi']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
+                      <a href="index.php?page=edit-kriteria&&id=<?= $rtg['id_isi_sko']; ?>&&jab=<?= $rtg['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $rtg['id_isi_sko']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -168,8 +168,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                     <td><?= $p['kriteria']; ?></td>
                     <td><?= $p['target']; ?></td>
                     <td>
-                      <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
-                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $p['id_isi']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
+                      <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi_sko']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $p['id_isi_sko']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -208,8 +208,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                     <td><?= $p['kriteria']; ?></td>
                     <td><?= $p['target']; ?></td>
                     <td>
-                      <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
-                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $p['id_isi']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
+                      <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi_sko']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $p['id_isi_sko']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -248,8 +248,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                     <td><?= $p['kriteria']; ?></td>
                     <td><?= $p['target']; ?></td>
                     <td>
-                      <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
-                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $p['id_isi']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
+                      <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi_sko']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $p['id_isi_sko']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -288,8 +288,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                     <td><?= $p['kriteria']; ?></td>
                     <td><?= $p['target']; ?></td>
                     <td>
-                      <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
-                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $p['id_isi']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
+                      <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi_sko']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $p['id_isi_sko']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>

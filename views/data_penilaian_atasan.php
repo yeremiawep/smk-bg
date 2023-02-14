@@ -63,7 +63,7 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi");
                     <td><?= $cro['name_div']; ?></td>
                     <td><?= $cro['name_jab']; ?></td>
                     <td width="30%">
-                      <a href="index.php?page=input-nilai&&id=<?= $cro['id_pegawai']; ?>&&div=<?= $cro['divisi']; ?>&&jab=<?= $cro['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SKO</a>
+                      <a href="index.php?page=input-nilai-atasan&&id=<?= $cro['id_user']; ?>&&idpeg=<?= $cro['id_pegawai']; ?>&&div=<?= $cro['divisi']; ?>&&jab=<?= $cro['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SKO</a>
                       <a href="index.php?page=input-nilai-sk-manajerial&&id=<?= $cro['id_pegawai']; ?>&&div=<?= $cro['divisi']; ?>&&jab=<?= $cro['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SK</a>
                     </td>
                     <td></td>
@@ -116,7 +116,7 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi");
                     <td><?= $cit['name_div']; ?></td>
                     <td><?= $cit['name_jab']; ?></td>
                     <td width="30%">
-                      <a href="index.php?page=input-nilai&&id=<?= $cit['id_pegawai']; ?>&&div=<?= $cit['divisi']; ?>&&jab=<?= $cit['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SKO</a>
+                      <a href="index.php?page=input-nilai-atasan&&id=<?= $cit['id_user']; ?>&&idpeg=<?= $cit['id_pegawai']; ?>&&div=<?= $cit['divisi']; ?>&&jab=<?= $cit['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SKO</a>
                       <a href="index.php?page=input-nilai-sk-manajerial&&id=<?= $cit['id_pegawai']; ?>&&div=<?= $cit['divisi']; ?>&&jab=<?= $cit['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SK</a>
                     </td>
                     <td></td>
@@ -169,7 +169,7 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi");
                     <td><?= $rtg['name_div']; ?></td>
                     <td><?= $rtg['name_jab']; ?></td>
                     <td width="30%">
-                      <a href="index.php?page=input-nilai&&id=<?= $rtg['id_pegawai']; ?>&&div=<?= $rtg['divisi']; ?>&&jab=<?= $rtg['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SKO</a>
+                      <a href="index.php?page=input-nilai-atasan&&id=<?= $rtg['id_user']; ?>&&idpeg=<?= $rtg['id_pegawai']; ?>&&div=<?= $rtg['divisi']; ?>&&jab=<?= $rtg['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SKO</a>
                       <a href="index.php?page=input-nilai-sk-manajerial&&id=<?= $rtg['id_pegawai']; ?>&&div=<?= $rtg['divisi']; ?>&&jab=<?= $rtg['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SK</a>
                     </td>
                     <td></td>

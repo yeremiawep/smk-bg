@@ -73,8 +73,14 @@ include '../config/database.php'
           include "../views/data_kompetensi.php";
         } else if ($_GET['page'] == 'edit-kriteria') {
           include "../views/edit/edit_kriteria.php";
-        } else if ($_GET['page'] == 'input-nilai') {
-          include "../views/hitung/hitung_sko_rtg.php";
+        } else if ($_GET['page'] == 'input-nilai-rtg') {
+          include "../views/form/hitung_sko_rtg.php";
+        } else if ($_GET['page'] == 'input-nilai-cro') {
+          include "../views/form/hitung_sko_cro.php";
+        } else if ($_GET['page'] == 'input-nilai-cit') {
+          include "../views/form/hitung_sko_cit.php";
+        } else if ($_GET['page'] == 'input-nilai-atasan') {
+          include "../views/form/hitung_sko_atasan.php";
         } else if ($_GET['page'] == 'input-nilai-sk') {
           include "../views/hitung/hitung_sk_rtg.php";
         } else if ($_GET['page'] == 'input-nilai-sk-manajerial') {
