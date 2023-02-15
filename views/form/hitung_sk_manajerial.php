@@ -58,3 +58,6 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk='1'"
     </div>
   </div>
 </section>
+
+
+<?php include '../template/footer.php' ?>

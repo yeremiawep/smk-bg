@@ -125,9 +125,9 @@ $hukuman = mysqli_query($conn, "SELECT * FROM hukuman");
                     <label for="nilai" class="col-sm-2 col-form-label">Jenis Pelanggaran</label>
                     <div class="col-sm-10">
                       <select name="nilaihk" id="nilaihk" class="rounded col-6 text-center" required>
-                      <?php foreach ($hukuman as $hk) : ?>
-                        <option value="<?= $hk['bobot']; ?>"><?= $hk['bobot']; ?> | <?= $hk['jenis_pelanggaran']; ?></option>
-                      <?php endforeach; ?>
+                        <?php foreach ($hukuman as $hk) : ?>
+                          <option value="<?= $hk['bobot']; ?>"><?= $hk['bobot']; ?> | <?= $hk['jenis_pelanggaran']; ?></option>
+                        <?php endforeach; ?>
                       </select>
                     </div>
                   </div>
@@ -142,3 +142,6 @@ $hukuman = mysqli_query($conn, "SELECT * FROM hukuman");
     </div>
   </div>
 </section>
+
+
+<?php include '../template/footer.php' ?>

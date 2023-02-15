@@ -68,3 +68,6 @@ $kriteria = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN jabatans 
     </div>
   </div>
 </section>
+
+
+<?php include '../template/footer.php' ?>

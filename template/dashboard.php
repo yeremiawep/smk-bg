@@ -1,4 +1,4 @@
-<?php 
+<?php
 include '../config/database.php';
 
 $query = mysqli_query($conn, "SELECT count(id_user) AS jml FROM users");
@@ -68,3 +68,6 @@ $view3 = mysqli_fetch_array($query3);
 </div>
 </div>
 </section>
+
+
+<?php include '../template/footer.php' ?>

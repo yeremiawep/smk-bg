@@ -1,4 +1,4 @@
-<?php 
+<?php
 include '../config/database.php';
 
 $sk_manajerial = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk=1");
@@ -33,9 +33,9 @@ $sk_pcro = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk
               </thead>
               <tbody>
                 <?php foreach ($sk_manajerial as $sm) : ?>
-                <tr>
-                  <td><?= $sm['kriteria']; ?></td>
-                </tr>
+                  <tr>
+                    <td><?= $sm['kriteria']; ?></td>
+                  </tr>
                 <?php endforeach; ?>
               </tbody>
             </table>
@@ -56,9 +56,9 @@ $sk_pcro = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk
               </thead>
               <tbody>
                 <?php foreach ($sk_pcro as $sm) : ?>
-                <tr>
-                  <td><?= $sm['kriteria']; ?></td>
-                </tr>
+                  <tr>
+                    <td><?= $sm['kriteria']; ?></td>
+                  </tr>
                 <?php endforeach; ?>
               </tbody>
             </table>
@@ -68,3 +68,5 @@ $sk_pcro = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk
     </div>
   </div>
 </section>
+
+<?php include '../template/footer.php' ?>

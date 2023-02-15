@@ -367,6 +367,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
   </div>
   <!-- End Modal Add -->
 
+
+  <?php include '../template/footer.php' ?>
   <script>
     function hapusData() {
       alert('Yakin Hapus ?');

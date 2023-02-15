@@ -1,7 +1,7 @@
 <?php
 include '../../config/database.php';
 
-$id = $_POST['id'];
+$id = $_POST['id_user'];
 $name = $_POST['name'];
 $id_pegawai = $_POST['id_pegawai'];
 $id_personal = $_POST['id_personal'];

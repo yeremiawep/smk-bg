@@ -33,3 +33,6 @@ $divisi = mysqli_query($conn, "SELECT * FROM divisions WHERE id='$id'");
     </div>
   </div>
 </section>
+
+
+<?php include '../template/footer.php' ?>

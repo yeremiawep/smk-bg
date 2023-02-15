@@ -104,7 +104,7 @@ $jabatan = mysqli_query($conn, "SELECT * FROM jabatans");
 </div>
 <!-- ./wrapper -->
 <!-- DataTables  & Plugins -->
-<!-- <?php include '../template/footer.php' ?> -->
+<?php include '../template/footer.php' ?>
 <script>
   $(function() {
     $("#example1")

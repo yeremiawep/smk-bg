@@ -33,3 +33,6 @@ $query = mysqli_query($conn, "SELECT * FROM jabatans WHERE id='$id'");
     </div>
   </div>
 </section>
+
+
+<?php include '../template/footer.php' ?>
