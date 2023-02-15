@@ -33,7 +33,7 @@
       <div class="card-body">
         <form action="config/auth.php" method="post">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" id="nip" name="nip" placeholder="ID Pegawai">
+            <input type="text" class="form-control" id="nip" name="nip" placeholder="ID Pegawai" required>
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-user"></span>
@@ -41,7 +41,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>

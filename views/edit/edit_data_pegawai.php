@@ -16,27 +16,27 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
         <form method="POST" action="../views/update/update_data_pegawai.php">
           <?php foreach ($query as $q) : ?>
             <div class="row">
-              <input type="text" name="id_user" id="id_user" value="<?= $q['id_user']; ?>" disabled>
+              <input type="text" name="id_user" id="id_user" value="<?= $q['id_user']; ?>" hidden>
             </div>
             <div class="row">
               <div class="col-sm-6">
                 <div class="form-group">
                   <label>ID Pegawai</label>
-                  <input type="text" class="form-control" name="id_pegawai" id="id_pegawai" value="<?= $q['id_pegawai']; ?>" disabled>
+                  <input type="text" class="form-control" name="id_pegawai" id="id_pegawai" value="<?= $q['id_pegawai']; ?>" readonly>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <label>ID Personal</label>
-                  <input type="text" class="form-control" name="id_personal" id="id_personal" value="<?= $q['id_personal']; ?>" disabled>
+                  <input type="text" class="form-control" name="id_personal" id="id_personal" value="<?= $q['id_personal']; ?>" readonly>
                 </div>
               </div>
             </div>
-            <div class=" row">
+            <div class="row">
               <div class="col-sm-6">
                 <div class="form-group">
-                  <label>Nama</label>
-                  <input type="text" class="form-control" name="name" value="<?= $q['name']; ?>">
+                  <Label>No. KTP</Label>
+                  <input type="text" class="form-control" name="no_ktp" id="no_ktp" value="<?= $q['no_ktp']; ?>">
                 </div>
               </div>
               <div class=" col-sm-6">
@@ -48,6 +48,20 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
                     <option value="2">CIT</option>
                     <option value="3">RTG</option>
                   </select>
+                </div>
+              </div>
+            </div>
+            <div class=" row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Nama</label>
+                  <input type="text" class="form-control" name="name" value="<?= $q['name']; ?>">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="">Tgl. Lahir</label>
+                  <input type="date" name="tgl_lahir" id="tgl_lahir" class="form-control" value="<?= $q['tgl_lahir']; ?>">
                 </div>
               </div>
             </div>
@@ -73,12 +87,24 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
                   </select>
                 </div>
               </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>No. BPJS Kesehatan</label>
+                  <input type="text" class="form-control" name="no_bpjs_kesehatan" value="<?= $q['no_bpjs_kesehatan']; ?>">
+                </div>
+              </div>
             </div>
             <div class=" row">
               <div class="col-sm-6">
                 <div class="form-group">
                   <label>Domisili</label>
                   <input type="text" class="form-control" name="domisili" value="<?= $q['domisili']; ?>">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Usia</label>
+                  <input type="text" class="form-control" name="usia" value="<?= $q['usia']; ?>">
                 </div>
               </div>
             </div>
@@ -89,8 +115,6 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
                   <input type="text" class="form-control" name="agama" value="<?= $q['agama']; ?>">
                 </div>
               </div>
-            </div>
-            <div class=" row">
               <div class="col-sm-6">
                 <div class="form-group">
                   <label>Pendidikan</label>
@@ -109,28 +133,18 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
                   </select>
                 </div>
               </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Ijazah</label>
+                  <input type="text" class="form-control" name="ijazah" value="<?= $q['ijazah']; ?>">
+                </div>
+              </div>
             </div>
             <div class=" row">
               <div class="col-sm-6">
                 <div class="form-group">
                   <label>No. BPJS Ketenagakerjaan</label>
                   <input type="text" class="form-control" name="no_bpjs_ketenagakerjaan" value="<?= $q['no_bpjs_ketenagakerjaan']; ?>">
-                </div>
-              </div>
-            </div>
-            <div class=" row">
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label>No. BPJS Kesehatan</label>
-                  <input type="text" class="form-control" name="no_bpjs_kesehatan" value="<?= $q['no_bpjs_kesehatan']; ?>">
-                </div>
-              </div>
-            </div>
-            <div class=" row">
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label>Ijazah</label>
-                  <input type="text" class="form-control" name="ijazah" value="<?= $q['ijazah']; ?>">
                 </div>
               </div>
             </div>

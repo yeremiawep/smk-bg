@@ -22,7 +22,8 @@ $divisi = mysqli_query($conn, "SELECT * FROM divisions");
 <section class="content">
   <div class="flash-data" data-flashdata="<?php if (isset($_SESSION['message'])) {
                                             echo $_SESSION['message'];
-                                          } ?>"></div>
+                                          }
+                                          unset($_SESSION['message']); ?>"></div>
   <div class="container-fluid">
     <div class="row">
       <div class="col-12">
