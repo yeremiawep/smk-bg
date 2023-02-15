@@ -9,7 +9,7 @@ $divisi = mysqli_query($conn, "SELECT * FROM divisions");
 <section class="content-header">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-12">
         <h1>Data Divisi</h1>
         <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-xl"><i class="nav-icon fas fa-plus"></i> Add Division</button>
       </div>
@@ -20,6 +20,9 @@ $divisi = mysqli_query($conn, "SELECT * FROM divisions");
 
 <!-- Main content -->
 <section class="content">
+  <div class="flash-data" data-flashdata="<?php if (isset($_SESSION['message'])) {
+                                            echo $_SESSION['message'];
+                                          } ?>"></div>
   <div class="container-fluid">
     <div class="row">
       <div class="col-12">
@@ -42,7 +45,7 @@ $divisi = mysqli_query($conn, "SELECT * FROM divisions");
                     <td><?= $d['name_div']; ?></td>
                     <td>
                       <a href="index.php?page=edit-data-divisi&&id=<?= $d['id']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
-                      <a onClick="hapusData()" href="../views/delete/delete_data_divisi.php?id=<?= $d['id']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
+                      <a onclick="hapusData()" href="../views/delete/delete_data_divisi.php?id=<?= $d['id']; ?>" class="btn btn-sm btn-danger" id="tombol"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -129,9 +132,28 @@ $divisi = mysqli_query($conn, "SELECT * FROM divisions");
 </script>
 <script>
   function hapusData() {
-    alert('Yakin Hapus ?');
+    alert('Yakin Hapus Data ?')
   }
 </script>
+<!-- SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  const notifikasi = $('.flash-data').data(flashdata);
+  if (notifikasi) {
+    Swal.fire(
+      'Sucess',
+      'Add Data',
+      'success'
+    )
+  } else {
+    Swal.fire(
+      'Failed',
+      'Add Data',
+      'error'
+    )
+  }
+</script>
+
 </body>
 
 </html>

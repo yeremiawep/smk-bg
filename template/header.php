@@ -9,6 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../app/plugins/fontawesome-free/css/all.min.css" />
+  <!-- Sweet Alert -->
+  <link rel="stylesheet" href="../app/plugins/sweetalert2/sweetalert2.css">
+  <link rel="stylesheet" href="../app/plugins/sweetalert2/sweetalert2.min.css">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="../app/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" />
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
   <!-- Tempusdominus Bootstrap 4 -->

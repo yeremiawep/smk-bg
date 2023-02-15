@@ -344,6 +344,7 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                 <select class="custom-select" name="aspek" id="aspek">
                   <option value=" Aspek Proses Bisnis Internal">Proses Bisnis Internal</option>
                   <option value="Aspek Pekerja">Pekerja</option>
+                  <option value="Aspek Pelanggan">Pelanggan</option>
                 </select>
               </div>
               <div class="row">
