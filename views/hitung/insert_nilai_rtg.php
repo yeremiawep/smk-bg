@@ -28,17 +28,10 @@ $countsk = count($nilaisk);
 // }
 
 // Insert Nilai Akhir
-
 $nilaihk = $_POST['nilaihk'];
-
-// Hitung Nilai SKO-Non Manajerial, bobot = 60% ;
-$total_nilai_sko = array_sum($nilaisko)/$count * 60 / 100; 
-
-// Hitung Nilai SK-Non Manajerial, bobot = 40% ;
-$total_nilai_sk = array_sum($nilaisk)/$countsk * 40 / 100;
-
-// Total Nilai Akhir
-$nilai_akhir = $total_nilai_sko + $total_nilai_sk - $nilaihk;
+$total_nilai_sko = array_sum($nilaisko)/$count * 60 / 100; // hitung nilai sko non-manajerial, bobot = 60%
+$total_nilai_sk = array_sum($nilaisk)/$countsk * 40 / 100; // hitung nilai sk non-manajerial, bobot = 40%
+$nilai_akhir = $total_nilai_sko + $total_nilai_sk - $nilaihk; // total nilai akhir
 
 $insertna = "INSERT INTO nilai_akhir VALUES ('','$id[0]','$id_pegawai[0]','$total_nilai_sko','$total_nilai_sk','$nilaihk','$nilai_akhir')";
 $sql = mysqli_query($conn, $insertna);

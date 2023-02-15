@@ -8,7 +8,7 @@ $password = $_POST['password'];
 $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE id_pegawai='$nip' AND password='$password'");
 
 if (mysqli_num_rows($query) == 1) {
-  header('Location:../app');
+  header('Location:../app/index.php?page=dashboard');
   $user = mysqli_fetch_array($query);
   $_SESSION['user'] = $user['name'];
   $_SESSION['jabatan'] = $user['jabatan'];
