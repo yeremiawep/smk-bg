@@ -46,19 +46,19 @@ $nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhi
               <tbody>
                 <?php $no = 1; ?>
                 <?php foreach ($nilai as $nilai) : ?>
-                <tr>
-                  <td><?= $no++; ?></td>
-                  <td><?= $nilai['id_pegawai']; ?></td>
-                  <td><?= $nilai['name']; ?></td>
-                  <td><?= $nilai['divisi']; ?></td>
-                  <td><?= $nilai['jabatan']; ?></td>
-                  <td><?= $nilai['nilai_sko']; ?></td>
-                  <td><?= $nilai['nilai_sk']; ?></td>
-                  <td><?= $nilai['hukuman']; ?></td>
-                  <td><?= $nilai['nilai_akhir']; ?></td>
-                  <td>
-                  </td>
-                </tr>
+                  <tr>
+                    <td><?= $no++; ?></td>
+                    <td><?= $nilai['id_pegawai']; ?></td>
+                    <td><?= $nilai['name']; ?></td>
+                    <td><?= $nilai['divisi']; ?></td>
+                    <td><?= $nilai['jabatan']; ?></td>
+                    <td><?= $nilai['nilai_sko']; ?></td>
+                    <td><?= $nilai['nilai_sk']; ?></td>
+                    <td><?= $nilai['hukuman']; ?></td>
+                    <td><?= $nilai['nilai_akhir']; ?></td>
+                    <td>
+                    </td>
+                  </tr>
                 <?php endforeach; ?>
               </tbody>
             </table>
