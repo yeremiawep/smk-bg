@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include '../../config/database.php';
 
@@ -9,10 +9,10 @@ $id_isi = $_POST['id_isi'];
 $nilaisko = $_POST['nilai'];
 $count = count($nilaisko);
 
-// for($i=0; $i <= $count; $i++) {
-//   $insertsko = "INSERT INTO hitung_nilai VALUES ('','$id[$i]','$id_pegawai[$i]','$id_isi[$i]','$nilaisko[$i]')";
-//   $sql = mysqli_query($conn, $insertsko);
-// }
+for ($i = 0; $i < $count; $i++) {
+  $insertsko = "INSERT INTO hitung_nilai VALUES ('','$id[$i]','$id_pegawai[$i]','$id_isi[$i]','$nilaisko[$i]')";
+  $sql = mysqli_query($conn, $insertsko);
+}
 
 
 // Insert Nilai SK
@@ -22,15 +22,15 @@ $id_isi_sk = $_POST['id_isi_sk'];
 $nilaisk = $_POST['nilaisk'];
 $countsk = count($nilaisk);
 
-// for($j=0; $j <= $countsk; $j++) {
-//   $insertsk = "INSERT INTO hitung_nilai_sk VALUES('','$id[$j]','$id_pegawai[$j]','$id_isi_sk[$j]','$nilaisk[$j]')";
-//   $sql = mysqli_query($conn, $insertsk);
-// }
+for ($j = 0; $j < $countsk; $j++) {
+  $insertsk = "INSERT INTO hitung_nilai_sk VALUES('','$id[$j]','$id_pegawai[$j]','$id_isi_sk[$j]','$nilaisk[$j]')";
+  $sql = mysqli_query($conn, $insertsk);
+}
 
 // Insert Nilai Akhir
 $nilaihk = $_POST['nilaihk']; //nilai pelanggaran disiplin
-$total_nilai_sko = array_sum($nilaisko)/$count * 70 / 100; // hitung Nilai SKO non-manajerial, bobot = 70%
-$total_nilai_sk = array_sum($nilaisk)/$countsk * 30 / 100; // hitung Nilai SK non-manajerial, bobot = 30 %
+$total_nilai_sko = array_sum($nilaisko) / $count * 70 / 100; // hitung Nilai SKO non-manajerial, bobot = 70%
+$total_nilai_sk = array_sum($nilaisk) / $countsk * 30 / 100; // hitung Nilai SK non-manajerial, bobot = 30 %
 $nilai_akhir = $total_nilai_sko + $total_nilai_sk - $nilaihk; // total Nilai Akhir
 
 $insertna = "INSERT INTO nilai_akhir VALUES ('','$id[0]','$id_pegawai[0]','$total_nilai_sko','$total_nilai_sk','$nilaihk','$nilai_akhir')";
@@ -58,7 +58,3 @@ header('Location : ../../../app/index.php?page=data-penilaian-atasan');
 // var_dump($total_nilai_sk);
 // var_dump($nilaihk);
 // var_dump($nilai_akhir);
-
-
-
-?>
