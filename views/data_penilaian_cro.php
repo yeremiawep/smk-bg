@@ -55,7 +55,6 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk='2'"
                     <td><?= $user['name_jab']; ?></td>
                     <td width="20%">
                       <a href="index.php?page=input-nilai-cro&&id=<?= $user['id_user']; ?>&&idpeg=<?= $user['id_pegawai']; ?>&&div=<?= $user['divisi']; ?>&&jab=<?= $user['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai</a>
-                      <!-- <a href="index.php?page=input-nilai-sk&&id=<?= $user['id_pegawai']; ?>&&div=<?= $user['divisi']; ?>&&jab=<?= $user['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SK</a> -->
                     </td>
                   </tr>
                 <?php endforeach; ?>
