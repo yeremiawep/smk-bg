@@ -43,57 +43,100 @@ include '../config/database.php'
       <!-- Main content -->
       <?php
       if (isset($_GET['page'])) {
-        if ($_GET['page'] == 'dashboard') {
-          include "../template/dashboard.php";
-        } else if ($_GET['page'] == 'data-pegawai') {
-          include "../views/data_pegawai.php";
-        } else if ($_GET['page'] == 'data-penilaian-cro') {
-          include "../views/data_penilaian_cro.php";
-        } else if ($_GET['page'] == 'data-penilaian-cit') {
-          include "../views/data_penilaian_cit.php";
-        } else if ($_GET['page'] == 'data-penilaian-rtg') {
-          include "../views/data_penilaian_rtg.php";
-        } else if ($_GET['page'] == 'data-penilaian-atasan') {
-          include "../views/data_penilaian_atasan.php";
-        } else if ($_GET['page'] == 'edit-data-pegawai') {
-          include "../views/edit/edit_data_pegawai.php";
-        } else if ($_GET['page'] == 'data-jabatan') {
-          include "../views/data_jabatan.php";
-        } else if ($_GET['page'] == 'edit-data-jabatan') {
-          include "../views/edit/edit_data_jabatan.php";
-        } else if ($_GET['page'] == 'data-divisi') {
-          include "../views/data_divisi.php";
-        } else if ($_GET['page'] == 'edit-data-divisi') {
-          include "../views/edit/edit_data_divisi.php";
-        } else if ($_GET['page'] == 'detail-pegawai') {
-          include "../views/detail_pegawai.php";
-        } else if ($_GET['page'] == 'data-kinerja-objektif') {
-          include "../views/data_kriteria.php";
-        } else if ($_GET['page'] == 'data-kompetensi') {
-          include "../views/data_kompetensi.php";
-        } else if ($_GET['page'] == 'edit-kriteria') {
-          include "../views/edit/edit_kriteria.php";
-        } else if ($_GET['page'] == 'input-nilai-rtg') {
-          include "../views/form/hitung_sko_rtg.php";
-        } else if ($_GET['page'] == 'input-nilai-cro') {
-          include "../views/form/hitung_sko_cro.php";
-        } else if ($_GET['page'] == 'input-nilai-cit') {
-          include "../views/form/hitung_sko_cit.php";
-        } else if ($_GET['page'] == 'input-nilai-atasan') {
-          include "../views/form/hitung_sko_atasan.php";
-        } else if ($_GET['page'] == 'input-nilai-sk') {
-          include "../views/hitung/hitung_sk_rtg.php";
-        } else if ($_GET['page'] == 'input-nilai-sk-manajerial') {
-          include "../views/hitung/hitung_sk_manajerial.php";
-        } else if ($_GET['page'] == 'isi-nilai') {
-          include "../views/hitung/input/input_nilai.php";
-        } else if ($_GET['page'] == 'rekap-nilai') {
-          include "../views/rekap_nilai.php";
-        } else {
-          include "../template/dashboard.php";
+        $hal = $_GET['page'];
+
+        switch ($hal) {
+
+            // Halaman Dashboard
+          case 'dashboard':
+            include '../template/dashboard.php';
+            break;
+
+            // Halaman ASS. SPV. RTG
+            // dataPegawai
+          case 'data-pegawai':
+            include '../views/data_pegawai.php';
+            break;
+          case 'edit-data-pegawai':
+            include '../views/edit/edit_data_pegawai.php';
+            break;
+          case 'detail-pegawai':
+            include '../views/detail_pegawai.php';
+            break;
+            // dataJabatan
+          case 'data-jabatan':
+            include '../views/data_jabatan.php';
+            break;
+          case 'edit-data-jabatan':
+            include '../views/edit/edit_data_jabatan.php';
+            break;
+            // dataDivisi
+          case 'data-divisi':
+            include '../views/data_divisi.php';
+            break;
+          case 'edit-data-divisi':
+            include '../views/edit/edit_data_divisi.php';
+            break;
+            // sasaranKinerjaObjektif
+          case 'data-kinerja-objektif':
+            include '../views/data_kriteria.php';
+            break;
+          case 'edit-kriteria':
+            include '../views/edit/edit_kriteria.php';
+            break;
+            // sasaranKompetensi
+          case 'data-kompetensi':
+            include '../views/data_kompetensi.php';
+            break;
+            // penilaian
+          case 'data-penilaian-rtg':
+            include '../views/data_penilaian_rtg.php';
+            break;
+          case 'input-nilai-rtg':
+            include '../views/form/hitung_sko_rtg.php';
+            break;
+          case 'rekap-nilai':
+            include '../views/rekap_nilai.php';
+            break;
+
+            // Halaman ASS. SPV. CRO
+          case 'data-penilaian-cro':
+            include '../views/data_penilaian_cro.php';
+            break;
+          case 'input-nilai-cro':
+            include '../views/form/hitung_sko_cro.php';
+            break;
+
+            // Halaman ASS. SPV. CIT
+          case 'data-penilaian-cit':
+            include '../views/data_penilaian_cit.php';
+            break;
+          case 'input-nilai-cit':
+            include '../views/form/hitung_sko_cit.php';
+            break;
+
+            // Halaman ATASAN (Pemimpin Cabang)
+          case 'data-penilaian-atasan':
+            include '../views/data_penilaian_atasan.php';
+            break;
+          case 'input-nilai-atasan':
+            include '../views/form/hitung_sko_atasan.php';
+            break;
+
+            // Halaman PEGAWAI
+          case 'rekap-nilai-pegawai':
+            include '../views/pegawai/rekap_nilai_pegawai.php';
+            break;
+
+          default:
+            include "../template/dashboard.php";
+            break;
         }
+      } else {
+        include "../template/dashboard.php";
       }
       ?>
+
       <!-- /.content -->
 
     </div>

@@ -10,9 +10,12 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
 if (mysqli_num_rows($query) == 1) {
   header('Location:../app/index.php?page=dashboard');
   $user = mysqli_fetch_array($query);
+  $_SESSION['id_user'] = $user['id_user'];
   $_SESSION['user'] = $user['name'];
   $_SESSION['jabatan'] = $user['jabatan'];
+  $_SESSION['divisi'] = $user['divisi'];
   $_SESSION['name_jab'] = $user['name_jab'];
+  $_SESSION['name_div'] = $user['name_div'];
 } else if ($nip == '' || $password == '') {
   header('Location:../index.php?error=2');
 } else {

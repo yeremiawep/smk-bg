@@ -66,7 +66,8 @@ $hukuman = mysqli_query($conn, "SELECT * FROM hukuman");
                     <div class="form-group row">
                       <label for="nilai" class="col-sm-2 col-form-label">Nilai</label>
                       <div class="col-sm-10">
-                        <select name="nilai[]" id="nilai[]" class="rounded col-1 text-center" required>
+                        <select name="nilai[]" id="nilai[]" class="form-select rounded col-2 text-center" required>
+                          <option selected disabled value="">--</option>
                           <option value="1">1</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -99,7 +100,8 @@ $hukuman = mysqli_query($conn, "SELECT * FROM hukuman");
                     <div class="form-group row">
                       <label for="nilaisk" class="col-sm-2 col-form-label">Nilai</label>
                       <div class="col-sm-10">
-                        <select name="nilaisk[]" id="nilaisk[]" class="rounded col-1 text-center" required>
+                        <select name="nilaisk[]" id="nilaisk[]" class="form-select rounded col-2 text-center" required>
+                          <option selected disabled value="">--</option>
                           <option value="1">1</option>
                           <option value="2">2</option>
                           <option value="3">3</option>

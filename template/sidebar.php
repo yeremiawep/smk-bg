@@ -5,7 +5,7 @@
       <!-- <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image" /> -->
     </div>
     <div class="row justify-content-center text-white">
-      <?= $_SESSION['user'] . '<hr>' . $_SESSION['name_jab']; ?>
+      <?= $_SESSION['user'] . '<hr>' . $_SESSION['name_div'] . '|' . $_SESSION['name_jab']; ?>
     </div>
   </div>
 
@@ -32,6 +32,8 @@
     include 'menu/menu_spv_cro.php';
   } else if ($_SESSION['jabatan'] == '4') {
     include 'menu/menu_spv_cit.php';
+  } else {
+    include 'menu/menu_pegawai.php';
   }
   ?>
   <!-- /.sidebar-menu -->
