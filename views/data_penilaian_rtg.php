@@ -50,7 +50,6 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
                     <td><?= $user['name_jab']; ?></td>
                     <td width="20%">
                       <a href="index.php?page=input-nilai-rtg&&id=<?= $user['id_user']; ?>&&idpeg=<?= $user['id_pegawai']; ?>&&div=<?= $user['divisi']; ?>&&jab=<?= $user['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai</a>
-                      <!-- <a href="index.php?page=input-nilai-sk&&id=<?= $user['id_pegawai']; ?>&&div=<?= $user['divisi']; ?>&&jab=<?= $user['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SK</a> -->
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -192,7 +191,7 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
 </div>
 <!-- ./wrapper -->
 <!-- DataTables  & Plugins -->
-<!-- <?php include '../template/footer.php' ?> -->
+<?php include '../template/footer.php' ?>
 <script>
   $(function() {
     $("#example1")

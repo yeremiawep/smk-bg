@@ -98,6 +98,9 @@ include '../config/database.php'
           case 'rekap-nilai':
             include '../views/rekap_nilai.php';
             break;
+          case 'detail-nilai-pegawai':
+            include '../views/detail_nilai_pegawai.php';
+            break;
 
             // Halaman ASS. SPV. CRO
           case 'data-penilaian-cro':
@@ -126,6 +129,10 @@ include '../config/database.php'
             // Halaman PEGAWAI
           case 'rekap-nilai-pegawai':
             include '../views/pegawai/rekap_nilai_pegawai.php';
+            break;
+
+          case 'detail-penilaian':
+            include '../views/pegawai/detail_penilaian.php';
             break;
 
           default:

@@ -41,6 +41,7 @@ $nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhi
                   <th width="10%">Pelanggaran Disiplin</th>
                   <th width="10%">Nilai Akhir</th>
                   <th width="10%">Predikat</th>
+                  <th width="10%">Options</th>
                 </tr>
               </thead>
               <tbody>
@@ -56,7 +57,9 @@ $nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhi
                     <td><?= $nilai['nilai_sk']; ?></td>
                     <td><?= $nilai['hukuman']; ?></td>
                     <td><?= $nilai['nilai_akhir']; ?></td>
+                    <td><?= $nilai['predikat']; ?></td>
                     <td>
+                      <a href="index.php?detail-nilai-pegawai?id=<?= $nilai['id_user']; ?>" class="btn btn-sm btn-primary"><i class="nav-icon fas fa-plus"></i> Catatan</a>
                     </td>
                   </tr>
                 <?php endforeach; ?>

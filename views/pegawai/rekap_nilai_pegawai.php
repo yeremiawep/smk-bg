@@ -37,8 +37,8 @@ $nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhi
                   <th width="2%">No</th>
                   <th width="10%">ID Pegawai</th>
                   <th width="10%">Nama</th>
-                  <th width="10%">Divisi</th>
-                  <th width="10%">Jabatan</th>
+                  <!-- <th width="10%">Divisi</th> -->
+                  <!-- <th width="10%">Jabatan</th> -->
                   <th width="10%">Nilai SKO</th>
                   <th width="10%">Nilai SK</th>
                   <th width="10%">Pelanggaran Disiplin</th>
@@ -53,13 +53,13 @@ $nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhi
                     <td><?= $no++; ?></td>
                     <td><?= $nilai['id_pegawai']; ?></td>
                     <td><?= $nilai['name']; ?></td>
-                    <td><?= $_SESSION['name_div']; ?></td>
-                    <td><?= $_SESSION['name_jab']; ?></td>
+                    <!-- <td><?= $_SESSION['name_div']; ?></td> -->
+                    <!-- <td><?= $_SESSION['name_jab']; ?></td> -->
                     <td><?= $nilai['nilai_sko']; ?></td>
                     <td><?= $nilai['nilai_sk']; ?></td>
                     <td><?= $nilai['hukuman']; ?></td>
                     <td><?= $nilai['nilai_akhir']; ?></td>
-                    <td></td>
+                    <td><?= $nilai['predikat']; ?></td>
                   </tr>
                 <?php endforeach; ?>
               </tbody>

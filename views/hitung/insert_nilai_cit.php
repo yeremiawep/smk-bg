@@ -1,6 +1,7 @@
 <?php
 
 include '../../config/database.php';
+include '../../config/function.php';
 
 // Insert Nilai SKO
 $id = $_POST['id_user'];
@@ -32,8 +33,9 @@ $nilaihk = $_POST['nilaihk']; // nilai pelanggaran disiplin
 $total_nilai_sko = array_sum($nilaisko) / $count * 60 / 100; // hitung nilai SKO non-manajerial, bobot = 60%
 $total_nilai_sk = array_sum($nilaisk) / $countsk * 40 / 100; // hitung nilai SK non-manajerial, bobot = 40 %
 $nilai_akhir = $total_nilai_sko + $total_nilai_sk - $nilaihk; // total nilai akhir
+$predikat = predikat($nilai_akhir);
 
-$insertna = "INSERT INTO nilai_akhir VALUES ('','$id[0]','$id_pegawai[0]','$total_nilai_sko','$total_nilai_sk','$nilaihk','$nilai_akhir')";
+$insertna = "INSERT INTO nilai_akhir VALUES ('','$id[0]','$id_pegawai[0]','$total_nilai_sko','$total_nilai_sk','$nilaihk','$nilai_akhir','$predikat')";
 $sql = mysqli_query($conn, $insertna);
 
 
