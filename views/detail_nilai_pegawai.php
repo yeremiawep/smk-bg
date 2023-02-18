@@ -6,7 +6,7 @@ $idna = $_GET['idna'];
 $id = $_GET['id'];
 $idpeg = $_GET['idpeg'];
 
-$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user WHERE id_na='$idna'");
+$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user JOIN jabatans ON nilai_akhir.jabatan=jabatans.id JOIN divisions ON nilai_akhir.divisi=divisions.id WHERE id_na='$idna'");
 $nilaisko = mysqli_query($conn, "SELECT * FROM hitung_nilai JOIN kriteria_penilaian ON hitung_nilai.id_isi_sko=kriteria_penilaian.id_isi_sko WHERE id_user='$id'");
 $nilaisk = mysqli_query($conn, "SELECT * FROM hitung_nilai_sk JOIN kriteria_kompetensi ON hitung_nilai_sk.id_isi_sk=kriteria_kompetensi.id_isi_sk WHERE id_user='$id'");
 
@@ -25,6 +25,31 @@ $n = mysqli_fetch_array($nilai);
             </div>
           </div>
           <div class="card-body">
+            <div class="form-group row">
+              <label for="" class="col-sm-2 col-form-label">Nama</label>
+              <div class="col-sm-4">
+                <input type="text" id="" value="<?= $n['name']; ?>" disabled>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="" class="col-sm-2 col-form-label">ID Pegawai</label>
+              <div class="col-sm-4">
+                <input type="text" id="" value="<?= $n['id_pegawai']; ?>" disabled>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="" class="col-sm-2 col-form-label">Divisi</label>
+              <div class="col-sm-4">
+                <input type="text" id="" value="<?= $n['name_div']; ?>" disabled>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="" class="col-sm-2 col-form-label">Jabatan</label>
+              <div class="col-sm-4">
+                <input type="text" id="" value="<?= $n['name_jab']; ?>" disabled>
+              </div>
+            </div>
+            <hr class="border-primary">
             <h5>Sasaran Kinerja Objektif</h5>
             <table class="table table-bordered">
               <thead>
@@ -47,7 +72,7 @@ $n = mysqli_fetch_array($nilai);
             <div class="row mb-3 mt-2">
               <label for="nilaisko" class="col-sm-2 col-form-label">Total Nilai SKO</label>
               <div class="col-2">
-                <input type="text" class="form-control" id="nilaisko" name="nilaisko" value="<?= $n['total_nilai_sko']; ?>" disabled>
+                <input type="text" id="nilaisko" name="nilaisko" value="<?= $n['total_nilai_sko']; ?>" disabled>
               </div>
             </div>
           </div>
@@ -71,19 +96,19 @@ $n = mysqli_fetch_array($nilai);
             <div class="row mb-3 mt-2">
               <label for="nilaisk" class="col-sm-2 col-form-label">Total Nilai SK</label>
               <div class="col-2">
-                <input type="text" class="form-control" id="nilaisko" name="nilaisko" value="<?= $n['total_nilai_sk']; ?>" disabled>
+                <input type="text" id="nilaisko" name="nilaisko" value="<?= $n['total_nilai_sk']; ?>" disabled>
               </div>
             </div>
             <div class="row mb-3">
               <label for="nilaisk" class="col-sm-2 col-form-label">Nilai Akhir</label>
               <div class="col-2">
-                <input type="text" class="form-control" id="nilaisko" name="nilaisko" value="<?= $n['nilai_akhir']; ?>" disabled>
+                <input type="text" id="nilaisko" name="nilaisko" value="<?= $n['nilai_akhir']; ?>" disabled>
               </div>
             </div>
             <div class="row mb-3">
               <label for="nilaisk" class="col-sm-2 col-form-label">Predikat</label>
               <div class="col-2">
-                <input type="text" class="form-control" id="nilaisko" name="nilaisko" value="<?= $n['predikat']; ?>" disabled>
+                <input type="text" id="nilaisko" name="nilaisko" value="<?= $n['predikat']; ?>" disabled>
               </div>
             </div>
           </div>
@@ -91,7 +116,7 @@ $n = mysqli_fetch_array($nilai);
           <div class="card-body">
             <div class="form-group">
               <label for="exampleFormControlTextarea1">Catatan</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" value="<?= $n['catatan']; ?>"></textarea>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="Tidak ada catatan" disabled><?= $n['catatan']; ?></textarea>
             </div>
           </div>
         </div>

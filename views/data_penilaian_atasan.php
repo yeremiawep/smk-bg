@@ -6,11 +6,6 @@ $cit = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=j
 $rtg = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisi='3' AND jabatan='5' ");
 
 
-// $sko_cro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian");
-// $sko_cit = mysqli_query($conn, "SELECT * FROM kriteria_penilaian");
-// $sko_rtg = mysqli_query($conn, "SELECT * FROM kriteria_penilaian");
-// $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi");
-
 ?>
 
 <!-- Content Wrapper. Contains page content -->

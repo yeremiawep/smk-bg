@@ -77,11 +77,11 @@ $jabatan = mysqli_query($conn, "SELECT * FROM jabatans");
           <div class="form">
             <div class="row">
               <label for="name_jab">Jabatan</label>
-              <input type="text" class="form-control" name="name_jab" id="name_jab">
+              <input type="text" class="form-control" name="name_jab" id="name_jab" required>
             </div>
             <div class="row mt-2 d-inline-block">
               <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Save changes</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
             </div>
           </div>
         </form>

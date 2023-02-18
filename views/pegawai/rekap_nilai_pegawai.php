@@ -2,23 +2,18 @@
 
 include '../config/database.php';
 
+$user = $_SESSION['user'];
 $id = $_SESSION['id_user'];
+$jabatan = $_SESSION['jabatan'];
+$divisi = $_SESSION['divisi'];
 $jab = $_SESSION['name_jab'];
-$jab = $_SESSION['name_div'];
-$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user WHERE nilai_akhir.id_user='$id'");
-?>
+$div = $_SESSION['name_div'];
 
-<!-- Content Wrapper. Contains page content -->
-<!-- <section class="content-header">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-6">
-        <h1>Rekap Nilai Penilaian</h1>
-      </div>
-    </div>
-  </div>
-  /.container-fluid -->
-<!-- </section> -->
+$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user JOIN jabatans ON nilai_akhir.jabatan=jabatans.id JOIN divisions ON nilai_akhir.divisi=divisions.id");
+$rank = mysqli_query($conn, "SELECT * FROM nilai_akhir WHERE divisi='$divisi'");
+
+
+?>
 
 <!-- Main content -->
 <section class="content">
@@ -37,8 +32,8 @@ $nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhi
                   <th width="2%">No</th>
                   <th width="10%">ID Pegawai</th>
                   <th width="10%">Nama</th>
-                  <!-- <th width="10%">Divisi</th> -->
-                  <!-- <th width="10%">Jabatan</th> -->
+                  <th width="10%">Divisi</th>
+                  <th width="10%">Jabatan</th>
                   <th width="10%">Nilai SKO</th>
                   <th width="10%">Nilai SK</th>
                   <th width="10%">Pelanggaran Disiplin</th>
@@ -53,10 +48,10 @@ $nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhi
                     <td><?= $no++; ?></td>
                     <td><?= $nilai['id_pegawai']; ?></td>
                     <td><?= $nilai['name']; ?></td>
-                    <!-- <td><?= $_SESSION['name_div']; ?></td> -->
-                    <!-- <td><?= $_SESSION['name_jab']; ?></td> -->
-                    <td><?= $nilai['nilai_sko']; ?></td>
-                    <td><?= $nilai['nilai_sk']; ?></td>
+                    <td><?= $nilai['name_div']; ?></td>
+                    <td><?= $nilai['name_jab']; ?></td>
+                    <td><?= $nilai['total_nilai_sko']; ?></td>
+                    <td><?= $nilai['total_nilai_sk']; ?></td>
                     <td><?= $nilai['hukuman']; ?></td>
                     <td><?= $nilai['nilai_akhir']; ?></td>
                     <td><?= $nilai['predikat']; ?></td>

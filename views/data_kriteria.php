@@ -318,7 +318,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
             <div class="form">
               <div class="row">
                 <label for="divisi">Divisi</label>
-                <select class="custom-select" name="divisi" id="divisi">
+                <select class="custom-select" name="divisi" id="divisi" required>
+                  <option selected disabled value="">--</option>
                   <option value="1">CRO</option>
                   <option value="2">CIT</option>
                   <option value="3">Rutang</option>
@@ -326,7 +327,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
               </div>
               <div class="row">
                 <label for="jabatan">Jabatan</label>
-                <select class="custom-select" name="jabatan" id="jabatan">
+                <select class="custom-select" name="jabatan" id="jabatan" required>
+                  <option selected disabled value="">--</option>
                   <option value="3">Asisten Supervisor CRO</option>
                   <option value="4">Asisten Supervisor CIT</option>
                   <option value="5">Asisten Supervisor Rutang</option>
@@ -341,7 +343,7 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
               </div>
               <div class="row">
                 <label for="aspek">Aspek</label>
-                <select class="custom-select" name="aspek" id="aspek">
+                <select class="custom-select" name="aspek" id="aspek" required>
                   <option value=" Aspek Proses Bisnis Internal">Proses Bisnis Internal</option>
                   <option value="Aspek Pekerja">Pekerja</option>
                   <option value="Aspek Pelanggan">Pelanggan</option>
@@ -349,15 +351,15 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
               </div>
               <div class="row">
                 <label for="kriteria">Kriteria</label>
-                <input type="text" class="form-control" name="kriteria" id="kriteria">
+                <input type="text" class="form-control" name="kriteria" id="kriteria" required>
               </div>
               <div class="row">
                 <label for="target">Target</label>
-                <input type="text" class="form-control" name="target" id="target">
+                <input type="text" class="form-control" name="target" id="target" required>
               </div>
               <div class="row mt-2 d-inline-block">
                 <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
               </div>
             </div>
           </form>

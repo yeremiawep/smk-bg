@@ -34,13 +34,32 @@
         </p>
       </a>
     </li>
-    <li class="nav-item">
-      <a href="index.php?page=data-penilaian-rtg" class="nav-link">
+    <li class="nav-item menu-open">
+      <a href="#" class="nav-link">
         <i class="nav-icon fas fa-copy"></i>
         <p>
           Penilaian
+          <i class="right fas fa-angle left"></i>
         </p>
       </a>
+      <ul class="nav nav-treeview">
+        <li class="nav-item">
+        <a href="index.php?page=detail-penilaian" class="nav-link">
+          <i class="nav-icon fas fa-eye"></i>
+          <p>
+            Detail Nilai Saya
+          </p>
+        </a>
+      </li>
+        <li class="nav-item">
+          <a href="index.php?page=data-penilaian-rtg" class="nav-link">
+            <i class="nav-icon far fa-circle"></i>
+            <p>
+              Input Penilaian
+            </p>
+          </a>
+        </li>
+      </ul>
     </li>
     <li class="nav-item">
       <a href="index.php?page=data-kinerja-objektif" class="nav-link">
@@ -68,6 +87,7 @@
         </p>
       </a>
     </li>
+    <hr>
     <li class="nav-item">
       <a href="../config/logout.php" class="nav-link text-red">
         <i class="nav-icon fas fa-power-off"></i>

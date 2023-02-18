@@ -84,19 +84,19 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
           <div class="form">
             <div class="row">
               <label for="name">Nama</label>
-              <input type="text" class="form-control" name="name" id="name">
+              <input type="text" class="form-control" name="name" id="name" required>
             </div>
             <div class="row">
               <label for="id_pegawai">ID Pegawai</label>
-              <input type="text" class="form-control" name="id_pegawai" id="id_pegawai">
+              <input type="text" class="form-control" name="id_pegawai" id="id_pegawai" required>
             </div>
             <div class="row">
               <label for="id_personal">ID Personal</label>
-              <input type="text" class="form-control" name="id_personal" id="id_personal">
+              <input type="text" class="form-control" name="id_personal" id="id_personal" required>
             </div>
             <div class="row">
               <label for="divisi">Divisi</label>
-              <select class="custom-select" name="divisi" id="divisi">
+              <select class="custom-select" name="divisi" id="divisi" required>
                 <option value="1">CRO</option>
                 <option value="2">CIT</option>
                 <option value="3">RTG</option>
@@ -104,7 +104,8 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
             </div>
             <div class="row">
               <label for="jabatan">Jabatan</label>
-              <select class="custom-select" name="jabatan" id="jabatan">
+              <select class="custom-select" name="jabatan" id="jabatan" required>
+                <option value="13">Pelaksana CRO</option>
                 <option value="1">Pemimpin Cabang</option>
                 <option value="2">Wakil Pemimpin Cabang</option>
                 <option value="3">Asisten Supervisor CRO</option>
@@ -117,12 +118,11 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
                 <option value="10">Pelaksana CIT</option>
                 <option value="11">Pelaksana CPC</option>
                 <option value="12">Supervisor CRO</option>
-                <option value="13">Pelaksana CRO</option>
               </select>
             </div>
             <div class="row mt-2 inline-block">
               <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Save changes</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
             </div>
           </div>
         </form>

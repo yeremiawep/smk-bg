@@ -80,11 +80,11 @@ $divisi = mysqli_query($conn, "SELECT * FROM divisions");
           <div class="form">
             <div class="row">
               <label for="name_div">Divisi</label>
-              <input type="text" class="form-control" name="name_div" id="name_div">
+              <input type="text" class="form-control" name="name_div" id="name_div" required>
             </div>
             <div class="row mt-2 d-inline-block">
               <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Save changes</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
             </div>
           </div>
         </form>
@@ -93,8 +93,6 @@ $divisi = mysqli_query($conn, "SELECT * FROM divisions");
     </div>
     <!-- /.modal-dialog -->
   </div>
-
-
   <!-- END MODAL XL -->
 
 

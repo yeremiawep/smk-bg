@@ -32,14 +32,15 @@ for ($j = 0; $j < $countsk; $j++) {
 
 // Insert Nilai Akhir
 $nilaihk = $_POST['nilaihk'];
+$catatan = $_POST['catatan'];
 $total_nilai_sko = array_sum($nilaisko) / $count * 60 / 100; // hitung nilai sko non-manajerial, bobot = 60%
 $total_nilai_sk = array_sum($nilaisk) / $countsk * 40 / 100; // hitung nilai sk non-manajerial, bobot = 40%
 $nilai_akhir = $total_nilai_sko + $total_nilai_sk - $nilaihk; // total nilai akhir
 $predikat = predikat($nilai_akhir);
 
-$insertna = "INSERT INTO nilai_akhir VALUES ('','$id[0]','$id_pegawai[0]','$jab','$div','$total_nilai_sko','$total_nilai_sk','$nilaihk','$nilai_akhir','$predikat')";
-$sql = mysqli_query($conn, $insertna);
 
+$insertna = "INSERT INTO nilai_akhir VALUES ('','$id[0]','$id_pegawai[0]','$jab','$div','$total_nilai_sko','$total_nilai_sk','$nilaihk','$nilai_akhir','$predikat','$catatan')";
+$sql = mysqli_query($conn, $insertna);
 
 header('Location: ../../app/index.php?page=data-penilaian-rtg');
 
@@ -64,3 +65,4 @@ header('Location: ../../app/index.php?page=data-penilaian-rtg');
 // var_dump($nilaihk);
 // var_dump($nilai_akhir);
 // var_dump($predikat);
+// var_dump($catatan);

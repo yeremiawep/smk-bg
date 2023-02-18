@@ -3,9 +3,6 @@ include '../config/database.php';
 
 $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisi='2' AND jabatan='8' ");
 
-$sko = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE divisi='2' AND jabatan!='4'");
-$sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk='2'");
-
 ?>
 
 <!-- Content Wrapper. Contains page content -->

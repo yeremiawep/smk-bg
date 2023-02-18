@@ -21,7 +21,7 @@ $query = mysqli_query($conn, "SELECT * FROM jabatans WHERE id='$id'");
               <div class="col-sm-6">
                 <div class="form-group">
                   <label>Jabatan</label>
-                  <input type="text" class="form-control" name="name_jab" value="<?= $j['name_jab']; ?>">
+                  <input type="text" class="form-control" name="name_jab" value="<?= $j['name_jab']; ?>" required>
                 </div>
               </div>
             </div>

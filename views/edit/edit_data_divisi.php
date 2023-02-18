@@ -21,7 +21,7 @@ $divisi = mysqli_query($conn, "SELECT * FROM divisions WHERE id='$id'");
               <div class="col-sm-6">
                 <div class="form-group">
                   <label>Divisi</label>
-                  <input type="text" class="form-control" name="name_div" value="<?= $d['name_div']; ?>">
+                  <input type="text" class="form-control" name="name_div" value="<?= $d['name_div']; ?>" required>
                 </div>
               </div>
             </div>

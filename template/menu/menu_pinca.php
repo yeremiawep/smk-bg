@@ -18,6 +18,7 @@
         </p>
       </a>
     </li>
+    <hr>
     <li class="nav-item">
       <a href="../config/logout.php" class="nav-link text-red">
         <i class="nav-icon fas fa-power-off"></i>

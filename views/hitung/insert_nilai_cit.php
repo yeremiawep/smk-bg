@@ -32,12 +32,13 @@ for ($j = 0; $j < $countsk; $j++) {
 
 // Insert Nilai Akhir
 $nilaihk = $_POST['nilaihk']; // nilai pelanggaran disiplin
+$catatan = $_POST['catatan']; // catatan untuk pekerja
 $total_nilai_sko = array_sum($nilaisko) / $count * 60 / 100; // hitung nilai SKO non-manajerial, bobot = 60%
 $total_nilai_sk = array_sum($nilaisk) / $countsk * 40 / 100; // hitung nilai SK non-manajerial, bobot = 40 %
 $nilai_akhir = $total_nilai_sko + $total_nilai_sk - $nilaihk; // total nilai akhir
 $predikat = predikat($nilai_akhir);
 
-$insertna = "INSERT INTO nilai_akhir VALUES ('','$id[0]','$id_pegawai[0]','$jab','$div','$total_nilai_sko','$total_nilai_sk','$nilaihk','$nilai_akhir','$predikat')";
+$insertna = "INSERT INTO nilai_akhir VALUES ('','$id[0]','$id_pegawai[0]','$jab','$div','$total_nilai_sko','$total_nilai_sk','$nilaihk','$nilai_akhir','$predikat','$catatan')";
 $sql = mysqli_query($conn, $insertna);
 
 

@@ -140,6 +140,11 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk='2'"
                 </div>
               </div>
               <hr class="rounded border border-dark border-5 opacity-75">
+              <div class="form-group">
+                <label for="catatan">Catatan</label>
+                <textarea class="form-control" id="catatan" name="catatan" rows="4" placeholder="Tambahkan Catatan"></textarea>
+              </div>
+              <hr class="rounded border border-dark border-5 opacity-75">
               <button type="submit" class="btn btn-md btn-primary">Submit</button>
             </form>
           </div>
