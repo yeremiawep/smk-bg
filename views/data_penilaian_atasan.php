@@ -6,10 +6,10 @@ $cit = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=j
 $rtg = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisi='3' AND jabatan='5' ");
 
 
-$sko_cro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian");
-$sko_cit = mysqli_query($conn, "SELECT * FROM kriteria_penilaian");
-$sko_rtg = mysqli_query($conn, "SELECT * FROM kriteria_penilaian");
-$sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi");
+// $sko_cro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian");
+// $sko_cit = mysqli_query($conn, "SELECT * FROM kriteria_penilaian");
+// $sko_rtg = mysqli_query($conn, "SELECT * FROM kriteria_penilaian");
+// $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi");
 
 ?>
 
@@ -60,7 +60,6 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi");
                     <td><?= $cro['name_jab']; ?></td>
                     <td width="30%">
                       <a href="index.php?page=input-nilai-atasan&&id=<?= $cro['id_user']; ?>&&idpeg=<?= $cro['id_pegawai']; ?>&&div=<?= $cro['divisi']; ?>&&jab=<?= $cro['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai</a>
-                      <!-- <a href="index.php?page=input-nilai-sk-manajerial&&id=<?= $cro['id_pegawai']; ?>&&div=<?= $cro['divisi']; ?>&&jab=<?= $cro['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SK</a> -->
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -105,7 +104,6 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi");
                     <td><?= $cit['name_jab']; ?></td>
                     <td width="30%">
                       <a href="index.php?page=input-nilai-atasan&&id=<?= $cit['id_user']; ?>&&idpeg=<?= $cit['id_pegawai']; ?>&&div=<?= $cit['divisi']; ?>&&jab=<?= $cit['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai</a>
-                      <!-- <a href="index.php?page=input-nilai-sk-manajerial&&id=<?= $cit['id_pegawai']; ?>&&div=<?= $cit['divisi']; ?>&&jab=<?= $cit['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SK</a> -->
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -150,7 +148,6 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi");
                     <td><?= $rtg['name_jab']; ?></td>
                     <td width="30%">
                       <a href="index.php?page=input-nilai-atasan&&id=<?= $rtg['id_user']; ?>&&idpeg=<?= $rtg['id_pegawai']; ?>&&div=<?= $rtg['divisi']; ?>&&jab=<?= $rtg['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai</a>
-                      <!-- <a href="index.php?page=input-nilai-sk-manajerial&&id=<?= $rtg['id_pegawai']; ?>&&div=<?= $rtg['divisi']; ?>&&jab=<?= $rtg['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai SK</a> -->
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -341,8 +338,6 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi");
   <!-- /.content -->
 </div>
 <!-- END SKO RTG -->
-
-
 
 <!-- SK -->
 <div class="modal fade" id="modal-sk">
