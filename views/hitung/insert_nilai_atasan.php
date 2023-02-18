@@ -41,7 +41,7 @@ $insertna = "INSERT INTO nilai_akhir VALUES ('','$id[0]','$id_pegawai[0]','$jab'
 $sql = mysqli_query($conn, $insertna);
 
 
-header('Location: ../../../app/index.php?page=data-penilaian-atasan');
+header('Location: ../../app/index.php?page=data-penilaian-atasan');
 
 // var_dump($insertsko);
 // var_dump($sql);

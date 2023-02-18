@@ -128,9 +128,12 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk='1'"
                     <label for="nilai" class="col-sm-2 col-form-label">Jenis Pelanggaran</label>
                     <div class="col-sm-10">
                       <select name="nilaihk" id="nilaihk" class="rounded col-6 text-center" required>
-                        <?php foreach ($hukuman as $hk) : ?>
-                          <option value="<?= $hk['bobot']; ?>"><?= $hk['bobot']; ?> | <?= $hk['jenis_pelanggaran']; ?></option>
-                        <?php endforeach; ?>
+                        <option selected value="0">Tidak ada pelanggaran dilakukan</option>
+                        <option value="0.25">SP - 1 | 0.25</option>
+                        <option value="0.35">SP - 2 | 0.35</option>
+                        <option value="0.50">SP - 3 | 0.50</option>
+                        <option value="1.00">Sistem dan Prosedur | 1.00</option>
+                        <option value="1.50">Pelanggaran Fundamental | 1.50</option>
                       </select>
                     </div>
                   </div>
