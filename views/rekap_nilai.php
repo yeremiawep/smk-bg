@@ -1,7 +1,8 @@
 <?php
 include '../config/database.php';
 
-$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user");
+$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user JOIN jabatans ON nilai_akhir.jabatan=jabatans.id JOIN divisions ON nilai_akhir.divisi=divisions.id");
+
 
 ?>
 
@@ -51,8 +52,8 @@ $nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhi
                     <td><?= $no++; ?></td>
                     <td><?= $nilai['id_pegawai']; ?></td>
                     <td><?= $nilai['name']; ?></td>
-                    <td><?= $nilai['divisi']; ?></td>
-                    <td><?= $nilai['jabatan']; ?></td>
+                    <td><?= $nilai['name_div']; ?></td>
+                    <td><?= $nilai['name_jab']; ?></td>
                     <td><?= $nilai['nilai_sko']; ?></td>
                     <td><?= $nilai['nilai_sk']; ?></td>
                     <td><?= $nilai['hukuman']; ?></td>

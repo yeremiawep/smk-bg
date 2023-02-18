@@ -88,6 +88,8 @@ $hukuman = mysqli_query($conn, "SELECT * FROM hukuman");
                   <?php foreach ($sk as $sk) : ?>
                     <div class="form-group row">
                       <input type="text" name="id_user[]" id="id_user[]" value="<?= $id; ?>" hidden>
+                      <input type="text" name="div" id="div" value="<?= $div; ?>" hidden>
+                      <input type="text" name="jab" id="jab" value="<?= $jab; ?>" hidden>
                       <input type="text" name="id_pegawai[]" id="id_pegawai[]" value="<?= $idpeg; ?>" hidden>
                       <input type="text" name="id_isi_sk[]" id="id_isi_sk[]" value="<?= $sk['id_isi_sk']; ?>" hidden>
                     </div>

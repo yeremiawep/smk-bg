@@ -6,6 +6,8 @@ include '../../config/function.php';
 // Insert Nilai SKO
 $id = $_POST['id_user'];
 $id_pegawai = $_POST['id_pegawai'];
+$div = $_POST['div'];
+$jab = $_POST['jab'];
 $id_isi = $_POST['id_isi'];
 $nilaisko = $_POST['nilai'];
 $count = count($nilaisko);
@@ -35,7 +37,7 @@ $total_nilai_sk = array_sum($nilaisk) / $countsk * 40 / 100; // hitung nilai sk 
 $nilai_akhir = $total_nilai_sko + $total_nilai_sk - $nilaihk; // total nilai akhir
 $predikat = predikat($nilai_akhir);
 
-$insertna = "INSERT INTO nilai_akhir VALUES ('','$id[0]','$id_pegawai[0]','$total_nilai_sko','$total_nilai_sk','$nilaihk','$nilai_akhir','$predikat')";
+$insertna = "INSERT INTO nilai_akhir VALUES ('','$id[0]','$id_pegawai[0]','$jab','$div','$total_nilai_sko','$total_nilai_sk','$nilaihk','$nilai_akhir','$predikat')";
 $sql = mysqli_query($conn, $insertna);
 
 
@@ -49,7 +51,8 @@ header('Location: ../../app/index.php?page=data-penilaian-rtg');
 // var_dump($id_isi);
 // var_dump($nilaisko);
 // var_dump($count);
-
+// var_dump($div);
+// var_dump($jab);
 
 // var_dump($id_pegawai);
 // var_dump($id_isi_sk);
