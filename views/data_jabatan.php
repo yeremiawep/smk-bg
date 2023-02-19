@@ -2,7 +2,7 @@
 include '../config/database.php';
 
 // $query = mysqli_query($conn, "SELECT * FROM users");
-$jabatan = mysqli_query($conn, "SELECT * FROM jabatans");
+$jabatan = mysqli_query($conn, "SELECT * FROM jabatans JOIN kategori ON jabatans.kat_jabatan=kategori.id_kat");
 
 ?>
 
@@ -34,6 +34,7 @@ $jabatan = mysqli_query($conn, "SELECT * FROM jabatans");
               <thead>
                 <tr>
                   <th>Jabatan</th>
+                  <th>Level</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
@@ -41,9 +42,9 @@ $jabatan = mysqli_query($conn, "SELECT * FROM jabatans");
                 <?php foreach ($jabatan as $j) : ?>
                   <tr>
                     <td width="20%"><?= $j['name_jab']; ?></td>
+                    <td width="20%"><?= $j['nama_kat']; ?></td>
                     <td width="20%">
                       <a href="index.php?page=edit-data-jabatan&&id=<?= $j['id']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
-                      <a onClick="hapusData()" href="../views/delete/delete_data_jabatan.php?id=<?= $j['id']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>

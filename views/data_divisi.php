@@ -46,7 +46,6 @@ $divisi = mysqli_query($conn, "SELECT * FROM divisions");
                     <td><?= $d['name_div']; ?></td>
                     <td>
                       <a href="index.php?page=edit-data-divisi&&id=<?= $d['id']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
-                      <a onclick="hapusData()" href="../views/delete/delete_data_divisi.php?id=<?= $d['id']; ?>" class="btn btn-sm btn-danger" id="tombol"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
