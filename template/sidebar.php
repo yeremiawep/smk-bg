@@ -1,11 +1,11 @@
 <div class="sidebar" style="font-family: Poppins; font-size: 14px;">
   <!-- Sidebar user panel (optional) -->
-  <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+  <div class="user-panel mt-2 pb-4 mb-3 d-block">
     <div class="image">
       <!-- <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image" /> -->
     </div>
-    <div class="row justify-content-center text-white">
-      <?= $_SESSION['user'] . '<hr>' . $_SESSION['name_jab']; ?>
+    <div class="row justify-content-center text-dark">
+      <?= $_SESSION['user'] . '<br>' .  $_SESSION['name_jab']; ?>
     </div>
   </div>
 

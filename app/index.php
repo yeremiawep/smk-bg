@@ -22,7 +22,7 @@ include '../config/database.php'
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <aside class="main-sidebar sidebar-light-primary elevation-2">
 
       <!-- Brand Logo -->
       <?php include "../template/logo.php"; ?>
