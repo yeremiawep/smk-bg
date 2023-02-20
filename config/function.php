@@ -19,3 +19,7 @@ function predikat($nilai_akhir)
 
   return $p;
 }
+
+function hitung_sk()
+{
+}
