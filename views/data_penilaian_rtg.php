@@ -30,9 +30,9 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
               <thead>
                 <tr>
                   <th>No</th>
+                  <th>Nama</th>
                   <th>ID Pegawai</th>
                   <th>ID Personal</th>
-                  <th>Nama</th>
                   <th>Divisi</th>
                   <th>Jabatan</th>
                   <th>Input Nilai</th>
@@ -43,9 +43,9 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
                 <?php foreach ($query as $user) : ?>
                   <tr>
                     <td width="2%"><?= $no++; ?></td>
+                    <td><?= $user['name']; ?></td>
                     <td width="2%"><?= $user['id_pegawai']; ?></td>
                     <td width="2%"><?= $user['id_personal']; ?></td>
-                    <td><?= $user['name']; ?></td>
                     <td><?= $user['name_div']; ?></td>
                     <td><?= $user['name_jab']; ?></td>
                     <td width="20%">
@@ -103,7 +103,7 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
 </script>
 <!-- SweetAlert -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<!-- start nofit -->
+<!-- start notif -->
 <?php if (@$_SESSION['sukses']) { ?>
   <script>
     Swal.fire({

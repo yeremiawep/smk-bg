@@ -12,7 +12,7 @@
     </li>
     <li class="nav-item">
       <a href="index.php?page=data-penilaian-atasan" class="nav-link">
-        <i class="nav-icon fas fa-copy"></i>
+        <i class="nav-icon fas fa-chart-bar"></i>
         <p>
           Penilaian
         </p>

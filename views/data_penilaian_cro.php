@@ -59,6 +59,8 @@ $pcpc = mysqli_query($conn, "SELECT * FROM users JOIN divisions ON users.divisi=
               </tbody>
             </table>
           </div>
+        </div>
+        <div class="card">
           <div class="card-body">
             <table id="example1" class="table table-bordered">
               <thead>
@@ -90,6 +92,8 @@ $pcpc = mysqli_query($conn, "SELECT * FROM users JOIN divisions ON users.divisi=
               </tbody>
             </table>
           </div>
+        </div>
+        <div class="card">
           <div class="card-body">
             <table id="example1" class="table table-bordered">
               <thead>
@@ -121,12 +125,13 @@ $pcpc = mysqli_query($conn, "SELECT * FROM users JOIN divisions ON users.divisi=
               </tbody>
             </table>
           </div>
-          <!-- /.card-body -->
         </div>
+        <!-- /.card-body -->
       </div>
-      <!-- /.card -->
     </div>
-    <!-- /.col -->
+    <!-- /.card -->
+  </div>
+  <!-- /.col -->
   </div>
   <!-- /.row -->
   <!-- /.container-fluid -->
@@ -137,7 +142,7 @@ $pcpc = mysqli_query($conn, "SELECT * FROM users JOIN divisions ON users.divisi=
 </div>
 <!-- ./wrapper -->
 <!-- DataTables  & Plugins -->
-<!-- <?php include '../template/footer.php' ?> -->
+<?php include '../template/footer.php' ?>
 <script>
   $(function() {
     $("#example1")

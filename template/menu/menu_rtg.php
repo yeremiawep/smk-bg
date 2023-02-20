@@ -34,12 +34,12 @@
         </p>
       </a>
     </li>
-    <li class="nav-item menu-open">
+    <li class="nav-item">
       <a href="#" class="nav-link">
-        <i class="nav-icon fas fa-copy"></i>
+        <i class="nav-icon fas fa-chart-bar"></i>
         <p>
           Penilaian
-          <i class="right fas fa-angle left"></i>
+          <i class="right fas fa-angle-left"></i>
         </p>
       </a>
       <ul class="nav nav-treeview">
@@ -53,7 +53,7 @@
         </li>
         <li class="nav-item">
           <a href="index.php?page=data-penilaian-rtg" class="nav-link">
-            <i class="nav-icon far fa-circle"></i>
+            <i class="nav-icon fas fa-calculator"></i>
             <p>
               Input Penilaian
             </p>
@@ -62,31 +62,42 @@
       </ul>
     </li>
     <li class="nav-item">
-      <a href="index.php?page=data-kinerja-objektif" class="nav-link">
-        <i class="far fa-copy nav-icon"></i>
-        <p>Sasaran Kinerja Objektif</p>
+      <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-tasks"></i>
+        <p>
+          Sasaran Kinerja
+          <i class="right fas fa-angle-left"></i>
+        </p>
       </a>
-    </li>
-    <li class="nav-item">
-      <a href="index.php?page=data-kompetensi" class="nav-link">
-        <i class="far fa-copy nav-icon"></i>
-        <p>Sasaran Kompetensi</p>
-      </a>
+      <ul class="nav nav-treeview">
+        <li class="nav-item">
+          <a href="index.php?page=data-kinerja-objektif" class="nav-link">
+            <i class="far fa-copy nav-icon"></i>
+            <p>Sasaran Kinerja Objektif</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="index.php?page=data-kompetensi" class="nav-link">
+            <i class="far fa-copy nav-icon"></i>
+            <p>Sasaran Kompetensi</p>
+          </a>
+        </li>
+      </ul>
     </li>
     <li class="nav-item">
       <a href="index.php?page=rekap-nilai" class="nav-link">
-        <i class="far fa-copy nav-icon"></i>
+        <i class="fas fa-database nav-icon"></i>
         <p>Rekap Nilai</p>
       </a>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a href="index.php?page=data-periode" class="nav-link">
         <i class="nav-icon fas fa-calendar"></i>
         <p>
           Periode
         </p>
       </a>
-    </li>
+    </li> -->
     <hr>
     <li class="nav-item">
       <a href="../config/logout.php" class="nav-link text-red">

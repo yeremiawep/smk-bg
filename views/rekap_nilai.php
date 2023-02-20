@@ -6,17 +6,6 @@ $nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhi
 
 ?>
 
-<!-- Content Wrapper. Contains page content -->
-<!-- <section class="content-header">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-6">
-        <h1>Rekap Nilai Penilaian</h1>
-      </div>
-    </div>
-  </div>
-  /.container-fluid -->
-<!-- </section> -->
 
 <!-- Main content -->
 <section class="content">
@@ -60,7 +49,7 @@ $nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhi
                     <td><?= $nilai['nilai_akhir']; ?></td>
                     <td><?= $nilai['predikat']; ?></td>
                     <td>
-                      <a href="index.php?page=detail-nilai-pegawai&&idna=<?= $nilai['id_na']; ?>&&id=<?= $nilai['id_user']; ?>&&idpeg=<?= $nilai['id_pegawai']; ?>" class="btn btn-sm btn-primary"><i class="nav-icon fas fa-eye"></i> Details</a>
+                      <a href="index.php?page=detail-nilai-pegawai&&idna=<?= $nilai['id_na']; ?>&&id=<?= $nilai['id_user']; ?>&&idpeg=<?= $nilai['id_pegawai']; ?>" class="btn btn-sm btn-primary"><i class="nav-icon fas fa-eye"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>

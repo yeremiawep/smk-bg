@@ -164,7 +164,7 @@ $rtg = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=j
 </div>
 <!-- ./wrapper -->
 <!-- DataTables  & Plugins -->
-<!-- <?php include '../template/footer.php' ?> -->
+<?php include '../template/footer.php' ?>
 <script>
   $(function() {
     $("#example1")

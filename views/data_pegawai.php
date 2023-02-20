@@ -32,9 +32,9 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
             <table id="example1" class="table table-bordered table-striped">
               <thead>
                 <tr>
+                  <th>Nama</th>
                   <th>ID Pegawai</th>
                   <th>ID Personal</th>
-                  <th>Nama</th>
                   <th>Divisi</th>
                   <th>Jabatan</th>
                   <th>Options</th>
@@ -43,9 +43,9 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
               <tbody>
                 <?php foreach ($query as $user) : ?>
                   <tr>
+                    <td><?= $user['name']; ?></td>
                     <td width="2%"><?= $user['id_pegawai']; ?></td>
                     <td width="2%"><?= $user['id_personal']; ?></td>
-                    <td><?= $user['name']; ?></td>
                     <td><?= $user['name_div']; ?></td>
                     <td><?= $user['name_jab']; ?></td>
                     <td>

@@ -74,7 +74,7 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
 </div>
 <!-- ./wrapper -->
 <!-- DataTables  & Plugins -->
-<!-- <?php include '../template/footer.php' ?> -->
+<?php include '../template/footer.php' ?>
 <script>
   $(function() {
     $("#example1")

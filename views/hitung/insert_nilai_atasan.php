@@ -3,6 +3,8 @@
 include '../../config/database.php';
 include '../../config/function.php';
 
+session_start();
+
 // Insert Nilai SKO
 $id = $_POST['id_user'];
 $id_pegawai = $_POST['id_pegawai'];
