@@ -42,6 +42,11 @@ $predikat = predikat($nilai_akhir);
 $insertna = "INSERT INTO nilai_akhir VALUES ('','$id[0]','$id_pegawai[0]','$jab','$div','$total_nilai_sko','$total_nilai_sk','$nilaihk','$nilai_akhir','$predikat','$catatan')";
 $sql = mysqli_query($conn, $insertna);
 
+if ($sql) {
+  $_SESSION['sukses'] = 'Berhasil Input Nilai';
+} else {
+  $_SESSION['gagal'] = 'Failed';
+}
 
 header('Location: ../../app/index.php?page=data-penilaian-cro');
 

@@ -11,7 +11,7 @@ $idpeg = $_SESSION['id_pegawai'];
 $nilaisko = mysqli_query($conn, "SELECT * FROM hitung_nilai JOIN kriteria_penilaian ON hitung_nilai.id_isi_sko=kriteria_penilaian.id_isi_sko WHERE id_user='$id'");
 $nilaisk = mysqli_query($conn, "SELECT * FROM hitung_nilai_sk JOIN kriteria_kompetensi ON hitung_nilai_sk.id_isi_sk=kriteria_kompetensi.id_isi_sk WHERE id_user='$id'");
 $me = mysqli_query($conn, "SELECT * FROM nilai_akhir WHERE id_user='$id'");
-$m = mysqli_fetch_row($me);
+$m = mysqli_fetch_array($me);
 
 ?>
 
@@ -73,7 +73,7 @@ $m = mysqli_fetch_row($me);
             <div class="row mb-3 mt-2">
               <label for="nilaisko" class="col-sm-2 col-form-label">Total Nilai SKO</label>
               <div class="col-2">
-                <input type="text" id="nilaisko" name="nilaisko" value="<?php if(isset($m['total_nilai_sko']) ? '' : ''); ?>" placeholder="--" disabled>
+                <input type="text" id="nilaisko" name="nilaisko" value="<?= $m['total_nilai_sko']; ?>" placeholder="--" disabled>
               </div>
             </div>
           </div>
@@ -97,19 +97,19 @@ $m = mysqli_fetch_row($me);
             <div class="row mb-3 mt-2">
               <label for="nilaisk" class="col-sm-2 col-form-label">Total Nilai SK</label>
               <div class="col-2">
-                <input type="text" id="nilaisko" name="nilaisko" value="<?php if(isset($m['total_nilai_sk']) ? '' : ''); ?>" placeholder="--" disabled>
+                <input type="text" id="nilaisk" name="nilaisk" value="<?= $m['total_nilai_sk'] ? $m['total_nilai_sk'] : '--'; ?>" placeholder="--" disabled>
               </div>
             </div>
             <div class="row mb-3">
-              <label for="nilaisk" class="col-sm-2 col-form-label">Nilai Akhir</label>
+              <label for="nilaiakhir" class="col-sm-2 col-form-label">Nilai Akhir</label>
               <div class="col-2">
-                <input type="text" id="nilaisko" name="nilaisko" value="<?php if(isset($m['nilai_akhir']) ? '' : ''); ?>" placeholder="--" disabled>
+                <input type="text" id="nilaiakhir" name="nilaiakhir" value="<?= $m['nilai_akhir'] ? $m['nilai_akhir'] : '--'; ?>" disabled>
               </div>
             </div>
-            <div class="row mb-3">
-              <label for="nilaisk" class="col-sm-2 col-form-label">Predikat</label>
+            <div class=" row mb-3">
+              <label for="predikat" class="col-sm-2 col-form-label">Predikat</label>
               <div class="col-2">
-                <input type="text" id="nilaisko" name="nilaisko" value="<?php if(isset($m['predikat']) ? '' : ''); ?>" placeholder="--" disabled>
+                <input type="text" id="predikat" name="predikat" value="<?= $m['predikat'] ?: '--'; ?>" disabled>
               </div>
             </div>
           </div>
@@ -117,7 +117,7 @@ $m = mysqli_fetch_row($me);
           <div class="card-body">
             <div class="form-group">
               <label for="exampleFormControlTextarea1">Catatan</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="Tidak ada catatan" disabled><?php if(isset($m['catatan']) ? '' : ''); ?></textarea>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" disabled><?= $m['catatan'] ?: 'Tidak ada catatan'; ?></textarea>
             </div>
           </div>
         </div>

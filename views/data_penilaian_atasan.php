@@ -159,256 +159,6 @@ $rtg = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=j
   <!-- /.row -->
   <!-- /.container-fluid -->
 </section>
-
-
-<!-- MODAL XL -->
-
-<!-- SKO CRO -->
-<div class="modal fade" id="modal-cro">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Tambah Penilaian</h4>
-        <button type="button" class="close" data-dismiss="modal" Arial-label="Close">
-          <span Arial-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="../views/hitung/hitung_sko.php" method="POST">
-          <div class="form">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th>Aspek</th>
-                  <th>Kriteria</th>
-                  <th>Target</th>
-                  <th>Nilai</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php foreach ($sko_cro as $sko) : ?>
-                  <tr>
-                    <td><?= $sko['aspek']; ?></td>
-                    <td><?= $sko['kriteria']; ?></td>
-                    <td><?= $sko['target']; ?></td>
-                    <td>
-                      <select class="form-select" Arial-label="Default select example" name="nilai" id="nilai">
-                        <option selected>Input Nilai</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                      </select>
-                    </td>
-                  </tr>
-                <?php endforeach; ?>
-              </tbody>
-            </table>
-            <div class="row d-inline-block">
-              <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </form>
-      </div>
-      <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-  </div>
-  <!-- END MODAL XL -->
-  <!-- /.content -->
-</div>
-<!-- END SKO CRO -->
-
-<!-- SKO CIT -->
-<div class="modal fade" id="modal-cit">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Tambah Penilaian</h4>
-        <button type="button" class="close" data-dismiss="modal" Arial-label="Close">
-          <span Arial-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="../views/hitung/hitung_sko.php" method="POST">
-          <div class="form">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th>Aspek</th>
-                  <th>Kriteria</th>
-                  <th>Target</th>
-                  <th>Nilai</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php foreach ($sko_cit as $sko) : ?>
-                  <tr>
-                    <td><?= $sko['aspek']; ?></td>
-                    <td><?= $sko['kriteria']; ?></td>
-                    <td><?= $sko['target']; ?></td>
-                    <td>
-                      <select class="form-select" Arial-label="Default select example" name="nilai" id="nilai">
-                        <option selected>Input Nilai</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                      </select>
-                    </td>
-                  </tr>
-                <?php endforeach; ?>
-              </tbody>
-            </table>
-            <div class="row d-inline-block">
-              <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </form>
-      </div>
-      <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-  </div>
-  <!-- END MODAL XL -->
-  <!-- /.content -->
-</div>
-<!-- END SKO CIT -->
-
-<!-- SKO RTG -->
-<div class="modal fade" id="modal-rtg">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Tambah Penilaian</h4>
-        <button type="button" class="close" data-dismiss="modal" Arial-label="Close">
-          <span Arial-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="../views/hitung/hitung_sko.php" method="POST">
-          <div class="form">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th>Aspek</th>
-                  <th>Kriteria</th>
-                  <th>Target</th>
-                  <th>Nilai</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php foreach ($sko_rtg as $sko) : ?>
-                  <tr>
-                    <td><?= $sko['aspek']; ?></td>
-                    <td><?= $sko['kriteria']; ?></td>
-                    <td><?= $sko['target']; ?></td>
-                    <td>
-                      <select class="form-select" Arial-label="Default select example" name="nilai" id="nilai">
-                        <option selected>Input Nilai</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                      </select>
-                    </td>
-                  </tr>
-                <?php endforeach; ?>
-              </tbody>
-            </table>
-            <div class="row d-inline-block">
-              <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </form>
-      </div>
-      <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-  </div>
-  <!-- END MODAL XL -->
-  <!-- /.content -->
-</div>
-<!-- END SKO RTG -->
-
-<!-- SK -->
-<div class="modal fade" id="modal-sk">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Tambah Penilaian</h4>
-        <button type="button" class="close" data-dismiss="modal" Arial-label="Close">
-          <span Arial-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="../views/hitung/hitung_sk.php" method="GET">
-          <div class="form">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th>Kriteria</th>
-                  <th>Nilai</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php foreach ($sk as $sk) : ?>
-                  <tr>
-                    <td><?= $sk['kriteria']; ?></td>
-                    <td>
-                      <select class="form-select" Arial-label="Default select example" name="nilai" id="nilai">
-                        <option selected>Input Nilai</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                      </select>
-                      <!-- <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="nilai" id="nilai" value="1">
-                        <label class="form-check-label" for="inlineRadio1">1</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="nilai" id="nilai" value="2">
-                        <label class="form-check-label" for="inlineRadio2">2</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="nilai" id="nilai" value="3">
-                        <label class="form-check-label" for="inlineRadio2">3</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="nilai" id="nilai" value="4">
-                        <label class="form-check-label" for="inlineRadio2">4</label>
-                      </div> -->
-                    </td>
-                  </tr>
-                <?php endforeach; ?>
-              </tbody>
-            </table>
-            <div class="row d-inline-block">
-              <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </form>
-      </div>
-      <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-  </div>
-
-
-  <!-- END MODAL XL -->
-
-
-  <!-- /.content -->
-</div>
-<!-- END SK -->
-
-
-
 <!-- /.content-wrapper -->
 <!-- /.control-sidebar -->
 </div>
@@ -443,6 +193,23 @@ $rtg = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=j
     alert('Yakin Hapus ?');
   }
 </script>
+<!-- SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- start nofit -->
+<?php if (@$_SESSION['sukses']) { ?>
+  <script>
+    Swal.fire({
+      text: "<?php echo $_SESSION['sukses']; ?>",
+      icon: "success",
+      customClass: {
+        confirmButton: "btn fw-bold btn-primary",
+        cancelButton: "btn fw-bold btn-active-light-primary"
+      }
+    })
+  </script>
+<?php unset($_SESSION['sukses']);
+} ?>
+<!-- end notif -->
 </body>
 
 </html>

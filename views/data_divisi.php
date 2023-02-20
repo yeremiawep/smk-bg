@@ -100,7 +100,7 @@ $divisi = mysqli_query($conn, "SELECT * FROM divisions");
 </div>
 <!-- ./wrapper -->
 <!-- DataTables  & Plugins -->
-<!-- <?php include '../template/footer.php' ?> -->
+<?php include '../template/footer.php' ?>
 <script>
   $(function() {
     $("#example1")
@@ -134,11 +134,6 @@ $divisi = mysqli_query($conn, "SELECT * FROM divisions");
 <!-- start nofit -->
 <?php if (@$_SESSION['sukses']) { ?>
   <script>
-    Swal.fire(
-      'Sucess',
-      'Add Data',
-      'success'
-    )
     Swal.fire({
       text: "<?php echo $_SESSION['sukses']; ?>",
       icon: "success",
@@ -151,22 +146,6 @@ $divisi = mysqli_query($conn, "SELECT * FROM divisions");
 <?php unset($_SESSION['sukses']);
 } ?>
 <!-- end notif -->
-<!-- <script>
-  const notifikasi = $('.flash-data').data(flashdata);
-  if (notifikasi) {
-    Swal.fire(
-      'Sucess',
-      'Add Data',
-      'success'
-    )
-  } else {
-    Swal.fire(
-      'Failed',
-      'Add Data',
-      'error'
-    )
-  }
-</script> -->
 
 </body>
 

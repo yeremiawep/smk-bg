@@ -27,25 +27,25 @@ $n = mysqli_fetch_array($nilai);
           <div class="card-body">
             <div class="form-group row">
               <label for="" class="col-sm-2 col-form-label">Nama</label>
-              <div class="col-sm-4">
+              <div class="col-sm-6">
                 <input type="text" id="" value="<?= $n['name']; ?>" disabled>
               </div>
             </div>
             <div class="form-group row">
               <label for="" class="col-sm-2 col-form-label">ID Pegawai</label>
-              <div class="col-sm-4">
+              <div class="col-sm-6">
                 <input type="text" id="" value="<?= $n['id_pegawai']; ?>" disabled>
               </div>
             </div>
             <div class="form-group row">
               <label for="" class="col-sm-2 col-form-label">Divisi</label>
-              <div class="col-sm-4">
+              <div class="col-sm-6">
                 <input type="text" id="" value="<?= $n['name_div']; ?>" disabled>
               </div>
             </div>
             <div class="form-group row">
               <label for="" class="col-sm-2 col-form-label">Jabatan</label>
-              <div class="col-sm-4">
+              <div class="col-sm-6">
                 <input type="text" id="" value="<?= $n['name_jab']; ?>" disabled>
               </div>
             </div>

@@ -166,6 +166,23 @@ $pcpc = mysqli_query($conn, "SELECT * FROM users JOIN divisions ON users.divisi=
     alert('Yakin Hapus ?');
   }
 </script>
+<!-- SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- start nofit -->
+<?php if (@$_SESSION['sukses']) { ?>
+  <script>
+    Swal.fire({
+      text: "<?php echo $_SESSION['sukses']; ?>",
+      icon: "success",
+      customClass: {
+        confirmButton: "btn fw-bold btn-primary",
+        cancelButton: "btn fw-bold btn-active-light-primary"
+      }
+    })
+  </script>
+<?php unset($_SESSION['sukses']);
+} ?>
+<!-- end notif -->
 </body>
 
 </html>

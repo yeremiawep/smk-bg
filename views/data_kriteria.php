@@ -289,7 +289,7 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                     <td><?= $p['target']; ?></td>
                     <td>
                       <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi_sko']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
-                      <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $p['id_isi_sko']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
+                      <a onClick="hapusData(<?= $p['id_isi_sko']; ?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -372,8 +372,41 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
 
   <?php include '../template/footer.php' ?>
   <script>
-    function hapusData() {
-      alert('Yakin Hapus ?');
+    function hapusData(data_id) {
+      // alert('Yakin Hapus ?');
+      Swal.fire({
+        title: 'Are you sure ?',
+        showDenyButton: false,
+        showCancelButton: true,
+        confirmButtonText: 'Yes',
+        denyButtonText: `Don't save`,
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          window.location = ("../views/delete/delete_kriteria.php?id=" + data_id);
+          // Swal.fire('Saved!', '', 'success')
+        }
+      })
     }
   </script>
+  <!-- SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <?php if (@$_SESSION['sukses']) { ?>
+    <script>
+      // Swal.fire(
+      //   'Success',
+      //   'Add Data',
+      //   'success'
+      // )
+      Swal.fire({
+        text: "<?php echo $_SESSION['sukses']; ?>",
+        icon: "success",
+        customClass: {
+          confirmButton: "btn fw-bold btn-primary",
+          cancelButton: "btn fw-bold btn-active-light-primary"
+        }
+      })
+    </script>
+  <?php unset($_SESSION['sukses']);
+  } ?>
 </section>

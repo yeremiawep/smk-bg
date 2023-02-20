@@ -1,5 +1,6 @@
 <?php
 include '../../config/database.php';
+session_start();
 
 $id = $_POST['id_user'];
 $name = $_POST['name'];
@@ -54,12 +55,12 @@ $query = mysqli_query($conn, "UPDATE users SET
                               ijazah='$ijazah' 
                           WHERE id_user='$id'");
 
-// if ($query) {
-//     echo "<script>'Data Berhasil Di Update'</script>";
-// } else {
-//     echo "<script>'Gagal Update Data'</script>";
-// }
+if ($query) {
+    $_SESSION['sukses'] = 'Updated';
+} else {
+    $_SESSION['gagal'] = 'Failed';
+}
 
 // var_dump($query);
 
-// header('Location: ../../app/index.php?page=data-pegawai');
+header('Location: ../../app/index.php?page=data-pegawai');

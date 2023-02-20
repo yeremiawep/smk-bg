@@ -1,9 +1,8 @@
 <?php
 include '../config/database.php';
 
-// $query = mysqli_query($conn, "SELECT * FROM users");
 $jabatan = mysqli_query($conn, "SELECT * FROM jabatans JOIN kategori ON jabatans.kat_jabatan=kategori.id_kat");
-
+$kategori = mysqli_query($conn, "SELECT * FROM kategori");
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -80,6 +79,15 @@ $jabatan = mysqli_query($conn, "SELECT * FROM jabatans JOIN kategori ON jabatans
               <label for="name_jab">Jabatan</label>
               <input type="text" class="form-control" name="name_jab" id="name_jab" required>
             </div>
+            <div class="row">
+              <label for="kat_jab">Level</label>
+              <select class="custom-select" name="kat_jab" id="kat_jab" required>
+                <option selected value="">--</option>
+                <?php foreach ($kategori as $k) : ?>
+                  <option value="<?= $k['id_kat']; ?>"><?= $k['nama_kat']; ?></option>
+                <?php endforeach; ?>
+              </select>
+            </div>
             <div class="row mt-2 d-inline-block">
               <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
               <button type="submit" class="btn btn-primary">Submit</button>
@@ -134,6 +142,28 @@ $jabatan = mysqli_query($conn, "SELECT * FROM jabatans JOIN kategori ON jabatans
     alert('Yakin Hapus ?');
   }
 </script>
+<!-- SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- start nofit -->
+<?php if (@$_SESSION['sukses']) { ?>
+  <script>
+    Swal.fire(
+      'Success',
+      'Add Data',
+      'success'
+    )
+    Swal.fire({
+      text: "<?php echo $_SESSION['sukses']; ?>",
+      icon: "success",
+      customClass: {
+        confirmButton: "btn fw-bold btn-primary",
+        cancelButton: "btn fw-bold btn-active-light-primary"
+      }
+    })
+  </script>
+<?php unset($_SESSION['sukses']);
+} ?>
+<!-- end notif -->
 </body>
 
 </html>
