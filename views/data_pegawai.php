@@ -51,7 +51,7 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
                     <td>
                       <a href="index.php?page=detail-pegawai&&id=<?= $user['id_pegawai']; ?>" class="btn btn-sm btn-info"><i class="nav-icon fas fa-eye"></i></a>
                       <a href="index.php?page=edit-data-pegawai&&id=<?= $user['id_pegawai']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
-                      <a onClick="hapusData()" href="../views/delete/delete_data_pegawai.php?id=<?= $user['id_pegawai']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
+                      <a onClick="hapusData(<?= $user['id_pegawai']; ?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -161,8 +161,22 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
   });
 </script>
 <script>
-  function hapusData() {
-    alert('Yakin Hapus ?');
+  function hapusData(data_id) {
+    // alert('Yakin Hapus ?');
+    // window.location=("../views/delete/delete_data_pegawai.php?id="+data_id);
+    Swal.fire({
+        title: 'Are you sure ?',
+        showDenyButton: false,
+        showCancelButton: true,
+        confirmButtonText: 'Yes',
+        denyButtonText: `Don't save`,
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          window.location=("../views/delete/delete_data_pegawai.php?id="+data_id);
+          // Swal.fire('Saved!', '', 'success')
+        }
+      })
   }
 </script>
 <script>

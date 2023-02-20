@@ -20,10 +20,6 @@ $divisi = mysqli_query($conn, "SELECT * FROM divisions");
 
 <!-- Main content -->
 <section class="content">
-  <div class="flash-data" data-flashdata="<?php if (isset($_SESSION['message'])) {
-                                            echo $_SESSION['message'];
-                                          }
-                                          unset($_SESSION['message']); ?>"></div>
   <div class="container-fluid">
     <div class="row">
       <div class="col-12">
@@ -135,7 +131,27 @@ $divisi = mysqli_query($conn, "SELECT * FROM divisions");
 </script>
 <!-- SweetAlert -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
+<!-- start nofit -->
+<?php if (@$_SESSION['sukses']) { ?>
+  <script>
+    Swal.fire(
+      'Sucess',
+      'Add Data',
+      'success'
+    )
+    Swal.fire({
+      text: "<?php echo $_SESSION['sukses']; ?>",
+      icon: "success",
+      customClass: {
+        confirmButton: "btn fw-bold btn-primary",
+        cancelButton: "btn fw-bold btn-active-light-primary"
+      }
+    })
+  </script>
+<?php unset($_SESSION['sukses']);
+} ?>
+<!-- end notif -->
+<!-- <script>
   const notifikasi = $('.flash-data').data(flashdata);
   if (notifikasi) {
     Swal.fire(
@@ -150,7 +166,7 @@ $divisi = mysqli_query($conn, "SELECT * FROM divisions");
       'error'
     )
   }
-</script>
+</script> -->
 
 </body>
 
