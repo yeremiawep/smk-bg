@@ -44,13 +44,13 @@
       </a>
       <ul class="nav nav-treeview">
         <li class="nav-item">
-        <a href="index.php?page=detail-penilaian" class="nav-link">
-          <i class="nav-icon fas fa-eye"></i>
-          <p>
-            Detail Nilai Saya
-          </p>
-        </a>
-      </li>
+          <a href="index.php?page=detail-penilaian" class="nav-link">
+            <i class="nav-icon fas fa-eye"></i>
+            <p>
+              Detail Nilai Saya
+            </p>
+          </a>
+        </li>
         <li class="nav-item">
           <a href="index.php?page=data-penilaian-rtg" class="nav-link">
             <i class="nav-icon far fa-circle"></i>
