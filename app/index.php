@@ -117,6 +117,12 @@ include '../config/database.php'
           case 'input-nilai-cit':
             include '../views/form/hitung_sko_cit.php';
             break;
+          case 'rekap-nilai-cit':
+            include '../views/rekap_nilai_cit.php';
+            break;
+          case 'edit-nilai-cit':
+            include '../views/edit/edit_nilai_cit.php';
+            break;
 
             // Halaman ATASAN (Pemimpin Cabang)
           case 'data-penilaian-atasan':
