@@ -59,6 +59,14 @@
             </p>
           </a>
         </li>
+        <li class="nav-item">
+          <a href="index.php?page=rekap-nilai-rtg" class="nav-link">
+            <i class="nav-icon fas fa-database"></i>
+            <p>
+              Rekap Nilai Rutang
+            </p>
+          </a>
+        </li>
       </ul>
     </li>
     <li class="nav-item">

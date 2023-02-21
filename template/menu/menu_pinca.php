@@ -18,6 +18,14 @@
         </p>
       </a>
     </li>
+    <li class="nav-item">
+      <a href="index.php?page=rekap-nilai-atasan" class="nav-link">
+        <i class="nav-icon fas fa-database"></i>
+        <p>
+          Rekap Nilai Asisten Supervisor
+        </p>
+      </a>
+    </li>
     <hr>
     <li class="nav-item">
       <a href="../config/logout.php" class="nav-link text-red">

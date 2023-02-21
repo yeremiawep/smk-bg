@@ -26,6 +26,14 @@
         </p>
       </a>
     </li>
+    <li class="nav-item">
+      <a href="index.php?page=rekap-nilai-cro" class="nav-link">
+        <i class="nav-icon fas fa-database"></i>
+        <p>
+          Rekap Nilai CRO
+        </p>
+      </a>
+    </li>
     <hr>
     <li class="nav-item">
       <a href="../config/logout.php" class="nav-link text-red">

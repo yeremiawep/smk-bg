@@ -101,6 +101,12 @@ include '../config/database.php'
           case 'detail-nilai-pegawai':
             include '../views/detail_nilai_pegawai.php';
             break;
+          case 'rekap-nilai-rtg':
+            include '../views/rekap_nilai_rtg.php';
+            break;
+          case 'edit-nilai-rtg':
+            include '../views/edit/edit_nilai_rtg.php';
+            break;
 
             // Halaman ASS. SPV. CRO
           case 'data-penilaian-cro':
@@ -108,6 +114,12 @@ include '../config/database.php'
             break;
           case 'input-nilai-cro':
             include '../views/form/hitung_sko_cro.php';
+            break;
+          case 'rekap-nilai-cro':
+            include '../views/rekap_nilai_cro.php';
+            break;
+          case 'edit-nilai-cro':
+            include '../views/edit/edit_nilai_cro.php';
             break;
 
             // Halaman ASS. SPV. CIT
@@ -130,6 +142,12 @@ include '../config/database.php'
             break;
           case 'input-nilai-atasan':
             include '../views/form/hitung_sko_atasan.php';
+            break;
+          case 'rekap-nilai-atasan':
+            include '../views/rekap_nilai_atasan.php';
+            break;
+          case 'edit-nilai-atasan':
+            include '../views/edit/edit_nilai_atasan.php';
             break;
 
             // Halaman PEGAWAI

@@ -25,7 +25,7 @@ $n = mysqli_fetch_array($nilai);
             </div>
           </div>
           <div class="card-body">
-            <form action="../views/update/update_nilai_cit.php" method="POST">
+            <form action="../views/update/update_nilai_cro.php" method="POST">
               <div class="form-group row">
                 <label for="" class="col-sm-2 col-form-label">Nama</label>
                 <div class="col-sm-6">
