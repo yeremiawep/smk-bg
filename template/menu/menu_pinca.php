@@ -26,6 +26,14 @@
         </p>
       </a>
     </li>
+    <!-- <li class="nav-item">
+      <a href="index.php?page=tambah-pemberitahuan" class="nav-link">
+        <i class="nav-icon fas fa-sticky-note"></i>
+        <p>
+          Tambah Pemberitahuan
+        </p>
+      </a>
+    </li> -->
     <hr>
     <li class="nav-item">
       <a href="../config/logout.php" class="nav-link text-red">

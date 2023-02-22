@@ -7,6 +7,12 @@ $query3 = mysqli_query($conn, "SELECT count(id) AS jml FROM jabatans");
 $view = mysqli_fetch_array($query);
 $view2 = mysqli_fetch_array($query2);
 $view3 = mysqli_fetch_array($query3);
+
+
+// $noticeCRO = isset($_POST['cro']) ? $_POST['cro'] : 'Belum ada pemberitahuan';
+// $noticeCIT = isset($_POST['cit']) ? $_POST['cit'] : 'Belum ada pemberitahuan';
+// $noticeRTG = isset($_POST['rtg']) ? $_POST['rtg'] : 'Belum ada pemberitahuan';
+
 ?>
 
 <section class="content">

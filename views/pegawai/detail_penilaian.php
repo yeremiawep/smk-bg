@@ -73,7 +73,7 @@ $m = mysqli_fetch_array($me);
             <div class="row mb-3 mt-2">
               <label for="nilaisko" class="col-sm-2 col-form-label">Total Nilai SKO</label>
               <div class="col-2">
-                <input type="text" id="nilaisko" name="nilaisko" value="<?= $m['total_nilai_sko']; ?>" placeholder="--" disabled>
+                <input type="text" id="nilaisko" name="nilaisko" value="<?= @$m['total_nilai_sko']; ?>" placeholder="--" disabled>
               </div>
             </div>
           </div>
@@ -97,19 +97,19 @@ $m = mysqli_fetch_array($me);
             <div class="row mb-3 mt-2">
               <label for="nilaisk" class="col-sm-2 col-form-label">Total Nilai SK</label>
               <div class="col-2">
-                <input type="text" id="nilaisk" name="nilaisk" value="<?= $m['total_nilai_sk'] ? $m['total_nilai_sk'] : '--'; ?>" placeholder="--" disabled>
+                <input type="text" id="nilaisk" name="nilaisk" value="<?= @$m['total_nilai_sk'] ? $m['total_nilai_sk'] : '--'; ?>" placeholder="--" disabled>
               </div>
             </div>
             <div class="row mb-3">
               <label for="nilaiakhir" class="col-sm-2 col-form-label">Nilai Akhir</label>
               <div class="col-2">
-                <input type="text" id="nilaiakhir" name="nilaiakhir" value="<?= $m['nilai_akhir'] ? $m['nilai_akhir'] : '--'; ?>" disabled>
+                <input type="text" id="nilaiakhir" name="nilaiakhir" value="<?= @$m['nilai_akhir'] ? $m['nilai_akhir'] : '--'; ?>" disabled>
               </div>
             </div>
             <div class=" row mb-3">
               <label for="predikat" class="col-sm-2 col-form-label">Predikat</label>
               <div class="col-2">
-                <input type="text" id="predikat" name="predikat" value="<?= $m['predikat'] ?: '--'; ?>" disabled>
+                <input type="text" id="predikat" name="predikat" value="<?= @$m['predikat'] ?: '--'; ?>" disabled>
               </div>
             </div>
           </div>
@@ -117,7 +117,7 @@ $m = mysqli_fetch_array($me);
           <div class="card-body">
             <div class="form-group">
               <label for="exampleFormControlTextarea1">Catatan</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" disabled><?= $m['catatan'] ?: 'Tidak ada catatan'; ?></textarea>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" disabled><?= @$m['catatan'] ?: 'Tidak ada catatan'; ?></textarea>
             </div>
           </div>
         </div>

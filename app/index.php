@@ -149,6 +149,9 @@ include '../config/database.php'
           case 'edit-nilai-atasan':
             include '../views/edit/edit_nilai_atasan.php';
             break;
+          case 'tambah-pemberitahuan':
+            include '../views/tambah_pemberitahuan.php';
+            break;
 
             // Halaman PEGAWAI
           case 'rekap-nilai-pegawai':
