@@ -59,58 +59,6 @@ $view3 = mysqli_fetch_array($query3);
       </div>
       <!-- ./col -->
     </div>
-    <!-- /.row -->
-    <!-- <div class="row">
-      <div class="col-lg-3 col-3">
-        <div class="small-box bg-white">
-          <div class="inner">
-            <h4>Bobot Sasaran Kinerja Objektif</h4>
-            <p>Asisten Supervisor = 70%</p>
-            <p>Pelaksana = 60%</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-checkmark-round"></i>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-3">
-        <div class="small-box bg-white">
-          <div class="inner">
-            <h4>Bobot Sasaran Kompetensi</h4>
-            <p>Asisten Supervisor = 30%</p>
-            <p>Pelaksana = 40%</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-checkmark-round"></i>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-3">
-        <div class="small-box bg-danger">
-          <div class="inner">
-            <h4>Pelanggaran Disiplin</h4>
-            <p>SP-1 = 0.25 |
-              SP-2 = 0.35 |
-              SP-3 = 0.50</p>
-            <p>Sistem dan Prosedur = 1.00</p>
-            <p>Pelanggaran Fundamental = 1.50</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-alert"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-6 col-6">
-        <div class="small-box bg-primary">
-          <div class="inner">
-            <h3>Total Nilai</h3>
-            <p>Sasaran Kinerja Objektif + Sasaran Kompetensi - Pelanggaran Disiplin </p>
-          </div>
-        </div>
-      </div>
-    </div> -->
     <!-- Main row -->
     <div class="row">
       <!-- Left col -->
