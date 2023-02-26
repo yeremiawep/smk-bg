@@ -176,9 +176,9 @@ include '../config/database.php'
     </div>
 
     <!-- /.content-wrapper -->
-    <footer class="main-footer" style="font-family: Poppins;">
-      <strong>Bringin Gigantara Copyright &copy; 2022 </strong>
-      All rights reserved.
+    <footer class="main-footer" style="font-family: Nunito;">
+      <strong>Copyright &copy; 2023 </strong>
+      PT. Bringin Gigantara cabang Cempaka Putih .
       <div class="float-right d-none d-sm-inline-block"><b>Version</b> 1.1.0</div>
     </footer>
 

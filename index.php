@@ -55,7 +55,7 @@
           <div class="row">
             <!-- /.col -->
             <div class="col-12">
-              <button type="submit" class="btn btn-primary btn-block">Login</button>
+              <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-fw fa-sign-in-alt mr-1"></i> Login</button>
             </div>
             <!-- /.col -->
           </div>
