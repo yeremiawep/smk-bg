@@ -22,9 +22,9 @@ $plkcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE divisi='1'
   <div class="container-fluid">
     <!-- Small boxes (Stat box) -->
     <div class="row">
-      <div class="col-lg-3 col-6">
+      <div class="col-lg-4 col-6">
         <!-- small box -->
-        <div class="small-box bg-info">
+        <div class="small-box bg-primary">
           <div class="inner">
             <h3><?= $view['jml']; ?></h3>
             <p>Pegawai</p>
@@ -35,7 +35,7 @@ $plkcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE divisi='1'
         </div>
       </div>
       <!-- ./col -->
-      <div class="col-lg-3 col-6">
+      <div class="col-lg-4 col-6">
         <!-- small box -->
         <div class="small-box bg-success">
           <div class="inner">
@@ -48,7 +48,7 @@ $plkcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE divisi='1'
         </div>
       </div>
       <!-- ./col -->
-      <div class="col-lg-3 col-6">
+      <div class="col-lg-4 col-6">
         <!-- small box -->
         <div class="small-box bg-warning">
           <div class="inner">
@@ -62,56 +62,56 @@ $plkcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE divisi='1'
       </div>
     </div>
     <div class="row">
-      <div class="col-3">
+      <div class="col-4">
         <div class="card bg-light">
-          <div class="card-header">
+          <div class="card-header bg-info">
             <h5 class="card-title">
               Sasaran Kinerja Objektif CRO
             </h5>
           </div>
           <div class="card-body">
             <div class="row">
-              <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#modal-sko-cro-aspv"><i class="nav-icon fas fa-eye"></i> Ass. SPV CRO</button>
+              <button type="button" class="btn btn-outline-info mt-2 btn-block" data-toggle="modal" data-target="#modal-sko-cro-aspv"><i class="fas fa-eye"></i> Ass. SPV CRO</button>
             </div>
             <div class="row">
-              <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#modal-sko-cro-admin"><i class="nav-icon fas fa-eye"></i> Admin CRO</button>
+              <button type="button" class="btn btn-outline-info mt-2 btn-block" data-toggle="modal" data-target="#modal-sko-cro-admin"><i class="fas fa-eye"></i> Admin CRO</button>
             </div>
             <div class="row">
-              <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#modal-sko-cro-plk"><i class="nav-icon fas fa-eye"></i>Pelaksana CRO</button>
+              <button type="button" class="btn btn-outline-info mt-2 btn-block" data-toggle="modal" data-target="#modal-sko-cro-plk"><i class="fas fa-eye"></i> Pelaksana CRO</button>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-3">
+      <div class="col-4">
         <div class="card bg-light">
-          <div class="card-header">
+          <div class="card-header bg-info">
             <h5 class="card-title">
               Sasaran Kinerja Objektif CIT
             </h5>
           </div>
           <div class="card-body">
             <div class="row">
-              <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#modal-sko-cit-aspv"><i class="nav-icon fas fa-eye"></i> Ass. SPV CIT</button>
+              <button type="button" class="btn btn-outline-info mt-2 btn-block" data-toggle="modal" data-target="#modal-sko-cit-aspv"><i class="fas fa-eye"></i> Ass. SPV CIT</button>
             </div>
             <div class="row">
-              <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#modal-sko-cit-admin"><i class="nav-icon fas fa-eye"></i> Admin CIT</button>
+              <button type="button" class="btn btn-outline-info mt-2 btn-block" data-toggle="modal" data-target="#modal-sko-cit-admin"><i class="fas fa-eye"></i> Admin CIT</button>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-3">
+      <div class="col-4">
         <div class="card bg-light">
-          <div class="card-header">
+          <div class="card-header bg-info">
             <h5 class="card-title">
               Sasaran Kinerja Objektif Rutang
             </h5>
           </div>
           <div class="card-body">
             <div class="row">
-              <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#modal-sko-rtg-aspv"><i class="nav-icon fas fa-eye"></i> Ass. SPV Rutang</button>
+              <button type="button" class="btn btn-outline-info mt-2 btn-block" data-toggle="modal" data-target="#modal-sko-rtg-aspv"><i class="fas fa-eye"></i> Ass. SPV Rutang</button>
             </div>
             <div class="row">
-              <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#modal-sko-rtg-admin"><i class="nav-icon fas fa-eye"></i> Admin Rutang</button>
+              <button type="button" class="btn btn-outline-info mt-2 btn-block" data-toggle="modal" data-target="#modal-sko-rtg-admin"><i class="fas fa-eye"></i> Admin Rutang</button>
             </div>
           </div>
         </div>
