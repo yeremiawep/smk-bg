@@ -4,7 +4,7 @@
                with font-awesome or any other icon font library -->
     <li class="nav-item">
       <a href="index.php?page=dashboard" class="nav-link">
-        <i class="nav-icon fas fa-tachometer-alt"></i>
+        <i class="fas fa-tachometer-alt"></i>
         <p>
           Dashboard
         </p>
@@ -12,7 +12,7 @@
     </li>
     <li class="nav-item">
       <a href="index.php?page=data-pegawai" class="nav-link">
-        <i class="nav-icon fas fa-users"></i>
+        <i class="fas fa-users"></i>
         <p>
           Data Pegawai
         </p>
@@ -20,7 +20,7 @@
     </li>
     <li class="nav-item">
       <a href="index.php?page=data-jabatan" class="nav-link">
-        <i class="nav-icon fas fa-th"></i>
+        <i class="fas fa-th"></i>
         <p>
           Data Jabatan
         </p>
@@ -28,7 +28,7 @@
     </li>
     <li class="nav-item">
       <a href="index.php?page=data-divisi" class="nav-link">
-        <i class="nav-icon fas fa-th"></i>
+        <i class="fas fa-th"></i>
         <p>
           Data Divisi
         </p>
@@ -36,7 +36,7 @@
     </li>
     <li class="nav-item">
       <a href="#" class="nav-link">
-        <i class="nav-icon fas fa-chart-bar"></i>
+        <i class="fas fa-chart-bar"></i>
         <p>
           Penilaian
           <i class="right fas fa-angle-left"></i>
@@ -45,7 +45,7 @@
       <ul class="nav nav-treeview">
         <li class="nav-item">
           <a href="index.php?page=detail-penilaian" class="nav-link">
-            <i class="nav-icon fas fa-eye"></i>
+            <i class="fas fa-eye"></i>
             <p>
               Detail Nilai Saya
             </p>
@@ -53,7 +53,7 @@
         </li>
         <li class="nav-item">
           <a href="index.php?page=data-penilaian-rtg" class="nav-link">
-            <i class="nav-icon fas fa-calculator"></i>
+            <i class="fas fa-calculator"></i>
             <p>
               Input Penilaian
             </p>
@@ -61,7 +61,7 @@
         </li>
         <li class="nav-item">
           <a href="index.php?page=rekap-nilai-rtg" class="nav-link">
-            <i class="nav-icon fas fa-database"></i>
+            <i class="fas fa-database"></i>
             <p>
               Rekap Nilai Rutang
             </p>
@@ -71,7 +71,7 @@
     </li>
     <li class="nav-item">
       <a href="#" class="nav-link">
-        <i class="nav-icon fas fa-tasks"></i>
+        <i class="fas fa-tasks"></i>
         <p>
           Sasaran Kinerja
           <i class="right fas fa-angle-left"></i>
@@ -80,13 +80,13 @@
       <ul class="nav nav-treeview">
         <li class="nav-item">
           <a href="index.php?page=data-kinerja-objektif" class="nav-link">
-            <i class="far fa-copy nav-icon"></i>
+            <i class="far fa-copy"></i>
             <p>Sasaran Kinerja Objektif</p>
           </a>
         </li>
         <li class="nav-item">
           <a href="index.php?page=data-kompetensi" class="nav-link">
-            <i class="far fa-copy nav-icon"></i>
+            <i class="far fa-copy"></i>
             <p>Sasaran Kompetensi</p>
           </a>
         </li>
@@ -94,13 +94,13 @@
     </li>
     <li class="nav-item">
       <a href="index.php?page=rekap-nilai" class="nav-link">
-        <i class="fas fa-database nav-icon"></i>
+        <i class="fas fa-database"></i>
         <p>Rekap Nilai</p>
       </a>
     </li>
     <!-- <li class="nav-item">
       <a href="index.php?page=data-periode" class="nav-link">
-        <i class="nav-icon fas fa-calendar"></i>
+        <i class="fas fa-calendar"></i>
         <p>
           Periode
         </p>
@@ -109,7 +109,7 @@
     <hr>
     <li class="nav-item">
       <a href="../config/logout.php" class="nav-link text-red">
-        <i class="nav-icon fas fa-power-off"></i>
+        <i class="fas fa-fw fa-sign-out-alt"></i>
         <p>
           Logout
         </p>

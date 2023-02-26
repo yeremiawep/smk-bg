@@ -4,7 +4,7 @@
                with font-awesome or any other icon font library -->
     <li class="nav-item">
       <a href="index.php?page=dashboard" class="nav-link">
-        <i class="nav-icon fas fa-tachometer-alt"></i>
+        <i class="fas fa-tachometer-alt"></i>
         <p>
           Dashboard
         </p>
@@ -12,7 +12,7 @@
     </li>
     <li class="nav-item">
       <a href="index.php?page=detail-penilaian" class="nav-link">
-        <i class="nav-icon fas fa-eye"></i>
+        <i class="fas fa-eye"></i>
         <p>
           Detail Nilai Saya
         </p>
@@ -20,7 +20,7 @@
     </li>
     <li class="nav-item">
       <a href="index.php?page=data-penilaian-cro" class="nav-link">
-        <i class="nav-icon fas fa-chart-bar"></i>
+        <i class="fas fa-chart-bar"></i>
         <p>
           Penilaian
         </p>
@@ -28,7 +28,7 @@
     </li>
     <li class="nav-item">
       <a href="index.php?page=rekap-nilai-cro" class="nav-link">
-        <i class="nav-icon fas fa-database"></i>
+        <i class="fas fa-database"></i>
         <p>
           Rekap Nilai CRO
         </p>
@@ -37,7 +37,7 @@
     <hr>
     <li class="nav-item">
       <a href="../config/logout.php" class="nav-link text-red">
-        <i class="nav-icon fas fa-power-off"></i>
+        <i class="fas fa-fw fa-sign-out-alt"></i>
         <p>
           Logout
         </p>
