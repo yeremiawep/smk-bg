@@ -9,7 +9,11 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"> -->
+  <!-- Font Nunito -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="app/plugins/fontawesome-free/css/all.min.css">
   <!-- icheck bootstrap -->
@@ -25,10 +29,10 @@
 <body class="hold-transition login-page">
   <div class="login-box">
     <!-- /.login-logo -->
-    <div class="card card-outline card-primary" style="font-family: Poppins;">
+    <div class="card card-outline card-primary" style="font-family: Nunito;">
       <div class="card-header text-center">
         <img src="app/dist/img/logo_bg2.png" alt="BG" width="50%" height="20%">
-        <h1>Bringin Gigantara</h1>
+        <h2>Bringin Gigantara Cempaka Putih</h2>
       </div>
       <div class="card-body">
         <form action="config/auth.php" method="post">

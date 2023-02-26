@@ -1,4 +1,4 @@
-<div class="content-header" style="font-family: Poppins;">
+<div class="content-header">
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-6">

@@ -1,4 +1,4 @@
-<div class="sidebar" style="font-family: Poppins; font-size: 14px;">
+<div class="sidebar">
   <!-- Sidebar user panel (optional) -->
   <div class="user-panel mt-2 pb-4 mb-3 d-block">
     <div class="image">
