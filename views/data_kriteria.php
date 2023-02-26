@@ -198,7 +198,7 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                   <th>Aspek</th>
                   <th>Kriteria</th>
                   <th>Target</th>
-                  <th>Options</th>
+                  <th width="8%">Options</th>
                 </tr>
               </thead>
               <tbody>

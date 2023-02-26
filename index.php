@@ -31,8 +31,9 @@
     <!-- /.login-logo -->
     <div class="card card-outline card-primary" style="font-family: Nunito;">
       <div class="card-header text-center">
-        <img src="app/dist/img/logo_bg2.png" alt="BG" width="50%" height="20%">
-        <h2>Bringin Gigantara Cempaka Putih</h2>
+        <img src="app/dist/img/logo_bg2.png" class="img-circle brand-image">
+        <h1>Bringin Gigantara</h1>
+        <h4>KC. Cempaka Putih</h4>
       </div>
       <div class="card-body">
         <form action="config/auth.php" method="post">
