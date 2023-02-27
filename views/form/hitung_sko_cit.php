@@ -27,10 +27,10 @@ $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk='2'"
     <div class="row">
       <div class="col-12">
         <div class="card">
-          <div class="card-header" style="font-family: Poppins; font-style: bold;">
+          <div class="card-header">
             <h2 class="card-title">Form Input Penilaian</h2>
           </div>
-          <div class="card-body" style="font-family: Poppins;">
+          <div class="card-body">
             <form action="../views/hitung/insert_nilai_cit.php" method="post">
               <!-- Sasaran Kinerja Objektif -->
               <div class="card">
