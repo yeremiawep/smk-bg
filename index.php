@@ -29,7 +29,7 @@
 <body class="hold-transition login-page">
   <div class="login-box">
     <!-- /.login-logo -->
-    <div class="card card-outline card-primary" style="font-family: Nunito;">
+    <div class="card card-outline card-primary" style="font-family: Nunito; font-size: 14px;">
       <div class="card-header text-center">
         <img src="app/dist/img/logo_bg2.png" class="img-circle brand-image">
         <h1>Bringin Gigantara</h1>
@@ -55,6 +55,11 @@
           </div>
           <div class="row">
             <!-- /.col -->
+            <div class="row">
+              <p class="mb-1">
+                <a href="forgotpassword.php">I forgot my password</a>
+              </p>
+            </div>
             <div class="col-12">
               <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-fw fa-sign-in-alt mr-1"></i> Login</button>
             </div>
