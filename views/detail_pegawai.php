@@ -36,6 +36,12 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
                   </div>
                 </div>
                 <div class="form-group row">
+                  <label for="" class="col-sm-2 col-form-label">Email</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="" value="<?= $q['email']; ?>" disabled>
+                  </div>
+                </div>
+                <div class="form-group row">
                   <label for="" class="col-sm-2 col-form-label">Jabatan</label>
                   <div class="col-sm-10">
                     <input type="text" class="form-control" id="" value="<?= $q['name_jab']; ?>" disabled>

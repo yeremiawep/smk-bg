@@ -4,6 +4,7 @@ session_start();
 
 $id = $_POST['id_user'];
 $name = $_POST['name'];
+$email = $_POST['email'];
 $id_pegawai = $_POST['id_pegawai'];
 $id_personal = $_POST['id_personal'];
 $divisi = $_POST['divisi'];
@@ -39,6 +40,7 @@ $ijazah = $_POST['ijazah'];
 
 $query = mysqli_query($conn, "UPDATE users SET 
                               name='$name',
+                              email='$email',
                               id_pegawai='$id_pegawai',
                               id_personal='$id_personal', 
                               divisi='$divisi', 

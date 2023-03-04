@@ -147,6 +147,12 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
                   <input type="text" class="form-control" name="no_bpjs_ketenagakerjaan" value="<?= $q['no_bpjs_ketenagakerjaan']; ?>">
                 </div>
               </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="text" class="form-control" name="email" value="<?= $q['email']; ?>">
+                </div>
+              </div>
             </div>
           <?php endforeach; ?>
           <a href="index.php?page=data-pegawai" class="btn btn-sm btn-warning">Back</a>
