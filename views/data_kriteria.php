@@ -24,6 +24,53 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
 <section class="content">
   <div class="container-fluid">
 
+    <!-- <?php foreach ($jab as $j) : ?>
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h2 class="card-title">Sasaran Kinerja Objektif</h2><br>
+              <h6><?= $j['name_jab']; ?></i></h6>
+              <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-add"><i class="nav-icon fas fa-plus"></i> Add Kriteria</button>
+            </div>
+            <div class="card-body">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Aspek</th>
+                    <th>Kriteria</th>
+                    <th>Target</th>
+                    <th>Options</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php foreach ($kriteria as $k) : ?>
+                    <tr>
+                      <td width="10%"><?= $k['aspek']; ?></td>
+                      <td><?= $k['kriteria']; ?></td>
+                      <td><?= $k['target']; ?></td>
+                      <td>
+                        <a href="index.php?page=edit-kriteria&&id=<?= $k['id_isi_sko']; ?>&&jab=<?= $k['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                        <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $k['id_isi_sko']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
+                      </td>
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    <?php endforeach; ?> -->
+
+
+
+
+
+
+
+
+
     <!-- Kriteria Ass.SPV CRO -->
     <div class="row">
       <div class="col-12">
