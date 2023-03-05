@@ -56,6 +56,8 @@ $n = mysqli_fetch_array($nilai);
                 <th>Aspek</th>
                 <th>Kriteria</th>
                 <th>Target</th>
+                <th>Bobot</th>
+                <th>Realisasi (%)</th>
                 <th>Nilai</th>
               </thead>
               <tbody>
@@ -64,6 +66,8 @@ $n = mysqli_fetch_array($nilai);
                     <td><?= $sko['aspek']; ?></td>
                     <td><?= $sko['kriteria']; ?></td>
                     <td><?= $sko['target']; ?></td>
+                    <td><?= $sko['bobot']; ?></td>
+                    <td><?= $sko['realisasi']; ?></td>
                     <td><?= $sko['nilai_sko']; ?></td>
                   </tr>
                 <?php endforeach; ?>

@@ -5,7 +5,7 @@ include '../config/database.php';
 // $jab = implode(',', $jabatan);
 
 // $nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user JOIN jabatans ON nilai_akhir.jabatan=jabatans.id JOIN divisions ON nilai_akhir.divisi=divisions.id");
-$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN divisions ON nilai_akhir.divisi=divisions.id JOIN jabatans ON nilai_akhir.jabatan=jabatans.id JOIN users ON nilai_akhir.id_user=users.id_user WHERE divisions.id='1' AND jabatans.id!='3'");
+$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN divisions ON nilai_akhir.divisi=divisions.id JOIN jabatans ON nilai_akhir.jabatan=jabatans.id JOIN users ON nilai_akhir.id_user=users.id_user JOIN periode ON nilai_akhir.periode=periode.id_periode WHERE divisions.id='1' AND jabatans.id!='3'");
 
 
 ?>
@@ -25,6 +25,7 @@ $nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN divisions ON nilai_
               <thead>
                 <tr>
                   <th width="2%">No</th>
+                  <th width="2%">Periode</th>
                   <th width="10%">ID Pegawai</th>
                   <th width="10%">Nama</th>
                   <th width="10%">Divisi</th>
@@ -42,6 +43,7 @@ $nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN divisions ON nilai_
                 <?php foreach ($nilai as $nilai) : ?>
                   <tr>
                     <td><?= $no++; ?></td>
+                    <td><?= $nilai['tahun']; ?></td>
                     <td><?= $nilai['id_pegawai']; ?></td>
                     <td><?= $nilai['name']; ?></td>
                     <td><?= $nilai['name_div']; ?></td>

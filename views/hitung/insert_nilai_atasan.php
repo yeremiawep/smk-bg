@@ -11,36 +11,44 @@ $id_pegawai = $_POST['id_pegawai'];
 $div = $_POST['div'];
 $jab = $_POST['jab'];
 $id_isi = $_POST['id_isi'];
-$nilaisko = $_POST['nilai'];
-$count = count($nilaisko);
+$realisasi = $_POST['realisasi'];
+$count = count($realisasi);
+$bobot = $_POST['bobot'];
+$periode = $_POST['periode'];
 
 for ($i = 0; $i < $count; $i++) {
-  $insertsko = "INSERT INTO hitung_nilai VALUES ('','$id[$i]','$id_pegawai[$i]','$id_isi[$i]','$nilaisko[$i]')";
+  $nilaiuntuksko[$i] = $realisasi[$i] * $bobot[$i];
+}
+$hasil = array_sum($nilaiuntuksko) / 25;
+
+for ($i = 0; $i < $count; $i++) {
+  $insertsko = "INSERT INTO hitung_nilai VALUES ('','$id[$i]','$id_pegawai[$i]','$id_isi[$i]','$realisasi[$i]','$nilaiuntuksko[$i]','')";
   $sql = mysqli_query($conn, $insertsko);
 }
 
 
 // Insert Nilai SK
 // $id = $_POST['id'];
-// $id_pegawai = $_POST['id_pegawai'];
+$id_pegawai = $_POST['id_pegawai'];
 $id_isi_sk = $_POST['id_isi_sk'];
 $nilaisk = $_POST['nilaisk'];
 $countsk = count($nilaisk);
 
 for ($j = 0; $j < $countsk; $j++) {
-  $insertsk = "INSERT INTO hitung_nilai_sk VALUES('','$id[$j]','$id_pegawai[$j]','$id_isi_sk[$j]','$nilaisk[$j]')";
+  $insertsk = "INSERT INTO hitung_nilai_sk VALUES('','$id[$j]','$id_pegawai[$j]','$id_isi_sk[$j]','$nilaisk[$j]','')";
   $sql = mysqli_query($conn, $insertsk);
 }
 
 // Insert Nilai Akhir
-$nilaihk = $_POST['nilaihk']; //nilai pelanggaran disiplin
-$catatan = $_POST['catatan']; //catatan untuk pekerja
-$total_nilai_sko = array_sum($nilaisko) / $count * 70 / 100; // hitung Nilai SKO non-manajerial, bobot = 70%
-$total_nilai_sk = array_sum($nilaisk) / $countsk * 30 / 100; // hitung Nilai SK non-manajerial, bobot = 30 %
-$nilai_akhir = $total_nilai_sko + $total_nilai_sk - $nilaihk; // total Nilai Akhir
+$nilaihk = $_POST['nilaihk'];
+$catatan = $_POST['catatan'];
+$total_nilai_sko = $hasil * 70 / 100; // hitung nilai sko manajerial, bobot = 70%
+$total_nilai_sk = array_sum($nilaisk) / $countsk * 30 / 100; // hitung nilai sk manajerial, bobot = 30%
+$nilai_akhir = $total_nilai_sko + $total_nilai_sk - $nilaihk; // total nilai akhir
 $predikat = predikat($nilai_akhir);
 
-$insertna = "INSERT INTO nilai_akhir VALUES ('','$id[0]','$id_pegawai[0]','$jab','$div','$total_nilai_sko','$total_nilai_sk','$nilaihk','$nilai_akhir','$predikat','$catatan')";
+
+$insertna = "INSERT INTO nilai_akhir VALUES ('','$id[0]','$id_pegawai[0]','$jab','$div','$total_nilai_sko','$total_nilai_sk','$nilaihk','$nilai_akhir','$predikat','$catatan','$periode[0]')";
 $sql = mysqli_query($conn, $insertna);
 
 if ($sql) {

@@ -66,6 +66,7 @@ $plkcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE divisi='1'
         <div class="card bg-light">
           <div class="card-header bg-info">
             <h5 class="card-title">
+              <span style="font-weight:bold; opacity:50%;">Klik untuk melihat</span><br>
               Sasaran Kinerja Objektif CRO
             </h5>
           </div>
@@ -86,6 +87,7 @@ $plkcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE divisi='1'
         <div class="card bg-light">
           <div class="card-header bg-info">
             <h5 class="card-title">
+              <span style="font-weight:bold; opacity:50%;">Klik untuk melihat</span><br>
               Sasaran Kinerja Objektif CIT
             </h5>
           </div>
@@ -103,6 +105,7 @@ $plkcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE divisi='1'
         <div class="card bg-light">
           <div class="card-header bg-info">
             <h5 class="card-title">
+              <span style="font-weight:bold; opacity:50%;">Klik untuk melihat</span><br>
               Sasaran Kinerja Objektif Rutang
             </h5>
           </div>

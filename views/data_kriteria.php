@@ -1,13 +1,13 @@
 <?php
 include '../config/database.php';
 
-$sko_spvcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan=3");
-$sko_spvcit = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan=4");
-$sko_spvrtg = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan=5");
-$sko_pcro   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan=13");
-$sko_acro   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan=7");
-$sko_acit   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan=8");
-$sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan=9");
+$sko_spvcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN tk_kepentingan ON kriteria_penilaian.id_tk=tk_kepentingan.id_tk WHERE jabatan=3");
+$sko_spvcit = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN tk_kepentingan ON kriteria_penilaian.id_tk=tk_kepentingan.id_tk WHERE jabatan=4");
+$sko_spvrtg = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN tk_kepentingan ON kriteria_penilaian.id_tk=tk_kepentingan.id_tk WHERE jabatan=5");
+$sko_pcro   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN tk_kepentingan ON kriteria_penilaian.id_tk=tk_kepentingan.id_tk WHERE jabatan=13");
+$sko_acro   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN tk_kepentingan ON kriteria_penilaian.id_tk=tk_kepentingan.id_tk WHERE jabatan=7");
+$sko_acit   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN tk_kepentingan ON kriteria_penilaian.id_tk=tk_kepentingan.id_tk WHERE jabatan=8");
+$sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN tk_kepentingan ON kriteria_penilaian.id_tk=tk_kepentingan.id_tk WHERE jabatan=9");
 
 ?>
 
@@ -87,7 +87,9 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                   <th>Aspek</th>
                   <th>Kriteria</th>
                   <th>Target</th>
-                  <th>Options</th>
+                  <th>Tingkat Kepentingan</th>
+                  <th>Bobot</th>
+                  <th width="8%">Options</th>
                 </tr>
               </thead>
               <tbody>
@@ -96,6 +98,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                     <td width="10%"><?= $cro['aspek']; ?></td>
                     <td><?= $cro['kriteria']; ?></td>
                     <td><?= $cro['target']; ?></td>
+                    <td><?= $cro['ket']; ?></td>
+                    <td><?= $cro['bobot']; ?></td>
                     <td>
                       <a href="index.php?page=edit-kriteria&&id=<?= $cro['id_isi_sko']; ?>&&jab=<?= $cro['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
                       <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $cro['id_isi_sko']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
@@ -126,7 +130,9 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                   <th>Aspek</th>
                   <th>Kriteria</th>
                   <th>Target</th>
-                  <th>Options</th>
+                  <th>Tingkat Kepentingan</th>
+                  <th>Bobot</th>
+                  <th width="8%">Options</th>
                 </tr>
               </thead>
               <tbody>
@@ -135,6 +141,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                     <td width="10%"><?= $cit['aspek']; ?></td>
                     <td><?= $cit['kriteria']; ?></td>
                     <td><?= $cit['target']; ?></td>
+                    <td><?= $cit['ket']; ?></td>
+                    <td><?= $cit['bobot']; ?></td>
                     <td>
                       <a href="index.php?page=edit-kriteria&&id=<?= $cit['id_isi_sko']; ?>&&jab=<?= $cit['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
                       <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $cit['id_isi_sko']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
@@ -165,7 +173,9 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                   <th>Aspek</th>
                   <th>Kriteria</th>
                   <th>Target</th>
-                  <th>Options</th>
+                  <th>Tingkat Kepentingan</th>
+                  <th>Bobot</th>
+                  <th width="8%">Options</th>
                 </tr>
               </thead>
               <tbody>
@@ -174,6 +184,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                     <td width="10%"><?= $rtg['aspek']; ?></td>
                     <td><?= $rtg['kriteria']; ?></td>
                     <td width="40%"><?= $rtg['target']; ?></td>
+                    <td><?= $rtg['ket']; ?></td>
+                    <td><?= $rtg['bobot']; ?></td>
                     <td>
                       <a href="index.php?page=edit-kriteria&&id=<?= $rtg['id_isi_sko']; ?>&&jab=<?= $rtg['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
                       <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $rtg['id_isi_sko']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
@@ -205,7 +217,9 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                   <th>Aspek</th>
                   <th>Kriteria</th>
                   <th>Target</th>
-                  <th>Options</th>
+                  <th>Tingkat Kepentingan</th>
+                  <th>Bobot</th>
+                  <th width="8%">Options</th>
                 </tr>
               </thead>
               <tbody>
@@ -214,6 +228,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                     <td><?= $p['aspek']; ?></td>
                     <td><?= $p['kriteria']; ?></td>
                     <td><?= $p['target']; ?></td>
+                    <td><?= $p['ket']; ?></td>
+                    <td><?= $p['bobot']; ?></td>
                     <td>
                       <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi_sko']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
                       <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $p['id_isi_sko']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
@@ -245,6 +261,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                   <th>Aspek</th>
                   <th>Kriteria</th>
                   <th>Target</th>
+                  <th>Tingkat Kepentingan</th>
+                  <th>Bobot</th>
                   <th width="8%">Options</th>
                 </tr>
               </thead>
@@ -254,6 +272,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                     <td><?= $p['aspek']; ?></td>
                     <td><?= $p['kriteria']; ?></td>
                     <td><?= $p['target']; ?></td>
+                    <td><?= $p['ket']; ?></td>
+                    <td><?= $p['bobot']; ?></td>
                     <td>
                       <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi_sko']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
                       <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $p['id_isi_sko']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
@@ -285,7 +305,9 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                   <th>Aspek</th>
                   <th>Kriteria</th>
                   <th>Target</th>
-                  <th>Options</th>
+                  <th>Tingkat Kepentingan</th>
+                  <th>Bobot</th>
+                  <th width="8%">Options</th>
                 </tr>
               </thead>
               <tbody>
@@ -294,6 +316,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                     <td><?= $p['aspek']; ?></td>
                     <td><?= $p['kriteria']; ?></td>
                     <td><?= $p['target']; ?></td>
+                    <td><?= $p['ket']; ?></td>
+                    <td><?= $p['bobot']; ?></td>
                     <td>
                       <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi_sko']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
                       <a onClick="hapusData()" href="../views/delete/delete_kriteria.php?id=<?= $p['id_isi_sko']; ?>" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
@@ -325,7 +349,9 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                   <th>Aspek</th>
                   <th>Kriteria</th>
                   <th>Target</th>
-                  <th>Options</th>
+                  <th>Tingkat Kepentingan</th>
+                  <th>Bobot</th>
+                  <th width="8%">Options</th>
                 </tr>
               </thead>
               <tbody>
@@ -334,6 +360,8 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
                     <td><?= $p['aspek']; ?></td>
                     <td><?= $p['kriteria']; ?></td>
                     <td><?= $p['target']; ?></td>
+                    <td><?= $p['ket']; ?></td>
+                    <td><?= $p['bobot']; ?></td>
                     <td>
                       <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi_sko']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
                       <a onClick="hapusData(<?= $p['id_isi_sko']; ?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
@@ -403,6 +431,20 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabata
               <div class="row">
                 <label for="target">Target</label>
                 <input type="text" class="form-control" name="target" id="target" required>
+              </div>
+              <div class="row">
+                <label for="tk_kepentingan">Tingkat Kepentingan</label>
+                <select class="custom-select" name="tk_kepentingan" id="tk_kepentingan" required>
+                  <option value="1">Sangat Rendah</option>
+                  <option value="2">Rendah</option>
+                  <option value="3">Sedang</option>
+                  <option value="4">Tinggi</option>
+                  <option value="5">Sangat Tinggi</option>
+                </select>
+              </div>
+              <div class="row">
+                <label for="bobot">Bobot</label>
+                <input type="text" class="form-control" name="bobot" id="bobot" required>
               </div>
               <div class="row mt-2 d-inline-block">
                 <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>

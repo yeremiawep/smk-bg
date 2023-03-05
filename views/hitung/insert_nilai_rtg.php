@@ -10,37 +10,44 @@ $id_pegawai = $_POST['id_pegawai'];
 $div = $_POST['div'];
 $jab = $_POST['jab'];
 $id_isi = $_POST['id_isi'];
-$nilaisko = $_POST['nilai'];
-$count = count($nilaisko);
+$realisasi = $_POST['realisasi'];
+$count = count($realisasi);
+$bobot = $_POST['bobot'];
+$periode = $_POST['periode'];
 
 for ($i = 0; $i < $count; $i++) {
-  $insertsko = "INSERT INTO hitung_nilai VALUES ('','$id[$i]','$id_pegawai[$i]','$id_isi[$i]','$nilaisko[$i]')";
+  $nilaiuntuksko[$i] = $realisasi[$i] * $bobot[$i];
+}
+$hasil = array_sum($nilaiuntuksko) / 25;
+
+for ($i = 0; $i < $count; $i++) {
+  $insertsko = "INSERT INTO hitung_nilai VALUES ('','$id[$i]','$id_pegawai[$i]','$id_isi[$i]','$realisasi[$i]','$nilaiuntuksko[$i]','')";
   $sql = mysqli_query($conn, $insertsko);
 }
 
 
 // Insert Nilai SK
 // $id = $_POST['id'];
-// $id_pegawai = $_POST['id_pegawai'];
+$id_pegawai = $_POST['id_pegawai'];
 $id_isi_sk = $_POST['id_isi_sk'];
 $nilaisk = $_POST['nilaisk'];
 $countsk = count($nilaisk);
 
 for ($j = 0; $j < $countsk; $j++) {
-  $insertsk = "INSERT INTO hitung_nilai_sk VALUES('','$id[$j]','$id_pegawai[$j]','$id_isi_sk[$j]','$nilaisk[$j]')";
+  $insertsk = "INSERT INTO hitung_nilai_sk VALUES('','$id[$j]','$id_pegawai[$j]','$id_isi_sk[$j]','$nilaisk[$j]','')";
   $sql = mysqli_query($conn, $insertsk);
 }
 
 // Insert Nilai Akhir
 $nilaihk = $_POST['nilaihk'];
 $catatan = $_POST['catatan'];
-$total_nilai_sko = array_sum($nilaisko) / $count * 60 / 100; // hitung nilai sko non-manajerial, bobot = 60%
+$total_nilai_sko = $hasil * 60 / 100; // hitung nilai sko non-manajerial, bobot = 60%
 $total_nilai_sk = array_sum($nilaisk) / $countsk * 40 / 100; // hitung nilai sk non-manajerial, bobot = 40%
 $nilai_akhir = $total_nilai_sko + $total_nilai_sk - $nilaihk; // total nilai akhir
 $predikat = predikat($nilai_akhir);
 
 
-$insertna = "INSERT INTO nilai_akhir VALUES ('','$id[0]','$id_pegawai[0]','$jab','$div','$total_nilai_sko','$total_nilai_sk','$nilaihk','$nilai_akhir','$predikat','$catatan')";
+$insertna = "INSERT INTO nilai_akhir VALUES ('','$id[0]','$id_pegawai[0]','$jab','$div','$total_nilai_sko','$total_nilai_sk','$nilaihk','$nilai_akhir','$predikat','$catatan','$periode[0]')";
 $sql = mysqli_query($conn, $insertna);
 
 if ($sql) {
@@ -51,16 +58,19 @@ if ($sql) {
 
 header('Location: ../../app/index.php?page=data-penilaian-rtg');
 
+
 // var_dump($insertsko);
 // var_dump($sql);
 // var_dump($insertna);
 
 // var_dump($id_pegawai);
 // var_dump($id_isi);
-// var_dump($nilaisko);
+// var_dump($realisasi);
 // var_dump($count);
 // var_dump($div);
 // var_dump($jab);
+// var_dump($periode);
+// var_dump($bobot);
 
 // var_dump($id_pegawai);
 // var_dump($id_isi_sk);
@@ -73,3 +83,6 @@ header('Location: ../../app/index.php?page=data-penilaian-rtg');
 // var_dump($nilai_akhir);
 // var_dump($predikat);
 // var_dump($catatan);
+
+// var_dump($nilaiuntuksko);
+// var_dump($hasil);

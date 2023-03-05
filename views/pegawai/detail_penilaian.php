@@ -57,6 +57,8 @@ $m = mysqli_fetch_array($me);
                 <th>Aspek</th>
                 <th>Kriteria</th>
                 <th>Target</th>
+                <th>Bobot</th>
+                <th>Realisasi (%)</th>
                 <th>Nilai</th>
               </thead>
               <tbody>
@@ -65,6 +67,8 @@ $m = mysqli_fetch_array($me);
                     <td><?= $sko['aspek']; ?></td>
                     <td><?= $sko['kriteria']; ?></td>
                     <td><?= $sko['target']; ?></td>
+                    <td><?= $sko['bobot']; ?></td>
+                    <td><?= $sko['realisasi']; ?></td>
                     <td placeholder="--"><?= $sko['nilai_sko']; ?></td>
                   </tr>
                 <?php endforeach; ?>
@@ -79,7 +83,7 @@ $m = mysqli_fetch_array($me);
           </div>
           <hr class="border-primary">
           <div class="card-body">
-            <h5>Sasaran Kinerja Objektif</h5>
+            <h5>Sasaran Kompetensi</h5>
             <table class="table table-bordered">
               <thead>
                 <th>Kriteria</th>

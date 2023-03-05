@@ -9,7 +9,7 @@ $divisi = $_SESSION['divisi'];
 $jab = $_SESSION['name_jab'];
 $div = $_SESSION['name_div'];
 
-$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user JOIN jabatans ON nilai_akhir.jabatan=jabatans.id JOIN divisions ON nilai_akhir.divisi=divisions.id");
+$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user JOIN jabatans ON nilai_akhir.jabatan=jabatans.id JOIN divisions ON nilai_akhir.divisi=divisions.id JOIN periode ON nilai_akhir.periode=periode.id_periode");
 $rank = mysqli_query($conn, "SELECT * FROM nilai_akhir WHERE divisi='$divisi'");
 
 
@@ -30,6 +30,7 @@ $rank = mysqli_query($conn, "SELECT * FROM nilai_akhir WHERE divisi='$divisi'");
               <thead>
                 <tr>
                   <th width="2%">No</th>
+                  <th width="2%">Periode</th>
                   <th width="10%">ID Pegawai</th>
                   <th width="10%">Nama</th>
                   <th width="10%">Divisi</th>
@@ -46,6 +47,7 @@ $rank = mysqli_query($conn, "SELECT * FROM nilai_akhir WHERE divisi='$divisi'");
                 <?php foreach ($nilai as $nilai) : ?>
                   <tr>
                     <td><?= $no++; ?></td>
+                    <td><?= $nilai['tahun']; ?></td>
                     <td><?= $nilai['id_pegawai']; ?></td>
                     <td><?= $nilai['name']; ?></td>
                     <td><?= $nilai['name_div']; ?></td>

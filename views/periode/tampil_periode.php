@@ -1,7 +1,7 @@
 <?php
 include '../config/database.php';
 
-$divisi = mysqli_query($conn, "SELECT * FROM divisions");
+$periode = mysqli_query($conn, "SELECT * FROM periode");
 
 ?>
 
@@ -10,8 +10,8 @@ $divisi = mysqli_query($conn, "SELECT * FROM divisions");
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <h1>Data Divisi</h1>
-        <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-xl"><i class="nav-icon fas fa-plus"></i> Add Division</button>
+        <h1>Periode</h1>
+        <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-xl"><i class="nav-icon fas fa-plus"></i> Add Periode</button>
       </div>
     </div>
   </div>
@@ -25,24 +25,24 @@ $divisi = mysqli_query($conn, "SELECT * FROM divisions");
       <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Data Divisi</h3>
+            <h3 class="card-title">Periode</h3>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
             <table id="example1" class="table table-bordered">
               <thead>
                 <tr>
-                  <th width="10%">Divisi</th>
-                  <th width="10%">Aksi</th>
+                  <th width="10%">Periode</th>
+                  <!-- <th width="10%">Aksi</th> -->
                 </tr>
               </thead>
               <tbody>
-                <?php foreach ($divisi as $d) : ?>
+                <?php foreach ($periode as $p) : ?>
                   <tr>
-                    <td><?= $d['name_div']; ?></td>
-                    <td>
-                      <a href="index.php?page=edit-data-divisi&&id=<?= $d['id']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
-                    </td>
+                    <td><?= $p['tahun']; ?></td>
+                    <!-- <td>
+                      <a href="index.php?page=edit-data-divisi&&id=<?= $p['id_periode']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                    </td> -->
                   </tr>
                 <?php endforeach; ?>
               </tbody>
@@ -65,17 +65,17 @@ $divisi = mysqli_query($conn, "SELECT * FROM divisions");
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Add Divisi</h4>
+        <h4 class="modal-title">Add New Periode</h4>
         <button type="button" class="close" data-dismiss="modal" Arial-label="Close">
           <span Arial-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form action="../views/add/tambah_data_divisi.php" method="POST">
+        <form action="../views/add/tambah_data_periode.php" method="POST">
           <div class="form">
             <div class="row">
-              <label for="name_div">Divisi</label>
-              <input type="text" class="form-control" name="name_div" id="name_div" required>
+              <label for="name_div">Tahun</label>
+              <input type="text" class="form-control" name="tahun" id="tahun" required>
             </div>
             <div class="row mt-2 d-inline-block">
               <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>

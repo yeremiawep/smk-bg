@@ -88,6 +88,10 @@ include '../config/database.php'
           case 'data-kompetensi':
             include '../views/data_kompetensi.php';
             break;
+            // periode
+          case 'data-periode':
+            include '../views/periode/tampil_periode.php';
+            break;
             // penilaian
           case 'data-penilaian-rtg':
             include '../views/data_penilaian_rtg.php';

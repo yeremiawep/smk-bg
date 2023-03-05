@@ -115,7 +115,8 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
                 </div>
               <?php endforeach; ?>
             </form>
-            <a href="index.php?page=data-pegawai" class="btn btn-md btn-warning">Back</a>
+            <a href="index.php?page=data-pegawai" class="btn btn-md btn-secondary">Back</a>
+            <a href="index.php?page=edit-data-pegawai&&id=<?= $q['id_pegawai']; ?>" class="btn btn-md btn-warning">Edit</a>
           </div>
         </div>
       </div>

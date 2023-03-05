@@ -7,7 +7,7 @@ $kategori = mysqli_query($conn, "SELECT * FROM kategori");
 
 <!-- Content Wrapper. Contains page content -->
 <section class="content-header">
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
       <div class="col-sm-6">
         <h1>Data Jabatan</h1>
@@ -15,12 +15,12 @@ $kategori = mysqli_query($conn, "SELECT * FROM kategori");
       </div>
     </div>
   </div>
-  <!-- /.container-fluid -->
+  <!-- /.container -->
 </section>
 
 <!-- Main content -->
 <section class="content">
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="card">

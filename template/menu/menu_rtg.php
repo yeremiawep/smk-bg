@@ -98,14 +98,14 @@
         <p>Rekap Nilai</p>
       </a>
     </li>
-    <!-- <li class="nav-item">
+    <li class="nav-item">
       <a href="index.php?page=data-periode" class="nav-link">
         <i class="fas fa-calendar"></i>
         <p>
           Periode
         </p>
       </a>
-    </li> -->
+    </li>
     <hr>
     <li class="nav-item">
       <a href="../config/logout.php" class="nav-link text-red">
