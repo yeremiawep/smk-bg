@@ -5,8 +5,11 @@ include '../config/database.php';
 // $jab = implode(',', $jabatan);
 
 // $nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user JOIN jabatans ON nilai_akhir.jabatan=jabatans.id JOIN divisions ON nilai_akhir.divisi=divisions.id");
-$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN divisions ON nilai_akhir.divisi=divisions.id JOIN jabatans ON nilai_akhir.jabatan=jabatans.id JOIN users ON nilai_akhir.id_user=users.id_user JOIN periode ON nilai_akhir.periode=periode.id_periode WHERE divisions.id='3' AND jabatans.id!='5'");
+// $nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN divisions ON nilai_akhir.divisi=divisions.id JOIN jabatans ON nilai_akhir.jabatan=jabatans.id JOIN users ON nilai_akhir.id_user=users.id_user JOIN periode ON nilai_akhir.periode=periode.id_periode WHERE divisions.id='3' AND jabatans.id!='5'");
 
+$nilai = mysqli_query($conn, "SELECT * FROM users JOIN nilai_akhir ON users.id_user=nilai_akhir.id_user JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id WHERE divisions.id ='3' AND jabatans.id!='5'");
+$periode = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN periode ON nilai_akhir.periode=periode.id_periode");
+$p = $periode->fetch_array();
 
 ?>
 
@@ -43,7 +46,7 @@ $nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN divisions ON nilai_
                 <?php foreach ($nilai as $nilai) : ?>
                   <tr>
                     <td><?= $no++; ?></td>
-                    <td><?= $nilai['tahun']; ?></td>
+                    <td><?= $p['tahun']; ?></td>
                     <td><?= $nilai['id_pegawai']; ?></td>
                     <td><?= $nilai['name']; ?></td>
                     <td><?= $nilai['name_div']; ?></td>
@@ -54,8 +57,8 @@ $nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN divisions ON nilai_
                     <td><?= $nilai['nilai_akhir']; ?></td>
                     <td><?= $nilai['predikat']; ?></td>
                     <td>
-                      <a href="index.php?page=detail-nilai-pegawai&&idna=<?= $nilai['id_na']; ?>&&id=<?= $nilai['id_user']; ?>&&idpeg=<?= $nilai['id_pegawai']; ?>" class="btn btn-sm btn-primary"><i class="nav-icon fas fa-eye"></i></a>
-                      <a href="index.php?page=edit-nilai-rtg&&idna=<?= $nilai['id_na']; ?>&&id=<?= $nilai['id_user']; ?>&&idpeg=<?= $nilai['id_pegawai']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                      <a href="index.php?page=detail-nilai-pegawai&&idna=<?= $nilai['id_na']; ?>&&id=<?= $nilai['id_user']; ?>" class="btn btn-sm btn-primary"><i class="nav-icon fas fa-eye"></i></a>
+                      <a href="index.php?page=edit-nilai-rtg&&idna=<?= $nilai['id_na']; ?>&&id=<?= $nilai['id_user']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
