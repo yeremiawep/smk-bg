@@ -7,26 +7,29 @@ $jml = $_POST['jml'];
 
 $tkkep = mysqli_query($conn, "SELECT * FROM tk_kepentingan");
 $kriteria = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan='$jab'");
+$jabatan = mysqli_query($conn, "SELECT * FROM jabatans WHERE id='$jab'");
+$j = $jabatan->fetch_array();
 
 ?>
 
 <section class="content">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-12">
         <div class="card">
           <div class="card-header">
             <div class="card-title">
               <h4>Tambah Kriteria</h4>
+              <h5><?= $j['name_jab']; ?></h5>
             </div>
             <div class="card-body">
               <form action="../views/add/tambah_kriteria.php" method="POST">
                 <table class="table table-bordered">
                   <thead>
-                    <td>Aspek</td>
+                    <td width="15%">Aspek</td>
                     <td>Kriteria</td>
                     <td>Target</td>
-                    <td>Tingkat Kepentingan</td>
+                    <td width="12%">Tingkat Kepentingan</td>
                   </thead>
                   <tbody>
                     <?php for ($i = 1; $i <= $jml; $i++) { ?>
@@ -39,8 +42,8 @@ $kriteria = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan=
                             <option value="Aspek Pelanggan">Pelanggan</option>
                           </select>
                         </td>
-                        <td><input type="text" name="kriteria[]" id="kriteria[]" required></td>
-                        <td><input type="text" name="target[]" id="target[]"></td>
+                        <td><input type="text" class="col-11" name="kriteria[]" id="kriteria[]" required></td>
+                        <td><input type="text" class="col-11" name="target[]" id="target[]"></td>
                         <td>
                           <select class="custom-select" name="tk_kep[]" id="tk_kep[]" required>
                             <option value="" selected disabled>--</option>
