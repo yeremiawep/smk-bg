@@ -5,9 +5,11 @@ include '../config/database.php';
 $id = $_GET['id'];
 $jab = $_GET['jab'];
 
-$query = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN jabatans ON kriteria_penilaian.jabatan=jabatans.id jabatan='$jab'");
+$query = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN jabatans ON kriteria_penilaian.jabatan=jabatans.id WHERE jabatan='$jab'");
 $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk='1'");
 $periode = mysqli_query($conn, "SELECT * FROM periode");
+$user = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id WHERE id_user='$id'");
+$n = $user->fetch_array();
 
 ?>
 
