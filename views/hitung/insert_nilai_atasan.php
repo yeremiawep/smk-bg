@@ -7,9 +7,6 @@ session_start();
 
 // Insert Nilai SKO
 $id = $_POST['id_user'];
-$id_pegawai = $_POST['id_pegawai'];
-$div = $_POST['div'];
-$jab = $_POST['jab'];
 $id_isi = $_POST['id_isi'];
 $realisasi = $_POST['realisasi'];
 $count = count($realisasi);
@@ -18,28 +15,27 @@ $periode = $_POST['periode'];
 
 for ($i = 0; $i < $count; $i++) {
   $nilaiuntuksko[$i] = $realisasi[$i] * $bobot[$i];
+  @$periode[$i] = $periode;
 }
 $hasil = array_sum($nilaiuntuksko) / 25;
 
 for ($i = 0; $i < $count; $i++) {
-  $insertsko = "INSERT INTO hitung_nilai VALUES ('','$id[$i]','$id_pegawai[$i]','$id_isi[$i]','$realisasi[$i]','$nilaiuntuksko[$i]','')";
+  $insertsko = "INSERT INTO hitung_nilai VALUES ('','$id[$i]','$id_isi[$i]','$realisasi[$i]','$nilaiuntuksko[$i]','$periode[$i]')";
   $sql = mysqli_query($conn, $insertsko);
 }
 
 
 // Insert Nilai SK
-// $id = $_POST['id'];
-$id_pegawai = $_POST['id_pegawai'];
 $id_isi_sk = $_POST['id_isi_sk'];
 $nilaisk = $_POST['nilaisk'];
 $countsk = count($nilaisk);
 
 for ($j = 0; $j < $countsk; $j++) {
-  $insertsk = "INSERT INTO hitung_nilai_sk VALUES('','$id[$j]','$id_pegawai[$j]','$id_isi_sk[$j]','$nilaisk[$j]','')";
+  $insertsk = "INSERT INTO hitung_nilai_sk VALUES('','$id[$j]','$id_isi_sk[$j]','$nilaisk[$j]','$periode[$j]')";
   $sql = mysqli_query($conn, $insertsk);
 }
 
-// Insert Nilai Akhir
+// // Insert Nilai Akhir
 $nilaihk = $_POST['nilaihk'];
 $catatan = $_POST['catatan'];
 $total_nilai_sko = $hasil * 70 / 100; // hitung nilai sko manajerial, bobot = 70%
@@ -48,7 +44,7 @@ $nilai_akhir = $total_nilai_sko + $total_nilai_sk - $nilaihk; // total nilai akh
 $predikat = predikat($nilai_akhir);
 
 
-$insertna = "INSERT INTO nilai_akhir VALUES ('','$id[0]','$id_pegawai[0]','$jab','$div','$total_nilai_sko','$total_nilai_sk','$nilaihk','$nilai_akhir','$predikat','$catatan','$periode[0]')";
+$insertna = "INSERT INTO nilai_akhir VALUES ('','$id[0]','$total_nilai_sko','$total_nilai_sk','$nilaihk','$nilai_akhir','$predikat','$catatan','$periode[0]')";
 $sql = mysqli_query($conn, $insertna);
 
 if ($sql) {

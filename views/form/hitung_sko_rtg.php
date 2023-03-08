@@ -59,14 +59,9 @@ $n = $user->fetch_array();
                 <div class="card-body">
                   <?php foreach ($query as $q) : ?>
                     <div class="form-group row">
-                      <!-- <input type="text" name="id_user[]" id="id_user[]" value="<?= $id; ?>" hidden> -->
-                      <input type="text" name="div" id="div" value="<?= $div; ?>" hidden>
-                      <input type="text" name="jab" id="jab" value="<?= $jab; ?>" hidden>
-                      <!-- <input type="text" name="id_pegawai[]" id="id_pegawai[]" value="<?= $idpeg; ?>" hidden> -->
-                      <!-- <input type="text" name="id_isi[]" id="id_isi[]" value="<?= $q['id_isi_sko']; ?>" hidden> -->
                       <label for="periode" class="col-sm-2 col-form-label">Periode</label>
                       <div class="col-sm-4">
-                        <select name="periode[]" id="periode[]" class="form-select rounded col-2 text-center" required>
+                        <select name="periode" id="periode" class="form-select rounded col-2 text-center" required>
                           <option selected disabled value="">--</option>
                           <?php foreach ($periode as $p) : ?>
                             <option value="<?= $p['id_periode']; ?>"><?= $p['tahun']; ?></option>
@@ -88,8 +83,8 @@ $n = $user->fetch_array();
                         <?php foreach ($query as $q) : ?>
                           <tr>
                             <td>
+                              <input type="text" name="id_user[]" id="id_user[]" value="<?= $id; ?>" hidden>
                               <input type="text" name="id_isi[]" id="id_isi[]" value="<?= $q['id_isi_sko']; ?>" hidden>
-                              <input type="text" name="aspek" id="aspek" value="<?= $q['aspek']; ?>" hidden>
                               <?= $q['aspek']; ?>
                             </td>
                             <td>
@@ -120,15 +115,6 @@ $n = $user->fetch_array();
                   <h5 class="card-title">Sasaran Kompetensi</h5>
                 </div>
                 <div class="card-body">
-                  <!-- <label for="periode" class="col-sm-2 col-form-label">Periode</label>
-                        <div class="col-sm-4">
-                          <select name="periode[]" id="periode[]" class="form-select rounded col-2 text-center" required>
-                            <option selected disabled value="">--</option>
-                            <?php foreach ($periode as $p) : ?>
-                              <option value="<?= $p['id_periode']; ?>"><?= $p['tahun']; ?></option>
-                            <?php endforeach; ?>
-                          </select>
-                        </div> -->
                   <?php foreach ($sk as $sk) : ?>
                     <div class="form-group row">
                       <input type="text" name="id_user[]" id="id_user[]" value="<?= $id; ?>" hidden>
@@ -164,7 +150,6 @@ $n = $user->fetch_array();
                 <div class="card-body">
                   <div class="form-group row">
                     <input type="text" name="id_user[]" id="id_user[]" value="<?= $id; ?>" hidden>
-                    <input type="text" name="id_pegawai[]" id="id_pegawai[]" value="<?= $idpeg; ?>" hidden>
                   </div>
                   <div class="form-group row">
                     <label for="nilai" class="col-sm-2 col-form-label">Jenis Pelanggaran</label>

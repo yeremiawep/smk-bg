@@ -31,6 +31,24 @@ $periode = mysqli_query($conn, "SELECT * FROM periode");
           </div>
           <div class="card-body">
             <form action="../views/hitung/insert_nilai_atasan.php" method="post">
+              <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">Nama</label>
+                <div class="col-sm-6">
+                  <input type="text" id="" value="<?= $n['name']; ?>" disabled>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">ID Pegawai</label>
+                <div class="col-sm-6">
+                  <input type="text" id="" value="<?= $n['id_pegawai']; ?>" disabled>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">Jabatan</label>
+                <div class="col-sm-6">
+                  <input type="text" id="" value="<?= $n['name_jab']; ?>" disabled>
+                </div>
+              </div>
               <!-- Sasaran Kinerja Objektif -->
               <div class="card">
                 <div class="card-header bg-primary text-white">
@@ -41,7 +59,7 @@ $periode = mysqli_query($conn, "SELECT * FROM periode");
                     <div class="form-group row">
                       <label for="periode" class="col-sm-2 col-form-label">Periode</label>
                       <div class="col-sm-4">
-                        <select name="periode[]" id="periode[]" class="form-select rounded col-2 text-center" required>
+                        <select name="periode" id="periode" class="form-select rounded col-2 text-center" required>
                           <option selected disabled value="">--</option>
                           <?php foreach ($periode as $p) : ?>
                             <option value="<?= $p['id_periode']; ?>"><?= $p['tahun']; ?></option>
@@ -131,7 +149,6 @@ $periode = mysqli_query($conn, "SELECT * FROM periode");
                 <div class="card-body">
                   <div class="form-group row">
                     <input type="text" name="id_user[]" id="id_user[]" value="<?= $id; ?>" hidden>
-                    <input type="text" name="id_pegawai[]" id="id_pegawai[]" value="<?= $idpeg; ?>" hidden>
                   </div>
                   <div class="form-group row">
                     <label for="nilai" class="col-sm-2 col-form-label">Jenis Pelanggaran</label>

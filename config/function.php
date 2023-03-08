@@ -1,7 +1,6 @@
 <?php
 
 // Pemberian Predikat 
-
 // ------------- Start ----------------- //
 function predikat($nilai_akhir)
 {
@@ -26,7 +25,6 @@ function predikat($nilai_akhir)
 
 
 // Menghitung nilai sasaran kompetensi untuk level non manajerial
-
 // ------------- Start ----------------------------------------- //
 function hitung_sk_plk($nilaisk, $countsk)
 {
@@ -38,7 +36,6 @@ function hitung_sk_plk($nilaisk, $countsk)
 
 
 // Menghitung nilai sasaran kinerja objektif untuk level non manajerial
-
 // ------------- Start ----------------------------------------- //
 function hitung_nilai_sko_plk($nilaisko, $count)
 {
@@ -50,7 +47,6 @@ function hitung_nilai_sko_plk($nilaisko, $count)
 
 
 // Menghitung nilai sasaran kinerja objektif untuk level manajerial
-
 // ---------------------- Start ---------------------------------- //
 function hitung_nilai_sko_mnj($nilaisko, $count)
 {
@@ -62,7 +58,6 @@ function hitung_nilai_sko_mnj($nilaisko, $count)
 
 
 // Menghitung nilai sasaran kompetensi untuk level manajerial 
-
 // ------------------------- Start -------------------------------- //
 function hitung_nilai_sk_mnj($nilaisk, $countsk)
 {
@@ -74,7 +69,6 @@ function hitung_nilai_sk_mnj($nilaisk, $countsk)
 
 
 // Menghitung Nilai Akhir
-
 // ---------------------------- Start ----------------------------- //
 function hitung_nilai_akhir($total_nilai_sko, $total_nilai_sk, $nilaihk)
 {
