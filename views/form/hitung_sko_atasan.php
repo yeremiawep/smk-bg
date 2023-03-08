@@ -5,7 +5,7 @@ include '../config/database.php';
 $id = $_GET['id'];
 $jab = $_GET['jab'];
 
-$query = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN divisions ON kriteria_penilaian.divisi=divisions.id JOIN jabatans ON kriteria_penilaian.jabatan=jabatans.id WHERE divisi='$div' AND jabatan='$jab'");
+$query = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN jabatans ON kriteria_penilaian.jabatan=jabatans.id jabatan='$jab'");
 $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk='1'");
 $periode = mysqli_query($conn, "SELECT * FROM periode");
 
@@ -40,8 +40,8 @@ $periode = mysqli_query($conn, "SELECT * FROM periode");
                   <?php foreach ($query as $q) : ?>
                     <div class="form-group row">
                       <!-- <input type="text" name="id_user[]" id="id_user[]" value="<?= $id; ?>" hidden> -->
-                      <input type="text" name="div" id="div" value="<?= $div; ?>" hidden>
-                      <input type="text" name="jab" id="jab" value="<?= $jab; ?>" hidden>
+                      <!-- <input type="text" name="div" id="div" value="<?= $div; ?>" hidden> -->
+                      <!-- <input type="text" name="jab" id="jab" value="<?= $jab; ?>" hidden> -->
                       <!-- <input type="text" name="id_pegawai[]" id="id_pegawai[]" value="<?= $idpeg; ?>" hidden> -->
                       <!-- <input type="text" name="id_isi[]" id="id_isi[]" value="<?= $q['id_isi_sko']; ?>" hidden> -->
                       <label for="periode" class="col-sm-2 col-form-label">Periode</label>
@@ -68,6 +68,7 @@ $periode = mysqli_query($conn, "SELECT * FROM periode");
                         <?php foreach ($query as $q) : ?>
                           <tr>
                             <td>
+                              <input type="text" name="id_user[]" id="id_user[]" value="<?= $id; ?>" hidden>
                               <input type="text" name="id_isi[]" id="id_isi[]" value="<?= $q['id_isi_sko']; ?>" hidden>
                               <input type="text" name="aspek" id="aspek" value="<?= $q['aspek']; ?>" hidden>
                               <?= $q['aspek']; ?>
