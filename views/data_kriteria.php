@@ -8,6 +8,7 @@ $sko_pcro   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN tk_kepe
 $sko_acro   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN tk_kepentingan ON kriteria_penilaian.id_tk=tk_kepentingan.id_tk WHERE jabatan=7");
 $sko_acit   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN tk_kepentingan ON kriteria_penilaian.id_tk=tk_kepentingan.id_tk WHERE jabatan=8");
 $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN tk_kepentingan ON kriteria_penilaian.id_tk=tk_kepentingan.id_tk WHERE jabatan=9");
+$jab = mysqli_query($conn, "SELECT * FROM jabatans");
 
 ?>
 
@@ -379,7 +380,7 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN tk_kepe
   </div>
 
   <!-- Modal Add -->
-  <div class="modal fade" id="modal-add">
+  <!-- <div class="modal fade" id="modal-add">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
@@ -392,28 +393,12 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN tk_kepe
           <form action="../views/add/tambah_kriteria.php" method="POST">
             <div class="form">
               <div class="row">
-                <label for="divisi">Divisi</label>
-                <select class="custom-select" name="divisi" id="divisi" required>
-                  <option selected disabled value="">--</option>
-                  <option value="1">CRO</option>
-                  <option value="2">CIT</option>
-                  <option value="3">Rutang</option>
-                </select>
-              </div>
-              <div class="row">
                 <label for="jabatan">Jabatan</label>
                 <select class="custom-select" name="jabatan" id="jabatan" required>
                   <option selected disabled value="">--</option>
-                  <option value="3">Asisten Supervisor CRO</option>
-                  <option value="4">Asisten Supervisor CIT</option>
-                  <option value="5">Asisten Supervisor Rutang</option>
-                  <option value="7">Admin CRO</option>
-                  <option value="8">Admin CIT</option>
-                  <option value="9">Admin Rutang</option>
-                  <option value="10">Pelaksana CIT</option>
-                  <option value="11">Pelaksana CPC</option>
-                  <option value="12">Supervisor CRO</option>
-                  <option value="13">Pelaksana CRO</option>
+                  <?php foreach ($jab as $j) : ?>
+                    <option value="<?= $j['id']; ?>"><?= $j['name_jab']; ?></option>
+                  <?php endforeach; ?>
                 </select>
               </div>
               <div class="row">
@@ -455,8 +440,46 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN tk_kepe
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- End Modal Add -->
+
+  <div class="modal fade" id="modal-add">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Add Kriteria & Target</h4>
+          <button type="button" class="close" data-dismiss="modal" Arial-label="Close">
+            <span Arial-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- <form action="../views/form/input_kriteria.php" method="POST"> -->
+          <form action="index.php?page=tambah-kriteria" method="POST">
+            <div class="form">
+              <div class="row">
+                <label for="jabatan">Jabatan</label>
+                <select class="custom-select" name="jab" id="jab" required>
+                  <option selected disabled value="">--</option>
+                  <?php foreach ($jab as $j) : ?>
+                    <option value="<?= $j['id']; ?>"><?= $j['name_jab']; ?></option>
+                  <?php endforeach; ?>
+                </select>
+              </div>
+              <div class="row">
+                <label for="target">Jumlah Data</label>
+                <input type="text" class="form-control" name="jml" id="jml" required>
+              </div>
+              <div class="row mt-2 d-inline-block">
+                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <!-- <a href="index.php?page=tambah-kriteria" class="btn btn-primary">Add</a> -->
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <?php include '../template/footer.php' ?>
@@ -465,10 +488,10 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN tk_kepe
       // alert('Yakin Hapus ?');
       Swal.fire({
         title: 'Are you sure ?',
-        showDenyButton: false,
         showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
         confirmButtonText: 'Yes',
-        denyButtonText: `Don't save`,
       }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
@@ -498,4 +521,5 @@ $sko_artg   = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN tk_kepe
     </script>
   <?php unset($_SESSION['sukses']);
   } ?>
+
 </section>

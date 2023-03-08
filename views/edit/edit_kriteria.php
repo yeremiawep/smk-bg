@@ -1,8 +1,7 @@
 <?php
 
 $id = $_GET['id'];
-$jab = $_GET['jab'];
-$kriteria = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN jabatans ON kriteria_penilaian.jabatan=jabatans.id JOIN divisions ON kriteria_penilaian.divisi=divisions.id WHERE id_isi_sko = '$id'");
+$kriteria = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN jabatans ON kriteria_penilaian.jabatan=jabatans.id WHERE id_isi_sko = '$id'");
 
 ?>
 
@@ -18,14 +17,6 @@ $kriteria = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN jabatans 
           <?php foreach ($kriteria as $k) : ?>
             <div class="row">
               <input type="text" name="id_isi" value="<?= $k['id_isi_sko']; ?>" hidden>
-            </div>
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label for="divisi">Divisi</label>
-                  <input type="text" class="form-control" name="divisi" value="<?= $k['name_div']; ?>" readonly>
-                </div>
-              </div>
             </div>
             <div class="row">
               <div class="col-sm-6">

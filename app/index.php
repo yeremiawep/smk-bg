@@ -84,6 +84,9 @@ include '../config/database.php'
           case 'edit-kriteria':
             include '../views/edit/edit_kriteria.php';
             break;
+          case 'tambah-kriteria':
+            include '../views/form/input_kriteria.php';
+            break;
             // sasaranKompetensi
           case 'data-kompetensi':
             include '../views/data_kompetensi.php';
