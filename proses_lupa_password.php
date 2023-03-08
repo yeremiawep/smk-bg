@@ -46,17 +46,15 @@ if ($aksi == 'lupa_password') {
             $mail->Subject = 'Reset Password';
             $mail->Body = $content;
             $send = $mail->send();
-            $_SESSION['toast_type'] = 'success';
-            $_SESSION['toast_message'] = 'Link untuk reset password sudah dikirim  melalui email.';
+            $_SESSION['sukses'] = 'Link untuk reset password sudah dikirim  melalui email.';
             header('location:index.php');
         } catch (Exception $e) {
             echo "<h1>Email gagal dikirim</h1><br /><a href='index.php'>Kembali ke Form</a>";
             echo '<h1>ERROR<br /><small>Error while sending email: ' . $mail->ErrorInfo . '</small></h1>'; // Aktifkan untuk mengetahui error message
         }
     } else {
-        $_SESSION['toast_type'] = 'error';
-        $_SESSION['toast_message'] = 'Email tidak ada.';
-        header('location:forgotpassword.php');
+        $_SESSION['failed'] = 'Email tidak terdaftar!';
+        header('location: forgotpassword.php');
     }
 } else if ($aksi == 'reset_password') {
     $email = $_GET['email'];
@@ -65,9 +63,8 @@ if ($aksi == 'lupa_password') {
 
     $query = mysqli_query($conn, "UPDATE users SET password='$password' WHERE email='$email'");
     if ($query) {
-        $_SESSION['toast_type'] = 'success';
-        $_SESSION['toast_message'] = 'Password berhasil direset, silahkan login.';
-        header('location:index.php');
+        $_SESSION['sukses'] = 'Password berhasil direset, silahkan login.';
+        header('Location: index.php');
     } else {
     }
 }

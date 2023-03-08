@@ -29,7 +29,7 @@
 <body class="hold-transition login-page">
   <div class="login-box">
     <!-- /.login-logo -->
-    <div class="card card-outline card-primary" style="font-family: Nunito; font-size: 14px;">
+    <div class="card card-outline card-primary" style="font-family: Inter; font-size: 14px;">
       <div class="card-header text-center">
         <img src="app/dist/img/logo_bg2.png" class="img-circle brand-image">
         <h1>Bringin Gigantara</h1>
@@ -71,6 +71,7 @@
   </div>
   <!-- /.login-box -->
 
+  <?php include 'template/footer.php'; ?>
 
   <!-- SweetAlert2 -->
   <script src="app/plugins/sweetalert2/sweetalert2.min.js"></script>
@@ -91,7 +92,7 @@ if (isset($_GET['error'])) {
     echo
     "<script>var Toast = Swal.mixin({
           toast: true,
-          position: 'center-top',
+          position: 'bottom',
           showConfirmButton: false,
           timer: 3000,
         });
@@ -99,7 +100,7 @@ if (isset($_GET['error'])) {
   } else if ($x == 2) {
     echo "<script>var Toast = Swal.mixin({
           toast: true,
-          position: 'center-top',
+          position: 'bottom',
           showConfirmButton: false,
           timer: 3000,
         });
@@ -109,5 +110,35 @@ if (isset($_GET['error'])) {
   }
 }
 ?>
+
+<!-- SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- start notif -->
+<?php if (@$_SESSION['sukses']) { ?>
+  <script>
+    Swal.fire({
+      text: "<?= $_SESSION['sukses']; ?>",
+      icon: "success",
+      customClass: {
+        confirmButton: "btn fw-bold btn-primary",
+        cancelButton: "btn fw-bold btn-active-light-primary"
+      }
+    })
+  </script>
+<?php unset($_SESSION['sukses']);
+} else if (@$_SESSION['failed']) { ?>
+  <script>
+    Swal.fire({
+      text: "<?= $_SESSION['failed']; ?>",
+      icon: "error",
+      customClass: {
+        confirmButton: "btn fw-bold btn-primary",
+        cancelButton: "btn fw-bold btn-active-light-primary"
+      }
+    })
+  </script>
+<?php unset($_SESSION['failed']);
+} ?>
+<!-- end notif -->
 
 </html>

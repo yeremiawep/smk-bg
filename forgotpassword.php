@@ -29,7 +29,7 @@
           </div>
           <div class="card-body">
             <div class="justify-content-center text-center">
-              <!-- <p class="fs-4 my-3 mb-5 fw-bold">RSU Khalishah</p> -->
+              <!-- <p class="fs-4 my-3 mb-5 fw-bold">PT. Bringin Gigantara KC. Cempaka Putih</p> -->
               <img src="app/dist/img/logo_bg2.png" alt="" height="150px" class="my-3 mb-5">
             </div>
             <?php if (isset($_SESSION['toast_type'])) {
@@ -40,7 +40,7 @@
             <?php } ?>
             <form action="./proses_lupa_password.php?aksi=lupa_password" method="POST">
               <div class="mb-3">
-                <input type="text" class="form-control py-2" placeholder="email" name="email" value="">
+                <input type="text" class="form-control py-2" placeholder="email" name="email" value="" required>
               </div>
               <div class="form-group d-flex align-items-end justify-content-end mt-4 mb-0">
                 <button type="submit" class="btn btn-primary">Kirim</button>
@@ -56,12 +56,45 @@
   </div>
   <!-- /.login-box -->
 
+  <?php include 'template/footer.php'; ?>
+
+  <!-- SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- start notif -->
+  <?php if (@$_SESSION['sukses']) { ?>
+    <script>
+      Swal.fire({
+        text: "<?= $_SESSION['sukses']; ?>",
+        icon: "success",
+        customClass: {
+          confirmButton: "btn fw-bold btn-primary",
+          cancelButton: "btn fw-bold btn-active-light-primary"
+        }
+      })
+    </script>
+  <?php unset($_SESSION['sukses']);
+  } else if (@$_SESSION['failed']) { ?>
+    <script>
+      Swal.fire({
+        text: "<?= $_SESSION['failed']; ?>",
+        icon: "error",
+        customClass: {
+          confirmButton: "btn fw-bold btn-primary",
+          cancelButton: "btn fw-bold btn-active-light-primary"
+        }
+      })
+    </script>
+  <?php unset($_SESSION['failed']);
+  } ?>
+  <!-- end notif -->
+
   <!-- jQuery -->
   <script src="app/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
   <script src="app/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
   <script src="app/dist/js/adminlte.min.js"></script>
+
 </body>
 
 </html>
