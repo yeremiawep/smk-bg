@@ -53,7 +53,7 @@ $m = mysqli_fetch_array($me);
             <div class="form-group row">
               <label for="" class="col-sm-2 col-form-label">Periode Penilaian</label>
               <div class="col-sm-4">
-                <input type="text" id="" value="<?= $m['tahun']; ?>" disabled>
+                <input type="text" id="" value="<?= @$m['tahun']; ?>" placeholder="--" disabled>
               </div>
             </div>
             <hr class="border-primary">
