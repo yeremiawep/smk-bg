@@ -1,13 +1,9 @@
 <?php
 include '../config/database.php';
-// $jabatan = [3, 4, 5];
-// $jab = implode(',', $jabatan);
 
-// $nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user JOIN jabatans ON nilai_akhir.jabatan=jabatans.id JOIN divisions ON nilai_akhir.divisi=divisions.id");
-$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN divisions ON nilai_akhir.divisi=divisions.id JOIN jabatans ON nilai_akhir.jabatan=jabatans.id JOIN users ON nilai_akhir.id_user=users.id_user JOIN periode ON nilai_akhir.periode=periode.id_periode WHERE divisions.id='1' AND jabatans.id='3'");
-$nilai2 = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN divisions ON nilai_akhir.divisi=divisions.id JOIN jabatans ON nilai_akhir.jabatan=jabatans.id JOIN users ON nilai_akhir.id_user=users.id_user JOIN periode ON nilai_akhir.periode=periode.id_periode WHERE divisions.id='2' AND jabatans.id='4'");
-$nilai3 = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN divisions ON nilai_akhir.divisi=divisions.id JOIN jabatans ON nilai_akhir.jabatan=jabatans.id JOIN users ON nilai_akhir.id_user=users.id_user JOIN periode ON nilai_akhir.periode=periode.id_periode WHERE divisions.id='3' AND jabatans.id='5'");
-
+$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user RIGHT JOIN jabatans ON users.jabatan=jabatans.id RIGHT JOIN divisions ON users.divisi = divisions.id JOIN periode ON nilai_akhir.periode=periode.id_periode WHERE divisions.id='1' AND jabatans.id='3'");
+$nilai2 = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user RIGHT JOIN jabatans ON users.jabatan=jabatans.id RIGHT JOIN divisions ON users.divisi = divisions.id JOIN periode ON nilai_akhir.periode=periode.id_periode WHERE divisions.id='2' AND jabatans.id='4'");
+$nilai3 = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user RIGHT JOIN jabatans ON users.jabatan=jabatans.id RIGHT JOIN divisions ON users.divisi = divisions.id JOIN periode ON nilai_akhir.periode=periode.id_periode WHERE divisions.id='3' AND jabatans.id='5'");
 
 ?>
 
@@ -55,8 +51,8 @@ $nilai3 = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN divisions ON nilai
                     <td><?= $nilai['nilai_akhir']; ?></td>
                     <td><?= $nilai['predikat']; ?></td>
                     <td>
-                      <a href="index.php?page=detail-nilai-pegawai&&idna=<?= $nilai['id_na']; ?>&&id=<?= $nilai['id_user']; ?>&&idpeg=<?= $nilai['id_pegawai']; ?>" class="btn btn-sm btn-primary"><i class="nav-icon fas fa-eye"></i></a>
-                      <a href="index.php?page=edit-nilai-atasan&&idna=<?= $nilai['id_na']; ?>&&id=<?= $nilai['id_user']; ?>&&idpeg=<?= $nilai['id_pegawai']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                      <a href="index.php?page=detail-nilai-pegawai&&idna=<?= $nilai['id_na']; ?>&&id=<?= $nilai['id_user']; ?>" class="btn btn-sm btn-primary"><i class="nav-icon fas fa-eye"></i></a>
+                      <a href="index.php?page=edit-nilai-atasan&&idna=<?= $nilai['id_na']; ?>&&id=<?= $nilai['id_user']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -101,8 +97,8 @@ $nilai3 = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN divisions ON nilai
                     <td><?= $nilai['nilai_akhir']; ?></td>
                     <td><?= $nilai['predikat']; ?></td>
                     <td>
-                      <a href="index.php?page=detail-nilai-pegawai&&idna=<?= $nilai['id_na']; ?>&&id=<?= $nilai['id_user']; ?>&&idpeg=<?= $nilai['id_pegawai']; ?>" class="btn btn-sm btn-primary"><i class="nav-icon fas fa-eye"></i></a>
-                      <a href="index.php?page=edit-nilai-atasan&&idna=<?= $nilai['id_na']; ?>&&id=<?= $nilai['id_user']; ?>&&idpeg=<?= $nilai['id_pegawai']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                      <a href="index.php?page=detail-nilai-pegawai&&idna=<?= $nilai['id_na']; ?>&&id=<?= $nilai['id_user']; ?>" class="btn btn-sm btn-primary"><i class="nav-icon fas fa-eye"></i></a>
+                      <a href="index.php?page=edit-nilai-atasan&&idna=<?= $nilai['id_na']; ?>&&id=<?= $nilai['id_user']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -147,8 +143,8 @@ $nilai3 = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN divisions ON nilai
                     <td><?= $nilai['nilai_akhir']; ?></td>
                     <td><?= $nilai['predikat']; ?></td>
                     <td>
-                      <a href="index.php?page=detail-nilai-pegawai&&idna=<?= $nilai['id_na']; ?>&&id=<?= $nilai['id_user']; ?>&&idpeg=<?= $nilai['id_pegawai']; ?>" class="btn btn-sm btn-primary"><i class="nav-icon fas fa-eye"></i></a>
-                      <a href="index.php?page=edit-nilai-atasan&&idna=<?= $nilai['id_na']; ?>&&id=<?= $nilai['id_user']; ?>&&idpeg=<?= $nilai['id_pegawai']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                      <a href="index.php?page=detail-nilai-pegawai&&idna=<?= $nilai['id_na']; ?>&&id=<?= $nilai['id_user']; ?>" class="btn btn-sm btn-primary"><i class="nav-icon fas fa-eye"></i></a>
+                      <a href="index.php?page=edit-nilai-atasan&&idna=<?= $nilai['id_na']; ?>&&id=<?= $nilai['id_user']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>

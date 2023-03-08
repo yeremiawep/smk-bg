@@ -3,13 +3,13 @@
 include '../config/database.php';
 
 $id = $_GET['id'];
-$idpeg = $_GET['idpeg'];
-$div = $_GET['div'];
 $jab = $_GET['jab'];
 
-$query = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN divisions ON kriteria_penilaian.divisi=divisions.id JOIN jabatans ON kriteria_penilaian.jabatan=jabatans.id WHERE divisi='$div' AND jabatan='$jab'");
+$query = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN jabatans ON kriteria_penilaian.jabatan=jabatans.id WHERE jabatan='$jab'");
 $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk='2'");
 $periode = mysqli_query($conn, "SELECT * FROM periode");
+$user = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=jabatans.id WHERE id_user='$id'");
+$n = $user->fetch_array();
 
 ?>
 
@@ -34,6 +34,22 @@ $periode = mysqli_query($conn, "SELECT * FROM periode");
           <div class="card-body">
             <form action="../views/hitung/insert_nilai_rtg.php" method="post">
               <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">Nama</label>
+                <div class="col-sm-6">
+                  <input type="text" id="" value="<?= $n['name']; ?>" disabled>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">ID Pegawai</label>
+                <div class="col-sm-6">
+                  <input type="text" id="" value="<?= $n['id_pegawai']; ?>" disabled>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">Jabatan</label>
+                <div class="col-sm-6">
+                  <input type="text" id="" value="<?= $n['name_jab']; ?>" disabled>
+                </div>
               </div>
               <!-- Sasaran Kinerja Objektif -->
               <div class="card">

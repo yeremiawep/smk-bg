@@ -4,9 +4,8 @@ include '../config/database.php';
 
 $idna = $_GET['idna'];
 $id = $_GET['id'];
-$idpeg = $_GET['idpeg'];
 
-$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user JOIN jabatans ON nilai_akhir.jabatan=jabatans.id JOIN divisions ON nilai_akhir.divisi=divisions.id WHERE id_na='$idna'");
+$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user RIGHT JOIN jabatans ON users.jabatan=jabatans.id RIGHT JOIN divisions ON users.divisi = divisions.id JOIN periode ON nilai_akhir.periode=periode.id_periode  WHERE id_na='$idna'");
 $nilaisko = mysqli_query($conn, "SELECT * FROM hitung_nilai JOIN kriteria_penilaian ON hitung_nilai.id_isi_sko=kriteria_penilaian.id_isi_sko WHERE id_user='$id'");
 $nilaisk = mysqli_query($conn, "SELECT * FROM hitung_nilai_sk JOIN kriteria_kompetensi ON hitung_nilai_sk.id_isi_sk=kriteria_kompetensi.id_isi_sk WHERE id_user='$id'");
 
@@ -58,6 +57,8 @@ $n = mysqli_fetch_array($nilai);
                   <th>Aspek</th>
                   <th>Kriteria</th>
                   <th>Target</th>
+                  <th>Bobot</th>
+                  <th>Realisasi (%)</th>
                   <th>Nilai</th>
                 </thead>
                 <tbody>
@@ -66,6 +67,8 @@ $n = mysqli_fetch_array($nilai);
                       <td><?= $sko['aspek']; ?></td>
                       <td><?= $sko['kriteria']; ?></td>
                       <td><?= $sko['target']; ?></td>
+                      <td><?= $sko['bobot']; ?></td>
+                      <td><?= $sko['realisasi']; ?></td>
                       <td><?= $sko['nilai_sko']; ?></td>
                     </tr>
                   <?php endforeach; ?>

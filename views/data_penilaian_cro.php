@@ -52,7 +52,7 @@ $pcpc = mysqli_query($conn, "SELECT * FROM users JOIN divisions ON users.divisi=
                     <td><?= $user['name_div']; ?></td>
                     <td><?= $user['name_jab']; ?></td>
                     <td width="20%">
-                      <a href="index.php?page=input-nilai-cro&&id=<?= $user['id_user']; ?>&&idpeg=<?= $user['id_pegawai']; ?>&&div=<?= $user['divisi']; ?>&&jab=<?= $user['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai</a>
+                      <a href="index.php?page=input-nilai-cro&&id=<?= $user['id_user']; ?>&&jab=<?= $user['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai</a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -85,7 +85,7 @@ $pcpc = mysqli_query($conn, "SELECT * FROM users JOIN divisions ON users.divisi=
                     <td><?= $user['name_div']; ?></td>
                     <td><?= $user['name_jab']; ?></td>
                     <td width="20%">
-                      <a href="index.php?page=input-nilai-cro&&id=<?= $user['id_user']; ?>&&idpeg=<?= $user['id_pegawai']; ?>&&div=<?= $user['divisi']; ?>&&jab=<?= $user['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai</a>
+                      <a href="index.php?page=input-nilai-cro&&id=<?= $user['id_user']; ?>&&jab=<?= $user['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai</a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -118,7 +118,7 @@ $pcpc = mysqli_query($conn, "SELECT * FROM users JOIN divisions ON users.divisi=
                     <td><?= $user['name_div']; ?></td>
                     <td><?= $user['name_jab']; ?></td>
                     <td width="20%">
-                      <a href="index.php?page=input-nilai-cro&&id=<?= $user['id_user']; ?>&&idpeg=<?= $user['id_pegawai']; ?>&&div=<?= $user['divisi']; ?>&&jab=<?= $user['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai</a>
+                      <a href="index.php?page=input-nilai-cro&&id=<?= $user['id_user']; ?>&&jab=<?= $user['jabatan']; ?>" class="btn btn-primary inline-block"><i class="nav-icon fas fa-plus"></i> Nilai</a>
                     </td>
                   </tr>
                 <?php endforeach; ?>

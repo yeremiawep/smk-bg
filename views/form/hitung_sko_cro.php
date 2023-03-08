@@ -3,11 +3,9 @@
 include '../config/database.php';
 
 $id = $_GET['id'];
-$idpeg = $_GET['idpeg'];
-$div = $_GET['div'];
 $jab = $_GET['jab'];
 
-$query = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN divisions ON kriteria_penilaian.divisi=divisions.id JOIN jabatans ON kriteria_penilaian.jabatan=jabatans.id WHERE divisi='$div' AND jabatan='$jab'");
+$query = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN jabatans ON kriteria_penilaian.jabatan=jabatans.id WHERE jabatan='$jab'");
 $sk = mysqli_query($conn, "SELECT * FROM kriteria_kompetensi WHERE jenis_sk='2'");
 $periode = mysqli_query($conn, "SELECT * FROM periode");
 

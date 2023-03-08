@@ -8,13 +8,13 @@ $view = mysqli_fetch_array($query);
 $view2 = mysqli_fetch_array($query2);
 $view3 = mysqli_fetch_array($query3);
 
-$aspvcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE divisi='1' AND jabatan='3'");
-$aspvcit = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE divisi='2' AND jabatan='4'");
-$aspvrtg = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE divisi='3' AND jabatan='5'");
-$admcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE divisi='1' AND jabatan='7'");
-$admcit = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE divisi='2' AND jabatan='8'");
-$admrtg = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE divisi='3' AND jabatan='9'");
-$plkcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE divisi='1' AND jabatan='13'");
+$aspvcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan='3'");
+$aspvcit = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan='4'");
+$aspvrtg = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan='5'");
+$admcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan='7'");
+$admcit = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan='8'");
+$admrtg = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan='9'");
+$plkcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan='13'");
 
 ?>
 

@@ -1,10 +1,7 @@
 <?php
 include '../config/database.php';
 
-$nilai = mysqli_query($conn, "SELECT * FROM users JOIN nilai_akhir ON users.id_user=nilai_akhir.id_user JOIN jabatans ON users.jabatan=jabatans.id JOIN divisions ON users.divisi=divisions.id");
-$periode = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN periode ON nilai_akhir.periode=periode.id_periode");
-$p = $periode->fetch_array();
-
+$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user RIGHT JOIN jabatans ON users.jabatan=jabatans.id RIGHT JOIN divisions ON users.divisi = divisions.id JOIN periode ON nilai_akhir.periode=periode.id_periode");
 ?>
 
 
@@ -41,7 +38,7 @@ $p = $periode->fetch_array();
                 <?php foreach ($nilai as $nilai) : ?>
                   <tr>
                     <td><?= $no++; ?></td>
-                    <td><?= $p['tahun']; ?></td>
+                    <td><?= $nilai['tahun']; ?></td>
                     <td><?= $nilai['id_pegawai']; ?></td>
                     <td><?= $nilai['name']; ?></td>
                     <td><?= $nilai['name_div']; ?></td>

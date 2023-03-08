@@ -10,7 +10,7 @@ $idpeg = $_SESSION['id_pegawai'];
 
 $nilaisko = mysqli_query($conn, "SELECT * FROM hitung_nilai JOIN kriteria_penilaian ON hitung_nilai.id_isi_sko=kriteria_penilaian.id_isi_sko WHERE id_user='$id'");
 $nilaisk = mysqli_query($conn, "SELECT * FROM hitung_nilai_sk JOIN kriteria_kompetensi ON hitung_nilai_sk.id_isi_sk=kriteria_kompetensi.id_isi_sk WHERE id_user='$id'");
-$me = mysqli_query($conn, "SELECT * FROM nilai_akhir WHERE id_user='$id'");
+$me = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN periode ON nilai_akhir.periode=periode.id_periode WHERE id_user='$id'");
 $m = mysqli_fetch_array($me);
 
 ?>
@@ -48,6 +48,12 @@ $m = mysqli_fetch_array($me);
               <label for="" class="col-sm-2 col-form-label">Jabatan</label>
               <div class="col-sm-4">
                 <input type="text" id="" value="<?= $_SESSION['name_jab']; ?>" disabled>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="" class="col-sm-2 col-form-label">Periode Penilaian</label>
+              <div class="col-sm-4">
+                <input type="text" id="" value="<?= $m['tahun']; ?>" disabled>
               </div>
             </div>
             <hr class="border-primary">

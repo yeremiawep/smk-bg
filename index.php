@@ -54,22 +54,20 @@
             </div>
           </div>
           <div class="row">
-            <!-- /.col -->
-            <div class="row">
-              <p class="mb-1">
-                <a href="forgotpassword.php">I forgot my password</a>
-              </p>
-            </div>
             <div class="col-12">
               <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-fw fa-sign-in-alt mr-1"></i> Login</button>
             </div>
-            <!-- /.col -->
+            <div class="row">
+              <div class="col-12">
+                <p class="mt-2">
+                  <a href="forgotpassword.php">Reset Password</a>
+                </p>
+              </div>
+            </div>
           </div>
         </form>
       </div>
-      <!-- /.card-body -->
     </div>
-    <!-- /.card -->
   </div>
   <!-- /.login-box -->
 
