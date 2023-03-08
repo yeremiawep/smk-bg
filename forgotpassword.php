@@ -73,7 +73,9 @@
       })
     </script>
   <?php unset($_SESSION['sukses']);
-  } else if (@$_SESSION['failed']) { ?>
+  } ?>
+
+  <?php if (@$_SESSION['failed']) { ?>
     <script>
       Swal.fire({
         text: "<?= $_SESSION['failed']; ?>",

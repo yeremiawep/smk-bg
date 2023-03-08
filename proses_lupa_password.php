@@ -66,5 +66,6 @@ if ($aksi == 'lupa_password') {
         $_SESSION['sukses'] = 'Password berhasil direset, silahkan login.';
         header('Location: index.php');
     } else {
+        //
     }
 }

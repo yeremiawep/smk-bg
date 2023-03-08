@@ -83,6 +83,8 @@
   <script src="app/dist/js/adminlte.min.js"></script>
   <!-- Toastr -->
   <script src="app/plugins/toastr/toastr.min.js"></script>
+
+
   <!-- SweetAlert -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- start notif -->
@@ -103,29 +105,55 @@
 </body>
 
 <?php
-if (isset($_GET['error'])) {
+if (isset($_GET['error']))
   $x = $_GET['error'];
-  if ($x == 1) {
-    echo
-    "<script>var Toast = Swal.mixin({
-          toast: true,
-          position: 'bottom',
-          showConfirmButton: false,
-          timer: 3000,
-        });
-  toastr.warning('Login Gagal')</script>";
-  } else if ($x == 2) {
-    echo "<script>var Toast = Swal.mixin({
-          toast: true,
-          position: 'bottom',
-          showConfirmButton: false,
-          timer: 3000,
-        });
-  toastr.info('Silahkan Masukkan NIP dan Password')</script>";
-  } else {
-    echo "";
-  }
-}
+//   if ($x == 1) {
+//     echo
+//     "<script>var Toast = Swal.mixin({
+//           toast: true,
+//           position: 'bottom',
+//           showConfirmButton: false,
+//           timer: 3000,
+//         });
+//   toastr.warning('Login Gagal')</script>";
+//   } else if ($x == 2) {
+//     echo "<script>var Toast = Swal.mixin({
+//           toast: true,
+//           position: 'bottom',
+//           showConfirmButton: false,
+//           timer: 3000,
+//         });
+//   toastr.info('Silahkan Masukkan NIP dan Password')</script>";
+//   } else {
+//     echo "";
+//   }
+// }
 ?>
+
+<?php if (@$x == 1) { ?>
+  <script>
+    Swal.fire({
+      text: "Login Gagal",
+      icon: "error",
+      customClass: {
+        confirmButton: "btn fw-bold btn-primary",
+        cancelButton: "btn fw-bold btn-active-light-primary"
+      }
+    })
+  </script>
+<?php } ?>
+
+<?php if (@$_SESSION['failed']) { ?>
+  <script>
+    Swal.fire({
+      text: "<?= $_SESSION['failed'] ?>",
+      icon: "error",
+      customClass: {
+        confirmButton: "btn fw-bold btn-primary",
+        cancelButton: "btn fw-bold btn-active-light-primary"
+      }
+    })
+  </script>
+<?php } ?>
 
 </html>
