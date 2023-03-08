@@ -135,7 +135,7 @@ $divisi = mysqli_query($conn, "SELECT * FROM divisions");
 <?php if (@$_SESSION['sukses']) { ?>
   <script>
     Swal.fire({
-      text: "<?php echo $_SESSION['sukses']; ?>",
+      text: "<?= $_SESSION['sukses']; ?>",
       icon: "success",
       customClass: {
         confirmButton: "btn fw-bold btn-primary",

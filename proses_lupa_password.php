@@ -47,14 +47,14 @@ if ($aksi == 'lupa_password') {
             $mail->Body = $content;
             $send = $mail->send();
             $_SESSION['sukses'] = 'Link untuk reset password sudah dikirim  melalui email.';
-            header('location:index.php');
+            header('Location: index.php');
         } catch (Exception $e) {
             echo "<h1>Email gagal dikirim</h1><br /><a href='index.php'>Kembali ke Form</a>";
             echo '<h1>ERROR<br /><small>Error while sending email: ' . $mail->ErrorInfo . '</small></h1>'; // Aktifkan untuk mengetahui error message
         }
     } else {
         $_SESSION['failed'] = 'Email tidak terdaftar!';
-        header('location: forgotpassword.php');
+        header('Location: forgotpassword.php');
     }
 } else if ($aksi == 'reset_password') {
     $email = $_GET['email'];

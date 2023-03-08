@@ -83,6 +83,23 @@
   <script src="app/dist/js/adminlte.min.js"></script>
   <!-- Toastr -->
   <script src="app/plugins/toastr/toastr.min.js"></script>
+  <!-- SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- start notif -->
+  <?php if (@$_SESSION['sukses']) { ?>
+    <script>
+      Swal.fire({
+        text: "<?= $_SESSION['sukses']; ?>",
+        icon: "success",
+        customClass: {
+          confirmButton: "btn fw-bold btn-primary",
+          cancelButton: "btn fw-bold btn-active-light-primary"
+        }
+      })
+    </script>
+  <?php unset($_SESSION['sukses']);
+  } ?>
+  <!-- end notif -->
 </body>
 
 <?php
@@ -110,35 +127,5 @@ if (isset($_GET['error'])) {
   }
 }
 ?>
-
-<!-- SweetAlert -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<!-- start notif -->
-<?php if (@$_SESSION['sukses']) { ?>
-  <script>
-    Swal.fire({
-      text: "<?= $_SESSION['sukses']; ?>",
-      icon: "success",
-      customClass: {
-        confirmButton: "btn fw-bold btn-primary",
-        cancelButton: "btn fw-bold btn-active-light-primary"
-      }
-    })
-  </script>
-<?php unset($_SESSION['sukses']);
-} else if (@$_SESSION['failed']) { ?>
-  <script>
-    Swal.fire({
-      text: "<?= $_SESSION['failed']; ?>",
-      icon: "error",
-      customClass: {
-        confirmButton: "btn fw-bold btn-primary",
-        cancelButton: "btn fw-bold btn-active-light-primary"
-      }
-    })
-  </script>
-<?php unset($_SESSION['failed']);
-} ?>
-<!-- end notif -->
 
 </html>
