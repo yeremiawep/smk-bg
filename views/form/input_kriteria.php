@@ -5,7 +5,8 @@ include '../config/database.php';
 $jab = $_POST['jab'];
 $jml = $_POST['jml'];
 
-$tkkep = mysqli_query($conn, "SELECT * FROM tk_kepentingan")
+$tkkep = mysqli_query($conn, "SELECT * FROM tk_kepentingan");
+$kriteria = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan='$jab'");
 
 ?>
 
@@ -38,7 +39,7 @@ $tkkep = mysqli_query($conn, "SELECT * FROM tk_kepentingan")
                             <option value="Aspek Pelanggan">Pelanggan</option>
                           </select>
                         </td>
-                        <td><input type="text" name="kriteria[]" id="kriteria[]"></td>
+                        <td><input type="text" name="kriteria[]" id="kriteria[]" required></td>
                         <td><input type="text" name="target[]" id="target[]"></td>
                         <td>
                           <select class="custom-select" name="tk_kep[]" id="tk_kep[]" required>

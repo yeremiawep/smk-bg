@@ -3,22 +3,6 @@
 include '../../config/database.php';
 session_start();
 
-// $jabatan = $_POST['jabatan'];
-// $aspek = $_POST['aspek'];
-// $kriteria = $_POST['kriteria'];
-// $target = $_POST['target'];
-// $tk_kepentingan = $_POST['tk_kepentingan'];
-// $bobot = $_POST['bobot'];
-
-// $query = mysqli_query($conn, "INSERT INTO kriteria_penilaian (id_isi_sko, jabatan, aspek, kriteria, target, id_tk, bobot) VALUES ('','$jabatan','$aspek','$kriteria','$target', '$tk_kepentingan', '$bobot')");
-
-// if ($query) {
-//   $_SESSION['sukses'] = 'Berhasil Menambah Data';
-// } else {
-//   // $_SESSION['gagal'] = 'Gagal Menambah Data';
-// }
-
-
 $jab = $_POST['jab'];
 $aspek = $_POST['aspek'];
 $kriteria = $_POST['kriteria'];
@@ -43,7 +27,7 @@ for ($i = 0; $i < $ctkp; $i++) {
 // die();
 
 for ($i = 0; $i < $ctkp; $i++) {
-  $insert = mysqli_query($conn, "INSERT INTO kriteria_penilaian (id_isi_sko, jabatan, aspek, kriteria, target, id_tk, bobot) VALUES ('','$jab[$i]','$aspek[$i]','$kriteria[$i]','$target[$i]', '$tk_kep[$i]', '$bobot[$i]')");
+  $query = mysqli_query($conn, "INSERT INTO kriteria_penilaian (id_isi_sko, jabatan, aspek, kriteria, target, id_tk, bobot) VALUES ('','$jab[$i]','$aspek[$i]','$kriteria[$i]','$target[$i]', '$tk_kep[$i]', '$bobot[$i]')");
 }
 
 if ($query) {
