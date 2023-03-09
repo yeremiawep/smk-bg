@@ -32,12 +32,6 @@
               <!-- <p class="fs-4 my-3 mb-5 fw-bold">PT. Bringin Gigantara KC. Cempaka Putih</p> -->
               <img src="app/dist/img/logo_bg2.png" alt="" height="150px" class="my-3 mb-5">
             </div>
-            <!-- <?php if (isset($_SESSION['toast_type'])) {
-                  ?>
-
-              <div class="alert <?= $_SESSION['toast_type'] == 'success' ? 'alert-success' : 'alert-danger' ?>"><?= $_SESSION['toast_message'] ?></div>
-
-            <?php } ?> -->
             <form action="./proses_lupa_password.php?aksi=lupa_password" method="POST">
               <div class="mb-3">
                 <label for="email">Masukkan Email</label>
@@ -57,28 +51,15 @@
   </div>
   <!-- /.login-box -->
 
-  <?php include 'template/footer.php'; ?>
 
   <!-- SweetAlert -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- start notif -->
   <?php
-  if (@$_SESSION['sukses']) { ?>
+  if (@$_SESSION['emailgagal']) { ?>
     <script>
       Swal.fire({
-        text: "<?= $_SESSION['sukses']; ?>",
-        icon: "success",
-        customClass: {
-          confirmButton: "btn fw-bold btn-primary",
-          cancelButton: "btn fw-bold btn-active-light-primary"
-        }
-      })
-    </script>
-  <?php unset($_SESSION['sukses']);
-  } else if (@$_SESSION['failed']) { ?>
-    <script>
-      Swal.fire({
-        text: "<?= $_SESSION['failed']; ?>",
+        text: "<?= $_SESSION['emailgagal']; ?>",
         icon: "error",
         customClass: {
           confirmButton: "btn fw-bold btn-primary",
@@ -86,7 +67,7 @@
         }
       })
     </script>
-  <?php unset($_SESSION['failed']);
+  <?php unset($_SESSION['emailgagal']);
   } ?>
   <!-- end notif -->
   <!-- jQuery -->
@@ -95,6 +76,7 @@
   <script src="app/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
   <script src="app/dist/js/adminlte.min.js"></script>
+  <?php include 'template/footer.php'; ?>
 
 </body>
 

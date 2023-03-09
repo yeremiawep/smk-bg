@@ -60,7 +60,7 @@
             <div class="row">
               <div class="col-12">
                 <p class="mt-2">
-                  <a href="forgotpassword.php">Reset Password</a>
+                  <a href="forgotpassword.php">Lupa Password</a>
                 </p>
               </div>
             </div>
@@ -85,11 +85,12 @@
   <script src="app/plugins/toastr/toastr.min.js"></script>
   <!-- SweetAlert -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <!-- start notif -->
-  <?php if (@$_SESSION['sukses']) { ?>
+  <?php if (@$_SESSION['emailsukses']) { ?>
     <script>
       Swal.fire({
-        text: "<?= $_SESSION['sukses']; ?>",
+        text: "<?= $_SESSION['emailsukses']; ?>",
         icon: "success",
         customClass: {
           confirmButton: "btn fw-bold btn-primary",
@@ -97,7 +98,21 @@
         }
       })
     </script>
-  <?php unset($_SESSION['sukses']);
+  <?php unset($_SESSION['emailsukses']);
+  } ?>
+
+  <?php if (@$_SESSION['resetsukses']) { ?>
+    <script>
+      Swal.fire({
+        text: "<?= $_SESSION['resetsukses']; ?>",
+        icon: "success",
+        customClass: {
+          confirmButton: "btn fw-bold btn-primary",
+          cancelButton: "btn fw-bold btn-active-light-primary"
+        }
+      })
+    </script>
+  <?php unset($_SESSION['resetsukses']);
   } ?>
   <!-- end notif -->
 </body>

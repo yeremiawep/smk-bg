@@ -53,7 +53,7 @@ if ($aksi == 'lupa_password') {
             echo '<h1>ERROR<br /><small>Error while sending email: ' . $mail->ErrorInfo . '</small></h1>'; // Aktifkan untuk mengetahui error message
         }
     } else {
-        $_SESSION['failed'] = 'Email tidak terdaftar!';
+        $_SESSION['emailgagal'] = 'Email tidak terdaftar!';
         header('Location: forgotpassword.php');
     }
 } else if ($aksi == 'reset_password') {
@@ -62,16 +62,19 @@ if ($aksi == 'lupa_password') {
     $password = $_POST['password'];
 
     $query = mysqli_query($conn, "SELECT password FROM users WHERE email='$email'");
-    if ($password === $query) {
+    $q1 = $query->fetch_array();
+    $q2 = implode($q1);
+    if ($password === $q2) {
         $_SESSION['info'] = 'Password sedang digunakan';
+        header('Location: passwordbaru.php');
     } else if ($password != $query) {
         $update = mysqli_query($conn, "UPDATE users SET password='$password' WHERE email='$email'");
     }
 
     if ($update) {
         $_SESSION['sukses'] = 'Password berhasil direset, silahkan login.';
-        header('Location: index.php');
     } else {
         //
     }
+    header('Location: index.php');
 }
