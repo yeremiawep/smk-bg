@@ -1,10 +1,10 @@
 <div class="sidebar">
   <!-- Sidebar user panel (optional) -->
   <div class="user-panel mt-2 pb-4 mb-3 d-block">
-    <div class="image">
-      <!-- <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image" /> -->
-    </div>
-    <div class="row justify-content-center text-white">
+    <!-- <div class="image"> -->
+    <!-- <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image" /> -->
+    <!-- </div> -->
+    <div class="row justify-content-center text-white d-flex">
       <?= $_SESSION['user'] . '<br>' .  $_SESSION['name_jab']; ?>
     </div>
   </div>

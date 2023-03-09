@@ -2,12 +2,14 @@
 
 include '../config/database.php';
 
-$jab = $_GET['jab'];
-
+$jab = @$_GET['jab'];
+$jab2 = @$_POST['jab'];
+$jml = @$_POST['jml'];
 $tkkep = mysqli_query($conn, "SELECT * FROM tk_kepentingan");
-$kriteria = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN tk_kepentingan ON kriteria_penilaian.id_tk=tk_kepentingan.id_tk WHERE jabatan='$jab'");
-$jabatan = mysqli_query($conn, "SELECT * FROM jabatans WHERE id='$jab'");
+$kriteria = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN tk_kepentingan ON kriteria_penilaian.id_tk=tk_kepentingan.id_tk WHERE jabatan='$jab' OR jabatan='$jab2'");
+$jabatan = mysqli_query($conn, "SELECT * FROM jabatans WHERE id='$jab' OR id='$jab2'");
 $j = $jabatan->fetch_array();
+
 
 ?>
 

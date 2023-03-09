@@ -32,12 +32,12 @@
               <!-- <p class="fs-4 my-3 mb-5 fw-bold">PT. Bringin Gigantara KC. Cempaka Putih</p> -->
               <img src="app/dist/img/logo_bg2.png" alt="" height="150px" class="my-3 mb-5">
             </div>
-            <?php if (isset($_SESSION['toast_type'])) {
-            ?>
+            <!-- <?php if (isset($_SESSION['toast_type'])) {
+                  ?>
 
               <div class="alert <?= $_SESSION['toast_type'] == 'success' ? 'alert-success' : 'alert-danger' ?>"><?= $_SESSION['toast_message'] ?></div>
 
-            <?php } ?>
+            <?php } ?> -->
             <form action="./proses_lupa_password.php?aksi=lupa_password" method="POST">
               <div class="mb-3">
                 <label for="email">Masukkan Email</label>
@@ -62,7 +62,8 @@
   <!-- SweetAlert -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- start notif -->
-  <?php if (@$_SESSION['sukses']) { ?>
+  <?php
+  if (@$_SESSION['sukses']) { ?>
     <script>
       Swal.fire({
         text: "<?= $_SESSION['sukses']; ?>",
@@ -74,9 +75,7 @@
       })
     </script>
   <?php unset($_SESSION['sukses']);
-  } ?>
-
-  <?php if (@$_SESSION['failed']) { ?>
+  } else if (@$_SESSION['failed']) { ?>
     <script>
       Swal.fire({
         text: "<?= $_SESSION['failed']; ?>",

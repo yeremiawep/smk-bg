@@ -177,13 +177,10 @@ include '../config/database.php'
         include "../template/dashboard.php";
       }
       ?>
-
       <!-- /.content -->
-
     </div>
-
     <!-- /.content-wrapper -->
-    <footer class="main-footer" style="font-family: Nunito;">
+    <footer class="main-footer" style="font-family: Inter;">
       <strong>Copyright &copy; 2023 </strong>
       PT. Bringin Gigantara cabang Cempaka Putih .
       <div class="float-right d-none d-sm-inline-block"><b>Version</b> 1.1.0</div>

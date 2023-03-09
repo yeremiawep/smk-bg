@@ -34,12 +34,6 @@
                                 <!-- <p class="fs-4 my-3 mb-5 fw-bold">RSU Khalishah</p> -->
                                 <img src="app/dist/img/logo_bg2.png" alt="" height="150px" class="my-3 mb-5">
                             </div>
-                            <!-- <?php if (isset($_SESSION['toast_type'])) {
-                                    ?>
-
-                                <div class="alert alert-danger"><?= $_SESSION['toast_message'] ?></div>
-
-                            <?php } ?> -->
                             <form action="./proses_lupa_password.php?aksi=reset_password&email=<?= $_GET['email'] ?>" method="POST">
                                 <div class="mb-3">
                                     <input type="password" class="form-control py-2" placeholder="password" name="password" value="">
@@ -73,13 +67,11 @@
         </footer>
     </div>
     </div>
-    <!-- <?php
-            if (isset($_SESSION['toast_type'])) {
-                unset($_SESSION['toast_type']);
-            }
-            ?> -->
 
-    <?php if (@$_SESSION['info']) { ?>
+    <?php
+    session_start();
+
+    if (@$_SESSION['info']) { ?>
         <script>
             swal.fire({
                 text: "<?= $_SESSION['info']; ?>",
