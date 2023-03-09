@@ -62,13 +62,13 @@ $kriteria = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN jabatans 
 
 include '../config/database.php';
 
-$jab = $_POST['jab'];
-$jml = $_POST['jml'];
+$jab = $_GET['jab'];
 
 $tkkep = mysqli_query($conn, "SELECT * FROM tk_kepentingan");
-$kriteria = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan='$jab'");
+$kriteria = mysqli_query($conn, "SELECT * FROM kriteria_penilaian JOIN tk_kepentingan ON kriteria_penilaian.id_tk=tk_kepentingan.id_tk WHERE jabatan='$jab'");
 $jabatan = mysqli_query($conn, "SELECT * FROM jabatans WHERE id='$jab'");
 $j = $jabatan->fetch_array();
+// $jml = mysqli_query($conn, "SELECT COUNT(kriteria) FROM kriteria_penilaian WHERE jabatan='$jab'");
 
 ?>
 
@@ -86,34 +86,36 @@ $j = $jabatan->fetch_array();
               <form action="../views/add/tambah_kriteria.php" method="POST">
                 <table class="table table-bordered">
                   <thead>
+                    <td width="15%">Jabatan</td>
                     <td width="15%">Aspek</td>
                     <td>Kriteria</td>
                     <td>Target</td>
                     <td width="12%">Tingkat Kepentingan</td>
                   </thead>
                   <tbody>
-                    <?php for ($i = 1; $i <= $jml; $i++) { ?>
+                    <?php foreach ($kriteria as $k) : ?>
                       <tr>
-                        <td hidden><input type="text" name="jab[]" id="jab[]" value="<?= $jab; ?>"></td>
+                        <td><?= $j['name_jab']; ?></td>
                         <td>
-                          <select class="custom-select" name="aspek[]" id="aspek[]" required>
+                          <select class="custom-select" name="aspek[]" id="aspek[]" value="<?= $k['aspek']; ?>">
+                            <option value="<?= $k['aspek']; ?>" selected><?= $k['aspek']; ?></option>
                             <option value="Aspek Proses Bisnis Internal">Proses Bisnis Internal</option>
                             <option value="Aspek Pekerja">Pekerja</option>
                             <option value="Aspek Pelanggan">Pelanggan</option>
                           </select>
                         </td>
-                        <td><input type="text" class="col-11" name="kriteria[]" id="kriteria[]" required></td>
-                        <td><input type="text" class="col-11" name="target[]" id="target[]"></td>
+                        <td><input type="text" class="col-11" name="kriteria[]" id="kriteria[]" value="<?= $k['kriteria']; ?>"></td>
+                        <td><input type="text" class="col-11" name="target[]" id="target[]" value="<?= $k['target']; ?>"></td>
                         <td>
-                          <select class="custom-select" name="tk_kep[]" id="tk_kep[]" required>
-                            <option value="" selected disabled>--</option>
+                          <select class="custom-select" name="tk_kep[]" id="tk_kep[]" value="<?= $k['id_tk']; ?>">
+                            <option value="<?= $k['id_tk']; ?>" selected><?= $k['ket']; ?></option>
                             <?php foreach ($tkkep as $tk) : ?>
                               <option value="<?= $tk['id_tk']; ?>"><?= $tk['ket']; ?></option>
                             <?php endforeach; ?>
                           </select>
                         </td>
                       </tr>
-                    <?php } ?>
+                    <?php endforeach; ?>
                   </tbody>
                 </table>
                 <button type="submit" class="btn btn-primary">Tambah</button>
