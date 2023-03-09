@@ -83,7 +83,7 @@ $j = $jabatan->fetch_array();
               <h5><?= $j['name_jab']; ?></h5>
             </div>
             <div class="card-body">
-              <form action="../views/add/tambah_kriteria.php" method="POST">
+              <form action="../views/update/update_data_kriteria.php" method="POST">
                 <table class="table table-bordered">
                   <thead>
                     <td width="15%">Jabatan</td>
@@ -95,6 +95,7 @@ $j = $jabatan->fetch_array();
                   <tbody>
                     <?php foreach ($kriteria as $k) : ?>
                       <tr>
+                        <td hidden><input type="text" name="id_isi[]" class="id_isi[]" value="<?= $k['id_isi_sko']; ?>"></td>
                         <td><?= $j['name_jab']; ?></td>
                         <td>
                           <select class="custom-select" name="aspek[]" id="aspek[]" value="<?= $k['aspek']; ?>">
@@ -118,7 +119,7 @@ $j = $jabatan->fetch_array();
                     <?php endforeach; ?>
                   </tbody>
                 </table>
-                <button type="submit" class="btn btn-primary">Tambah</button>
+                <button type="submit" class="btn btn-primary">Update</button>
               </form>
             </div>
           </div>
