@@ -18,37 +18,41 @@ for ($i = 0; $i < $count; $i++) {
 }
 $hasil = array_sum($nilaiuntuksko) / 25;
 
-for ($i = 0; $i < $count; $i++) {
-  $insertsko = "INSERT INTO hitung_nilai VALUES ('','$id[$i]','$id_isi[$i]','$realisasi[$i]','$nilaiuntuksko[$i]','$periode[$i]')";
-  $sql = mysqli_query($conn, $insertsko);
+$cek = mysqli_query($conn, "SELECT * FROM nilai_akhir WHERE id_user='$id[0]' AND periode='$periode[0]'");
+if (mysqli_num_rows($cek) == 0) {
+  for ($i = 0; $i < $count; $i++) {
+    $insertsko = "INSERT INTO hitung_nilai VALUES ('','$id[$i]','$id_isi[$i]','$realisasi[$i]','$nilaiuntuksko[$i]','$periode[$i]')";
+    $sql = mysqli_query($conn, $insertsko);
+  }
+
+  // Insert Nilai SK
+  $id_isi_sk = $_POST['id_isi_sk'];
+  $nilaisk = $_POST['nilaisk'];
+  $countsk = count($nilaisk);
+
+  for ($j = 0; $j < $countsk; $j++) {
+    $insertsk = "INSERT INTO hitung_nilai_sk VALUES('','$id[$j]','$id_isi_sk[$j]','$nilaisk[$j]','$periode[$j]')";
+    $sql = mysqli_query($conn, $insertsk);
+  }
+
+  // // Insert Nilai Akhir
+  $nilaihk = $_POST['nilaihk'];
+  $catatan = $_POST['catatan'];
+  $total_nilai_sko = $hasil * 60 / 100; // hitung nilai sko non-manajerial, bobot = 60%
+  $total_nilai_sk = array_sum($nilaisk) / $countsk * 40 / 100; // hitung nilai sk non-manajerial, bobot = 40%
+  $nilai_akhir = $total_nilai_sko + $total_nilai_sk - $nilaihk; // total nilai akhir
+  $predikat = predikat($nilai_akhir);
+
+  $insertna = "INSERT INTO nilai_akhir VALUES ('','$id[0]','$total_nilai_sko','$total_nilai_sk','$nilaihk','$nilai_akhir','$predikat','$catatan','$periode[0]')";
+  $sql = mysqli_query($conn, $insertna);
+} else if (mysqli_num_rows($cek) > 0) {
 }
 
-// Insert Nilai SK
-$id_isi_sk = $_POST['id_isi_sk'];
-$nilaisk = $_POST['nilaisk'];
-$countsk = count($nilaisk);
-
-for ($j = 0; $j < $countsk; $j++) {
-  $insertsk = "INSERT INTO hitung_nilai_sk VALUES('','$id[$j]','$id_isi_sk[$j]','$nilaisk[$j]','$periode[$j]')";
-  $sql = mysqli_query($conn, $insertsk);
-}
-
-// // Insert Nilai Akhir
-$nilaihk = $_POST['nilaihk'];
-$catatan = $_POST['catatan'];
-$total_nilai_sko = $hasil * 60 / 100; // hitung nilai sko non-manajerial, bobot = 60%
-$total_nilai_sk = array_sum($nilaisk) / $countsk * 40 / 100; // hitung nilai sk non-manajerial, bobot = 40%
-$nilai_akhir = $total_nilai_sko + $total_nilai_sk - $nilaihk; // total nilai akhir
-$predikat = predikat($nilai_akhir);
-
-
-$insertna = "INSERT INTO nilai_akhir VALUES ('','$id[0]','$total_nilai_sko','$total_nilai_sk','$nilaihk','$nilai_akhir','$predikat','$catatan','$periode[0]')";
-$sql = mysqli_query($conn, $insertna);
 
 if ($sql) {
   $_SESSION['sukses'] = 'Berhasil Input Nilai';
 } else {
-  $_SESSION['gagal'] = 'Failed';
+  $_SESSION['gagal'] = 'Data sudah pernah diinput';
 }
 
 header('Location: ../../app/index.php?page=data-penilaian-rtg');

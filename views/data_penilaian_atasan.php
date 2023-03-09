@@ -209,6 +209,20 @@ $rtg = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan=j
   </script>
 <?php unset($_SESSION['sukses']);
 } ?>
+
+<?php if (@$_SESSION['gagal']) { ?>
+  <script>
+    Swal.fire({
+      text: "<?php echo $_SESSION['gagal']; ?>",
+      icon: "error",
+      customClass: {
+        confirmButton: "btn fw-bold btn-primary",
+        cancelButton: "btn fw-bold btn-active-light-primary"
+      }
+    })
+  </script>
+<?php unset($_SESSION['gagal']);
+} ?>
 <!-- end notif -->
 </body>
 
