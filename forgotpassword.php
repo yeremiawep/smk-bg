@@ -90,7 +90,6 @@
   <?php unset($_SESSION['failed']);
   } ?>
   <!-- end notif -->
-
   <!-- jQuery -->
   <script src="app/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->

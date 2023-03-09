@@ -83,8 +83,6 @@
   <script src="app/dist/js/adminlte.min.js"></script>
   <!-- Toastr -->
   <script src="app/plugins/toastr/toastr.min.js"></script>
-
-
   <!-- SweetAlert -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- start notif -->
@@ -104,6 +102,7 @@
   <!-- end notif -->
 </body>
 
+<!-- start notif login -->
 <?php
 if (isset($_GET['error']))
   $x = $_GET['error'];
@@ -155,5 +154,7 @@ if (isset($_GET['error']))
     })
   </script>
 <?php } ?>
+
+<!-- end notif login-->
 
 </html>
