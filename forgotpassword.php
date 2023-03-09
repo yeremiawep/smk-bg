@@ -40,7 +40,8 @@
             <?php } ?>
             <form action="./proses_lupa_password.php?aksi=lupa_password" method="POST">
               <div class="mb-3">
-                <input type="text" class="form-control py-2" placeholder="email" name="email" value="" required>
+                <label for="email">Masukkan Email</label>
+                <input type="email" class="form-control py-2" placeholder="email" name="email" value="" required>
               </div>
               <div class="form-group d-flex align-items-end justify-content-end mt-4 mb-0">
                 <button type="submit" class="btn btn-primary">Kirim</button>

@@ -34,12 +34,12 @@
                                 <!-- <p class="fs-4 my-3 mb-5 fw-bold">RSU Khalishah</p> -->
                                 <img src="app/dist/img/logo_bg2.png" alt="" height="150px" class="my-3 mb-5">
                             </div>
-                            <?php if (isset($_SESSION['toast_type'])) {
-                            ?>
+                            <!-- <?php if (isset($_SESSION['toast_type'])) {
+                                    ?>
 
                                 <div class="alert alert-danger"><?= $_SESSION['toast_message'] ?></div>
 
-                            <?php } ?>
+                            <?php } ?> -->
                             <form action="./proses_lupa_password.php?aksi=reset_password&email=<?= $_GET['email'] ?>" method="POST">
                                 <div class="mb-3">
                                     <input type="password" class="form-control py-2" placeholder="password" name="password" value="">
@@ -62,7 +62,7 @@
         <footer class="py-4 bg-light mt-auto">
             <div class="container-fluid">
                 <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Copyright &copy; PT. Bukit Baros Cempaka</div>
+                    <div class="text-muted">Copyright &copy; PT. Bringin Gigantara KC. Cempaka Putih</div>
                     <div>
                         <a href="#">Privacy Policy</a>
                         &middot;
@@ -73,12 +73,25 @@
         </footer>
     </div>
     </div>
-    <?php
-    if (isset($_SESSION['toast_type'])) {
-        unset($_SESSION['toast_type']);
-    }
-    ?>
+    <!-- <?php
+            if (isset($_SESSION['toast_type'])) {
+                unset($_SESSION['toast_type']);
+            }
+            ?> -->
 
+    <?php if (@$_SESSION['info']) { ?>
+        <script>
+            swal.fire({
+                text: "<?= $_SESSION['info']; ?>",
+                icon: "warning",
+                customClass: {
+                    confirmButton: "btn fw-bold btn-primary",
+                    cancelButton: "btn fw-bold btn-active-light-primary"
+                }
+            })
+        </script>
+    <?php unset($_SESSION['info']);
+    } ?>
 
 </body>
 

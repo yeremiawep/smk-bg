@@ -61,8 +61,14 @@ if ($aksi == 'lupa_password') {
     $email = base64_decode($email);
     $password = $_POST['password'];
 
-    $query = mysqli_query($conn, "UPDATE users SET password='$password' WHERE email='$email'");
-    if ($query) {
+    $query = mysqli_query($conn, "SELECT password FROM users WHERE email='$email'");
+    if ($password === $query) {
+        $_SESSION['info'] = 'Password sedang digunakan';
+    } else if ($password != $query) {
+        $update = mysqli_query($conn, "UPDATE users SET password='$password' WHERE email='$email'");
+    }
+
+    if ($update) {
         $_SESSION['sukses'] = 'Password berhasil direset, silahkan login.';
         header('Location: index.php');
     } else {
