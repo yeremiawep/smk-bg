@@ -62,7 +62,7 @@
         <footer class="py-4 bg-light mt-auto">
             <div class="container-fluid">
                 <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Copyright &copy; PT. Bukit Baros Cempaka</div>
+                    <!-- <div class="text-muted">Copyright &copy; PT. Bukit Baros Cempaka</div> -->
                     <div>
                         <a href="#">Privacy Policy</a>
                         &middot;

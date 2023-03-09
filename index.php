@@ -132,7 +132,7 @@ if (isset($_GET['error']))
 <?php if (@$x == 1) { ?>
   <script>
     Swal.fire({
-      text: "Login Gagal",
+      text: "ID Pegawai dan Password Tidak Sesuai!",
       icon: "error",
       customClass: {
         confirmButton: "btn fw-bold btn-primary",
