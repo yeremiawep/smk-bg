@@ -29,7 +29,7 @@
           </div>
           <div class="card-body">
             <div class="justify-content-center text-center">
-              <!-- <p class="fs-4 my-3 mb-5 fw-bold">PT. Bringin Gigantara KC. Cempaka Putih</p> -->
+              <p class="fs-4 my-3 mb-5 fw-bold">PT. Bringin Gigantara KC. Cempaka Putih</p>
               <img src="app/dist/img/logo_bg2.png" alt="" height="150px" class="my-3 mb-5">
             </div>
             <form action="./proses_lupa_password.php?aksi=lupa_password" method="POST">

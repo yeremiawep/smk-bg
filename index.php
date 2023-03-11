@@ -57,17 +57,18 @@
             <div class="col-12">
               <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-fw fa-sign-in-alt mr-1"></i> Login</button>
             </div>
-            <div class="row">
-              <div class="col-12">
-                <p class="mt-2">
-                  <a href="forgotpassword.php">Lupa Password</a>
-                </p>
-              </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <p class=" mt-2">
+                <a href="forgotpassword.php" style="text-decoration:underline;">Lupa Password</a>
+              </p>
             </div>
           </div>
-        </form>
       </div>
+      </form>
     </div>
+  </div>
   </div>
   <!-- /.login-box -->
 

@@ -15,6 +15,8 @@ $admcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan='7
 $admcit = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan='8'");
 $admrtg = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan='9'");
 $plkcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan='13'");
+$ternilai = mysqli_query($conn, "SELECT COUNT(id_na) AS jml FROM nilai_akhir");
+$view4 = $ternilai->fetch_array();
 
 ?>
 
@@ -27,7 +29,7 @@ $plkcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan='1
         <div class="small-box bg-primary">
           <div class="inner">
             <h3><?= $view['jml']; ?></h3>
-            <p>Pegawai</p>
+            <p class="text-bold">Pegawai</p>
           </div>
           <div class="icon">
             <i class="ion ion-person"></i>
@@ -40,7 +42,7 @@ $plkcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan='1
         <div class="small-box bg-success">
           <div class="inner">
             <h3><?= $view2['jml']; ?></h3>
-            <p>Divisi</p>
+            <p class="text-bold">Divisi</p>
           </div>
           <div class="icon">
             <i class="ion ion-stats-bars"></i>
@@ -53,10 +55,23 @@ $plkcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan='1
         <div class="small-box bg-warning">
           <div class="inner">
             <h3><?= $view3['jml']; ?></h3>
-            <p>Jabatan</p>
+            <p class="text-bold">Jabatan</p>
           </div>
           <div class="icon">
             <i class="ion ion-pie-graph"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-6">
+        <div class="small-box bg-primary">
+          <div class="inner">
+            <h3><?= $view4['jml']; ?></h3>
+            <p class="text-bold">Jumlah Pegawai Dinilai</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-stats-bars"></i>
           </div>
         </div>
       </div>
