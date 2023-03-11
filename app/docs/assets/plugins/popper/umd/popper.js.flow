@@ -1,23 +1,23 @@
 // @flow
 
-export type Position = "top" | "right" | "bottom" | "left";
+export type Position = 'top' | 'right' | 'bottom' | 'left';
 
 export type Placement =
-  | "auto-start"
-  | "auto"
-  | "auto-end"
-  | "top-start"
-  | "top"
-  | "top-end"
-  | "right-start"
-  | "right"
-  | "right-end"
-  | "bottom-end"
-  | "bottom"
-  | "bottom-start"
-  | "left-end"
-  | "left"
-  | "left-start";
+  | 'auto-start'
+  | 'auto'
+  | 'auto-end'
+  | 'top-start'
+  | 'top'
+  | 'top-end'
+  | 'right-start'
+  | 'right'
+  | 'right-end'
+  | 'bottom-end'
+  | 'bottom'
+  | 'bottom-start'
+  | 'left-end'
+  | 'left'
+  | 'left-start';
 
 export type Offset = {
   top: number,
@@ -27,9 +27,9 @@ export type Offset = {
   position: Position,
 };
 
-export type Boundary = "scrollParent" | "viewport" | "window";
+export type Boundary = 'scrollParent' | 'viewport' | 'window';
 
-export type Behavior = "flip" | "clockwise" | "counterclockwise";
+export type Behavior = 'flip' | 'clockwise' | 'counterclockwise';
 
 export type Data = {
   instance: Popper,
@@ -85,8 +85,8 @@ export type Modifiers = {
     behavior?: Behavior | Position[],
     padding?: number | Padding,
     boundariesElement?: Boundary | Element,
-    flipVArialtions?: boolean,
-    flipVArialtionsByContent?: boolean,
+    flipVariations?: boolean,
+    flipVariationsByContent?: boolean,
   },
   inner?: BaseModifier,
   hide?: BaseModifier,
@@ -96,8 +96,8 @@ export type Modifiers = {
   },
   computeStyle?: BaseModifier & {
     gpuAcceleration?: boolean,
-    x?: "bottom" | "top",
-    y?: "left" | "right",
+    x?: 'bottom' | 'top',
+    y?: 'left' | 'right',
   },
 
   [name: string]: (BaseModifier & { [string]: * }) | null,
@@ -146,7 +146,11 @@ declare class Popper {
   popper: Element;
   reference: Element | ReferenceObject;
 
-  constructor(reference: Element | ReferenceObject, popper: Element, options?: Options): Instance;
+  constructor(
+    reference: Element | ReferenceObject,
+    popper: Element,
+    options?: Options
+  ): Instance;
 }
 
 declare export default typeof Popper;

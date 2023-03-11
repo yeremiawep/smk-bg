@@ -37,7 +37,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: Arial", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ariall, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-sans-serif: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -60,7 +60,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: Arial", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ariall, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -6242,7 +6242,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: Arial", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ariall, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -6355,7 +6355,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: Arial", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ariall, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -33143,32 +33143,32 @@ html.maximized-card {
   transition: transform 0.3s linear, -webkit-transform 0.3s linear;
 }
 
-[data-widget="expandable-table"][Arial-expanded="true"] i.expandable-table-caret[class*="right"] {
+[data-widget="expandable-table"][aria-expanded="true"] i.expandable-table-caret[class*="right"] {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
-[data-widget="expandable-table"][Arial-expanded="true"] i.expandable-table-caret[class*="left"] {
+[data-widget="expandable-table"][aria-expanded="true"] i.expandable-table-caret[class*="left"] {
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
 
-[Arial-expanded="true"] {
+[aria-expanded="true"] {
   cursor: pointer;
 }
 
-[Arial-expanded="true"] i.expandable-table-caret {
+[aria-expanded="true"] i.expandable-table-caret {
   transition: -webkit-transform 0.3s linear;
   transition: transform 0.3s linear;
   transition: transform 0.3s linear, -webkit-transform 0.3s linear;
 }
 
-[Arial-expanded="true"] [data-widget="expandable-table"] i.expandable-table-caret[class*="right"] {
+[aria-expanded="true"] [data-widget="expandable-table"] i.expandable-table-caret[class*="right"] {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
-[Arial-expanded="true"] [data-widget="expandable-table"] i.expandable-table-caret[class*="left"] {
+[aria-expanded="true"] [data-widget="expandable-table"] i.expandable-table-caret[class*="left"] {
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
@@ -35657,15 +35657,15 @@ body.iframe-mode-fullscreen .content-wrapper.iframe-mode {
   border-bottom: 0;
 }
 
-.select2-container--default .select2-results__option[Arial-disabled='true'] {
+.select2-container--default .select2-results__option[aria-disabled='true'] {
   color: #6c757d;
 }
 
-.select2-container--default .select2-results__option[Arial-selected='true'] {
+.select2-container--default .select2-results__option[aria-selected='true'] {
   background-color: #dee2e6;
 }
 
-.select2-container--default .select2-results__option[Arial-selected='true'], .select2-container--default .select2-results__option[Arial-selected='true']:hover {
+.select2-container--default .select2-results__option[aria-selected='true'], .select2-container--default .select2-results__option[aria-selected='true']:hover {
   color: #1f2d3d;
 }
 
@@ -35674,7 +35674,7 @@ body.iframe-mode-fullscreen .content-wrapper.iframe-mode {
   color: #fff;
 }
 
-.select2-container--default .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #0074f0;
   color: #fff;
 }
@@ -35828,9 +35828,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .select2-primary .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-primary .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-primary .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-primary .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-primary .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-primary .select2-results__option--highlighted[aria-selected]:hover,
+.select2-primary .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-primary .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #0074f0;
   color: #fff;
 }
@@ -35885,9 +35885,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .select2-secondary .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-secondary .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-secondary .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-secondary .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-secondary .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-secondary .select2-results__option--highlighted[aria-selected]:hover,
+.select2-secondary .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-secondary .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #656d75;
   color: #fff;
 }
@@ -35942,9 +35942,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .select2-success .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-success .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-success .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-success .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-success .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-success .select2-results__option--highlighted[aria-selected]:hover,
+.select2-success .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-success .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #259b40;
   color: #fff;
 }
@@ -35999,9 +35999,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .select2-info .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-info .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-info .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-info .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-info .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-info .select2-results__option--highlighted[aria-selected]:hover,
+.select2-info .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-info .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #1596aa;
   color: #fff;
 }
@@ -36056,9 +36056,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #1f2d3d;
 }
 
-.select2-container--default .select2-warning .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-warning .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-warning .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-warning .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-warning .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-warning .select2-results__option--highlighted[aria-selected]:hover,
+.select2-warning .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-warning .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #f7b900;
   color: #1f2d3d;
 }
@@ -36113,9 +36113,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .select2-danger .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-danger .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-danger .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-danger .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-danger .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-danger .select2-results__option--highlighted[aria-selected]:hover,
+.select2-danger .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-danger .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #da2839;
   color: #fff;
 }
@@ -36170,9 +36170,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #1f2d3d;
 }
 
-.select2-container--default .select2-light .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-light .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-light .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-light .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-light .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-light .select2-results__option--highlighted[aria-selected]:hover,
+.select2-light .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-light .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #eff1f4;
   color: #1f2d3d;
 }
@@ -36227,9 +36227,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .select2-dark .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-dark .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-dark .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-dark .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-dark .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-dark .select2-results__option--highlighted[aria-selected]:hover,
+.select2-dark .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-dark .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #2d3238;
   color: #fff;
 }
@@ -36284,9 +36284,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .select2-lightblue .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-lightblue .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-lightblue .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-lightblue .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-lightblue .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-lightblue .select2-results__option--highlighted[aria-selected]:hover,
+.select2-lightblue .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-lightblue .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #3884b0;
   color: #fff;
 }
@@ -36341,9 +36341,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .select2-navy .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-navy .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-navy .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-navy .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-navy .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-navy .select2-results__option--highlighted[aria-selected]:hover,
+.select2-navy .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-navy .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #001730;
   color: #fff;
 }
@@ -36398,9 +36398,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .select2-olive .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-olive .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-olive .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-olive .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-olive .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-olive .select2-results__option--highlighted[aria-selected]:hover,
+.select2-olive .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-olive .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #398e68;
   color: #fff;
 }
@@ -36455,9 +36455,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #1f2d3d;
 }
 
-.select2-container--default .select2-lime .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-lime .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-lime .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-lime .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-lime .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-lime .select2-results__option--highlighted[aria-selected]:hover,
+.select2-lime .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-lime .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #00f169;
   color: #1f2d3d;
 }
@@ -36512,9 +36512,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .select2-fuchsia .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-fuchsia .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-fuchsia .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-fuchsia .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-fuchsia .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-fuchsia .select2-results__option--highlighted[aria-selected]:hover,
+.select2-fuchsia .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-fuchsia .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #e40eb4;
   color: #fff;
 }
@@ -36569,9 +36569,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .select2-maroon .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-maroon .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-maroon .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-maroon .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-maroon .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-maroon .select2-results__option--highlighted[aria-selected]:hover,
+.select2-maroon .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-maroon .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #ca195a;
   color: #fff;
 }
@@ -36626,9 +36626,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .select2-blue .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-blue .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-blue .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-blue .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-blue .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-blue .select2-results__option--highlighted[aria-selected]:hover,
+.select2-blue .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-blue .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #0074f0;
   color: #fff;
 }
@@ -36683,9 +36683,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .select2-indigo .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-indigo .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-indigo .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-indigo .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-indigo .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-indigo .select2-results__option--highlighted[aria-selected]:hover,
+.select2-indigo .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-indigo .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #5f0de6;
   color: #fff;
 }
@@ -36740,9 +36740,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .select2-purple .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-purple .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-purple .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-purple .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-purple .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-purple .select2-results__option--highlighted[aria-selected]:hover,
+.select2-purple .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-purple .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #683cb8;
   color: #fff;
 }
@@ -36797,9 +36797,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .select2-pink .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-pink .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-pink .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-pink .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-pink .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-pink .select2-results__option--highlighted[aria-selected]:hover,
+.select2-pink .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-pink .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #e63084;
   color: #fff;
 }
@@ -36854,9 +36854,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .select2-red .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-red .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-red .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-red .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-red .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-red .select2-results__option--highlighted[aria-selected]:hover,
+.select2-red .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-red .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #da2839;
   color: #fff;
 }
@@ -36911,9 +36911,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #1f2d3d;
 }
 
-.select2-container--default .select2-orange .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-orange .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-orange .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-orange .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-orange .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-orange .select2-results__option--highlighted[aria-selected]:hover,
+.select2-orange .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-orange .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #fd7605;
   color: #fff;
 }
@@ -36968,9 +36968,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #1f2d3d;
 }
 
-.select2-container--default .select2-yellow .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-yellow .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-yellow .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-yellow .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-yellow .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-yellow .select2-results__option--highlighted[aria-selected]:hover,
+.select2-yellow .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-yellow .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #f7b900;
   color: #1f2d3d;
 }
@@ -37025,9 +37025,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .select2-green .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-green .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-green .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-green .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-green .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-green .select2-results__option--highlighted[aria-selected]:hover,
+.select2-green .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-green .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #259b40;
   color: #fff;
 }
@@ -37082,9 +37082,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .select2-teal .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-teal .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-teal .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-teal .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-teal .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-teal .select2-results__option--highlighted[aria-selected]:hover,
+.select2-teal .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-teal .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #1ebc8d;
   color: #fff;
 }
@@ -37139,9 +37139,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .select2-cyan .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-cyan .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-cyan .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-cyan .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-cyan .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-cyan .select2-results__option--highlighted[aria-selected]:hover,
+.select2-cyan .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-cyan .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #1596aa;
   color: #fff;
 }
@@ -37196,9 +37196,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #1f2d3d;
 }
 
-.select2-container--default .select2-white .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-white .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-white .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-white .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-white .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-white .select2-results__option--highlighted[aria-selected]:hover,
+.select2-white .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-white .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #f7f7f7;
   color: #1f2d3d;
 }
@@ -37253,9 +37253,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .select2-gray .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-gray .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-gray .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-gray .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-gray .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-gray .select2-results__option--highlighted[aria-selected]:hover,
+.select2-gray .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-gray .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #656d75;
   color: #fff;
 }
@@ -37310,9 +37310,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .select2-gray-dark .select2-results__option--highlighted[Arial-selected], .select2-container--default .select2-gray-dark .select2-results__option--highlighted[Arial-selected]:hover,
-.select2-gray-dark .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.select2-gray-dark .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .select2-gray-dark .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-gray-dark .select2-results__option--highlighted[aria-selected]:hover,
+.select2-gray-dark .select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-gray-dark .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #2d3238;
   color: #fff;
 }
@@ -37375,7 +37375,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: white;
 }
 
-.dark-mode .select2-results__option[Arial-selected="true"] {
+.dark-mode .select2-results__option[aria-selected="true"] {
   background-color: #3f474e !important;
   color: #dee2e6;
 }
@@ -37412,9 +37412,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .dark-mode .select2-primary .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-primary .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-primary .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-primary .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-primary .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-primary .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-primary .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-primary .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #3a5f86;
   color: #fff;
 }
@@ -37469,9 +37469,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .dark-mode .select2-secondary .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-secondary .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-secondary .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-secondary .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-secondary .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-secondary .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-secondary .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-secondary .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #656d75;
   color: #fff;
 }
@@ -37526,9 +37526,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .dark-mode .select2-success .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-success .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-success .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-success .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-success .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-success .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-success .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-success .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #00ad81;
   color: #fff;
 }
@@ -37583,9 +37583,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .dark-mode .select2-info .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-info .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-info .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-info .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-info .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-info .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-info .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-info .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #2791d9;
   color: #fff;
 }
@@ -37640,9 +37640,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #1f2d3d;
 }
 
-.select2-container--default .dark-mode .select2-warning .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-warning .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-warning .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-warning .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-warning .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-warning .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-warning .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-warning .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #ea940c;
   color: #1f2d3d;
 }
@@ -37697,9 +37697,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .dark-mode .select2-danger .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-danger .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-danger .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-danger .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-danger .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-danger .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-danger .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-danger .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #e53f2e;
   color: #fff;
 }
@@ -37754,9 +37754,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #1f2d3d;
 }
 
-.select2-container--default .dark-mode .select2-light .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-light .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-light .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-light .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-light .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-light .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-light .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-light .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #eff1f4;
   color: #1f2d3d;
 }
@@ -37811,9 +37811,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .dark-mode .select2-dark .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-dark .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-dark .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-dark .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-dark .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-dark .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-dark .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-dark .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #2d3238;
   color: #fff;
 }
@@ -37868,9 +37868,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #1f2d3d;
 }
 
-.select2-container--default .dark-mode .select2-lightblue .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-lightblue .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-lightblue .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-lightblue .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-lightblue .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-lightblue .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-lightblue .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-lightblue .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #7ab3d5;
   color: #1f2d3d;
 }
@@ -37925,9 +37925,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .dark-mode .select2-navy .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-navy .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-navy .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-navy .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-navy .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-navy .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-navy .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-navy .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #002449;
   color: #fff;
 }
@@ -37982,9 +37982,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #1f2d3d;
 }
 
-.select2-container--default .dark-mode .select2-olive .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-olive .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-olive .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-olive .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-olive .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-olive .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-olive .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-olive .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #69c39b;
   color: #1f2d3d;
 }
@@ -38039,9 +38039,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #1f2d3d;
 }
 
-.select2-container--default .dark-mode .select2-lime .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-lime .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-lime .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-lime .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-lime .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-lime .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-lime .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-lime .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #58ffa1;
   color: #1f2d3d;
 }
@@ -38096,9 +38096,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #1f2d3d;
 }
 
-.select2-container--default .dark-mode .select2-fuchsia .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-fuchsia .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-fuchsia .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-fuchsia .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-fuchsia .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-fuchsia .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-fuchsia .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-fuchsia .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #f564d4;
   color: #1f2d3d;
 }
@@ -38153,9 +38153,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #1f2d3d;
 }
 
-.select2-container--default .dark-mode .select2-maroon .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-maroon .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-maroon .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-maroon .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-maroon .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-maroon .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-maroon .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-maroon .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #eb5f92;
   color: #fff;
 }
@@ -38210,9 +38210,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .dark-mode .select2-blue .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-blue .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-blue .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-blue .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-blue .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-blue .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-blue .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-blue .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #3a5f86;
   color: #fff;
 }
@@ -38267,9 +38267,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .dark-mode .select2-indigo .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-indigo .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-indigo .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-indigo .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-indigo .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-indigo .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-indigo .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-indigo .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #5f0de6;
   color: #fff;
 }
@@ -38324,9 +38324,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .dark-mode .select2-purple .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-purple .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-purple .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-purple .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-purple .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-purple .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-purple .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-purple .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #683cb8;
   color: #fff;
 }
@@ -38381,9 +38381,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .dark-mode .select2-pink .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-pink .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-pink .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-pink .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-pink .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-pink .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-pink .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-pink .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #e63084;
   color: #fff;
 }
@@ -38438,9 +38438,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .dark-mode .select2-red .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-red .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-red .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-red .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-red .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-red .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-red .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-red .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #e53f2e;
   color: #fff;
 }
@@ -38495,9 +38495,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #1f2d3d;
 }
 
-.select2-container--default .dark-mode .select2-orange .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-orange .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-orange .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-orange .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-orange .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-orange .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-orange .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-orange .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #fd7605;
   color: #fff;
 }
@@ -38552,9 +38552,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #1f2d3d;
 }
 
-.select2-container--default .dark-mode .select2-yellow .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-yellow .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-yellow .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-yellow .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-yellow .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-yellow .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-yellow .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-yellow .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #ea940c;
   color: #1f2d3d;
 }
@@ -38609,9 +38609,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .dark-mode .select2-green .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-green .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-green .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-green .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-green .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-green .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-green .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-green .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #00ad81;
   color: #fff;
 }
@@ -38666,9 +38666,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .dark-mode .select2-teal .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-teal .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-teal .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-teal .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-teal .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-teal .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-teal .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-teal .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #1ebc8d;
   color: #fff;
 }
@@ -38723,9 +38723,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .dark-mode .select2-cyan .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-cyan .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-cyan .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-cyan .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-cyan .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-cyan .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-cyan .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-cyan .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #2791d9;
   color: #fff;
 }
@@ -38780,9 +38780,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #1f2d3d;
 }
 
-.select2-container--default .dark-mode .select2-white .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-white .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-white .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-white .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-white .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-white .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-white .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-white .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #f7f7f7;
   color: #1f2d3d;
 }
@@ -38837,9 +38837,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .dark-mode .select2-gray .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-gray .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-gray .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-gray .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-gray .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-gray .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-gray .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-gray .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #656d75;
   color: #fff;
 }
@@ -38894,9 +38894,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #fff;
 }
 
-.select2-container--default .dark-mode .select2-gray-dark .select2-results__option--highlighted[Arial-selected], .select2-container--default .dark-mode .select2-gray-dark .select2-results__option--highlighted[Arial-selected]:hover,
-.dark-mode .select2-gray-dark .select2-container--default .select2-results__option--highlighted[Arial-selected],
-.dark-mode .select2-gray-dark .select2-container--default .select2-results__option--highlighted[Arial-selected]:hover {
+.select2-container--default .dark-mode .select2-gray-dark .select2-results__option--highlighted[aria-selected], .select2-container--default .dark-mode .select2-gray-dark .select2-results__option--highlighted[aria-selected]:hover,
+.dark-mode .select2-gray-dark .select2-container--default .select2-results__option--highlighted[aria-selected],
+.dark-mode .select2-gray-dark .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #2d3238;
   color: #fff;
 }
@@ -40035,7 +40035,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .mapael .mapTooltip {
-  font-family: Arial", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ariall, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;

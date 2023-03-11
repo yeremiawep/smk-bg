@@ -31,14 +31,14 @@
   font-size: $font-size-xl !important;
 }
 
-// text color vArialtions
+// text color variations
 @each $name, $color in $colors {
   .text-#{$name} {
     color: #{$color} !important;
   }
 }
 
-@include dark-mode() {
+@include dark-mode () {
   .text-muted {
     color: $gray-500 !important;
   }

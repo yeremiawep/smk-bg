@@ -10,42 +10,38 @@ In this example we create a custom button class called `.btn-custom-color` with 
 ```scss
 // Bootstrap
 // ---------------------------------------------------
-@import "~bootstrap/scss/functions";
-@import "~admin-lte/build/scss/bootstrap-vArialbles";
+@import '~bootstrap/scss/functions';
+@import '~admin-lte/build/scss/bootstrap-variables';
 
 // Custom Theme Color START
-$custom-color: #00ff00;
-$theme-colors: map-merge(
-  (
-    "custom-color": $custom-color,
-  ),
-  $theme-colors
-);
+$custom-color: #00FF00;
+$theme-colors: map-merge((
+    'custom-color': $custom-color,
+), $theme-colors);
 // Custom Theme Color END
 
-// VArialbles and Mixins
+// Variables and Mixins
 // ---------------------------------------------------
-@import "~admin-lte/build/scss/vArialbles";
-@import "~admin-lte/build/scss/vArialbles-alt";
-@import "~admin-lte/build/scss/mixins";
+@import '~admin-lte/build/scss/variables';
+@import '~admin-lte/build/scss/variables-alt';
+@import '~admin-lte/build/scss/mixins';
 
-@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
 
-@import "~admin-lte/build/scss/parts/core";
-@import "~admin-lte/build/scss/parts/components";
-@import "~admin-lte/build/scss/parts/extra-components";
-@import "~admin-lte/build/scss/parts/pages";
-@import "~admin-lte/build/scss/parts/plugins";
-@import "~admin-lte/build/scss/parts/miscellaneous";
+@import '~admin-lte/build/scss/parts/core';
+@import '~admin-lte/build/scss/parts/components';
+@import '~admin-lte/build/scss/parts/extra-components';
+@import '~admin-lte/build/scss/parts/pages';
+@import '~admin-lte/build/scss/parts/plugins';
+@import '~admin-lte/build/scss/parts/miscellaneous';
 
 // Custom Style START
 .my-custom-style {
   background-color: $custom-color;
-  padding: 0.5rem 0;
+  padding: .5rem 0;
 }
 // Custom Style END
 ```
-
 {: .max-height-300}
 
 You can also create a skin on top of AdminLTE with the following SCSS template.
@@ -55,18 +51,18 @@ In this example we create a custom class called `.btn-custom-color` with a extra
 ```scss
 // Bootstrap
 // ---------------------------------------------------
-@import "~bootstrap/scss/functions";
-@import "~admin-lte/build/scss/bootstrap-vArialbles";
-@import "~bootstrap/scss/mixins";
+@import '~bootstrap/scss/functions';
+@import '~admin-lte/build/scss/bootstrap-variables';
+@import '~bootstrap/scss/mixins';
 
-$custom-color: #00ff00;
+$custom-color: #00FF00;
 
 .btn-custom-color {
-  @include button-vArialnt($custom-color, $custom-color);
+    @include button-variant($custom-color, $custom-color);
 }
 ```
 
+
 > ##### Warning!
->
 > These examples are only raw SCSS templates, you will still need a SCSS -> CSS build script to compile the SCSS to CSS!
-> {: .quote-warning}
+{: .quote-warning}

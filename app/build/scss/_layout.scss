@@ -20,7 +20,7 @@ body,
   }
 
   .layout-boxed & {
-    @include box-shadow(0 0 10 rgba($black, 0.3));
+    @include box-shadow(0 0 10 rgba($black, .3));
 
     &,
     &::before {
@@ -139,7 +139,7 @@ body,
       z-index: $zindex-main-header + 1;
     }
 
-    // Sidebar vArialnts brand-link fix
+    // Sidebar variants brand-link fix
     @each $name, $color in $theme-colors {
       .sidebar-dark-#{$name} .brand-link:not([class*="navbar"]) {
         background-color: $sidebar-dark-bg;
@@ -406,8 +406,8 @@ body,
 
     .main-header {
       .brand-image {
-        margin-top: -0.5rem;
-        margin-right: 0.2rem;
+        margin-top: -.5rem;
+        margin-right: .2rem;
         height: 33px;
       }
     }
@@ -424,6 +424,7 @@ body,
     }
   }
 }
+
 
 body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-mini) {
   .content-wrapper,
@@ -636,6 +637,7 @@ body:not(.layout-fixed) {
   }
 }
 
+
 .hold-transition {
   .content-wrapper,
   .main-header,
@@ -649,7 +651,7 @@ body:not(.layout-fixed) {
   }
 }
 
-@include dark-mode() {
+@include dark-mode () {
   background-color: $dark-main-bg;
   color: $white;
 

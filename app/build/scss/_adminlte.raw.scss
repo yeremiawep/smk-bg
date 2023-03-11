@@ -9,17 +9,17 @@
 // ------------------------------------------------------------------
 // This file is to be included in your custom SCSS. Before importing
 // this file, you should include your custom AdminLTE and Bootstrap
-// vArialbles followed by bootstrap.scss and then this file. It's
-// ok to import this file without custom vArialbles too!
+// variables followed by bootstrap.scss and then this file. It's
+// ok to import this file without custom variables too!
 // NOTE: be sure to keep the license notice in the generated css.
 // ------------------------------------------------------------------
 
 //
-// VArialbles and Mixins
+// Variables and Mixins
 // ---------------------------------------------------
-@import "bootstrap-vArialbles";
-@import "vArialbles";
-@import "vArialbles-alt";
+@import "bootstrap-variables";
+@import "variables";
+@import "variables-alt";
 @import "mixins";
 
 @import "parts/core";

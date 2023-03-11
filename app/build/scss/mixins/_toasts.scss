@@ -2,11 +2,12 @@
 // Mixins: Toasts
 //
 
-// Toast VArialnt
-@mixin toast-vArialnt($name, $color) {
+// Toast Variant
+@mixin toast-variant($name, $color) {
   &.bg-#{$name} {
-    background-color: rgba($color, 0.9) !important;
+    background-color: rgba($color, .9) !important;
     @if (color-yiq($color) == $yiq-text-light) {
+
       .close {
         color: color-yiq($color);
         text-shadow: 0 1px 0 $black;
@@ -14,8 +15,9 @@
     }
 
     .toast-header {
-      background-color: rgba($color, 0.85);
+      background-color: rgba($color, .85);
       color: color-yiq($color);
     }
   }
 }
+
