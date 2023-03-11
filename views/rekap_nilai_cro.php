@@ -49,8 +49,8 @@ $nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhi
                     <td><?= $nilai['nilai_akhir']; ?></td>
                     <td><?= $nilai['predikat']; ?></td>
                     <td>
-                      <a href="index.php?page=detail-nilai-pegawai&&idna=<?= $nilai['id_na']; ?>&&id=<?= $nilai['id_user']; ?>&&idpeg=<?= $nilai['id_pegawai']; ?>" class="btn btn-sm btn-primary"><i class="nav-icon fas fa-eye"></i></a>
-                      <a href="index.php?page=edit-nilai-cro&&idna=<?= $nilai['id_na']; ?>&&id=<?= $nilai['id_user']; ?>&&idpeg=<?= $nilai['id_pegawai']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
+                      <a href="index.php?page=detail-nilai-pegawai&&idna=<?= $nilai['id_na']; ?>&&id=<?= $nilai['id_user']; ?>&&periode=<?= $nilai['periode']; ?>" class="btn btn-sm btn-primary"><i class="nav-icon fas fa-eye"></i></a>
+                      <a href="index.php?page=edit-nilai-cro&&idna=<?= $nilai['id_na']; ?>&&id=<?= $nilai['id_user']; ?>&&periode=<?= $nilai['periode']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>

@@ -4,10 +4,11 @@ include '../config/database.php';
 
 $idna = $_GET['idna'];
 $id = $_GET['id'];
+$periode = $_GET['periode'];
 
-$nilaisko = mysqli_query($conn, "SELECT * FROM hitung_nilai JOIN kriteria_penilaian ON hitung_nilai.id_isi_sko=kriteria_penilaian.id_isi_sko WHERE id_user='$id'");
-$nilaisk = mysqli_query($conn, "SELECT * FROM hitung_nilai_sk JOIN kriteria_kompetensi ON hitung_nilai_sk.id_isi_sk=kriteria_kompetensi.id_isi_sk WHERE id_user='$id'");
-$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user RIGHT JOIN jabatans ON users.jabatan=jabatans.id RIGHT JOIN divisions ON users.divisi = divisions.id JOIN periode ON nilai_akhir.periode=periode.id_periode WHERE id_na='$idna'");
+$nilaisko = mysqli_query($conn, "SELECT * FROM hitung_nilai JOIN kriteria_penilaian ON hitung_nilai.id_isi_sko=kriteria_penilaian.id_isi_sko WHERE id_user='$id' AND periode='$periode'");
+$nilaisk = mysqli_query($conn, "SELECT * FROM hitung_nilai_sk JOIN kriteria_kompetensi ON hitung_nilai_sk.id_isi_sk=kriteria_kompetensi.id_isi_sk WHERE id_user='$id' AND periode='$periode'");
+$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user RIGHT JOIN jabatans ON users.jabatan=jabatans.id RIGHT JOIN divisions ON users.divisi = divisions.id JOIN periode ON nilai_akhir.periode=periode.id_periode WHERE id_na='$idna' AND periode='$periode'");
 $n = mysqli_fetch_array($nilai);
 
 ?>
