@@ -21,23 +21,6 @@ $no_bpjs_kesehatan = $_POST['no_bpjs_kesehatan'];
 $ijazah = $_POST['ijazah'];
 
 
-// var_dump($id);
-// var_dump($id_pegawai);
-// var_dump($id_personal);
-// var_dump($no_ktp);
-// var_dump($no_bpjs_kesehatan);
-// var_dump($no_bpjs_ketenagakerjaan);
-// var_dump($agama);
-// var_dump($domisili);
-// var_dump($divisi);
-// var_dump($jabatan);
-// var_dump($usia);
-// var_dump($tgl_lahir);
-// var_dump($pendidikan);
-// var_dump($ijazah);
-// var_dump($name);
-// var_dump($status);
-
 $query = mysqli_query($conn, "UPDATE users SET 
                               name='$name',
                               email='$email',
@@ -63,6 +46,5 @@ if ($query) {
     $_SESSION['gagal'] = 'Failed';
 }
 
-// var_dump($query);
 
 header('Location: ../../app/index.php?page=data-pegawai');
