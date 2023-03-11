@@ -16,7 +16,6 @@ for ($i = 0; $i < $ctkp; $i++) {
   $bobot[$i] = $tk_kep[$i] / $tkkep;
 }
 
-
 for ($i = 0; $i < $ctkp; $i++) {
   $query = mysqli_query($conn, "INSERT INTO kriteria_penilaian (id_isi_sko, jabatan, aspek, kriteria, target, id_tk, bobot) VALUES ('','$jab[$i]','$aspek[$i]','$kriteria[$i]','$target[$i]', '$tk_kep[$i]', '$bobot[$i]')");
 }
