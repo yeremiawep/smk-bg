@@ -24,6 +24,27 @@ function predikat($nilai_akhir)
 // ----------------- End ------------------- //
 
 
+// Status Periode
+// ------------- Start ----------------------------- //
+
+function periode($tgl_mulai, $tgl_berakhir)
+{
+  $status = [];
+
+  $set = strtotime($tgl_berakhir) - strtotime($tgl_mulai);
+  if ($set == 0) {
+    $status = 'Tidak Aktif';
+  } else {
+    $status = 'Aktif';
+  }
+
+  return $status;
+}
+
+
+
+// ------------- End ------------------------------- //
+
 // Menghitung nilai sasaran kompetensi untuk level non manajerial
 // ------------- Start ----------------------------------------- //
 function hitung_sk_plk($nilaisk, $countsk)

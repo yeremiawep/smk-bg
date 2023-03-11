@@ -32,14 +32,33 @@ $periode = mysqli_query($conn, "SELECT * FROM periode");
             <table id="example1" class="table table-bordered">
               <thead>
                 <tr>
+                  <th width="2%">No</th>
                   <th width="10%">Periode</th>
+                  <th width="10%">Tgl. Mulai</th>
+                  <th width="10%">Tgl. Berakhir</th>
+                  <th width="10%">Status</th>
+                  <th width="10%">Option</th>
                   <!-- <th width="10%">Aksi</th> -->
                 </tr>
               </thead>
               <tbody>
+                <?php $no = 1; ?>
                 <?php foreach ($periode as $p) : ?>
                   <tr>
+                    <td><?= $no++; ?></td>
                     <td><?= $p['tahun']; ?></td>
+                    <td><?= $p['tgl_mulai']; ?></td>
+                    <td><?= $p['tgl_berakhir']; ?></td>
+                    <td>
+                      <?php if ($p['status'] == 'Aktif') { ?>
+                        <a class="badge badge-lg badge-success"><?= $p['status']; ?></a>
+                      <?php } else if ($p['status'] == 'Tidak Aktif') { ?>
+                        <a class="badge badge-lg badge-danger disabled"><?= $p['status']; ?></a>
+                      <?php } ?>
+                    </td>
+                    <td>
+                      <a href="" class="badge badge-lg badge-primary"><i class="fas fa-cog"></i></i> Setting</a>
+                    </td>
                     <!-- <td>
                       <a href="index.php?page=edit-data-divisi&&id=<?= $p['id_periode']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
                     </td> -->
@@ -74,8 +93,16 @@ $periode = mysqli_query($conn, "SELECT * FROM periode");
         <form action="../views/add/tambah_data_periode.php" method="POST">
           <div class="form">
             <div class="row">
-              <label for="name_div">Tahun</label>
+              <label for="tahun">Tahun</label>
               <input type="text" class="form-control" name="tahun" id="tahun" required>
+            </div>
+            <div class="row">
+              <label for="tgl_mulai">Tgl. Mulai</label>
+              <input type="date" class="form-control" name="tgl_mulai" id="tgl_mulai" required>
+            </div>
+            <div class="row">
+              <label for="tgl_berakhir">Tgl. Berakhir</label>
+              <input type="date" class="form-control" name="tgl_berakhir" id="tgl_berakhir" required>
             </div>
             <div class="row mt-2 d-inline-block">
               <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
