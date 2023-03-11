@@ -87,6 +87,9 @@ include '../config/database.php'
           case 'tambah-kriteria':
             include '../views/form/input_kriteria.php';
             break;
+          case 'update-bobot':
+            include '../views/edit/hitung_ulang_bobot.php';
+            break;
             // sasaranKompetensi
           case 'data-kompetensi':
             include '../views/data_kompetensi.php';

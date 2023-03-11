@@ -22,7 +22,7 @@ for ($i = 0; $i < $ctkp; $i++) {
 }
 
 if ($query) {
-  $_SESSION['sukses'] = 'Updated';
+  $_SESSION['sukses'] = 'Success';
 } else {
   $_SESSION['gagal'] = 'Failed';
 }

@@ -20,7 +20,7 @@ $j = $jabatan->fetch_array();
         <div class="card">
           <div class="card-header">
             <div class="card-title">
-              <h4>Edit Kriteria</h4>
+              <h4>Update Bobot</h4>
               <h5><?= $j['name_jab']; ?></h5>
             </div>
             <div class="card-body">
@@ -68,6 +68,38 @@ $j = $jabatan->fetch_array();
       </div>
     </div>
   </div>
+
+
+  <!-- SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <?php if (@$_SESSION['sukses']) { ?>
+    <script>
+      Swal.fire({
+        text: "<?php echo $_SESSION['sukses']; ?>",
+        icon: "success",
+        customClass: {
+          confirmButton: "btn fw-bold btn-primary",
+          cancelButton: "btn fw-bold btn-active-light-primary"
+        }
+      })
+    </script>
+  <?php unset($_SESSION['sukses']);
+  } ?>
+
+  <?php if (@$_SESSION['gagal']) { ?>
+    <script>
+      Swal.fire({
+        text: "<?php echo $_SESSION['gagal']; ?>",
+        icon: "error",
+        customClass: {
+          confirmButton: "btn fw-bold btn-primary",
+          cancelButton: "btn fw-bold btn-active-light-primary"
+        }
+      })
+    </script>
+  <?php unset($_SESSION['gagal']);
+  } ?>
+
 </section>
 
 <?php include '../template/footer.php' ?>

@@ -21,9 +21,9 @@ for ($i = 0; $i < $ctkp; $i++) {
 }
 
 if ($query) {
-  $_SESSION['sukses'] = 'Berhasil Menambah Data';
+  $_SESSION['sukses'] = 'Berhasil Menambah Data, Silahkan Update Bobot!';
 } else {
   // $_SESSION['gagal'] = 'Gagal Menambah Data';
 }
 
-header('Location: ../../app/index.php?page=data-kinerja-objektif');
+header('Location: ../../app/index.php?page=update-bobot&&jab=' . $jab[0]);

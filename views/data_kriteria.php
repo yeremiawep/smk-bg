@@ -55,7 +55,7 @@ $jab = mysqli_query($conn, "SELECT * FROM jabatans");
                     <td><?= $cro['bobot']; ?></td>
                     <td>
                       <a href="index.php?page=edit-kriteria&&id=<?= $cro['id_isi_sko']; ?>&&jab=<?= $cro['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
-                      <a onClick="hapusData(<?= $cro['id_isi_sko']; ?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
+                      <a onClick="hapusData(<?= $cro['id_isi_sko']; ?>, <?= $cro['jabatan']; ?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -98,7 +98,7 @@ $jab = mysqli_query($conn, "SELECT * FROM jabatans");
                     <td><?= $cit['bobot']; ?></td>
                     <td>
                       <a href="index.php?page=edit-kriteria&&id=<?= $cit['id_isi_sko']; ?>&&jab=<?= $cit['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
-                      <a onClick="hapusData(<?= $cit['id_isi_sko']; ?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
+                      <a onClick="hapusData(<?= $cit['id_isi_sko']; ?>, <?= $cit['jabatan']; ?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -141,7 +141,7 @@ $jab = mysqli_query($conn, "SELECT * FROM jabatans");
                     <td><?= $rtg['bobot']; ?></td>
                     <td>
                       <a href="index.php?page=edit-kriteria&&id=<?= $rtg['id_isi_sko']; ?>&&jab=<?= $rtg['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
-                      <a onClick="hapusData(<?= $rtg['id_isi_sko']; ?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
+                      <a onClick="hapusData(<?= $rtg['id_isi_sko']; ?>, <?= $rtg['jabatan']; ?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -185,7 +185,7 @@ $jab = mysqli_query($conn, "SELECT * FROM jabatans");
                     <td><?= $p['bobot']; ?></td>
                     <td>
                       <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi_sko']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
-                      <a onClick="hapusData(<?= $p['id_isi_sko']; ?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
+                      <a onClick="hapusData(<?= $p['id_isi_sko']; ?>, <?= $p['jabatan']; ?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -229,7 +229,7 @@ $jab = mysqli_query($conn, "SELECT * FROM jabatans");
                     <td><?= $p['bobot']; ?></td>
                     <td>
                       <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi_sko']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
-                      <a onClick="hapusData(<?= $p['id_isi_sko']; ?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
+                      <a onClick="hapusData(<?= $p['id_isi_sko']; ?>, <?= $p['jabatan']; ?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -273,7 +273,7 @@ $jab = mysqli_query($conn, "SELECT * FROM jabatans");
                     <td><?= $p['bobot']; ?></td>
                     <td>
                       <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi_sko']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
-                      <a onClick="hapusData(<?= $p['id_isi_sko']; ?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
+                      <a onClick="hapusData(<?= $p['id_isi_sko']; ?>, <?= $p['jabatan']; ?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -317,7 +317,7 @@ $jab = mysqli_query($conn, "SELECT * FROM jabatans");
                     <td><?= $p['bobot']; ?></td>
                     <td>
                       <a href="index.php?page=edit-kriteria&&id=<?= $p['id_isi_sko']; ?>&&jab=<?= $p['jabatan']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
-                      <a onClick="hapusData(<?= $p['id_isi_sko']; ?>)" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
+                      <a onClick="hapusData(<?= $p['id_isi_sko']; ?>, <?= $p['jabatan']; ?> )" class="btn btn-sm btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -436,8 +436,11 @@ $jab = mysqli_query($conn, "SELECT * FROM jabatans");
 
   <?php include '../template/footer.php' ?>
   <script>
-    function hapusData(data_id) {
+    function hapusData(id, jab) {
       // alert('Yakin Hapus ?');
+      var id = id;
+      var jab = jab;
+
       Swal.fire({
         title: 'Are you sure ?',
         showCancelButton: true,
@@ -447,7 +450,7 @@ $jab = mysqli_query($conn, "SELECT * FROM jabatans");
       }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
-          window.location = ("../views/delete/delete_kriteria.php?id=" + data_id);
+          window.location = ("../views/delete/delete_kriteria.php?id=" + id + "&&jab=" + jab);
           // Swal.fire('Saved!', '', 'success')
         }
       })
