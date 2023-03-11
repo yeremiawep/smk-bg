@@ -15,8 +15,10 @@ $admcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan='7
 $admcit = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan='8'");
 $admrtg = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan='9'");
 $plkcro = mysqli_query($conn, "SELECT * FROM kriteria_penilaian WHERE jabatan='13'");
-$ternilai = mysqli_query($conn, "SELECT COUNT(id_na) AS jml FROM nilai_akhir");
+$ternilai = mysqli_query($conn, "SELECT COUNT(id_na) AS jml FROM nilai_akhir JOIN periode ON nilai_akhir.periode=periode.id_periode WHERE periode.status='Aktif'");
 $view4 = $ternilai->fetch_array();
+$periode = mysqli_query($conn, "SELECT * FROM periode WHERE status='Aktif'");
+$view5 = $periode->fetch_array();
 
 ?>
 
@@ -32,33 +34,33 @@ $view4 = $ternilai->fetch_array();
             <p class="text-bold">Pegawai</p>
           </div>
           <div class="icon">
-            <i class="ion ion-person"></i>
+            <i class="ion ion-person text-light"></i>
           </div>
         </div>
       </div>
       <!-- ./col -->
       <div class="col-lg-4 col-6">
         <!-- small box -->
-        <div class="small-box bg-success">
+        <div class="small-box bg-primary">
           <div class="inner">
             <h3><?= $view2['jml']; ?></h3>
             <p class="text-bold">Divisi</p>
           </div>
           <div class="icon">
-            <i class="ion ion-stats-bars"></i>
+            <i class="ion ion-stats-bars text-light"></i>
           </div>
         </div>
       </div>
       <!-- ./col -->
       <div class="col-lg-4 col-6">
         <!-- small box -->
-        <div class="small-box bg-warning">
+        <div class="small-box bg-primary">
           <div class="inner">
             <h3><?= $view3['jml']; ?></h3>
             <p class="text-bold">Jabatan</p>
           </div>
           <div class="icon">
-            <i class="ion ion-pie-graph"></i>
+            <i class="ion ion-pie-graph text-light"></i>
           </div>
         </div>
       </div>
@@ -67,22 +69,33 @@ $view4 = $ternilai->fetch_array();
       <div class="col-lg-4 col-6">
         <div class="small-box bg-primary">
           <div class="inner">
-            <h3><?= $view4['jml']; ?></h3>
+            <h3><?= $view4['jml']; ?><span style="font-weight:bold; opacity:40%;">/<?= $view['jml']; ?></h3>
             <p class="text-bold">Jumlah Pegawai Dinilai</p>
           </div>
           <div class="icon">
-            <i class="ion ion-stats-bars"></i>
+            <i class="ion ion-stats-bars text-light"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-6">
+        <div class="small-box bg-primary">
+          <div class="inner">
+            <h3><?= $view5['tahun']; ?></h3>
+            <p class="text-bold">Periode Aktif | <i><span style="font-weight:bold; opacity:60%;"><?= $view5['tgl_mulai']; ?> s/d <?= $view5['tgl_berakhir']; ?></i></p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-calendar text-light"></i>
           </div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-4">
+    <!-- <div class="row">
+      <div class="col-lg-4">
         <div class="card bg-light">
           <div class="card-header bg-info">
             <h5 class="card-title">
-              <span style="font-weight:bold; opacity:50%;">Klik untuk melihat</span><br>
-              Sasaran Kinerja Objektif CRO
+              <span style="font-weight:bold; opacity:50%;">Klik untuk melihat</span>
+              <p>Sasaran Kinerja Objektif CRO</p>
             </h5>
           </div>
           <div class="card-body">
@@ -103,7 +116,7 @@ $view4 = $ternilai->fetch_array();
           <div class="card-header bg-info">
             <h5 class="card-title">
               <span style="font-weight:bold; opacity:50%;">Klik untuk melihat</span><br>
-              Sasaran Kinerja Objektif CIT
+              <p>Sasaran Kinerja Objektif CIT</p>
             </h5>
           </div>
           <div class="card-body">
@@ -121,7 +134,7 @@ $view4 = $ternilai->fetch_array();
           <div class="card-header bg-info">
             <h5 class="card-title">
               <span style="font-weight:bold; opacity:50%;">Klik untuk melihat</span><br>
-              Sasaran Kinerja Objektif Rutang
+              <p>Sasaran Kinerja Objektif Rutang</p>
             </h5>
           </div>
           <div class="card-body">
@@ -136,7 +149,7 @@ $view4 = $ternilai->fetch_array();
       </div>
     </div>
 
-    <!-- Modal SKO CRO ASPV -->
+    Modal SKO CRO ASPV
     <div class="modal fade" id="modal-sko-cro-aspv">
       <div class="modal-dialog modal-xl">
         <div class="modal-content">
@@ -173,9 +186,9 @@ $view4 = $ternilai->fetch_array();
         </div>
       </div>
     </div>
-    <!--  END Modal SKO CRO ASPV -->
+     END Modal SKO CRO ASPV
 
-    <!-- Modal SKO CRO ADM -->
+    Modal SKO CRO ADM
     <div class="modal fade" id="modal-sko-cro-admin">
       <div class="modal-dialog modal-xl">
         <div class="modal-content">
@@ -212,9 +225,9 @@ $view4 = $ternilai->fetch_array();
         </div>
       </div>
     </div>
-    <!-- END Modal SKO CRO ADM -->
+    END Modal SKO CRO ADM
 
-    <!-- Modal SKO CRO PLK -->
+    Modal SKO CRO PLK
     <div class="modal fade" id="modal-sko-cro-plk">
       <div class="modal-dialog modal-xl">
         <div class="modal-content">
@@ -251,9 +264,9 @@ $view4 = $ternilai->fetch_array();
         </div>
       </div>
     </div>
-    <!-- END Modal SKO CRO PLK -->
+    END Modal SKO CRO PLK
 
-    <!-- Modal SKO CIT ASPV -->
+    Modal SKO CIT ASPV
     <div class="modal fade" id="modal-sko-cit-aspv">
       <div class="modal-dialog modal-xl">
         <div class="modal-content">
@@ -290,9 +303,9 @@ $view4 = $ternilai->fetch_array();
         </div>
       </div>
     </div>
-    <!-- END Modal SKO CIT ASPV -->
+    END Modal SKO CIT ASPV
 
-    <!-- Modal SKO CIT ADM -->
+    Modal SKO CIT ADM
     <div class="modal fade" id="modal-sko-cit-admin">
       <div class="modal-dialog modal-xl">
         <div class="modal-content">
@@ -329,9 +342,9 @@ $view4 = $ternilai->fetch_array();
         </div>
       </div>
     </div>
-    <!-- END Modal SKO CIT ADM -->
+    END Modal SKO CIT ADM
 
-    <!-- Modal SKO RTG ASPV -->
+    Modal SKO RTG ASPV
     <div class="modal fade" id="modal-sko-rtg-aspv">
       <div class="modal-dialog modal-xl">
         <div class="modal-content">
@@ -368,9 +381,9 @@ $view4 = $ternilai->fetch_array();
         </div>
       </div>
     </div>
-    <!-- END Modal SKO RTG ASPV -->
+    END Modal SKO RTG ASPV
 
-    <!-- Modal SKO RTG ASPV -->
+    Modal SKO RTG ASPV
     <div class="modal fade" id="modal-sko-rtg-admin">
       <div class="modal-dialog modal-xl">
         <div class="modal-content">
@@ -406,7 +419,7 @@ $view4 = $ternilai->fetch_array();
           </form>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- END Modal SKO RTG ASPV -->
     <!-- Main row -->
     <div class="row">

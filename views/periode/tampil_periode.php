@@ -38,7 +38,6 @@ $periode = mysqli_query($conn, "SELECT * FROM periode");
                   <th width="10%">Tgl. Berakhir</th>
                   <th width="10%">Status</th>
                   <th width="10%">Option</th>
-                  <!-- <th width="10%">Aksi</th> -->
                 </tr>
               </thead>
               <tbody>
@@ -57,11 +56,8 @@ $periode = mysqli_query($conn, "SELECT * FROM periode");
                       <?php } ?>
                     </td>
                     <td>
-                      <a href="" class="badge badge-lg badge-primary"><i class="fas fa-cog"></i></i> Setting</a>
+                      <a href="index.php?page=setting-periode&&id=<?= $p['id_periode']; ?>" class="badge badge-lg badge-primary"><i class="fas fa-cog"></i></i> Setting</a>
                     </td>
-                    <!-- <td>
-                      <a href="index.php?page=edit-data-divisi&&id=<?= $p['id_periode']; ?>" class="btn btn-sm btn-warning"><i class="nav-icon fas fa-edit"></i></a>
-                    </td> -->
                   </tr>
                 <?php endforeach; ?>
               </tbody>

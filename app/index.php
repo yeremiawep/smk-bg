@@ -98,6 +98,9 @@ include '../config/database.php'
           case 'data-periode':
             include '../views/periode/tampil_periode.php';
             break;
+          case 'setting-periode':
+            include '../views/periode/setting_periode.php';
+            break;
             // penilaian
           case 'data-penilaian-rtg':
             include '../views/data_penilaian_rtg.php';

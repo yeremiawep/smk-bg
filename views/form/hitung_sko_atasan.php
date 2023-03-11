@@ -64,7 +64,7 @@ $n = $user->fetch_array();
                         <select name="periode" id="periode" class="form-select rounded col-2 text-center" required>
                           <option selected disabled value="">--</option>
                           <?php foreach ($periode as $p) : ?>
-                            <option value="<?= $p['id_periode']; ?>"><?= $p['tahun']; ?></option>
+                            <option value="<?= $p['id_periode']; ?>" <?= $p['status'] == 'Tidak Aktif' ? 'disabled' : '' ?>><?= $p['tahun']; ?> | <?= $p['status']; ?></option>
                           <?php endforeach; ?>
                         </select>
                       </div>
