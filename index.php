@@ -88,10 +88,10 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!-- start notif -->
-  <?php if (@$_SESSION['emailsukses']) { ?>
+  <?php if (@$_SESSION['sukses']) { ?>
     <script>
       Swal.fire({
-        text: "<?= $_SESSION['emailsukses']; ?>",
+        text: "<?= $_SESSION['sukses']; ?>",
         icon: "success",
         customClass: {
           confirmButton: "btn fw-bold btn-primary",
@@ -99,7 +99,7 @@
         }
       })
     </script>
-  <?php unset($_SESSION['emailsukses']);
+  <?php unset($_SESSION['sukses']);
   } ?>
 
   <?php if (@$_SESSION['resetsukses']) { ?>
