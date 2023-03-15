@@ -11,7 +11,7 @@ $divisi = mysqli_query($conn, "SELECT * FROM divisions");
     <div class="row">
       <div class="col-sm-12">
         <h1>Data Divisi</h1>
-        <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-xl"><i class="nav-icon fas fa-plus"></i> Add Division</button>
+        <button type="button" class="btn btn-sm btn-primary mt-2" data-toggle="modal" data-target="#modal-xl"><i class="nav-icon fas fa-plus"></i> Add Division</button>
       </div>
     </div>
   </div>

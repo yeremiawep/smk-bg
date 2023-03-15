@@ -11,7 +11,7 @@ $kategori = mysqli_query($conn, "SELECT * FROM kategori");
     <div class="row">
       <div class="col-sm-6">
         <h1>Data Jabatan</h1>
-        <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-xl"><i class="nav-icon fas fa-plus"></i> Add Jabatan</button>
+        <button type="button" class="btn btn-sm btn-primary mt-2" data-toggle="modal" data-target="#modal-xl"><i class="nav-icon fas fa-plus"></i> Add Jabatan</button>
       </div>
     </div>
   </div>

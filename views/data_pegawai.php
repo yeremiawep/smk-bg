@@ -11,7 +11,7 @@ $query = mysqli_query($conn, "SELECT * FROM users JOIN jabatans ON users.jabatan
     <div class="row">
       <div class="col-sm-6">
         <h1>Data Pegawai</h1>
-        <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-xl"><i class="nav-icon fas fa-user-plus"></i> Add Pegawai</button>
+        <button type="button" class="btn btn-sm btn-primary mt-2" data-toggle="modal" data-target="#modal-xl"><i class="nav-icon fas fa-user-plus"></i> Add Pegawai</button>
       </div>
     </div>
   </div>

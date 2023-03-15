@@ -17,6 +17,7 @@ $jab = mysqli_query($conn, "SELECT * FROM jabatans");
     <div class="row">
       <div class="col-sm-6">
         <h1>Sasaran Kinerja Objektif</h1>
+        <button type="button" class="btn btn-sm btn-primary mt-2" data-toggle="modal" data-target="#modal-add"><i class="nav-icon fas fa-plus"></i> Add Kriteria</button>
       </div>
     </div>
   </div>
@@ -31,7 +32,6 @@ $jab = mysqli_query($conn, "SELECT * FROM jabatans");
           <div class="card-header">
             <h2 class="card-title">Sasaran Kinerja Objektif</h2><br>
             <h6>Asisten Supervisor | <i>Cash Replenishment Outsource</i></h6>
-            <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-add"><i class="nav-icon fas fa-plus"></i> Add Kriteria</button>
           </div>
           <div class="card-body">
             <table class="table table-bordered">
@@ -74,7 +74,6 @@ $jab = mysqli_query($conn, "SELECT * FROM jabatans");
           <div class="card-header">
             <h2 class="card-title">Sasaran Kinerja Objektif</h2><br>
             <h6>Asisten Supervisor | <i>Cash In Transit</i></h6>
-            <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-add"><i class="nav-icon fas fa-plus"></i> Add Kriteria</button>
           </div>
           <div class="card-body">
             <table class="table table-bordered">
@@ -117,7 +116,6 @@ $jab = mysqli_query($conn, "SELECT * FROM jabatans");
           <div class="card-header">
             <h2 class="card-title">Sasaran Kinerja Objektif</h2><br>
             <h6>Asisten Supervisor | <i>Rumah Tangga</i></h6>
-            <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-add"><i class="nav-icon fas fa-plus"></i> Add Kriteria</button>
           </div>
           <div class="card-body">
             <table class="table table-bordered">
@@ -160,8 +158,6 @@ $jab = mysqli_query($conn, "SELECT * FROM jabatans");
           <div class="card-header">
             <h2 class="card-title">Sasaran Kinerja Objektif</h2><br>
             <h6>Pelaksana | <i>Cash Replenishment Outsource</i></h6>
-            <!-- <h6>| <i>Cash Replenishment Outsource</i></h6> -->
-            <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-add"><i class="nav-icon fas fa-plus"></i> Add Kriteria</button>
           </div>
           <div class="card-body">
             <table class="table table-bordered">
@@ -204,8 +200,6 @@ $jab = mysqli_query($conn, "SELECT * FROM jabatans");
           <div class="card-header">
             <h2 class="card-title">Sasaran Kinerja Objektif</h2><br>
             <h6>Admin | <i>Cash Replenishment Outsource</i></h6>
-            <!-- <h6>| <i>Cash Replenishment Outsource</i></h6> -->
-            <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-add"><i class="nav-icon fas fa-plus"></i> Add Kriteria</button>
           </div>
           <div class="card-body">
             <table class="table table-bordered">
@@ -248,8 +242,6 @@ $jab = mysqli_query($conn, "SELECT * FROM jabatans");
           <div class="card-header">
             <h2 class="card-title">Sasaran Kinerja Objektif</h2><br>
             <h6>Admin | <i>Cash In Transit</i></h6>
-            <!-- <h6>| <i>Cash Replenishment Outsource</i></h6> -->
-            <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-add"><i class="nav-icon fas fa-plus"></i> Add Kriteria</button>
           </div>
           <div class="card-body">
             <table class="table table-bordered">
@@ -292,8 +284,6 @@ $jab = mysqli_query($conn, "SELECT * FROM jabatans");
           <div class="card-header">
             <h2 class="card-title">Sasaran Kinerja Objektif</h2><br>
             <h6>Admin | <i>Rumah Tangga</i></h6>
-            <!-- <h6>| <i>Cash Replenishment Outsource</i></h6> -->
-            <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-add"><i class="nav-icon fas fa-plus"></i> Add Kriteria</button>
           </div>
           <div class="card-body">
             <table class="table table-bordered">
@@ -332,69 +322,6 @@ $jab = mysqli_query($conn, "SELECT * FROM jabatans");
   </div>
 
   <!-- Modal Add -->
-  <!-- <div class="modal fade" id="modal-add">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Add Kriteria & Target</h4>
-          <button type="button" class="close" data-dismiss="modal" Arial-label="Close">
-            <span Arial-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form action="../views/add/tambah_kriteria.php" method="POST">
-            <div class="form">
-              <div class="row">
-                <label for="jabatan">Jabatan</label>
-                <select class="custom-select" name="jabatan" id="jabatan" required>
-                  <option selected disabled value="">--</option>
-                  <?php foreach ($jab as $j) : ?>
-                    <option value="<?= $j['id']; ?>"><?= $j['name_jab']; ?></option>
-                  <?php endforeach; ?>
-                </select>
-              </div>
-              <div class="row">
-                <label for="aspek">Aspek</label>
-                <select class="custom-select" name="aspek" id="aspek" required>
-                  <option value=" Aspek Proses Bisnis Internal">Proses Bisnis Internal</option>
-                  <option value="Aspek Pekerja">Pekerja</option>
-                  <option value="Aspek Pelanggan">Pelanggan</option>
-                </select>
-              </div>
-              <div class="row">
-                <label for="kriteria">Kriteria</label>
-                <input type="text" class="form-control" name="kriteria" id="kriteria" required>
-              </div>
-              <div class="row">
-                <label for="target">Target</label>
-                <input type="text" class="form-control" name="target" id="target" required>
-              </div>
-              <div class="row">
-                <label for="tk_kepentingan">Tingkat Kepentingan</label>
-                <select class="custom-select" name="tk_kepentingan" id="tk_kepentingan" required>
-                  <option value="1">Sangat Rendah</option>
-                  <option value="2">Rendah</option>
-                  <option value="3">Sedang</option>
-                  <option value="4">Tinggi</option>
-                  <option value="5">Sangat Tinggi</option>
-                </select>
-              </div>
-              <div class="row">
-                <label for="bobot">Bobot</label>
-                <input type="text" class="form-control" name="bobot" id="bobot" required>
-              </div>
-              <div class="row mt-2 d-inline-block">
-                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div> -->
-  <!-- End Modal Add -->
-
   <div class="modal fade" id="modal-add">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
@@ -432,7 +359,7 @@ $jab = mysqli_query($conn, "SELECT * FROM jabatans");
       </div>
     </div>
   </div>
-
+  <!-- End Modal Add -->
 
   <?php include '../template/footer.php' ?>
   <script>
