@@ -1,7 +1,11 @@
 <?php
 include '../config/database.php';
 
-$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user RIGHT JOIN jabatans ON users.jabatan=jabatans.id RIGHT JOIN divisions ON users.divisi = divisions.id JOIN periode ON nilai_akhir.periode=periode.id_periode");
+$periode = @$_POST['periode'];
+
+$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user RIGHT JOIN jabatans ON users.jabatan=jabatans.id RIGHT JOIN divisions ON users.divisi = divisions.id JOIN periode ON nilai_akhir.periode=periode.id_periode WHERE periode.id_periode='$periode'");
+$periode2 = mysqli_query($conn, "SELECT * FROM periode");
+$p = $periode2->fetch_array();
 ?>
 
 
@@ -16,6 +20,19 @@ $nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhi
           </div>
           <!-- /.card-header -->
           <div class="card-body">
+            <div class="row px-2">
+              <label for="periode" class="col-form-label">Periode</label>
+              <form action="" method="POST" id="pilihPeriode">
+                <div class="col-12">
+                  <select name="periode" id="periode" class="form-control form-control-sm mb-2" onchange="document.getElementById('pilihPeriode').submit()">
+                    <option value="">-- Pilih Periode --</option>
+                    <?php foreach ($periode2 as $p2) : ?>
+                      <option value="<?= $p2['id_periode']; ?>"><?= $p2['tahun']; ?></option>
+                    <?php endforeach; ?>
+                  </select>
+                </div>
+              </form>
+            </div>
             <table id="example1" class="table table-bordered">
               <thead>
                 <tr>

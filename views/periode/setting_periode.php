@@ -41,6 +41,18 @@ $periode = mysqli_query($conn, "SELECT * FROM periode WHERE id_periode='$id'");
                 </div>
               </div>
             </div>
+            <div class="row">
+              <div class=" col-sm-6">
+                <div class="form-group">
+                  <label>Status</label>
+                  <select class="custom-select" name="status" id="status">
+                    <option value="<?= $p['status']; ?>" selected><?= $p['status']; ?></option>
+                    <option value="Aktif">Aktif</option>
+                    <option value="Tidak Aktif">Tidak Aktif</option>
+                  </select>
+                </div>
+              </div>
+            </div>
           <?php endforeach; ?>
           <button type="submit" class="btn btn-sm btn-primary">Submit</button>
         </form>

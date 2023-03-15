@@ -1,9 +1,13 @@
 <?php
 include '../config/database.php';
 
-$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user RIGHT JOIN jabatans ON users.jabatan=jabatans.id RIGHT JOIN divisions ON users.divisi = divisions.id JOIN periode ON nilai_akhir.periode=periode.id_periode WHERE divisions.id='1' AND jabatans.id='3'");
-$nilai2 = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user RIGHT JOIN jabatans ON users.jabatan=jabatans.id RIGHT JOIN divisions ON users.divisi = divisions.id JOIN periode ON nilai_akhir.periode=periode.id_periode WHERE divisions.id='2' AND jabatans.id='4'");
-$nilai3 = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user RIGHT JOIN jabatans ON users.jabatan=jabatans.id RIGHT JOIN divisions ON users.divisi = divisions.id JOIN periode ON nilai_akhir.periode=periode.id_periode WHERE divisions.id='3' AND jabatans.id='5'");
+$periode = @$_POST['periode'];
+
+$nilai = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user RIGHT JOIN jabatans ON users.jabatan=jabatans.id RIGHT JOIN divisions ON users.divisi = divisions.id JOIN periode ON nilai_akhir.periode=periode.id_periode WHERE divisions.id='1' AND jabatans.id='3' AND periode.id_periode='$periode'");
+$nilai2 = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user RIGHT JOIN jabatans ON users.jabatan=jabatans.id RIGHT JOIN divisions ON users.divisi = divisions.id JOIN periode ON nilai_akhir.periode=periode.id_periode WHERE divisions.id='2' AND jabatans.id='4' AND periode.id_periode='$periode'");
+$nilai3 = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akhir.id_user=users.id_user RIGHT JOIN jabatans ON users.jabatan=jabatans.id RIGHT JOIN divisions ON users.divisi = divisions.id JOIN periode ON nilai_akhir.periode=periode.id_periode WHERE divisions.id='3' AND jabatans.id='5' AND periode.id_periode='$periode'");
+$periode2 = mysqli_query($conn, "SELECT * FROM periode");
+$p = $periode2->fetch_array();
 
 ?>
 
@@ -18,6 +22,19 @@ $nilai3 = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akh
           </div>
           <!-- /.card-header -->
           <div class="card-body">
+            <div class="row px-2">
+              <label for="periode" class="col-form-label">Periode</label>
+              <form action="" method="POST" id="pilihPeriode">
+                <div class="col-12">
+                  <select name="periode" id="periode" class="form-control form-control-sm mb-2" onchange="document.getElementById('pilihPeriode').submit()">
+                    <option value="">-- Pilih Periode --</option>
+                    <?php foreach ($periode2 as $p2) : ?>
+                      <option value="<?= $p2['id_periode']; ?>"><?= $p2['tahun']; ?></option>
+                    <?php endforeach; ?>
+                  </select>
+                </div>
+              </form>
+            </div>
             <table id="example1" class="table table-bordered">
               <thead>
                 <tr>
@@ -70,6 +87,7 @@ $nilai3 = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akh
               <thead>
                 <tr>
                   <th width="2%">No</th>
+                  <th width="2%">Periode</th>
                   <th width="10%">ID Pegawai</th>
                   <th width="10%">Nama</th>
                   <th width="10%">Divisi</th>
@@ -87,6 +105,7 @@ $nilai3 = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akh
                 <?php foreach ($nilai2 as $nilai) : ?>
                   <tr>
                     <td><?= $no++; ?></td>
+                    <td><?= $nilai['tahun']; ?></td>
                     <td><?= $nilai['id_pegawai']; ?></td>
                     <td><?= $nilai['name']; ?></td>
                     <td><?= $nilai['name_div']; ?></td>
@@ -116,6 +135,7 @@ $nilai3 = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akh
               <thead>
                 <tr>
                   <th width="2%">No</th>
+                  <th width="2%">Periode</th>
                   <th width="10%">ID Pegawai</th>
                   <th width="10%">Nama</th>
                   <th width="10%">Divisi</th>
@@ -134,6 +154,7 @@ $nilai3 = mysqli_query($conn, "SELECT * FROM nilai_akhir JOIN users ON nilai_akh
                   <tr>
                     <td><?= $no++; ?></td>
                     <td><?= $nilai['id_pegawai']; ?></td>
+                    <td><?= $nilai['tahun']; ?></td>
                     <td><?= $nilai['name']; ?></td>
                     <td><?= $nilai['name_div']; ?></td>
                     <td><?= $nilai['name_jab']; ?></td>
