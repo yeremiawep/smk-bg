@@ -175,6 +175,10 @@ include '../config/database.php'
             include '../views/pegawai/detail_penilaian.php';
             break;
 
+          case 'profile':
+            include '../views/profile.php';
+            break;
+
           default:
             include "../template/dashboard.php";
             break;

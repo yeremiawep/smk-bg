@@ -4,8 +4,13 @@
     <!-- <div class="image"> -->
     <!-- <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image" /> -->
     <!-- </div> -->
-    <div class="row justify-content-center text-white d-flex">
+    <div class="row text-white d-flex px-4 py-1">
       <?= $_SESSION['user'] . '<br>' .  $_SESSION['name_jab']; ?>
+    </div>
+    <div class="row text-white d-flex px-4 py-1">
+      <a href="index.php?page=profile" class="badge badge-sm rounded-5">
+        <i class="fas fa-cog"></i></i> Edit Profile</a>
+      </a>
     </div>
   </div>
 
