@@ -80,8 +80,8 @@ $view5 = $periode->fetch_array();
       <div class="col-lg-4 col-6">
         <div class="small-box bg-primary">
           <div class="inner">
-            <h3><?= $view5['tahun']; ?></h3>
-            <p class="text-bold">Periode Aktif | <i><span style="font-weight:bold; opacity:60%;"><?= $view5['tgl_mulai']; ?> s/d <?= $view5['tgl_berakhir']; ?></i></p>
+            <h3><?= @$view5['tahun']; ?></h3>
+            <p class="text-bold">Periode <?= @$view5['status']; ?> | <i><span style="font-weight:bold; opacity:60%;"><?= @$view5['tgl_mulai']; ?> s/d <?= @$view5['tgl_berakhir']; ?></span></i></p>
           </div>
           <div class="icon">
             <i class="ion ion-calendar text-light"></i>
